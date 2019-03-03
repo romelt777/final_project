@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 2019_03_01_041105) do
     t.string "make"
     t.string "model"
     t.float "msrp"
-    t.string "type"
+    t.string "condition"
     t.integer "year"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -143,8 +143,8 @@ ActiveRecord::Schema.define(version: 2019_03_01_041105) do
     t.datetime "updated_at", null: false
   end
 
-  add_index "conparison_cars", ["comparison_id"], name: "index_conparison_cars_on_comparison_id", using: :btree
-  add_index "conparison_cars", ["car_id"], name: "index_conparison_cars_on_car_id", using: :btree
+  add_index "comparison_cars", ["comparison_id"], name: "index_comparison_cars_on_comparison_id", using: :btree
+  add_index "comparison_cars", ["car_id"], name: "index_comparison_cars_on_car_id", using: :btree
 
 
 

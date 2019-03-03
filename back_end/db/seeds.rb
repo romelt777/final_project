@@ -1,9 +1,9 @@
 Car.create({
   make: 'Mazda',
   model: '3',
-  msrp: 16_000
-  year: 2018
-  type: 'new'
+  msrp: 16_000,
+  year: 2018,
+  condition: 'new'
 })
 
 # Unlimited/km, 36/Months
