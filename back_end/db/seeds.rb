@@ -10,7 +10,11 @@
 ## https://www.auto123.com/en/new-cars/technical-specs/mazda/3/2018/base/gx/
 ## https://www.edmunds.com/mazda/3/2018/st-401721579/cost-to-own/
 
-Car.create({
+
+
+
+
+car1 = Car.find_or_create_by!({
   year: "2018",
   make: "Mazda",
   model: "3 GX",
@@ -18,7 +22,7 @@ Car.create({
   condition: 'new'
 })
 
-Price.create({
+car1.prices.create!({
   vehicle_price: 16000.00,
   freight_delivery: 1695.00,
   total_price: 19995.35
