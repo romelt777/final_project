@@ -1,14 +1,15 @@
 Car.create({
-  title: "Nissan Sentra",
-  price: 20_000.00
+  make: 'Mazda',
+  model: '3',
+  msrp: 16_000
+  year: 2018
+  type: 'new'
 })
 
-Car.create({
-  title: "Nissan Maxima",
-  price: 26_000.00
-})
-
-Car.create({
-  title: "Nissan Versa",
-  price: 17_000.00
-})
+Unlimited/km, 36/Months
+Powertrain
+Unlimited/km, 60/Months
+Roadside Assistance
+Unlimited/km, 36/Months
+Rust-through
+Unlimited/km, 84/Months
