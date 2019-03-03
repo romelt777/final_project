@@ -10,11 +10,11 @@ export default class CarList extends React.Component {
   }
 
   componentDidMount(){
-    axios.get('https://jsonplaceholder.typicode.com/users')
+    axios.get('http://localhost:3001/api/v1/cars')
       .then(res => {
         console.log(res);
         this.setState(
-        {newCars: res.data}
+        {newCars: res.data.data}
         )
       });
   }
@@ -22,7 +22,7 @@ export default class CarList extends React.Component {
   render(){
     return (
       <ul>
-        {this.state.newCars.map(car => <li>{car.name}</li>)}
+        {this.state.newCars.map(car => <li>{car.title}</li>)}
       </ul>
     )
   }
