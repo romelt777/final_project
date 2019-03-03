@@ -30,24 +30,37 @@ ActiveRecord::Schema.define(version: 2019_03_01_041105) do
     t.float "vehicle_price"
     t.float "freight_delivery"
     t.float "total_price"
+    t.integer "car_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "warranty", force: :cascade do |t|
+
+  add_index "prices", ["car_id"], name: "index_prices_on_car_id", using: :btree
+
+
+  create_table "warranties", force: :cascade do |t|
     t.string "bumper"
     t.string "powertrain"
     t.string "roadside"
     t.string "rust"
+    t.integer "car_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
+  add_index "warranties", ["car_id"], name: "index_warranties_on_car_id", using: :btree
+
+
   create_table "pictures", force: :cascade do |t|
     t.string "url"
+    t.integer "car_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  add_index "pictures", ["car_id"], name: "index_pictures_on_car_id", using: :btree
+
 
   # Combined fuel economy is a weighted average of City and Highway MPG values that is calculated by weighting the City value by 55% and the Highway value by 45%.
   create_table "fuels", force: :cascade do |t|
@@ -57,9 +70,12 @@ ActiveRecord::Schema.define(version: 2019_03_01_041105) do
     t.float "manual_city"
     t.float "manual_highway"
     t.float "manual_combined"
+    t.integer "car_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  add_index "fuels", ["car_id"], name: "index_fuels_on_car_id", using: :btree
 
   #edmunds
   create_table "maintenance_models", force: :cascade do |t|
@@ -69,21 +85,28 @@ ActiveRecord::Schema.define(version: 2019_03_01_041105) do
     t.float "fourth"
     t.float "fifth"
     t.float "total"
+    t.integer "car_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
+  add_index "maintenance_models", ["car_id"], name: "index_maintenance_models_on_car_id", using: :btree
+
   #edmunds
-  create_table "depreciations_models", force: :cascade do |t|
+  create_table "depreciation_models", force: :cascade do |t|
     t.float "first"
     t.float "second"
     t.float "third"
     t.float "fourth"
     t.float "fifth"
     t.float "total"
+    t.integer "car_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  add_index "depreciation_models", ["car_id"], name: "index_depreciation_models_on_car_id", using: :btree
+
 
   create_table "users", force: :cascade do |t|
     t.string "username"
@@ -111,11 +134,31 @@ ActiveRecord::Schema.define(version: 2019_03_01_041105) do
   end
 
   add_index "comparisons", ["user_id"], name: "index_comparisons_on_user_id", using: :btree
-  add_index "comparisons", ["comparison_cars_id"], name: "index_comparisons_on_comparison_car_id", using: :btree
+  add_index "comparisons", ["comparison_car_id"], name: "index_comparisons_on_comparison_car_id", using: :btree
+
+  create_table "comparison_cars", force: :cascade do |t|
+    t.integer "comparison_id"
+    t.integer "car_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "conparison_cars", ["comparison_id"], name: "index_conparison_cars_on_comparison_id", using: :btree
+  add_index "conparison_cars", ["car_id"], name: "index_conparison_cars_on_car_id", using: :btree
 
 
 
 
+  add_foreign_key "prices", "cars"
+  add_foreign_key "warranties", "cars"
+  add_foreign_key "pictures", "cars"
+  add_foreign_key "fuels", "cars"
+  add_foreign_key "maintenance_models", "cars"
+  add_foreign_key "depreciation_models", "cars"
   add_foreign_key "saved_cars", "users"
   add_foreign_key "saved_cars", "cars"
+  add_foreign_key "comparisons", "users"
+  add_foreign_key "comparisons", "comparison_cars"
+  add_foreign_key "comparison_cars", "comparisons"
+  add_foreign_key "comparison_cars", "cars"
 end
