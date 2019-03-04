@@ -12,10 +12,22 @@ function About() {
   return <h2>About</h2>
 }
 
-function Users() {
+
+function Car({match}) {
+  return <h3>Requested Param: {match.params.id}</h3>
+}
+function Cars({match}) {
   return (
-    <h2>Cars
-    <CarList /> </h2>
+    <div>
+      <h2>Cars</h2>
+      <Route path={`${match.path}/:id`} component={Car}></Route>
+      <Route
+        exact
+        path={match.path}
+        render={() => <h3>Please select a car</h3>}>
+      </Route>
+      <CarList />
+    </div>
   )
 }
 
@@ -30,7 +42,7 @@ class AppRouter extends Component {
             <h1 className="App-title">Welcome to React</h1>
           </header>
           <Route path="/about/" component={About} />
-          <Route path="/cars/" component={Users} />
+          <Route path="/cars" component={Cars} />
         </div>
       </Router>
     );
