@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  bumper: MyString
+  powertrain: MyString
+  roadside: MyString
+  rust: MyString
+  car: one
+
+two:
+  bumper: MyString
+  powertrain: MyString
+  roadside: MyString
+  rust: MyString
+  car: two

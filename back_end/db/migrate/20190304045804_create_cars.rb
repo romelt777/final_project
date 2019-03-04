@@ -1,8 +1,10 @@
 class CreateCars < ActiveRecord::Migration[5.2]
   def change
     create_table :cars do |t|
-      t.string :title
-      t.float :price
+      t.string :make
+      t.string :model
+      t.string :condition
+      t.integer :year
 
       t.timestamps
     end

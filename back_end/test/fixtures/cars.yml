@@ -1,9 +1,15 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  title: MyString
-  price: 1.5
+  make: MyString
+  model: MyString
+  msrp: 1.5
+  condition: MyString
+  year: 1
 
 two:
-  title: MyString
-  price: 1.5
+  make: MyString
+  model: MyString
+  msrp: 1.5
+  condition: MyString
+  year: 1
