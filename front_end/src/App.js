@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import CarList from './Components/CarList'
+import CurrentCar from './Components/CurrentCar'
 
 function Index() {
   return <h2>Home</h2>;
@@ -42,6 +43,7 @@ class AppRouter extends Component {
             <img src={logo} className="App-logo" alt="logo" />
             <h1 className="App-title">Welcome to React</h1>
           </header>
+          <CurrentCar></CurrentCar>
           <Route path="/about/" component={About} />
           <Route path="/cars" component={Cars} />
         </div>
