@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  auto_city: 1.5
+  auto_highway_float: MyString
+  auto_combined: 1.5
+  manual_city: 1.5
+  manual_highway: 1.5
+  manual_combined: 1.5
+  car: one
+
+two:
+  auto_city: 1.5
+  auto_highway_float: MyString
+  auto_combined: 1.5
+  manual_city: 1.5
+  manual_highway: 1.5
+  manual_combined: 1.5
+  car: two
