@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import axios from 'axios'
 import CarList from './Components/CarList'
 import CurrentCar from './Components/CurrentCar'
 
@@ -47,6 +48,13 @@ class AppRouter extends Component {
 
   updateCurrent(currentCar) {
     console.log(currentCar)
+    axios.post(`http://localhost:3001/api/v1/cars/`, currentCar)
+      .then(function (res) {
+        console.log(res)
+      })
+      .catch(function (err) {
+        console.log(err)
+      })
   }
 
   render() {

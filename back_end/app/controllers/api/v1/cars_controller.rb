@@ -10,6 +10,12 @@ module Api
         },status: :ok
       end
 
+      def create
+        puts "909"
+        puts params
+      end
+
+
       def show
         puts params[:id]
         @car = Car.find(params[:id])
