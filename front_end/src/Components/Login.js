@@ -1,12 +1,17 @@
 import React, { Component } from 'react';
-import axios from 'axios'
+
 
 export default  class Login extends React.Component {
     submitCurrent = event => {
         event.preventDefault();
-        console.log(this.refs.email.value)
-        console.log(this.refs.password.value)
+        let account = [{
+            "Email": this.refs.email.value,
+            "Password": this.refs.password.value
+          }]
+          console.log(account)
+          this.props.updateAccount(account)
         }
+        
 
    render(){
     return (

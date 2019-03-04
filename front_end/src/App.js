@@ -34,6 +34,18 @@ function Cars({match}) {
 
 
 class AppRouter extends Component {
+  constructor(props){
+    super(props)
+    this.state = {
+
+    }
+
+    this.updateAccount = this.updateAccount.bind(this);
+  }
+
+  updateAccount(account) {
+    console.log(account)
+  }
   render() {
     return (
       <Router>
@@ -42,9 +54,11 @@ class AppRouter extends Component {
             <img src={logo} className="App-logo" alt="logo" />
             <h1 className="App-title">Welcome to React</h1>
           </header>
+
           <Route path="/about/" component={About} />
           <Route path="/cars" component={Cars} />
-          <Route path="/login" component={Login}/>
+          <Route path="/login" render={() => <Login updateAccount={this.updateAccount}/>}/>
+          
         </div>
       </Router>
     );
