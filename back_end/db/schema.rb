@@ -59,7 +59,7 @@ ActiveRecord::Schema.define(version: 2019_03_04_060109) do
 
   create_table "fuels", force: :cascade do |t|
     t.float "auto_city"
-    t.string "auto_highway"
+    t.float "auto_highway"
     t.float "auto_combined"
     t.float "manual_city"
     t.float "manual_highway"
