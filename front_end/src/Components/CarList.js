@@ -30,5 +30,4 @@ export default class CarList extends React.Component {
       </div>
     )
   }
-
 }

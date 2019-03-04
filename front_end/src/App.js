@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 import './App.css';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import axios from 'axios'
 import CarList from './Components/CarList'
 import Body from './Components/Body'
 
@@ -11,7 +12,7 @@ import Mazda from './images/mazda.jpg';
 import Honda from './images/honda.jpg';
 import Toyota from './images/toyota.jpg';
 import { Fade } from 'react-slideshow-image';
-
+import CurrentCar from './Components/CurrentCar'
 
 function Index() {
   return <h2>Home</h2>;
@@ -25,6 +26,7 @@ function About() {
 function Car({match}) {
   return <h3>Requested Param: {match.params.id}</h3>
 }
+
 function Cars({match}) {
   console.log(match)
   return (
@@ -43,6 +45,26 @@ function Cars({match}) {
 
 
 class AppRouter extends Component {
+  constructor(props){
+    super(props)
+    this.state = {
+
+    }
+
+    this.updateCurrent = this.updateCurrent.bind(this);
+  }
+
+  updateCurrent(currentCar) {
+    console.log(currentCar)
+    axios.post(`http://localhost:3001/api/v1/cars/`, currentCar)
+      .then(function (res) {
+        console.log(res)
+      })
+      .catch(function (err) {
+        console.log(err)
+      })
+  }
+
   render() {
     const fadeProperties = {
       duration: 4000,
@@ -55,6 +77,7 @@ class AppRouter extends Component {
     return (
       <Router>
         <div className="App">
+          <CurrentCar updateCurrent={this.updateCurrent}></CurrentCar>
           <Route path="/about/" component={About} />
           <Route path="/cars" component={Cars} />
           <Fade {...fadeProperties}>
