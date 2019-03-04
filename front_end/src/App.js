@@ -17,6 +17,7 @@ function Car({match}) {
   return <h3>Requested Param: {match.params.id}</h3>
 }
 function Cars({match}) {
+  console.log(match)
   return (
     <div>
       <h2>Cars</h2>
@@ -26,7 +27,7 @@ function Cars({match}) {
         path={match.path}
         render={() => <h3>Please select a car</h3>}>
       </Route>
-      <CarList />
+      <Route path={`${match.path}/:id`} component={CarList}></Route>
     </div>
   )
 }
