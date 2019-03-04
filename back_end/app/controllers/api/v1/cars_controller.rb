@@ -12,15 +12,20 @@ module Api
 
       def create
         puts "909"
-        puts params[:_json]
+        puts params[:_json][0]
         # puts
-        # @car = Car.new(
-
-        # )
-        render json: {
-          status: 'SUCCESS',
-          message: 'Save current to database',
-        },status: :ok
+        @car = Car.new(car_params)
+        if @car.save
+          render json: {
+            status: 'SUCCESS',
+            message: 'Save current car to database',
+          },status: :created
+        else
+          render json: {
+            status: 'FAILED',
+            message: 'Failed to save current car to database',
+          },status: :bad_request
+        end
       end
 
 
@@ -33,6 +38,13 @@ module Api
           data: @car
         },status: :ok
       end
+
+      private
+
+      def car_params
+        params[:_json][0].permit(:make, :model, :year, :condition)
+      end
+
     end
   end
 

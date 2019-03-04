@@ -8,7 +8,7 @@ export default class CurrentCar extends React.Component {
       "make": this.refs.make.value,
       "model": this.refs.model.value,
       "year": this.refs.year.value,
-      "type": "current"
+      "condition": "current"
     }]
     console.log("make:", this.refs.make.value)
     console.log("model:", this.refs.model.value)
