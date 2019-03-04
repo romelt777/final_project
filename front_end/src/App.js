@@ -17,6 +17,7 @@ function About() {
 function Car({match}) {
   return <h3>Requested Param: {match.params.id}</h3>
 }
+
 function Cars({match}) {
   console.log(match)
   return (
@@ -35,6 +36,19 @@ function Cars({match}) {
 
 
 class AppRouter extends Component {
+  constructor(props){
+    super(props)
+    this.state = {
+
+    }
+
+    this.updateCurrent = this.updateCurrent.bind(this);
+  }
+
+  updateCurrent(currentCar) {
+    console.log(currentCar)
+  }
+
   render() {
     return (
       <Router>
@@ -43,7 +57,7 @@ class AppRouter extends Component {
             <img src={logo} className="App-logo" alt="logo" />
             <h1 className="App-title">Welcome to React</h1>
           </header>
-          <CurrentCar></CurrentCar>
+          <CurrentCar updateCurrent={this.updateCurrent}></CurrentCar>
           <Route path="/about/" component={About} />
           <Route path="/cars" component={Cars} />
         </div>
