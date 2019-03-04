@@ -12,7 +12,15 @@ module Api
 
       def create
         puts "909"
-        puts params
+        puts params[:_json]
+        # puts
+        # @car = Car.new(
+
+        # )
+        render json: {
+          status: 'SUCCESS',
+          message: 'Save current to database',
+        },status: :ok
       end
 
 
