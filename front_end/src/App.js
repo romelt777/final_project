@@ -96,7 +96,7 @@ class AppRouter extends Component {
     return (
       <Router>
         <div className="App">
-          <Route exact path="/currentCar/" render={() => <CurrentCar updateCurrent={this.updateCurrent}></CurrentCar>} />
+          <Route exact path="/currentCar/" render={() => <CurrentCar updateCurrent={this.updateCurrent} data={this.state}></CurrentCar>} />
           <Route exact path="/" component={CarSlide} />
           <Route path="/cars" component={this.Cars} />
           <Body />

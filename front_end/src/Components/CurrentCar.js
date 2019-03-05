@@ -1,5 +1,4 @@
 import React from 'react'
-import CarList from './CarList'
 
 export default class CurrentCar extends React.Component {
 
@@ -16,6 +15,13 @@ export default class CurrentCar extends React.Component {
   }
 
   render(){
+
+    const newCars = this.props.data.newCars.reverse().map(car => (
+        <tr key={car.id}>
+          <th><input type="radio" ref={car.id}></input></th><th key={car.id}>{car.year} {car.make} {car.model} </th>
+        </tr>
+    ))
+
     return (
       <div>
         <form onSubmit={this.submitCurrent}>
@@ -24,7 +30,11 @@ export default class CurrentCar extends React.Component {
           <label> Year: <input type="text" name="year" ref="year" /> </label> <br></br>
           <input type="submit" value="Submit"/>
         </form>
-        <CarList />
+        <table>
+          <tbody>
+            {newCars}
+          </tbody>
+        </table>
       </div>
     )
   }
