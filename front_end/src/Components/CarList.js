@@ -3,7 +3,8 @@ import axios from 'axios'
 
 export default class CarList extends React.Component {
   state = {
-    newCars: []
+    newCars: [],
+    newPrices: []
   }
 
   componentDidMount(){
@@ -11,6 +12,13 @@ export default class CarList extends React.Component {
       .then(res => {
         this.setState(
           {newCars: res.data.data}
+        )
+      });
+    axios.get(`http://localhost:3001/api/v1/prices/`)
+      .then(res => {
+        console.log(res);
+        this.setState(
+          {newPrices: res.data.data}
         )
       });
   }
