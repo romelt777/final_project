@@ -12,24 +12,74 @@ import CarSlide from './Components/CarSlide';
 import Car from './Components/Car';
 
 
-function Cars({match}) {
-  console.log(match)
-  return (
-    <div>
-      <h2>Cars</h2>
-      <Route exact path = {`${match.path}/:id`} component={Car}></Route>
-      <Route exact path = {`${match.path}`} component={CarList}></Route>
-
-    </div>
-  )
-}
-
 class AppRouter extends Component {
   constructor(props){
     super(props)
     this.state = {
-
+      newCars: [],
+      newPrices: [],
+      newWarranties: [],
+      newPictures: [],
+      newFuels: [],
+      newDepreciations: []
     }
+  }
+
+  Cars = ({match}) => {
+    console.log(match)
+    return (
+      <div>
+        <h2>Cars</h2>
+        <Route exact path = {`${match.path}/:id`} component={Car}></Route>
+        <Route exact path = {`${match.path}`} render={() => <CarList data={this.state}/> }></Route>
+      </div>
+    )
+  }
+
+
+  componentDidMount(){
+    axios.get(`http://localhost:3001/api/v1/cars/`)
+      .then(res => {
+        console.log(res)
+        this.setState(
+          {newCars: res.data.data}
+        )
+      });
+    axios.get(`http://localhost:3001/api/v1/prices/`)
+      .then(res => {
+        console.log(res);
+        this.setState(
+          {newPrices: res.data.data}
+        )
+      });
+    axios.get(`http://localhost:3001/api/v1/warranties/`)
+      .then(res => {
+        console.log(res);
+        this.setState(
+          {newPrices: res.data.data}
+        )
+      });
+    axios.get(`http://localhost:3001/api/v1/pictures/`)
+      .then(res => {
+        console.log(res);
+        this.setState(
+          {newPrices: res.data.data}
+        )
+      });
+    axios.get(`http://localhost:3001/api/v1/fuels/`)
+      .then(res => {
+        console.log(res);
+        this.setState(
+          {newPrices: res.data.data}
+        )
+      });
+    axios.get(`http://localhost:3001/api/v1/depreciations/`)
+      .then(res => {
+        console.log(res);
+        this.setState(
+          {newPrices: res.data.data}
+        )
+      });
   }
 
   //uses form to send users current car to database.
@@ -50,7 +100,7 @@ class AppRouter extends Component {
         <div className="App">
           <Route exact path="/currentCar/" render={() => <CurrentCar updateCurrent={this.updateCurrent}></CurrentCar>} />
           <Route exact path="/" component={CarSlide} />
-          <Route path="/cars" component={Cars} />
+          <Route path="/cars" component={this.Cars} />
           <Body />
         </div>
       </Router>

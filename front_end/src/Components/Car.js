@@ -4,7 +4,8 @@ import axios from 'axios'
 
 export default class CarList extends React.Component {
   state = {
-    newCars: []
+    newCars: [],
+    newPrices: []
   }
 
   componentDidMount(){
@@ -17,6 +18,15 @@ export default class CarList extends React.Component {
           {newCars: res.data.data}
         )
       });
+
+    axios.get(`http://localhost:3001/api/v1/prices/`)
+      .then(res => {
+        console.log(res);
+        console.log(res.data.data)
+        this.setState(
+          {newPrices: res.data.data}
+        )
+      });
   }
 
   render(){
@@ -24,9 +34,11 @@ export default class CarList extends React.Component {
     this.state.newCars.forEach((car) => {
       if(car.id == this.props.match.params.id){
         newCar = <h2>{car.year} {car.make} {car.model}</h2>
-        console.log("hello", newCar)
       }
     })
+
+
+
 
     return (
       <div>
