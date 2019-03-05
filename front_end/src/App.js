@@ -17,8 +17,8 @@ function Cars({match}) {
   return (
     <div>
       <h2>Cars</h2>
-      <Route path={`${match.path}/:id`} component={Car}></Route>
-      <Route path={`${match.path}`} component={CarList}></Route>
+      <Route exact path = {`${match.path}/:id`} component={Car}></Route>
+      <Route exact path = {`${match.path}`} component={CarList}></Route>
 
     </div>
   )

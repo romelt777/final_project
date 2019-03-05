@@ -36,21 +36,10 @@ export default class CarList extends React.Component {
       <h2 key={car.id}>{car.year} {car.make} {car.model}</h2>
     ))
 
-    console.log(newCars)
-
-    if(this.props.match.params){
-      console.log("exists")
-    } else{
-      console.log('nope')
-    }
-
-
-    console.log(this.state.newCars);
-    console.log("hello", this.props.match.params.id)
     return (
       <div>
         <ul>
-          {this.props.match.params === undefined ? newCars : newCar}
+          {newCar}
         </ul>
       </div>
     )
