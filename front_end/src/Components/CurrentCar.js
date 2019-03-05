@@ -1,4 +1,5 @@
 import React from 'react'
+import CarList from './CarList'
 
 export default class CurrentCar extends React.Component {
 
@@ -23,6 +24,7 @@ export default class CurrentCar extends React.Component {
           <label> Year: <input type="text" name="year" ref="year" /> </label> <br></br>
           <input type="submit" value="Submit"/>
         </form>
+        <CarList />
       </div>
     )
   }
