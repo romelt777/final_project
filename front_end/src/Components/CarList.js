@@ -4,7 +4,11 @@ import axios from 'axios'
 export default class CarList extends React.Component {
   state = {
     newCars: [],
-    newPrices: []
+    newPrices: [],
+    newWarranties: [],
+    newPictures: [],
+    newFuels: [],
+    newDepreciations: []
   }
 
   componentDidMount(){
@@ -15,6 +19,34 @@ export default class CarList extends React.Component {
         )
       });
     axios.get(`http://localhost:3001/api/v1/prices/`)
+      .then(res => {
+        console.log(res);
+        this.setState(
+          {newPrices: res.data.data}
+        )
+      });
+    axios.get(`http://localhost:3001/api/v1/warranties/`)
+      .then(res => {
+        console.log(res);
+        this.setState(
+          {newPrices: res.data.data}
+        )
+      });
+    axios.get(`http://localhost:3001/api/v1/pictures/`)
+      .then(res => {
+        console.log(res);
+        this.setState(
+          {newPrices: res.data.data}
+        )
+      });
+    axios.get(`http://localhost:3001/api/v1/fuels/`)
+      .then(res => {
+        console.log(res);
+        this.setState(
+          {newPrices: res.data.data}
+        )
+      });
+    axios.get(`http://localhost:3001/api/v1/depreciations/`)
       .then(res => {
         console.log(res);
         this.setState(
