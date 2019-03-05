@@ -58,7 +58,7 @@ class AppRouter extends Component {
       <Router>
         <div className="App">
           <CurrentCar updateCurrent={this.updateCurrent}></CurrentCar>
-          <CarSlide></CarSlide>
+          <Route exact path="/" component={CarSlide} />
           <Route path="/cars" component={Cars} />
           <Body />
         </div>
