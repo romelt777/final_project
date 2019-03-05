@@ -11,7 +11,7 @@ module Api
       if @user && @user.authenticate(params[:password])
         # Save the user id inside the browser cookie. This is how we keep the user 
         # logged in when they navigate around our website.
-        session[:user_id] = user.id
+        session[:user_id] = @user.id
         render json: {
           status: 'SUCCESS',
           message: 'Login Success',
@@ -21,7 +21,7 @@ module Api
       else
         # If user's login doesn't work, send them back to the login form.
         render json: {
-          status: 'SUCCESS',
+          status: 'UNAUTHORIZED',
           message: 'Login Unsuccessful',
           data: @user
         },status: :unauthorized

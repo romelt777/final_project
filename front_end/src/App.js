@@ -4,6 +4,7 @@ import './App.css';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import CarList from './Components/CarList'
 import Login from './Components/Login'
+import Register from './Components/Register'
 import axios from 'axios'
 
 function Index() {
@@ -40,20 +41,37 @@ class AppRouter extends Component {
     this.state = {
 
     }
-
-    this.updateAccount = this.updateAccount.bind(this);
   }
 
-  updateAccount(account) {
+  
+
+  
+  login = (account) => {
     console.log(account)
     axios.post(`http://localhost:3001/api/v1/login/`, account)
-    .then(function (res) {
+    .then((res) => {
       console.log(res)
-    })
-    .catch(function (err) {
+    }
+    
+    ).catch((err) => {
       console.log(err)
-    })
+    });
   }
+
+  register = (account) => {
+    console.log(account)
+    axios.post(`http://localhost:3001//api/v1/register/`, account)
+    .then((res) => {
+      console.log(res)
+    }
+    
+    ).catch((err) => {
+      console.log(err)
+    });
+  }
+
+
+  
   render() {
     return (
       <Router>
@@ -65,7 +83,8 @@ class AppRouter extends Component {
 
           <Route path="/about/" component={About} />
           <Route path="/cars" component={Cars} />
-          <Route path="/login" render={() => <Login updateAccount={this.updateAccount}/>}/>
+          <Route path="/login" render={() => <Login login={this.login}/>}/>
+          <Route path="/register" render={() => <Register register={this.register}/>}/>
           
         </div>
       </Router>
