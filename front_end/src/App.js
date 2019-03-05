@@ -24,14 +24,12 @@ function Cars({match}) {
   )
 }
 
-
 class AppRouter extends Component {
   constructor(props){
     super(props)
     this.state = {
 
     }
-
   }
 
   //uses form to send users current car to database.
@@ -50,7 +48,7 @@ class AppRouter extends Component {
     return (
       <Router>
         <div className="App">
-          <CurrentCar updateCurrent={this.updateCurrent}></CurrentCar>
+          <Route exact path="/currentCar/" render={() => <CurrentCar updateCurrent={this.updateCurrent}></CurrentCar>} />
           <Route exact path="/" component={CarSlide} />
           <Route path="/cars" component={Cars} />
           <Body />
