@@ -4,6 +4,7 @@ import './App.css';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import CarList from './Components/CarList'
 import Login from './Components/Login'
+import axios from 'axios'
 
 function Index() {
   return <h2>Home</h2>;
@@ -45,6 +46,13 @@ class AppRouter extends Component {
 
   updateAccount(account) {
     console.log(account)
+    axios.post(`http://localhost:3001/api/v1/login/`, account)
+    .then(function (res) {
+      console.log(res)
+    })
+    .catch(function (err) {
+      console.log(err)
+    })
   }
   render() {
     return (
