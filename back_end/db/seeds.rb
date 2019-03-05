@@ -253,7 +253,7 @@ car5 = Car.find_or_create_by!({
 })
 
 Price.create!({
-  vehicle_price: 25_900.00,
+  vehicle_price: 25900.00,
   freight_delivery: 1895.00,
   total_price: 27795.00,
   car_id: 5

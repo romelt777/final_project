@@ -10,6 +10,9 @@ import CurrentCar from './Components/CurrentCar';
 import CarSlide from './Components/CarSlide';
 import CarList from './Components/CarList'
 import Car from './Components/Car';
+import Login from './Components/Login'
+import Register from './Components/Register'
+
 
 
 class AppRouter extends Component {
@@ -80,6 +83,8 @@ class AppRouter extends Component {
       });
   }
 
+
+
   //uses form to send users current car to database.
   updateCurrent = (currentCar) => {
     console.log(currentCar)
@@ -92,14 +97,49 @@ class AppRouter extends Component {
       })
   }
 
+
+
+  
+
+  
+  login = (account) => {
+    console.log(account)
+    axios.post(`http://localhost:3001/api/v1/login/`, account)
+    .then((res) => {
+      console.log(res)
+    }
+    
+    ).catch((err) => {
+      console.log(err)
+    });
+  }
+
+  register = (account) => {
+    console.log(account)
+    axios.post(`http://localhost:3001//api/v1/register/`, account)
+    .then((res) => {
+      console.log(res)
+    }
+    
+    ).catch((err) => {
+      console.log(err)
+    });
+  }
+
+
+  
   render() {
     return (
       <Router>
         <div className="App">
+
           <Route exact path="/currentCar/" render={() => <CurrentCar updateCurrent={this.updateCurrent}></CurrentCar>} />
           <Route exact path="/" component={CarSlide} />
           <Route path="/cars" component={this.Cars} />
           <Body />
+          <Route path="/login" render={() => <Login login={this.login}/>}/>
+          <Route path="/register" render={() => <Register register={this.register}/>}/>
+
         </div>
       </Router>
     );

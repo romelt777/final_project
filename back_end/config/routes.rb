@@ -7,6 +7,9 @@ Rails.application.routes.draw do
       resources :pictures
       resources :fuels
       resources :depreciations
+      post '/login' => 'sessions#create'
+      post '/register' => 'users#create'
+
     end
-  end
+  end  
 end
