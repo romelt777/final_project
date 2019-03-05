@@ -9,7 +9,6 @@ export default class CarList extends React.Component {
 
   componentDidMount(){
 
-
     axios.get(`http://localhost:3001/api/v1/cars/`)
       .then(res => {
         console.log(res);
@@ -18,7 +17,6 @@ export default class CarList extends React.Component {
           {newCars: res.data.data}
         )
       });
-
   }
 
   render(){
@@ -29,10 +27,6 @@ export default class CarList extends React.Component {
         console.log("hello", newCar)
       }
     })
-
-    const newCars = this.state.newCars.reverse().map(car => (
-      <h2 key={car.id}>{car.year} {car.make} {car.model}</h2>
-    ))
 
     return (
       <div>

@@ -1,7 +1,6 @@
 import React from 'react'
 import axios from 'axios'
 
-
 export default class CarList extends React.Component {
   state = {
     newCars: []
@@ -23,7 +22,6 @@ export default class CarList extends React.Component {
     const newCars = this.state.newCars.reverse().map(car => (
       <h2 key={car.id}>{car.year} {car.make} {car.model}</h2>
     ))
-
 
     return (
       <div>
