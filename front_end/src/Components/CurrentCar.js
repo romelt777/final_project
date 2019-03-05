@@ -1,6 +1,13 @@
 import React from 'react'
 
 export default class CurrentCar extends React.Component {
+  constructor(props){
+    super(props)
+    this.state = {
+      comparisonCars: []
+    }
+  }
+
 
   submitCurrent = event => {
     event.preventDefault();
@@ -14,11 +21,15 @@ export default class CurrentCar extends React.Component {
     this.props.updateCurrent(car)
   }
 
+  submitComparison = event => {
+    console.log("909")
+  }
+
   render(){
 
     const newCars = this.props.data.newCars.reverse().map(car => (
         <tr key={car.id}>
-          <th><input type="radio" ref={car.id}></input></th><th key={car.id}>{car.year} {car.make} {car.model} </th>
+          <th><input type="checkbox" ref={car.id}></input></th><th key={car.id}>{car.year} {car.make} {car.model} </th>
         </tr>
     ))
 
@@ -33,6 +44,11 @@ export default class CurrentCar extends React.Component {
         <table>
           <tbody>
             {newCars}
+            <tr>
+              <th>
+                <input type="submit" value="Submit" onClick={this.submitComparison}/>
+              </th>
+            </tr>
           </tbody>
         </table>
       </div>

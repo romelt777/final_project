@@ -54,28 +54,28 @@ class AppRouter extends Component {
       .then(res => {
         console.log(res);
         this.setState(
-          {newPrices: res.data.data}
+          {newWarranties: res.data.data}
         )
       });
     axios.get(`http://localhost:3001/api/v1/pictures/`)
       .then(res => {
         console.log(res);
         this.setState(
-          {newPrices: res.data.data}
+          {newPictures: res.data.data}
         )
       });
     axios.get(`http://localhost:3001/api/v1/fuels/`)
       .then(res => {
         console.log(res);
         this.setState(
-          {newPrices: res.data.data}
+          {newFuels: res.data.data}
         )
       });
     axios.get(`http://localhost:3001/api/v1/depreciations/`)
       .then(res => {
         console.log(res);
         this.setState(
-          {newPrices: res.data.data}
+          {newDepreciations: res.data.data}
         )
       });
   }
