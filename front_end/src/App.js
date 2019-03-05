@@ -5,6 +5,8 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import axios from 'axios'
 import CarList from './Components/CarList'
 import Body from './Components/Body'
+import Chart from './Components/Chart'
+import PieChart from './Components/PieChart'
 
 // for image slide show display effect
 import CurrentCar from './Components/CurrentCar';
@@ -51,6 +53,8 @@ class AppRouter extends Component {
           <Route exact path="/currentCar/" render={() => <CurrentCar updateCurrent={this.updateCurrent}></CurrentCar>} />
           <Route exact path="/" component={CarSlide} />
           <Route path="/cars" component={Cars} />
+          <Chart />
+          <PieChart />
           <Body />
         </div>
       </Router>
