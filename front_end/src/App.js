@@ -9,12 +9,8 @@ import Body from './Components/Body'
 // for image slide show display effect
 import CurrentCar from './Components/CurrentCar';
 import CarSlide from './Components/CarSlide';
+import Car from './Components/Car';
 
-
-
-function Car({match}) {
-  return <h3>Requested Param: {match.params.id}</h3>
-}
 
 function Cars({match}) {
   console.log(match)
@@ -22,12 +18,8 @@ function Cars({match}) {
     <div>
       <h2>Cars</h2>
       <Route path={`${match.path}/:id`} component={Car}></Route>
-      <Route
-        exact
-        path={match.path}
-        render={() => <h3>Please select a car</h3>}>
-      </Route>
-      <Route path={`${match.path}/:id`} component={CarList}></Route>
+      <Route path={`${match.path}`} component={CarList}></Route>
+
     </div>
   )
 }

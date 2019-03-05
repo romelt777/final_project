@@ -8,8 +8,6 @@ export default class CarList extends React.Component {
   }
 
   componentDidMount(){
-    console.log("hello", this.props.match)
-    console.log(this.props.match.params.id)
     axios.get(`http://localhost:3001/api/v1/cars/`)
       .then(res => {
         console.log(res);
@@ -18,26 +16,15 @@ export default class CarList extends React.Component {
           {newCars: res.data.data}
         )
       });
-
   }
 
   render(){
-    let newCar;
-    this.state.newCars.forEach((car) => {
-      if(car.id == this.props.match.params.id){
-        newCar = <h2>{car.year} {car.make} {car.model}</h2>
-        console.log("hello", newCar)
-      }
-    })
 
     const newCars = this.state.newCars.reverse().map(car => (
       <h2 key={car.id}>{car.year} {car.make} {car.model}</h2>
     ))
 
 
-
-
-    console.log(this.state.newCars);
     return (
       <div>
         <ul>
