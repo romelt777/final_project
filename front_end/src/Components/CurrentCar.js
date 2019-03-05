@@ -10,10 +10,7 @@ export default class CurrentCar extends React.Component {
       "year": this.refs.year.value,
       "condition": "current"
     }]
-    console.log("make:", this.refs.make.value)
-    console.log("model:", this.refs.model.value)
-    console.log("year:", this.refs.year.value)
-    console.log(car);
+
     this.props.updateCurrent(car)
   }
 

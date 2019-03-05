@@ -8,8 +8,7 @@ export default class CarList extends React.Component {
   }
 
   componentDidMount(){
-    console.log("hello", this.props.match)
-    console.log(this.props.match.params.id)
+
 
     axios.get(`http://localhost:3001/api/v1/cars/`)
       .then(res => {
@@ -30,7 +29,6 @@ export default class CarList extends React.Component {
         console.log("hello", newCar)
       }
     })
-    console.log(this.state.newCars)
 
     const newCars = this.state.newCars.reverse().map(car => (
       <h2 key={car.id}>{car.year} {car.make} {car.model}</h2>
