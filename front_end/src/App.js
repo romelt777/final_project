@@ -42,6 +42,7 @@ class AppRouter extends Component {
 
   }
 
+  //uses form to send users current car to database.
   updateCurrent = (currentCar) => {
     console.log(currentCar)
     axios.post(`http://localhost:3001/api/v1/cars/`, currentCar)

@@ -3,7 +3,6 @@ module Api
     class CarsController < ApplicationController
       def index
         @cars = Car.order('created_at DESC')
-        console.log(@cars)
         render json: {
           status: 'SUCCESS',
           message: 'Loaded Cars',
