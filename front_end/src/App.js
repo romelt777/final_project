@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
-
-import './App.css';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import axios from 'axios'
-import CarList from './Components/CarList'
+import './App.css';
+
 import Body from './Components/Body'
 
 // for image slide show display effect
 import CurrentCar from './Components/CurrentCar';
 import CarSlide from './Components/CarSlide';
+import CarList from './Components/CarList'
 import Car from './Components/Car';
 
 
@@ -26,16 +26,14 @@ class AppRouter extends Component {
   }
 
   Cars = ({match}) => {
-    console.log(match)
     return (
       <div>
         <h2>Cars</h2>
-        <Route exact path = {`${match.path}/:id`} component={Car}></Route>
+        <Route exact path = {`${match.path}/:id`} render={(props) => <Car data={this.state} {...props}/> }></Route>
         <Route exact path = {`${match.path}`} render={() => <CarList data={this.state}/> }></Route>
       </div>
     )
   }
-
 
   componentDidMount(){
     axios.get(`http://localhost:3001/api/v1/cars/`)
