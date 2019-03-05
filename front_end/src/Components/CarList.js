@@ -9,8 +9,6 @@ export default class CarList extends React.Component {
   componentDidMount(){
     axios.get(`http://localhost:3001/api/v1/cars/`)
       .then(res => {
-        console.log(res);
-        console.log(res.data.data)
         this.setState(
           {newCars: res.data.data}
         )
