@@ -22,17 +22,26 @@ export default class CarList extends React.Component {
   }
 
   render(){
-    const newCars = this.state.newCars.map(car => (
-      <h2>{car.year} {car.make} {car.model}</h2>
+    let newCar;
+    this.state.newCars.forEach((car) => {
+      if(car.id == this.props.match.params.id){
+        newCar = <h2>{car.year} {car.make} {car.model}</h2>
+        console.log("hello", newCar)
+      }
+    })
+
+    const newCars = this.state.newCars.reverse().map(car => (
+      <h2 key={car.id}>{car.year} {car.make} {car.model}</h2>
     ))
-    console.log(newCars)
+
+
 
 
     console.log(this.state.newCars);
     return (
       <div>
         <ul>
-          {newCars[this.props.match.params.id]}
+          {newCars}
         </ul>
       </div>
     )
