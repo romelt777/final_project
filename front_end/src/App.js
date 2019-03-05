@@ -10,13 +10,6 @@ import Body from './Components/Body'
 import CurrentCar from './Components/CurrentCar';
 import CarSlide from './Components/CarSlide';
 
-function Index() {
-  return <h2>Home</h2>;
-}
-
-function About() {
-  return <h2>About</h2>
-}
 
 
 function Car({match}) {
@@ -62,20 +55,11 @@ class AppRouter extends Component {
   }
 
   render() {
-    const fadeProperties = {
-      duration: 4000,
-      transitionDuration: 500,
-      infinite: true,
-      arrows: false,
-      autoplay: true
-    }
-
     return (
       <Router>
         <div className="App">
           <CurrentCar updateCurrent={this.updateCurrent}></CurrentCar>
           <CarSlide></CarSlide>
-          <Route path="/about/" component={About} />
           <Route path="/cars" component={Cars} />
           <Body />
         </div>
