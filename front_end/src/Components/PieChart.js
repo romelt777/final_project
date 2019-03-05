@@ -37,7 +37,7 @@ export default class PieChart extends React.Component {
 
   render() {
     return (
-      <div>
+      <div style={{width: 768, height: 768}}>
         <h2>Dynamicly refreshed Doughnut Example</h2>
         <Doughnut data={this.state} />
       </div>

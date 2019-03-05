@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 
-export default  class Login extends React.Component {
+export default class Login extends React.Component {
   submitCurrent = event => {
     event.preventDefault();
     let account = {
@@ -12,7 +12,7 @@ export default  class Login extends React.Component {
     console.log(account)
     this.props.login(account)
   }
-      
+
   render(){
     return (
       <div>
@@ -24,5 +24,5 @@ export default  class Login extends React.Component {
       </div>
     )
   }
-} 
+}
 

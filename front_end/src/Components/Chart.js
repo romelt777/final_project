@@ -29,7 +29,7 @@ export default class Chart extends React.Component {
 
   render() {
     return (
-      <div>
+      <div style={{width: 768, height: 768}}>
         <h2>Line Example</h2>
         <Line data={data} />
       </div>
