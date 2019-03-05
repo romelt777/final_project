@@ -40,10 +40,9 @@ class AppRouter extends Component {
 
     }
 
-    this.updateCurrent = this.updateCurrent.bind(this);
   }
 
-  updateCurrent(currentCar) {
+  updateCurrent = (currentCar) => {
     console.log(currentCar)
     axios.post(`http://localhost:3001/api/v1/cars/`, currentCar)
       .then(function (res) {
