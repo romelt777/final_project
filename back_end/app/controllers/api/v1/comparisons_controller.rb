@@ -2,7 +2,7 @@ module Api
   module V1
     class ComparisonsController < ApplicationController
       def create
-
+        puts params
       end
 
 

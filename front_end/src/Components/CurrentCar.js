@@ -32,12 +32,12 @@ export default class CurrentCar extends React.Component {
 
   submitComparison = event => {
     event.preventDefault();
-    let car = [{
+    let car = {
       "make": this.refs.make.value,
       "model": this.refs.model.value,
       "year": this.refs.year.value,
       "condition": "current"
-    }]
+    }
     console.log(car)
     let compareCars = [];
     for(const id of Object.keys(this.state.comparisonCars)) {
@@ -47,6 +47,8 @@ export default class CurrentCar extends React.Component {
       }
     }
     console.log(compareCars)
+    car["newCars"] = compareCars
+    console.log("ppp", car)
     this.props.submitCars(car, compareCars)
 
   }

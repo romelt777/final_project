@@ -98,6 +98,14 @@ class AppRouter extends Component {
 
   submitCars = (currentCar, newCars) => {
     console.log("111", currentCar, newCars)
+    axios.post(`http://localhost:3001/api/v1/comparisons/`, currentCar, newCars)
+      .then(function (res) {
+        console.log(res)
+      })
+      .catch(function (err) {
+        console.log(err)
+      })
+
   }
 
   render() {
