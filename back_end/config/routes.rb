@@ -7,6 +7,7 @@ Rails.application.routes.draw do
       resources :pictures
       resources :fuels
       resources :depreciations
+      resources :comparisons
     end
   end
 end
