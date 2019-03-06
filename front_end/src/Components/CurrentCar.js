@@ -7,7 +7,14 @@ export default class CurrentCar extends React.Component {
       comparisonCars: []
     }
   }
-
+  addNewCar = event => {
+    console.log(event.target.checked)
+    console.log(event.target.value)
+    if(event.target.checked){
+      console.log(event.target.value)
+      console.log("im checked")
+    }
+  }
 
   submitCurrent = event => {
     event.preventDefault();
@@ -22,6 +29,7 @@ export default class CurrentCar extends React.Component {
   }
 
   submitComparison = event => {
+    event.preventDefault();
     console.log("909")
   }
 
@@ -29,7 +37,7 @@ export default class CurrentCar extends React.Component {
 
     const newCars = this.props.data.newCars.reverse().map(car => (
         <tr key={car.id}>
-          <th><input type="checkbox" ref={car.id}></input></th><th key={car.id}>{car.year} {car.make} {car.model} </th>
+          <th><input type="checkbox" value={car.id} onChange={this.addNewCar}></input></th><th key={car.id}>{car.year} {car.make} {car.model} </th>
         </tr>
     ))
 
