@@ -49,7 +49,7 @@ export default class CurrentCar extends React.Component {
     console.log(compareCars)
     car["newCars"] = compareCars
     console.log("ppp", car)
-    this.props.submitCars(car, compareCars)
+    this.props.submitCars(car)
 
   }
 
