@@ -4,7 +4,7 @@ module Api
       def create
         puts "909"
         puts params
-        comparison = comparison_params
+        comparison = create_comparison(comparison_params)
         # @comparison = Comparison.new({
         #   user_id: "1",
         # })
@@ -29,6 +29,20 @@ module Api
 
       def comparison_params
         params.permit(:make, :model, :year, :condition, newCars: [])
+      end
+
+      def create_comparison(data)
+        puts "hello"
+        puts data
+        puts data[:make]
+        comparison = Comparison.new({
+          user_id: "1",
+        })
+        comparison.comparison_cars.new(
+          car_id: data[:newCars][0]
+        )
+        comparison.save!
+        comparison
       end
 
     end
