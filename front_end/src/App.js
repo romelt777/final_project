@@ -137,7 +137,7 @@ class AppRouter extends Component {
 
           <Route exact path="/currentCar/" render={() => <CurrentCar updateCurrent={this.updateCurrent}></CurrentCar>} />
           <Route exact path="/" component={CarSlide} />
-          <Chart />
+          <Chart depi={this.state.newDepreciations}/>
           <PieChart />
           <Route path="/cars" component={this.Cars} />
           <Body />
