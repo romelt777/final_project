@@ -10,6 +10,7 @@ import CurrentCar from './Components/CurrentCar';
 import CarSlide from './Components/CarSlide';
 import CarList from './Components/CarList'
 import Car from './Components/Car';
+import Comparison from './Components/Comparison';
 
 
 class AppRouter extends Component {
@@ -31,6 +32,15 @@ class AppRouter extends Component {
         <h2>Cars</h2>
         <Route exact path = {`${match.path}/:id`} render={(props) => <Car data={this.state} {...props}/> }></Route>
         <Route exact path = {`${match.path}`} render={() => <CarList data={this.state}/> }></Route>
+      </div>
+    )
+  }
+
+  Comparisons = ({match}) => {
+    return (
+      <div>
+        <h2>Comparisons</h2>
+        <Route exact path = {`${match.path}/:id`} render={(props) => <Comparison data={this.state} {...props}/> }></Route>
       </div>
     )
   }
@@ -106,6 +116,7 @@ class AppRouter extends Component {
           <Route exact path="/currentCar/" render={() => <CurrentCar updateCurrent={this.updateCurrent} data={this.state} submitCars={this.submitCars}></CurrentCar>} />
           <Route exact path="/" component={CarSlide} />
           <Route path="/cars" component={this.Cars} />
+          <Route path="/comparisons" component={this.Comparisons} />
           <Body />
         </div>
       </Router>
