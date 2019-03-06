@@ -32,14 +32,14 @@ export default class PieChart extends React.Component {
   componentWillMount() {
     setInterval(() => {
       this.setState(getState());
-    }, 3000);
+    }, 5000);
   }
 
   render() {
     return (
       <div style={{width: 768, height: 768}}>
         <h2>Cost Composition</h2>
-        <Doughnut data={this.state} />
+        <Doughnut data={this.state} redraw/>
       </div>
     );
   }
