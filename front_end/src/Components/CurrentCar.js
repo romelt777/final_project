@@ -32,7 +32,6 @@ export default class CurrentCar extends React.Component {
 
   submitComparison = event => {
     event.preventDefault();
-    console.log("909")
     let car = [{
       "make": this.refs.make.value,
       "model": this.refs.model.value,
@@ -40,13 +39,28 @@ export default class CurrentCar extends React.Component {
       "condition": "current"
     }]
     console.log(car)
+    let compareCars = [];
+    for(const id of Object.keys(this.state.comparisonCars)) {
+      console.log("999", id, this.state.comparisonCars[id])
+      if(this.state.comparisonCars[id]){
+        compareCars.push(id)
+      }
+    }
+    console.log(compareCars)
+
+
   }
 
   render(){
 
     const newCars = this.props.data.newCars.map(car => (
         <tr key={car.id}>
-          <th><input type="checkbox" value={car.id} onChange={this.addNewCar}></input></th><th key={car.id}>{car.year} {car.make} {car.model} </th>
+          <th>
+            <input type="checkbox" value={car.id} onChange={this.addNewCar}></input>
+          </th>
+          <th key={car.id}>
+            {car.year} {car.make} {car.model}
+          </th>
         </tr>
     ))
 

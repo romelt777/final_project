@@ -35,7 +35,7 @@ class AppRouter extends Component {
     )
   }
 
-  componentDidMount(){
+  async componentDidMount(){
     axios.get(`http://localhost:3001/api/v1/cars/`)
       .then(res => {
         console.log(res)
@@ -97,6 +97,9 @@ class AppRouter extends Component {
   }
 
   render() {
+    if(this.state.newDepreciations.length > 0){
+      console.log(this.state.newDepreciations[0].first)
+    }
     return (
       <Router>
         <div className="App">
