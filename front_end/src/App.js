@@ -39,6 +39,10 @@ class AppRouter extends Component {
     axios.get(`http://localhost:3001/api/v1/cars/`)
       .then(res => {
         console.log(res)
+        const newCars = {
+          ...this.state.newCars,
+          newCars: res.data.data
+        }
         this.setState(
           {newCars: res.data.data}
         )
