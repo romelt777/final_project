@@ -4,16 +4,20 @@ export default class CurrentCar extends React.Component {
   constructor(props){
     super(props)
     this.state = {
-      comparisonCars: []
+      comparisonCars: {}
     }
   }
+
   addNewCar = event => {
-    console.log(event.target.checked)
-    console.log(event.target.value)
-    if(event.target.checked){
-      console.log(event.target.value)
-      console.log("im checked")
-    }
+    const newComparisonCars = {
+      ...this.state.comparisonCars,
+      [event.target.value]: event.target.checked
+    };
+    this.setState({ comparisonCars: newComparisonCars })
+  }
+
+  changeCurrent = event => {
+    console.log(this.refs.make.value)
   }
 
   submitCurrent = event => {
@@ -31,6 +35,13 @@ export default class CurrentCar extends React.Component {
   submitComparison = event => {
     event.preventDefault();
     console.log("909")
+    let car = [{
+      "make": this.refs.make.value,
+      "model": this.refs.model.value,
+      "year": this.refs.year.value,
+      "condition": "current"
+    }]
+    console.log(car)
   }
 
   render(){
@@ -44,7 +55,7 @@ export default class CurrentCar extends React.Component {
     return (
       <div>
         <form onSubmit={this.submitCurrent}>
-          <label>Make: <input type="text" name="make" ref="make" /> </label> <br></br>
+          <label>Make: <input type="text" name="make" ref="make" onKeyUp={this.changeCurrent}/> </label> <br></br>
           <label> Model: <input type="text" name="model" ref="model" /> </label> <br></br>
           <label> Year: <input type="text" name="year" ref="year" /> </label> <br></br>
           <input type="submit" value="Submit"/>
