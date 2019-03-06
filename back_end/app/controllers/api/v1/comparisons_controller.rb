@@ -2,8 +2,15 @@ module Api
   module V1
     class ComparisonsController < ApplicationController
       def create
-        puts params[:_json]
-        # @comparison = Comparison.new(comparison_params)
+        puts "909"
+        puts params
+        comparison = comparison_params
+        # @comparison = Comparison.new({
+        #   user_id: "1",
+        # })
+        # @comparison.comparison_cars.new(
+        #   car_id: comparison_params.newCars[0]
+        # )
         # if @comparison.save
         #   render json: {
         #     status: 'SUCCESS',
@@ -21,7 +28,7 @@ module Api
       private
 
       def comparison_params
-        params[:_json][0].permit(:make, :model, :year, :condition, :newCars)
+        params.permit(:make, :model, :year, :condition, newCars: [])
       end
 
     end
