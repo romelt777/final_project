@@ -35,7 +35,8 @@ class AppRouter extends Component {
     )
   }
 
-  async componentDidMount(){
+  componentDidMount(){
+
     axios.get(`http://localhost:3001/api/v1/cars/`)
       .then(res => {
         const newCars = this.state.newCars
@@ -44,38 +45,33 @@ class AppRouter extends Component {
       });
     axios.get(`http://localhost:3001/api/v1/prices/`)
       .then(res => {
-        console.log(res);
-        this.setState(
-          {newPrices: res.data.data}
-        )
+        const newPrices = this.state.newPrices
+        Array.prototype.push.apply(newPrices, res.data.data)
+        this.setState({newPrices})
       });
     axios.get(`http://localhost:3001/api/v1/warranties/`)
       .then(res => {
-        console.log(res);
-        this.setState(
-          {newWarranties: res.data.data}
-        )
+        const newWarranties = this.state.newWarranties
+        Array.prototype.push.apply(newWarranties, res.data.data)
+        this.setState({newWarranties})
       });
     axios.get(`http://localhost:3001/api/v1/pictures/`)
       .then(res => {
-        console.log(res);
-        this.setState(
-          {newPictures: res.data.data}
-        )
+        const newPictures = this.state.newPictures
+        Array.prototype.push.apply(newPictures, res.data.data)
+        this.setState({newPictures})
       });
     axios.get(`http://localhost:3001/api/v1/fuels/`)
       .then(res => {
-        console.log(res);
-        this.setState(
-          {newFuels: res.data.data}
-        )
+        const newFuels = this.state.newFuels
+        Array.prototype.push.apply(newFuels, res.data.data)
+        this.setState({newFuels})
       });
     axios.get(`http://localhost:3001/api/v1/depreciations/`)
       .then(res => {
-        console.log(res);
-        this.setState(
-          {newDepreciations: res.data.data}
-        )
+        const newDepreciations = this.state.newDepreciations
+        Array.prototype.push.apply(newDepreciations, res.data.data)
+        this.setState({newDepreciations})
       });
   }
 
