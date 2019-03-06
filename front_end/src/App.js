@@ -103,7 +103,6 @@ class AppRouter extends Component {
 
   
   login = (account) => {
-    console.log(account)
     axios.post(`http://localhost:3001/api/v1/login/`, account)
     .then((res) => {
       console.log(res)

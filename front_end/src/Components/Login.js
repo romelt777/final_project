@@ -5,7 +5,6 @@ export default  class Login extends React.Component {
   submitCurrent = event => {
     event.preventDefault();
     let account = {
-      "username": this.refs.username.value,
       "email": this.refs.email.value,
       "password": this.refs.password.value
     }

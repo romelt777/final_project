@@ -4,11 +4,12 @@ import React, { Component } from 'react';
 export default  class Register extends React.Component {
   submitCurrent = event => {
     event.preventDefault();
+    console.log(this.refs.password.value)
     let account = {
       "first_name": this.refs.first_name.value,
       "last_name": this.refs.last_name.value,
       "email": this.refs.email.value,
-      "password": this.refs.password.value
+      "password_digest": this.refs.password.value
     }
     console.log(account)
     this.props.register(account)
@@ -27,4 +28,4 @@ export default  class Register extends React.Component {
       </div>
     )
   }
-} 
+}
