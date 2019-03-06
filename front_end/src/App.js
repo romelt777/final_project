@@ -38,14 +38,9 @@ class AppRouter extends Component {
   async componentDidMount(){
     axios.get(`http://localhost:3001/api/v1/cars/`)
       .then(res => {
-        console.log(res)
-        const newCars = {
-          ...this.state.newCars,
-          newCars: res.data.data
-        }
-        this.setState(
-          {newCars: res.data.data}
-        )
+        const newCars = this.state.newCars
+        Array.prototype.push.apply(newCars, res.data.data)
+        this.setState({newCars})
       });
     axios.get(`http://localhost:3001/api/v1/prices/`)
       .then(res => {
@@ -109,9 +104,6 @@ class AppRouter extends Component {
   }
 
   render() {
-    if(this.state.newDepreciations.length > 0){
-      console.log(this.state.newDepreciations[0].first)
-    }
     return (
       <Router>
         <div className="App">
