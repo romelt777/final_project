@@ -96,6 +96,10 @@ class AppRouter extends Component {
       })
   }
 
+  submitCars = (currentCar, newCars) => {
+    console.log("111", currentCar, newCars)
+  }
+
   render() {
     if(this.state.newDepreciations.length > 0){
       console.log(this.state.newDepreciations[0].first)
@@ -103,7 +107,7 @@ class AppRouter extends Component {
     return (
       <Router>
         <div className="App">
-          <Route exact path="/currentCar/" render={() => <CurrentCar updateCurrent={this.updateCurrent} data={this.state}></CurrentCar>} />
+          <Route exact path="/currentCar/" render={() => <CurrentCar updateCurrent={this.updateCurrent} data={this.state} submitCars={this.submitCars}></CurrentCar>} />
           <Route exact path="/" component={CarSlide} />
           <Route path="/cars" component={this.Cars} />
           <Body />

@@ -47,7 +47,7 @@ export default class CurrentCar extends React.Component {
       }
     }
     console.log(compareCars)
-
+    this.props.submitCars(car, compareCars)
 
   }
 
