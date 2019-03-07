@@ -3,11 +3,10 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import axios from 'axios'
 import './App.css';
 
+//components
 import Body from './Components/Body'
 import Chart from './Components/Chart'
 import PieChart from './Components/PieChart'
-
-//components
 import CurrentCar from './Components/CurrentCar';
 import CarSlide from './Components/CarSlide';
 import CarList from './Components/CarList'
@@ -51,7 +50,7 @@ class AppRouter extends Component {
   }
 
   componentDidMount(){
-
+    console.log("MOUNTING...")
     axios.get(`http://localhost:3001/api/v1/cars/`)
       .then(res => {
         const cars = this.state.cars
