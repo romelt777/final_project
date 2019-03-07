@@ -1,5 +1,8 @@
 import React from 'react'
 import axios from 'axios'
+import Chart from './Chart'
+import PieChart from './PieChart'
+
 
 export default class Comparison extends React.Component {
   constructor(){
@@ -19,13 +22,7 @@ export default class Comparison extends React.Component {
         Array.prototype.push.apply(carsNeed, res.data.data2)
         this.setState({comparisonId: carsNeed})
         console.log(this.state)
-        // res.data.data2.forEach((c) => {
-        //   this.props.data.cars.forEach((car) => {
-        //     if(c.id === car.id){
-        //       carsNeed.push(c.id)
-        //     }
-        //   })
-        // })
+
       });
   }
 
@@ -35,7 +32,6 @@ export default class Comparison extends React.Component {
     let carData = []
     this.props.data.cars.forEach((car) => {
       this.state.comparisonId.forEach((c) => {
-        console.log(c.id)
         if(c.car_id == car.id){
           carData.push(<h3 key={car.id}> {car.year} {car.make} {car.model} </h3>)
         }
@@ -43,11 +39,12 @@ export default class Comparison extends React.Component {
     })
     console.log(carData)
 
-
     return (
       <div>
         <h2>{this.props.match.params.id}</h2>
         {carData}
+          <Chart data={this.props.data}/>
+          <PieChart data={this.props.data}/>
       </div>
     )
   }
