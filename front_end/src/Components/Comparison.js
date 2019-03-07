@@ -22,13 +22,26 @@ export default class Comparison extends React.Component {
         Array.prototype.push.apply(carsNeed, res.data.data2)
         this.setState({comparisonId: carsNeed})
         console.log(this.state)
-
       });
   }
 
-
+  checkData = (data) => {
+    console.log(data)
+    let result = [];
+    data.forEach((d) => {
+      this.state.comparisonId.forEach((car) => {
+        if(car.car_id == d.id){
+          result.push(d)
+        }
+      })
+    })
+    console.log(result)
+    return result;
+  }
 
   render(){
+    console.log(this.props)
+
     let carData = []
     this.props.data.cars.forEach((car) => {
       this.state.comparisonId.forEach((c) => {
@@ -39,12 +52,13 @@ export default class Comparison extends React.Component {
     })
     console.log(carData)
 
+
+
     return (
       <div>
         <h2>{this.props.match.params.id}</h2>
         {carData}
-          <Chart data={this.props.data}/>
-          <PieChart data={this.props.data}/>
+        <Chart data={this.checkData(this.props.data.newDepreciations)}/>
       </div>
     )
   }

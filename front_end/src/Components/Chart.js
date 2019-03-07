@@ -56,8 +56,8 @@ export default class Chart extends React.Component {
 
 
     let depiData = [];
-    if(this.props.data.newDepreciations.length > 0) {
-      depiData = this.props.data.newDepreciations.map((data) =>
+    if(this.props.data.length > 0) {
+      depiData = this.props.data.map((data) =>
         [data.first, data.second, data.third, data.fourth, data.fifth]
       );
     }
