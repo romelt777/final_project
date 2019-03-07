@@ -26,7 +26,8 @@ class AppRouter extends Component {
       newWarranties: [],
       newPictures: [],
       newFuels: [],
-      newDepreciations: []
+      newDepreciations: [],
+      maintenances: []
     }
   }
 
@@ -87,6 +88,13 @@ class AppRouter extends Component {
         Array.prototype.push.apply(newDepreciations, res.data.data)
         this.setState({newDepreciations})
       });
+    axios.get(`http://localhost:3001/api/v1/maintenances/`)
+      .then(res => {
+        const maintenances = this.state.maintenances
+        Array.prototype.push.apply(maintenances, res.data.data)
+        this.setState({maintenances})
+      });
+
   }
 
 
