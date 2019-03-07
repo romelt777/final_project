@@ -62,7 +62,7 @@ export default class CurrentCar extends React.Component {
 
   render(){
 
-    const newCars = this.props.data.newCars.map(car => (
+    const cars = this.props.data.cars.map(car => (
         <tr key={car.id}>
           <th>
             <input type="checkbox" value={car.id} onChange={this.addNewCar}></input>
@@ -83,7 +83,7 @@ export default class CurrentCar extends React.Component {
         </form>
         <table>
           <tbody>
-            {newCars}
+            {cars}
             <tr>
               <th>
                 <input type="submit" value="Submit" onClick={this.submitComparison}/>
