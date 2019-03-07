@@ -12,10 +12,11 @@ module Api
         #   car_id: comparison_params.newCars[0]
         # )
         # if @comparison.save
-        #   render json: {
-        #     status: 'SUCCESS',
-        #     message: 'Saved comparison to database',
-        #   },status: :created
+          render json: {
+            status: 'SUCCESS',
+            message: 'Saved comparison to database',
+            data: comparison
+          },status: :created
         # else
         #   render json: {
         #     status: 'FAILED',

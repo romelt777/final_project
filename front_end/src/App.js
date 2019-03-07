@@ -5,7 +5,7 @@ import './App.css';
 
 import Body from './Components/Body'
 
-// for image slide show display effect
+//components
 import CurrentCar from './Components/CurrentCar';
 import CarSlide from './Components/CarSlide';
 import CarList from './Components/CarList'
@@ -102,6 +102,7 @@ class AppRouter extends Component {
     axios.post(`http://localhost:3001/api/v1/comparisons/`, currentCar)
       .then(function (res) {
         console.log(res)
+        this.history.push('/')
       })
       .catch(function (err) {
         console.log(err)
