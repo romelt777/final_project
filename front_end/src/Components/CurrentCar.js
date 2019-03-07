@@ -1,4 +1,5 @@
 import React from 'react'
+import axios from 'axios'
 
 export default class CurrentCar extends React.Component {
   constructor(props){
@@ -39,17 +40,25 @@ export default class CurrentCar extends React.Component {
       "condition": "current"
     }
     console.log(car)
-    let compareCars = [];
-    for(const id of Object.keys(this.state.comparisonCars)) {
-      console.log("999", id, this.state.comparisonCars[id])
-      if(this.state.comparisonCars[id]){
-        compareCars.push(id)
-      }
-    }
-    console.log(compareCars)
-    car["newCars"] = compareCars
-    console.log("ppp", car)
-    this.props.submitCars(car)
+
+    axios.post(`http://localhost:3001/api/v1/cars/`, car)
+      .then((res) => {
+        console.log(res)
+        let compareCars = [];
+        for(const id of Object.keys(this.state.comparisonCars)) {
+          console.log("999", id, this.state.comparisonCars[id])
+          if(this.state.comparisonCars[id]){
+            compareCars.push(id)
+          }
+        }
+        console.log(compareCars)
+        car["newCars"] = compareCars
+        console.log("ppp", car)
+        this.props.submitCars(car)
+      })
+      .catch((err) => {
+        console.log(err)
+      })
 
   }
 

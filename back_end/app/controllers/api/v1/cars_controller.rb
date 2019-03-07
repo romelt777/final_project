@@ -12,7 +12,7 @@ module Api
 
       def create
         puts "909"
-        puts params[:_json][0]
+        puts params
         # puts
         @car = Car.new(car_params)
         if @car.save
@@ -42,7 +42,7 @@ module Api
       private
 
       def car_params
-        params[:_json][0].permit(:make, :model, :year, :condition)
+        params.permit(:make, :model, :year, :condition)
       end
 
     end
