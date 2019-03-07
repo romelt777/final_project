@@ -6,7 +6,7 @@ class Body extends Component {
     return(
       <div className="container">
         <p>We are here to solve your vehicle financial issues with our analytics</p>
-        <button type="button" className="btn btn-info">Get Started</button>
+        <button type="button" className="btn btn-transparent btn-lg text-uppercase">Get Started</button>
       </div>
     );
   }
