@@ -14,6 +14,7 @@ import CarList from './Components/CarList'
 import Car from './Components/Car';
 import Login from './Components/Login'
 import Register from './Components/Register'
+import Profile from './Components/Profile'
 
 
 
@@ -26,7 +27,9 @@ class AppRouter extends Component {
       newWarranties: [],
       newPictures: [],
       newFuels: [],
-      newDepreciations: []
+      newDepreciations: [],
+      newUsers: [],
+      currentUser: []
     }
   }
 
@@ -142,6 +145,7 @@ class AppRouter extends Component {
           <Body />
           <Route path="/login" render={() => <Login login={this.login}/>}/>
           <Route path="/register" render={() => <Register register={this.register}/>}/>
+          <Route path ="/profile" component={Profile}/>
 
         </div>
       </Router>

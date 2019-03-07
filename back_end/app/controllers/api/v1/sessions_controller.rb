@@ -19,7 +19,6 @@ module Api
         },status: :ok
       
       else
-        # If user's login doesn't work, send them back to the login form.
         render json: {
           status: 'UNAUTHORIZED',
           message: 'Login Unsuccessful',
