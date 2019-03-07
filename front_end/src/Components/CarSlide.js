@@ -8,7 +8,7 @@ import '../image.css';
 
 export default function CarSLide(){
   const fadeProperties = {
-      duration: 4000000,
+      duration: 4000,
       transitionDuration: 500,
       infinite: true,
       arrows: false,
@@ -30,19 +30,34 @@ export default function CarSLide(){
 
       <div className="each-fade">
         <div className="image-container">        
-          <img className="image" src={Mazda} alt="Logo" />                    
+          <img className="image" src={Mazda} alt="Logo" />  
+          <div class="centered">
+          <h1 className="big">Compare your current vehicle to your new!</h1>
+          <p className="para">Click on the button</p>
+        <button type="button" className="btn btn-transparent btn-lg text-uppercase">Get Started</button>
+          </div>                  
         </div>
       </div>
 
       <div className="each-fade">
         <div className="image-container">
           <img className="image" src={Honda} alt="Logo" />
+          <div class="centered">
+          <h1 className="big">We provide professional information right to you!</h1>
+          <p className="para">Click on the button</p>
+        <button type="button" className="btn btn-transparent btn-lg text-uppercase">Get Started</button>
+          </div>
         </div>
       </div>
 
       <div className="each-fade">
         <div className="image-container">
           <img className="image" src={Toyota} alt="Logo" />
+          <div class="centered">
+          <h1 className="big">Need professional advice?</h1>
+          <p className="para">Click on the button</p>
+        <button type="button" className="btn btn-transparent btn-lg text-uppercase">Get Started</button>
+          </div>
         </div>
       </div>
     </Fade>
