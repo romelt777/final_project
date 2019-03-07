@@ -52,12 +52,13 @@ module Api
         comparison = Comparison.new({
           user_id: "1",
         })
-        comparison.comparison_cars.new(
-          car_id: data[:newCars][0]
-        )
-        comparison.comparison_cars.new(
-          car_id: data[:newCars][0]
-        )
+
+        data[:newCars].each do |car|
+          comparison.comparison_cars.new(
+            car_id: car
+          )
+        end
+
         # comparison[comparison_cars_id] = comparison.comparison_cars.id
         comparison.save!
         comparison
