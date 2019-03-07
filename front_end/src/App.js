@@ -14,7 +14,7 @@ import CarList from './Components/CarList'
 import Car from './Components/Car';
 import Login from './Components/Login'
 import Register from './Components/Register'
-
+import Calculator from './Components/Calculator'
 
 
 class AppRouter extends Component {
@@ -140,8 +140,10 @@ class AppRouter extends Component {
           <PieChart />
           <Route path="/cars" component={this.Cars} />
           <Body />
+          <Calculator price={this.state.newPrices}/>
           <Route path="/login" render={() => <Login login={this.login}/>}/>
           <Route path="/register" render={() => <Register register={this.register}/>}/>
+
 
         </div>
       </Router>
