@@ -4,6 +4,8 @@ import axios from 'axios'
 import './App.css';
 
 import Body from './Components/Body'
+import Chart from './Components/Chart'
+import PieChart from './Components/PieChart'
 
 // for image slide show display effect
 import CurrentCar from './Components/CurrentCar';
@@ -53,32 +55,32 @@ class AppRouter extends Component {
           {newPrices: res.data.data}
         )
       });
-    axios.get(`http://localhost:3001/api/v1/warranties/`)
-      .then(res => {
-        console.log(res);
-        this.setState(
-          {newPrices: res.data.data}
-        )
-      });
-    axios.get(`http://localhost:3001/api/v1/pictures/`)
-      .then(res => {
-        console.log(res);
-        this.setState(
-          {newPrices: res.data.data}
-        )
-      });
-    axios.get(`http://localhost:3001/api/v1/fuels/`)
-      .then(res => {
-        console.log(res);
-        this.setState(
-          {newPrices: res.data.data}
-        )
-      });
+    // axios.get(`http://localhost:3001/api/v1/warranties/`)
+    //   .then(res => {
+    //     console.log(res);
+    //     this.setState(
+    //       {newWarranties: res.data.data}
+    //     )
+    //   });
+    // axios.get(`http://localhost:3001/api/v1/pictures/`)
+    //   .then(res => {
+    //     console.log(res);
+    //     this.setState(
+    //       {newPictures: res.data.data}
+    //     )
+    //   });
+    // axios.get(`http://localhost:3001/api/v1/fuels/`)
+    //   .then(res => {
+    //     console.log(res);
+    //     this.setState(
+    //       {newFuels: res.data.data}
+    //     )
+    //   });
     axios.get(`http://localhost:3001/api/v1/depreciations/`)
       .then(res => {
         console.log(res);
         this.setState(
-          {newPrices: res.data.data}
+          {newDepreciations: res.data.data}
         )
       });
   }
@@ -99,15 +101,15 @@ class AppRouter extends Component {
 
 
 
-  
 
-  
+
+
   login = (account) => {
     axios.post(`http://localhost:3001/api/v1/login/`, account)
     .then((res) => {
       console.log(res)
     }
-    
+
     ).catch((err) => {
       console.log(err)
     });
@@ -119,14 +121,14 @@ class AppRouter extends Component {
     .then((res) => {
       console.log(res)
     }
-    
+
     ).catch((err) => {
       console.log(err)
     });
   }
 
 
-  
+
   render() {
     return (
       <Router>
@@ -134,6 +136,8 @@ class AppRouter extends Component {
 
           <Route exact path="/currentCar/" render={() => <CurrentCar updateCurrent={this.updateCurrent}></CurrentCar>} />
           <Route exact path="/" component={CarSlide} />
+          <Chart depi={this.state.newDepreciations}/>
+          <PieChart />
           <Route path="/cars" component={this.Cars} />
           <Body />
           <Route path="/login" render={() => <Login login={this.login}/>}/>

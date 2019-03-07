@@ -58,7 +58,6 @@ Depreciation.create!({
   car_id: 1
 })
 
-
 car2 = Car.find_or_create_by!({
   year: "2018",
   make: "Mazda",
