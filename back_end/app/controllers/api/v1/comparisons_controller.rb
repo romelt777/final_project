@@ -24,6 +24,20 @@ module Api
         # end
       end
 
+      def show
+        puts params[:id]
+        @comparison = Comparison.find(params[:id])
+        @comparison_cars = @comparison.comparison_cars
+        puts @comparison.inspect
+        puts @comparison_cars.inspect
+        render json: {
+          status: 'SUCCESS',
+          message: 'Loaded Comparison',
+          data1: @comparison,
+          data2: @comparison_cars
+        },status: :ok
+      end
+
 
       private
 
@@ -41,6 +55,10 @@ module Api
         comparison.comparison_cars.new(
           car_id: data[:newCars][0]
         )
+        comparison.comparison_cars.new(
+          car_id: data[:newCars][0]
+        )
+        # comparison[comparison_cars_id] = comparison.comparison_cars.id
         comparison.save!
         comparison
       end
