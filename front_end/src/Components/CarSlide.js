@@ -4,6 +4,7 @@ import Bmw from '../images/bmw.jpg';
 import Mazda from '../images/mazda.jpg';
 import Honda from '../images/honda.jpg';
 import Toyota from '../images/toyota.jpg';
+import '../image.css';
 
 export default function CarSLide(){
   const fadeProperties = {
@@ -21,19 +22,22 @@ export default function CarSLide(){
           <img src={Bmw} alt="Logo" />
         </div>
       </div>
+
       <div className="each-fade">
-        <div className="image-container">
-          <img src={Mazda} alt="Logo" />
+        <div className="image-container">        
+          <img className="image" src={Mazda} alt="Logo" />                    
         </div>
       </div>
+
       <div className="each-fade">
         <div className="image-container">
-          <img src={Honda} alt="Logo" />
+          <img className="image" src={Honda} alt="Logo" />
         </div>
       </div>
+
       <div className="each-fade">
         <div className="image-container">
-          <img src={Toyota} alt="Logo" />
+          <img className="image" src={Toyota} alt="Logo" />
         </div>
       </div>
     </Fade>
