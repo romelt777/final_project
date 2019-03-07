@@ -14,14 +14,26 @@ export default class Comparison extends React.Component {
     axios.get(`http://localhost:3001/api/v1/comparisons/${this.props.match.params.id}`)
       .then(res => {
         console.log(res)
+        console.log(res.data.data2)
+        const carsNeed = this.state.comparisonId
+        Array.prototype.push.apply(carsNeed, res.data.data2)
+        this.setState({comparisonId: carsNeed})
+        console.log(this.state)
+        // res.data.data2.forEach((c) => {
+        //   this.props.data.cars.forEach((car) => {
+        //     if(c.id === car.id){
+        //       carsNeed.push(c.id)
+        //     }
+        //   })
+        // })
       });
   }
 
 
 
-
-
   render(){
+    // const carData =
+
 
     return (
       <div>
