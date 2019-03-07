@@ -32,12 +32,22 @@ export default class Comparison extends React.Component {
 
 
   render(){
-    // const carData =
+    let carData
+    this.props.data.cars.forEach((car) => {
+      this.state.comparisonId.forEach((c) => {
+        console.log(c.id)
+        if(c.car_id == car.id){
+          carData += `${car.year} ${car.make} ${car.model}`
+        }
+      })
+    })
+    console.log(carData)
 
 
     return (
       <div>
         <h2>{this.props.match.params.id}</h2>
+        <h3>{carData}</h3>
       </div>
     )
   }
