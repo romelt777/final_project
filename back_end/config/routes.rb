@@ -10,6 +10,7 @@ Rails.application.routes.draw do
       post '/login' => 'sessions#create'
       post '/register' => 'users#create'
       resources :comparisons
+      resources :maintenances
 
     end
   end

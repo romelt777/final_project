@@ -58,7 +58,7 @@ export default class Comparison extends React.Component {
       <div>
         <h2>{this.props.match.params.id}</h2>
         {carData}
-        <Chart data={this.checkData(this.props.data.newDepreciations)}/>
+        <Chart data={this.checkData(this.props.data.maintenances)}/>
       </div>
     )
   }
