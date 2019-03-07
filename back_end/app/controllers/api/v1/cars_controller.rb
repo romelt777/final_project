@@ -12,13 +12,14 @@ module Api
 
       def create
         puts "909"
-        puts params[:_json][0]
+        puts params
         # puts
         @car = Car.new(car_params)
         if @car.save
           render json: {
             status: 'SUCCESS',
             message: 'Save current car to database',
+            data: @car.id
           },status: :created
         else
           render json: {
@@ -42,7 +43,7 @@ module Api
       private
 
       def car_params
-        params[:_json][0].permit(:make, :model, :year, :condition)
+        params.permit(:make, :model, :year, :condition)
       end
 
     end

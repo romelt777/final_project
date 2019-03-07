@@ -7,13 +7,14 @@ import Body from './Components/Body'
 import Chart from './Components/Chart'
 import PieChart from './Components/PieChart'
 
-// for image slide show display effect
+//components
 import CurrentCar from './Components/CurrentCar';
 import CarSlide from './Components/CarSlide';
 import CarList from './Components/CarList'
 import Car from './Components/Car';
 import Login from './Components/Login'
 import Register from './Components/Register'
+import Comparison from './Components/Comparison';
 
 
 
@@ -21,7 +22,7 @@ class AppRouter extends Component {
   constructor(props){
     super(props)
     this.state = {
-      newCars: [],
+      cars: [],
       newPrices: [],
       newWarranties: [],
       newPictures: [],
@@ -40,48 +41,52 @@ class AppRouter extends Component {
     )
   }
 
+  Comparisons = ({match}) => {
+    return (
+      <div>
+        <h2>Comparisons</h2>
+        <Route exact path = {`${match.path}/:id`} render={(props) => <Comparison data={this.state} {...props}/> }></Route>
+      </div>
+    )
+  }
+
   componentDidMount(){
+
     axios.get(`http://localhost:3001/api/v1/cars/`)
       .then(res => {
-        console.log(res)
-        this.setState(
-          {newCars: res.data.data}
-        )
+        const cars = this.state.cars
+        Array.prototype.push.apply(cars, res.data.data)
+        this.setState({cars})
       });
     axios.get(`http://localhost:3001/api/v1/prices/`)
       .then(res => {
-        console.log(res);
-        this.setState(
-          {newPrices: res.data.data}
-        )
+        const newPrices = this.state.newPrices
+        Array.prototype.push.apply(newPrices, res.data.data)
+        this.setState({newPrices})
       });
-    // axios.get(`http://localhost:3001/api/v1/warranties/`)
-    //   .then(res => {
-    //     console.log(res);
-    //     this.setState(
-    //       {newWarranties: res.data.data}
-    //     )
-    //   });
-    // axios.get(`http://localhost:3001/api/v1/pictures/`)
-    //   .then(res => {
-    //     console.log(res);
-    //     this.setState(
-    //       {newPictures: res.data.data}
-    //     )
-    //   });
-    // axios.get(`http://localhost:3001/api/v1/fuels/`)
-    //   .then(res => {
-    //     console.log(res);
-    //     this.setState(
-    //       {newFuels: res.data.data}
-    //     )
-    //   });
+    axios.get(`http://localhost:3001/api/v1/warranties/`)
+      .then(res => {
+        const newWarranties = this.state.newWarranties
+        Array.prototype.push.apply(newWarranties, res.data.data)
+        this.setState({newWarranties})
+      });
+    axios.get(`http://localhost:3001/api/v1/pictures/`)
+      .then(res => {
+        const newPictures = this.state.newPictures
+        Array.prototype.push.apply(newPictures, res.data.data)
+        this.setState({newPictures})
+      });
+    axios.get(`http://localhost:3001/api/v1/fuels/`)
+      .then(res => {
+        const newFuels = this.state.newFuels
+        Array.prototype.push.apply(newFuels, res.data.data)
+        this.setState({newFuels})
+      });
     axios.get(`http://localhost:3001/api/v1/depreciations/`)
       .then(res => {
-        console.log(res);
-        this.setState(
-          {newDepreciations: res.data.data}
-        )
+        const newDepreciations = this.state.newDepreciations
+        Array.prototype.push.apply(newDepreciations, res.data.data)
+        this.setState({newDepreciations})
       });
   }
 
@@ -98,11 +103,6 @@ class AppRouter extends Component {
         console.log(err)
       })
   }
-
-
-
-
-
 
   login = (account) => {
     axios.post(`http://localhost:3001/api/v1/login/`, account)
@@ -127,18 +127,28 @@ class AppRouter extends Component {
     });
   }
 
+  submitCars = (currentCar) => {
+    console.log("111", currentCar)
+    axios.post(`http://localhost:3001/api/v1/comparisons/`, currentCar)
+      .then((res) => {
+        console.log(res)
+        // this.Comparisons(`http://localhost:3000/comparisons/${res.data.data.id}`)
+      })
+      .catch((err) => {
+        console.log(err)
+      })
 
-
+  }
   render() {
     return (
       <Router>
         <div className="App">
-
-          <Route exact path="/currentCar/" render={() => <CurrentCar updateCurrent={this.updateCurrent}></CurrentCar>} />
+          <Route exact path="/currentCar/" render={() => <CurrentCar updateCurrent={this.updateCurrent} data={this.state} submitCars={this.submitCars}></CurrentCar>} />
           <Route exact path="/" component={CarSlide} />
           <Chart depi={this.state.newDepreciations}/>
           <PieChart />
           <Route path="/cars" component={this.Cars} />
+          <Route path="/comparisons" component={this.Comparisons} />
           <Body />
           <Route path="/login" render={() => <Login login={this.login}/>}/>
           <Route path="/register" render={() => <Register register={this.register}/>}/>

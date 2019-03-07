@@ -58,6 +58,13 @@ Depreciation.create!({
   car_id: 1
 })
 
+
+User.create!({
+  id: 1,
+  email: 'admin@example.com',
+  password_digest: 'foo_bar'
+})
+
 car2 = Car.find_or_create_by!({
   year: "2018",
   make: "Mazda",
