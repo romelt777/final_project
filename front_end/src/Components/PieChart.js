@@ -1,6 +1,16 @@
 import React from 'react';
 import {Doughnut} from 'react-chartjs-2';
 
+// Cost composition = Depreciation + Taxes & Fees + Financing + Fuel + Insurance + Maintenance + Repairs
+// ****************************************************************
+// Depreciation >> from database (newDepreciation on App.js)
+// Taxes & Fees >> from calculator component (price * tax rate)
+// Financing >> from calculator component ((price - down payment) * (1+interest rate)^period )
+// Fuel >> build-in formula: (Fuel efficiency * mileage)
+// Mainenance >> from database
+// repairs >> from database
+
+
 function getRandomInt (min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
@@ -27,7 +37,6 @@ const getState = () => ({
 });
 
 export default class PieChart extends React.Component {
-  displayName: 'DynamicDoughnutExample'
 
   componentWillMount() {
     setInterval(() => {

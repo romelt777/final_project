@@ -5,32 +5,16 @@ import {Line} from 'react-chartjs-2';
 
 // set plot color
 const colorScheme = [
-  'rgba(75,192,192,1)',
-  'rgba(100,10,0,1)',
-  'rgba(255,0,0,1)',
-  'rgba(0,255,0,1)',
-  'rgba(0,0,255,1)',
-  'rgba(255,255,0,1)',
-  'rgba(255,0,255,1)',
-  'rgba(0,255,255,1)',
-  'rgba(128,128,0,1)',
-  'rgba(0,128,0,1)',
+  'rgba(75,192,192,1)', 'rgba(100,10,0,1)', 'rgba(255,0,0,1)', 'rgba(0,255,0,1)', 'rgba(0,0,255,1)',
+  'rgba(255,255,0,1)', 'rgba(255,0,255,1)', 'rgba(0,255,255,1)', 'rgba(128,128,0,1)', 'rgba(0,128,0,1)',
 ];
 
 // set plot label name
 // ****** should obtain from the car forms *********
 // modify later
 const label = [
-  'dataset 1',
-  'dataset 2',
-  'dataset 3',
-  'dataset 4',
-  'dataset 5',
-  'dataset 6',
-  'dataset 7',
-  'dataset 8',
-  'dataset 9',
-  'dataset 10',
+  'dataset 1', 'dataset 2', 'dataset 3', 'dataset 4', 'dataset 5',
+  'dataset 6', 'dataset 7', 'dataset 8', 'dataset 9', 'dataset 10',
 ];
 
 // define default values for every single plot
@@ -77,7 +61,7 @@ export default class Chart extends React.Component {
 
     return (
       <div style={{width: 768, height: 768}}>
-        <h2>Break even analysis</h2>
+        <h2>5 years cost to own</h2>
         <Line data={chartData(depiData)} redraw/>
       </div>
     );
