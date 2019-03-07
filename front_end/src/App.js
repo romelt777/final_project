@@ -102,7 +102,7 @@ class AppRouter extends Component {
     axios.post(`http://localhost:3001/api/v1/comparisons/`, currentCar)
       .then((res) => {
         console.log(res)
-        this.Comparisons(`http://localhost:3000/comparisons/${res.data.data.id}`)
+        // this.Comparisons(`http://localhost:3000/comparisons/${res.data.data.id}`)
       })
       .catch((err) => {
         console.log(err)
