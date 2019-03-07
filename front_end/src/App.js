@@ -17,7 +17,7 @@ class AppRouter extends Component {
   constructor(props){
     super(props)
     this.state = {
-      newCars: [],
+      cars: [],
       newPrices: [],
       newWarranties: [],
       newPictures: [],
@@ -49,9 +49,9 @@ class AppRouter extends Component {
 
     axios.get(`http://localhost:3001/api/v1/cars/`)
       .then(res => {
-        const newCars = this.state.newCars
-        Array.prototype.push.apply(newCars, res.data.data)
-        this.setState({newCars})
+        const cars = this.state.cars
+        Array.prototype.push.apply(cars, res.data.data)
+        this.setState({cars})
       });
     axios.get(`http://localhost:3001/api/v1/prices/`)
       .then(res => {

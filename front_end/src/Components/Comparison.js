@@ -17,11 +17,15 @@ export default class Comparison extends React.Component {
       });
   }
 
+
+
+
+
   render(){
 
     return (
       <div>
-        <h2>Romel</h2>
+        <h2>{this.props.match.params.id}</h2>
       </div>
     )
   }
