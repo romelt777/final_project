@@ -8,7 +8,7 @@ export default class Login extends React.Component {
       "email": this.refs.email.value,
       "password": this.refs.password.value
     }
-    console.log(account)
+    // console.log(account)
     this.props.login(account)
   }
 

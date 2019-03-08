@@ -5,16 +5,20 @@
   margin-left: 0px;
   color: #ffffff;
   background-color: white;
-  box-shadow: 0px 2px 24px 0px rgba(0, 0, 0, 0.15);
-  border-radius: 8px;
+  
+  
   display: flex;
   justify-content: space-between;
   padding: 0 40px;
-  position: relative;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
 }
 
 #logo {
-  width: 92px;
+  width: 82px;
 }
 
 #content {
@@ -23,4 +27,26 @@
   height: 100%;
 }
 
+#nav-link {
+  color: #3a3e47; 
+  display: inline-block; 
+  height: 100%; 
+  font-size: 16px; 
+  text-decoration: none; 
+  text-transform: uppercase; 
+  display: flex; 
+  align-items: center; 
+  padding: 0 3px; 
+}
 
+#nav-content-item {
+  display: inline-block;
+  height: 100%;
+  margin-right: 20px;
+}
+
+#nav-link-active {
+  color: #ffaa3b;
+  border-top: 4px solid #ffaa3b;
+  font-weight: 700;
+}

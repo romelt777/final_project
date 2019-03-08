@@ -29,8 +29,7 @@ class AppRouter extends Component {
       newPictures: [],
       newFuels: [],
       newDepreciations: [],
-      newUsers: [],
-      currentUser: []
+      currentUser: ''
     }
   }
 
@@ -59,27 +58,27 @@ class AppRouter extends Component {
           {newPrices: res.data.data}
         )
       });
-    // axios.get(`http://localhost:3001/api/v1/warranties/`)
-    //   .then(res => {
-    //     console.log(res);
-    //     this.setState(
-    //       {newWarranties: res.data.data}
-    //     )
-    //   });
-    // axios.get(`http://localhost:3001/api/v1/pictures/`)
-    //   .then(res => {
-    //     console.log(res);
-    //     this.setState(
-    //       {newPictures: res.data.data}
-    //     )
-    //   });
-    // axios.get(`http://localhost:3001/api/v1/fuels/`)
-    //   .then(res => {
-    //     console.log(res);
-    //     this.setState(
-    //       {newFuels: res.data.data}
-    //     )
-    //   });
+    axios.get(`http://localhost:3001/api/v1/warranties/`)
+      .then(res => {
+        console.log(res);
+        this.setState(
+          {newWarranties: res.data.data}
+        )
+      });
+    axios.get(`http://localhost:3001/api/v1/pictures/`)
+      .then(res => {
+        console.log(res);
+        this.setState(
+          {newPictures: res.data.data}
+        )
+      });
+    axios.get(`http://localhost:3001/api/v1/fuels/`)
+      .then(res => {
+        console.log(res);
+        this.setState(
+          {newFuels: res.data.data}
+        )
+      });
     axios.get(`http://localhost:3001/api/v1/depreciations/`)
       .then(res => {
         console.log(res);
@@ -111,7 +110,9 @@ class AppRouter extends Component {
   login = (account) => {
     axios.post(`http://localhost:3001/api/v1/login/`, account)
     .then((res) => {
-      console.log(res)
+      this.setState(
+      {currentUser: res.data.data.first_name}
+      )
     }
 
     ).catch((err) => {
@@ -140,7 +141,7 @@ class AppRouter extends Component {
 
           <Route exact path="/currentCar/" render={() => <CurrentCar updateCurrent={this.updateCurrent}></CurrentCar>} />
           <Route exact path="/" component={CarSlide} />
-          <Route exact path="/" component={NavBar}/>
+          <Route path="/" render={() => <NavBar name={this.state.currentUser}/>}/>
           <Chart depi={this.state.newDepreciations}/>
           <PieChart />
           <Route path="/cars" component={this.Cars} />

@@ -8,10 +8,13 @@ export default class NavBar extends React.Component {
     return (
      <div className="container"> 
       <nav id="nav-bar">
-        <img class="logo" src={Bird}></img>
-        <div className="content">
-          <ul className="nav-content">
-
+        <img id="logo" src={Bird}></img>
+        <div id="content">
+          <ul id="nav-content">
+            <li id="nav-content-item"><a id="nav-link" href="#">Home</a></li>
+            <li id="nav-content-item"><a id="nav-link" href="#">About</a></li>
+            <li id="nav-content-item"><a id="nav-link" href="#">Login</a></li>
+            <li id="nav-content-item"><a id="nav-link" href="#">Register</a></li>
           </ul>
         </div>
       
