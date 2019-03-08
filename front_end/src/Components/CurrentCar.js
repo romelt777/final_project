@@ -62,21 +62,20 @@ export default class CurrentCar extends React.Component {
 
   render(){
 
-    const cars = this.props.data.cars.map(car => (
-      // if(car.condition === "new"){
-        // return (
+    const cars = this.props.data.cars.map(car => {
+      if(car.condition === "new"){
+        return (
           <tr key={car.id}>
             <th>
               <input type="checkbox" value={car.id} onChange={this.addNewCar}></input>
             </th>
             <th key={car.id}>
-              {car.year} {car.make} {car.model}
+              {car.year} {car.make} {car.model} {car.condition}
             </th>
           </tr>
-
-      //   )
-      // }
-    ))
+        )
+      }
+    })
 
     return (
       <div>
