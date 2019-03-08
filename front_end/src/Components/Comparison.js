@@ -11,13 +11,11 @@ export default class Comparison extends React.Component {
     super()
     this.state = {
       comparisonId: [],
-      // key: 1,
       toggle: "maintenances"
     }
   }
 
   componentDidMount(){
-    //might have to do call in APP JS
     axios.get(`http://localhost:3001/api/v1/comparisons/${this.props.match.params.id}`)
       .then(res => {
         const carsNeed = this.state.comparisonId

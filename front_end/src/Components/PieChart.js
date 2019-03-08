@@ -10,39 +10,36 @@ import {Doughnut} from 'react-chartjs-2';
 // Mainenance >> from database
 // repairs >> from database
 
-
-let getRandomInt = (min, max)  => {
-    return Math.floor(Math.random() * (max - min + 1)) + min;
-}
-
-let getState = () => ({
-  labels: [
-    'Depreciation',
-    'Maintenance',
-    'Fuel'
-  ],
-  datasets: [{
-    data: [getRandomInt(50, 200), getRandomInt(100, 150), getRandomInt(150, 250)],
-    backgroundColor: [
-    '#FF6384',
-    '#36A2EB',
-    '#FFCE56'
-    ],
-    hoverBackgroundColor: [
-    '#FF6384',
-    '#36A2EB',
-    '#FFCE56'
-    ]
-  }]
-});
-
 export default class PieChart extends React.Component {
 
-  componentWillMount() {
-    this.setState(getState());
+  constructor(){
+    super()
+    this.state = {
+      labels: [
+        'Depreciation',
+        'Maintenance',
+        'Fuel'
+      ],
+      datasets: [{
+        data: [50, 100, 50],
+        backgroundColor: [
+        '#FF6384',
+        '#36A2EB',
+        '#FFCE56'
+        ],
+        hoverBackgroundColor: [
+        '#FF6384',
+        '#36A2EB',
+        '#FFCE56'
+        ]
+      }]
+    }
   }
 
+
   render() {
+
+
 
     let depiData = [];
     if(this.props.depi.length > 0) {
