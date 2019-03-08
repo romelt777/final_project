@@ -1,18 +1,24 @@
 import React, { Component } from 'react';
+import '../NavBar.scss';
+import Bird from '../images/bird.png';
 
 export default class NavBar extends React.Component {
 
-  render(){
+  render() {
     return (
-      <nav>
-      <div className="navWide">
-        <div className="wideDiv">
-          <a href="#">Link 1</a>
-          <a href="#">Link 2</a>
-          <a href="#">Link 3</a>
+     <div className="container"> 
+      <nav id="nav-bar">
+        <img class="logo" src={Bird}></img>
+        <div className="content">
+          <ul className="nav-content">
+
+          </ul>
         </div>
-      </div>
+      
+      
       </nav>
-    )
+    </div>
+    );
   }
 }
+

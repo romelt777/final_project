@@ -14,7 +14,7 @@ import CarList from './Components/CarList'
 import Car from './Components/Car';
 import Login from './Components/Login'
 import Register from './Components/Register'
-import Profile from './Components/Profile'
+
 import NavBar from './Components/NavBar'
 
 
@@ -140,13 +140,14 @@ class AppRouter extends Component {
 
           <Route exact path="/currentCar/" render={() => <CurrentCar updateCurrent={this.updateCurrent}></CurrentCar>} />
           <Route exact path="/" component={CarSlide} />
+          <Route exact path="/" component={NavBar}/>
           <Chart depi={this.state.newDepreciations}/>
           <PieChart />
           <Route path="/cars" component={this.Cars} />
           <Body />
           <Route path="/login" render={() => <Login login={this.login}/>}/>
           <Route path="/register" render={() => <Register register={this.register}/>}/>
-          <Route path ="/profile" component={Profile}/>
+          
 
         </div>
       </Router>

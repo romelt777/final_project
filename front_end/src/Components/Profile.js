@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
+// import React, { Component } from 'react';
 
-export default class Profile extends React.Component {
+// export default class Profile extends React.Component {
 
-  render(){
-    return (
-     s
-    )
-  }
-}
+//   render(){
+//     return (
+//      s
+//     )
+//   }
+// }
