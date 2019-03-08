@@ -15,6 +15,7 @@ import Car from './Components/Car';
 import Login from './Components/Login'
 import Register from './Components/Register'
 import Profile from './Components/Profile'
+import NavBar from './Components/NavBar'
 
 
 
