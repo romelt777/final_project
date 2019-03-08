@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Link} from "react-router-dom";
+import { Router, Route, Link} from "react-router-dom";
 import createHistory from 'history/createBrowserHistory'
 import axios from 'axios'
 import './App.css';
@@ -31,6 +31,7 @@ class AppRouter extends Component {
       maintenances: [],
       comparisonRedirect: false
     }
+    this.history = createHistory()
   }
 
   Cars = ({match}) => {
@@ -140,13 +141,7 @@ class AppRouter extends Component {
     console.log("111", currentCar)
     axios.post(`http://localhost:3001/api/v1/comparisons/`, currentCar)
       .then((res) => {
-        console.log(res)
-        // this.Comparisons(`http://localhost:3000/comparisons/${res.data.data.id}`)
-        const history = createHistory()
-        history.push(`/comparisons/${res.data.data.id}`)
-        this.setState({comparisonRedirect: true})
-        console.log(this.state.comparisonRedirect)
-        console.log(history)
+        this.history.push(`/comparisons/${res.data.data.id}`)
       })
       .catch((err) => {
         console.log(err)
@@ -161,8 +156,23 @@ class AppRouter extends Component {
 
 
   render() {
+
+    // const history = createHistory()
+
+    // const routes =(
+    //   <div className="App">
+    //     <Route exact path="/currentCar/" render={() => <CurrentCar updateCurrent={this.updateCurrent} data={this.state} submitCars={this.submitCars}></CurrentCar>} />
+    //     <Route exact path="/" component={CarSlide} />
+    //     <Route path="/cars" component={this.Cars} />
+    //     <Route path="/comparisons" component={this.Comparisons} />
+    //     <Body />
+    //     <Route path="/login" render={() => <Login login={this.login}/>}/>
+    //     <Route path="/register" render={() => <Register register={this.register}/>}/>
+    //   </div>
+    // )
+
     return (
-      <Router>
+      <Router history={this.history} >
         <div className="App">
           <Route exact path="/currentCar/" render={() => <CurrentCar updateCurrent={this.updateCurrent} data={this.state} submitCars={this.submitCars}></CurrentCar>} />
           <Route exact path="/" component={CarSlide} />
@@ -171,7 +181,6 @@ class AppRouter extends Component {
           <Body />
           <Route path="/login" render={() => <Login login={this.login}/>}/>
           <Route path="/register" render={() => <Register register={this.register}/>}/>
-
         </div>
       </Router>
     );
