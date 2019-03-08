@@ -17,36 +17,24 @@ export default class Comparison extends React.Component {
   }
 
   componentDidMount(){
-    console.log(this.props.match.params.id)
     //might have to do call in APP JS
     axios.get(`http://localhost:3001/api/v1/comparisons/${this.props.match.params.id}`)
       .then(res => {
-        console.log(res)
-        console.log(res.data.data2)
         const carsNeed = this.state.comparisonId
         Array.prototype.push.apply(carsNeed, res.data.data2)
         this.setState({comparisonId: carsNeed})
-        console.log(this.state)
-
-
-        // this.setState({ state: this.state });
-        // this.setState({ key: Math.random() });
-        // this.forceUpdate()
       });
-      // this.forceUpdate()
   }
 
   checkData = (data) => {
-    console.log(data)
     let result = [];
     data.forEach((d) => {
       this.state.comparisonId.forEach((car) => {
-        if(car.car_id == d.id){
+        if(car.car_id === d.id){
           result.push(d)
         }
       })
     })
-    console.log(result)
     return result;
   }
 
@@ -67,14 +55,12 @@ export default class Comparison extends React.Component {
     let carName = []
     this.props.data.cars.forEach((car) => {
       this.state.comparisonId.forEach((c) => {
-        if(c.car_id == car.id){
-          console.log("909", car)
+        if(c.car_id === car.id){
           carData.push(<h3 key={car.id}> {car.year} {car.make} {car.model} </h3>)
           carName.push(car)
         }
       })
     })
-    console.log(carData)
 
     return (
       <div >
@@ -90,8 +76,12 @@ export default class Comparison extends React.Component {
           : this.state.toggle === "newDepreciations" ? <Chart carName={carName} data={this.checkData(this.props.data.newDepreciations)}/>
           : null
         }
-        <PieChart />
 
+        <PieChart carName={carName}
+                  maintenances={this.checkData(this.props.data.maintenances)}
+                  fuels={this.checkData(this.props.data.newFuels)}
+                  depi={this.checkData(this.props.data.newDepreciations)}
+        />
       </div>
     )
   }

@@ -1,13 +1,11 @@
 import React, { Component } from 'react';
-import { Router, Route, Link} from "react-router-dom";
+import { Router, Route } from "react-router-dom";
 import createHistory from 'history/createBrowserHistory'
 import axios from 'axios'
 import './App.css';
 
 //components
 import Body from './Components/Body'
-import Chart from './Components/Chart'
-import PieChart from './Components/PieChart'
 import CurrentCar from './Components/CurrentCar';
 import CarSlide from './Components/CarSlide';
 import CarList from './Components/CarList'
@@ -158,6 +156,7 @@ class AppRouter extends Component {
   }
 
   render() {
+    console.log(this.state.newFuels);
     return (
       <Router history={this.history} >
         <div className="App">
