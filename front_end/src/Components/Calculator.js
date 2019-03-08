@@ -1,7 +1,34 @@
 import React, { Component } from 'react';
+import Tooltip from 'rc-tooltip';
+import Slider from 'rc-slider';
+import 'rc-slider/assets/index.css';
+import 'rc-tooltip/assets/bootstrap.css';
+
+const createSliderWithTooltip = Slider.createSliderWithTooltip;
+const Range = createSliderWithTooltip(Slider.Range);
+const Handle = Slider.Handle;
+
+const handle = (props) => {
+  const { value, dragging, index, ...restProps } = props;
+  return (
+    <Tooltip
+      prefixCls="rc-slider-tooltip"
+      overlay={value}
+      visible={dragging}
+      placement="top"
+      key={index}
+    >
+      <Handle value={value} {...restProps} />
+    </Tooltip>
+  );
+};
+
+const wrapperStyle = { width: 400, margin: 50 };
 
 export default class Calculator extends Component {
-
+  // leasing price = price - down payment
+  // money factor = 1/ (1+int rate)^period
+  // residual value = price - depreciation
 
   render() {
 
@@ -21,7 +48,7 @@ export default class Calculator extends Component {
     }
 
     return (
-      <div ClassName='priceCalculator'>
+      <div ClassName='calculatorContainer'>
         <h3>Payment Calculator</h3>
         <table ClassName='priceCalculator'>
           <tbody>
@@ -38,11 +65,23 @@ export default class Calculator extends Component {
           <ul ClassName='contentItems'>
             <li ClassName='leaseItem'>
               <table ClassName='leaseCalculator'>
-                <tbody>
-                  <tr>Interest Rate (%):</tr>
-                  <tr>Term (Months):</tr>
-                  <tr>Down Payment ($):</tr>
-                  <tr>Monthly Payment:</tr>
+                 <tbody>
+                    <div style={wrapperStyle}>
+                      <span>Interest Rate (%): </span>
+                      <Slider min={0} max={10} defaultValue={0} handle={handle} />
+                    </div>
+                    <div style={wrapperStyle}>
+                      <span>Term (Months): </span>
+                      <Slider min={0} defaultValue={0} marks={{ 12: 12, 24: 24, 36: 36, 48: 48, 60: 60, 72: 72, 84: 84, 96: 96 }} step={null} />
+                    </div>
+                    <div style={wrapperStyle}>
+                      <span>Down Payment ($): </span>
+                      <Slider min={0} max={200000} defaultValue={0} handle={handle} />
+                    </div>
+                    <div style={wrapperStyle}>
+                      <span>Monthly Payment: </span>
+                      <Slider min={0} max={200000} defaultValue={0} handle={handle} />
+                    </div>
                 </tbody>
               </table>
             </li>
