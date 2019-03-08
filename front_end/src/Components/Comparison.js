@@ -11,7 +11,7 @@ export default class Comparison extends React.Component {
     super()
     this.state = {
       comparisonId: [],
-      key: false,
+      // key: 1,
       toggle: "maintenances"
     }
   }
@@ -28,7 +28,10 @@ export default class Comparison extends React.Component {
         this.setState({comparisonId: carsNeed})
         console.log(this.state)
 
+
+        // this.setState({ state: this.state });
         // this.setState({ key: Math.random() });
+        // this.forceUpdate()
       });
       // this.forceUpdate()
   }
@@ -74,7 +77,7 @@ export default class Comparison extends React.Component {
     console.log(carData)
 
     return (
-      <div>
+      <div >
         <h2 >{this.props.match.params.id}</h2>
         {carData}
         <ButtonToolbar>
