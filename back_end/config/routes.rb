@@ -9,7 +9,9 @@ Rails.application.routes.draw do
       resources :depreciations
       post '/login' => 'sessions#create'
       post '/register' => 'users#create'
+      resources :comparisons
+      resources :maintenances
 
     end
-  end  
+  end
 end
