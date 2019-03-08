@@ -8,12 +8,14 @@ export default class Comparison extends React.Component {
   constructor(){
     super()
     this.state = {
-      comparisonId: []
+      comparisonId: [],
+      key: false
     }
   }
 
   componentDidMount(){
     console.log(this.props.match.params.id)
+    //might have to do call in APP JS
     axios.get(`http://localhost:3001/api/v1/comparisons/${this.props.match.params.id}`)
       .then(res => {
         console.log(res)
@@ -22,6 +24,8 @@ export default class Comparison extends React.Component {
         Array.prototype.push.apply(carsNeed, res.data.data2)
         this.setState({comparisonId: carsNeed})
         console.log(this.state)
+        // this.forceUpdate()
+        // this.setState({ key: Math.random() });
       });
   }
 
@@ -57,9 +61,9 @@ export default class Comparison extends React.Component {
 
     return (
       <div>
-        <h2>{this.props.match.params.id}</h2>
+        <h2 key={this.state.key}>{this.props.match.params.id}</h2>
         {carData}
-        <Chart carName={carName} data={this.checkData(this.props.data.maintenances)}/>
+        <Chart  carName={carName} data={this.checkData(this.props.data.maintenances)}/>
       </div>
     )
   }
