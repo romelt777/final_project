@@ -90,6 +90,7 @@ export default class Comparison extends React.Component {
           : this.state.toggle === "newDepreciations" ? <Chart carName={carName} data={this.checkData(this.props.data.newDepreciations)}/>
           : null
         }
+        <PieChart />
 
       </div>
     )
