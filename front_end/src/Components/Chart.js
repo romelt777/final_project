@@ -35,7 +35,7 @@ export default class Chart extends React.Component {
 
     let dataSet = [];
     let getConfig = (data) => {
-      for(let i = 0; i < 10; i ++) {
+      for(let i = 0; i < label.length; i ++) {
         dataSet.push({
           ...plotSettings,
           label: label[i],
