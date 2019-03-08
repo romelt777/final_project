@@ -27,8 +27,7 @@ class AppRouter extends Component {
       newPictures: [],
       newFuels: [],
       newDepreciations: [],
-      maintenances: [],
-      comparisonRedirect: false
+      maintenances: []
     }
     this.history = createHistory()
   }
@@ -52,8 +51,7 @@ class AppRouter extends Component {
     )
   }
 
-  componentDidMount(){
-    console.log("MOUNTING...")
+  getAllInformation = () => {
     axios.get(`http://localhost:3001/api/v1/cars/`)
       .then(res => {
         const cars = this.state.cars
@@ -96,7 +94,11 @@ class AppRouter extends Component {
         Array.prototype.push.apply(maintenances, res.data.data)
         this.setState({maintenances})
       });
+  }
 
+  componentDidMount(){
+    console.log("MOUNTING...")
+    this.getAllInformation()
   }
 
   //uses form to send users current car to database.
@@ -138,7 +140,17 @@ class AppRouter extends Component {
     console.log("111", currentCar)
     axios.post(`http://localhost:3001/api/v1/comparisons/`, currentCar)
       .then((res) => {
+        this.setState({
+          cars: [],
+          newPrices: [],
+          newWarranties: [],
+          newPictures: [],
+          newFuels: [],
+          newDepreciations: [],
+          maintenances: []
+        })
         this.history.push(`/comparisons/${res.data.data.id}`)
+        this.getAllInformation()
       })
       .catch((err) => {
         console.log(err)

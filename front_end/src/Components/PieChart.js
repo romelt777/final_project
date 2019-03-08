@@ -39,9 +39,9 @@ const getState = () => ({
 export default class PieChart extends React.Component {
 
   componentWillMount() {
-    setInterval(() => {
+    // setInterval(() => {
       this.setState(getState());
-    }, 5000);
+    // }, 5000);
   }
 
   render() {

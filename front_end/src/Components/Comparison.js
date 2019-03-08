@@ -2,6 +2,8 @@ import React from 'react'
 import axios from 'axios'
 import Chart from './Chart'
 import PieChart from './PieChart'
+import {ButtonToolbar, ToggleButtonGroup, ToggleButton} from 'react-bootstrap'
+
 
 
 export default class Comparison extends React.Component {
@@ -9,7 +11,8 @@ export default class Comparison extends React.Component {
     super()
     this.state = {
       comparisonId: [],
-      key: false
+      // key: 1,
+      toggle: "maintenances"
     }
   }
 
@@ -24,9 +27,13 @@ export default class Comparison extends React.Component {
         Array.prototype.push.apply(carsNeed, res.data.data2)
         this.setState({comparisonId: carsNeed})
         console.log(this.state)
-        // this.forceUpdate()
+
+
+        // this.setState({ state: this.state });
         // this.setState({ key: Math.random() });
+        // this.forceUpdate()
       });
+      // this.forceUpdate()
   }
 
   checkData = (data) => {
@@ -43,8 +50,18 @@ export default class Comparison extends React.Component {
     return result;
   }
 
+  toggle = (event) => {
+    console.log("im clicked")
+    console.log(event.target.value)
+    if(event.target.value == 1){
+      this.setState({toggle: "maintenances"})
+    } else if(event.target.value == 2){
+      this.setState({toggle: "newDepreciations"})
+    }
+  }
+
+
   render(){
-    console.log(this.props)
 
     let carData = []
     let carName = []
@@ -60,10 +77,21 @@ export default class Comparison extends React.Component {
     console.log(carData)
 
     return (
-      <div>
-        <h2 key={this.state.key}>{this.props.match.params.id}</h2>
+      <div >
+        <h2 >{this.props.match.params.id}</h2>
         {carData}
-        <Chart  carName={carName} data={this.checkData(this.props.data.maintenances)}/>
+        <ButtonToolbar>
+          <ToggleButtonGroup type="radio" name="options" defaultValue={1} >
+            <ToggleButton value={1} onChange={this.toggle}>Depreciation </ToggleButton>
+            <ToggleButton value={2} onChange={this.toggle}>Maintenance</ToggleButton>
+          </ToggleButtonGroup>
+        </ButtonToolbar>
+        { this.state.toggle === "maintenances" ? <Chart carName={carName} data={this.checkData(this.props.data.maintenances)}/>
+          : this.state.toggle === "newDepreciations" ? <Chart carName={carName} data={this.checkData(this.props.data.newDepreciations)}/>
+          : null
+        }
+        <PieChart />
+
       </div>
     )
   }
