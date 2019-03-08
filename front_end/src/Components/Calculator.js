@@ -4,8 +4,6 @@ import Slider from 'rc-slider';
 import 'rc-slider/assets/index.css';
 import 'rc-tooltip/assets/bootstrap.css';
 
-const createSliderWithTooltip = Slider.createSliderWithTooltip;
-const Range = createSliderWithTooltip(Slider.Range);
 const Handle = Slider.Handle;
 
 const handle = (props) => {
@@ -23,12 +21,44 @@ const handle = (props) => {
   );
 };
 
-const wrapperStyle = { width: 400, margin: 50 };
+const wrapperStyle = { width: 300, margin: 50 };
 
 export default class Calculator extends Component {
-  // leasing price = price - down payment
-  // money factor = 1/ (1+int rate)^period
-  // residual value = price - depreciation
+  constructor(props) {
+    super(props);
+    this.state = {
+      depiFee: 0,
+      finFee: 0,
+      downPayment: 20000,
+      resValue: 0
+    };
+    // methods for leasing calculator, reflecting the following respectively:
+    // depreciationFee = (price - resdiual value - down payment) / months;
+    // financeFee = (price + resdiual value + down payment) * (interest / 2400);
+    // result = depreciationFee + financeFee;
+
+    this.getDepiFee = this.getDepiFee.bind(this);
+    this.getFinFee = this.getFinFee.bind(this);
+    this.getResValue = this.getResValue.bind(this);
+  }
+
+  getDepiFee = () => {
+    this.setState({depiFee: this.props.price[1].vehicle_price});
+  }
+
+  getFinFee = () => {
+    // should be imported from the sliders
+    const intRate = 0.13
+    const resValue = this.state.resValue
+    const downPayment = this.state.downPayment
+    this.setState({finFee: (this.props.price[1] - resValue - downPayment) / (intRate / 2400)});
+  }
+
+  getResValue = () => {
+    // should be imported from the leasing calculator form
+    const resValue = 10000
+    this.setState({resValue: resValue})
+  }
 
   render() {
 
@@ -64,26 +94,24 @@ export default class Calculator extends Component {
         <div ClassName='optTabs'>
           <ul ClassName='contentItems'>
             <li ClassName='leaseItem'>
-              <table ClassName='leaseCalculator'>
-                 <tbody>
-                    <div style={wrapperStyle}>
-                      <span>Interest Rate (%): </span>
-                      <Slider min={0} max={10} defaultValue={0} handle={handle} />
-                    </div>
-                    <div style={wrapperStyle}>
-                      <span>Term (Months): </span>
-                      <Slider min={0} defaultValue={0} marks={{ 12: 12, 24: 24, 36: 36, 48: 48, 60: 60, 72: 72, 84: 84, 96: 96 }} step={null} />
-                    </div>
-                    <div style={wrapperStyle}>
-                      <span>Down Payment ($): </span>
-                      <Slider min={0} max={200000} defaultValue={0} handle={handle} />
-                    </div>
-                    <div style={wrapperStyle}>
-                      <span>Monthly Payment: </span>
-                      <Slider min={0} max={200000} defaultValue={0} handle={handle} />
-                    </div>
-                </tbody>
-              </table>
+              <div ClassName='leaseCalculator'>
+                <div style={wrapperStyle}>
+                  <span>Interest Rate (%): </span>
+                  <Slider min={0} max={20} defaultValue={0} handle={handle} />
+                </div>
+                <div style={wrapperStyle}>
+                  <span>Term (Months): </span>
+                  <Slider min={0} max={96} defaultValue={0} handle={handle} />
+                </div>
+                <div style={wrapperStyle}>
+                  <span>Down Payment ($): </span>
+                  <Slider min={0} max={vehiclePrice} defaultValue={0} handle={handle} />
+                </div>
+                <div style={wrapperStyle}>
+                  <span>Monthly Payment: </span>
+                  <Slider min={0} max={vehiclePrice / 2} defaultValue={0} handle={handle} />
+                </div>
+              </div>
             </li>
             <li ClassName='finItem'>
               <table ClassName='finCalculator'>
@@ -96,8 +124,6 @@ export default class Calculator extends Component {
               </table>
             </li>
           </ul>
-        <table>
-        </table>
         </div>
       </div>
     );
