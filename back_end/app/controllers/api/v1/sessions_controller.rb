@@ -1,32 +1,29 @@
 module Api
   module V1
   class SessionsController < ApplicationController
-    def new
-
-    end
-
     def create
-      @user = User.find_by_email(params[:email])
-      # If the user exists AND the password entered is correct.
-      if @user && @user.authenticate(params[:password])
-        # Save the user id inside the browser cookie. This is how we keep the user 
-        # logged in when they navigate around our website.
-        session[:user_id] = @user.id
+      user = User.find_by(email: params[:email])
+      if user && user.authenticate(params[:password])
+        payload = { data: user.id}
+        token = JWT.encode payload, nil, 'none'
+
+        # cookies.signed[:jwt] = {
+        #   value:  token, 
+        #   httponly: true,
+        #   expires: 1.hour.from_now
+      # }
         render json: {
-          status: 'SUCCESS',
-          message: 'Login Success',
-          data: @user
-        },status: :ok
-      
+          data: user,
+          jwt: token
+        }
       else
-        # If user's login doesn't work, send them back to the login form.
         render json: {
-          status: 'UNAUTHORIZED',
-          message: 'Login Unsuccessful',
-          data: @user
-        },status: :unauthorized
+          error: 'Username or password incorrect'
+        }, status: 404
       end
     end
+
+   
 
     def destroy
       session[:user_id] = nil

@@ -3,7 +3,6 @@ import { Router, Route } from "react-router-dom";
 import createHistory from 'history/createBrowserHistory'
 import axios from 'axios'
 import './App.css';
-
 //components
 import Body from './Components/Body'
 import CurrentCar from './Components/CurrentCar';
@@ -13,7 +12,7 @@ import Car from './Components/Car';
 import Login from './Components/Login'
 import Register from './Components/Register'
 import Comparison from './Components/Comparison';
-
+import NavBar from './Components/NavBar'
 
 class AppRouter extends Component {
   constructor(props){
@@ -25,11 +24,13 @@ class AppRouter extends Component {
       newPictures: [],
       newFuels: [],
       newDepreciations: [],
-      maintenances: []
+      maintenances: [],
+      currentUser: '',
+      jwt: '',
+      loggedIn: false
     }
     this.history = createHistory()
   }
-
   Cars = ({match}) => {
     return (
       <div>
@@ -39,7 +40,6 @@ class AppRouter extends Component {
       </div>
     )
   }
-
   Comparisons = ({match}) => {
     return (
       <div>
@@ -48,7 +48,6 @@ class AppRouter extends Component {
       </div>
     )
   }
-
   getAllInformation = () => {
     axios.get(`http://localhost:3001/api/v1/cars/`)
       .then(res => {
@@ -93,12 +92,16 @@ class AppRouter extends Component {
         this.setState({maintenances})
       });
   }
-
   componentDidMount(){
     console.log("MOUNTING...")
     this.getAllInformation()
+    
+    if(localStorage.getItem('jwt')) {
+      this.setState(
+        {loggedIn: true}
+      )
+    }
   }
-
   //uses form to send users current car to database.
   updateCurrent = (currentCar) => {
     console.log(currentCar)
@@ -110,30 +113,35 @@ class AppRouter extends Component {
         console.log(err)
       })
   }
-
+  
+  logout = () => {
+    localStorage.clear(); 
+  }
+  
   login = (account) => {
     axios.post(`http://localhost:3001/api/v1/login/`, account)
     .then((res) => {
-      console.log(res)
+     localStorage.setItem('jwt', res.data.jwt)
+     this.setState(
+       {currentUser: res.data.data.first_name,
+        jwt: res.data.jwt
+       }
+     )
     }
-
     ).catch((err) => {
       console.log(err)
     });
   }
-
   register = (account) => {
     console.log(account)
     axios.post(`http://localhost:3001//api/v1/register/`, account)
     .then((res) => {
       console.log(res)
     }
-
     ).catch((err) => {
       console.log(err)
     });
   }
-
   submitCars = (currentCar) => {
     console.log("111", currentCar)
     axios.post(`http://localhost:3001/api/v1/comparisons/`, currentCar)
@@ -154,12 +162,12 @@ class AppRouter extends Component {
         console.log(err)
       })
   }
-
   render() {
     console.log(this.state.newFuels);
     return (
       <Router history={this.history} >
         <div className="App">
+          <NavBar name={this.state.currentUser} logout={this.logout} loggedIn={this.state.loggedIn}/> 
           <Route exact path="/currentCar/" render={() => <CurrentCar updateCurrent={this.updateCurrent} data={this.state} submitCars={this.submitCars}></CurrentCar>} />
           <Route exact path="/" component={CarSlide} />
           <Route path="/cars" component={this.Cars} />
@@ -172,5 +180,4 @@ class AppRouter extends Component {
     );
   }
 }
-
 export default AppRouter;
