@@ -43,22 +43,23 @@ export default class Comparison extends React.Component {
     console.log(this.props)
 
     let carData = []
+    let carName = []
     this.props.data.cars.forEach((car) => {
       this.state.comparisonId.forEach((c) => {
         if(c.car_id == car.id){
+          console.log("909", car)
           carData.push(<h3 key={car.id}> {car.year} {car.make} {car.model} </h3>)
+          carName.push(car)
         }
       })
     })
     console.log(carData)
 
-
-
     return (
       <div>
         <h2>{this.props.match.params.id}</h2>
         {carData}
-        <Chart data={this.checkData(this.props.data.maintenances)}/>
+        <Chart carName={carName} data={this.checkData(this.props.data.maintenances)}/>
       </div>
     )
   }

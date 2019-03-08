@@ -17,10 +17,15 @@ export default class Chart extends React.Component {
     // set plot label name
     // ****** should obtain from the car forms *********
     // modify later
-    const label = [
-      'dataset 1', 'dataset 2', 'dataset 3', 'dataset 4', 'dataset 5',
-      'dataset 6', 'dataset 7', 'dataset 8', 'dataset 9', 'dataset 10',
-    ];
+    // const label = [
+    //   'dataset 1', 'dataset 2', 'dataset 3', 'dataset 4', 'dataset 5',
+    //   'dataset 6', 'dataset 7', 'dataset 8', 'dataset 9', 'dataset 10',
+    // ];
+
+    const label = this.props.carName.map((d) => (
+      d.model
+    ))
+    console.log(label)
 
     // define default values for every single plot
     let plotSettings = {

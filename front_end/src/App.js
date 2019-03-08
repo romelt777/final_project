@@ -17,7 +17,6 @@ import Register from './Components/Register'
 import Comparison from './Components/Comparison';
 
 
-
 class AppRouter extends Component {
   constructor(props){
     super(props)
@@ -100,8 +99,6 @@ class AppRouter extends Component {
 
   }
 
-
-
   //uses form to send users current car to database.
   updateCurrent = (currentCar) => {
     console.log(currentCar)
@@ -146,31 +143,9 @@ class AppRouter extends Component {
       .catch((err) => {
         console.log(err)
       })
-
   }
 
-  // unlisten = createHistory().listen((createHistory().location, action) => {
-  //   // location is an object like window.location
-  //   console.log(action, location.pathname, location.state)
-  // })
-
-
   render() {
-
-    // const history = createHistory()
-
-    // const routes =(
-    //   <div className="App">
-    //     <Route exact path="/currentCar/" render={() => <CurrentCar updateCurrent={this.updateCurrent} data={this.state} submitCars={this.submitCars}></CurrentCar>} />
-    //     <Route exact path="/" component={CarSlide} />
-    //     <Route path="/cars" component={this.Cars} />
-    //     <Route path="/comparisons" component={this.Comparisons} />
-    //     <Body />
-    //     <Route path="/login" render={() => <Login login={this.login}/>}/>
-    //     <Route path="/register" render={() => <Register register={this.register}/>}/>
-    //   </div>
-    // )
-
     return (
       <Router history={this.history} >
         <div className="App">
