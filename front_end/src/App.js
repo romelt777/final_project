@@ -14,7 +14,6 @@ import CarList from './Components/CarList'
 import Car from './Components/Car';
 import Login from './Components/Login'
 import Register from './Components/Register'
-
 import NavBar from './Components/NavBar'
 
 
@@ -30,7 +29,8 @@ class AppRouter extends Component {
       newFuels: [],
       newDepreciations: [],
       currentUser: '',
-      jwt: ''
+      jwt: '',
+      loggedIn: false
     }
   }
 
@@ -45,6 +45,11 @@ class AppRouter extends Component {
   }
 
   componentDidMount(){
+    if(localStorage.getItem('jwt')) {
+      this.setState(
+        {loggedIn: true}
+      )
+    }
     axios.get(`http://localhost:3001/api/v1/cars/`, {
       'headers': {'Authorization': `Bearer ${localStorage.getItem('jwt')}`}
     })
@@ -147,7 +152,7 @@ class AppRouter extends Component {
     return (
       <Router>
         <div className="App">
-          <NavBar name={this.state.currentUser} jwt={this.state.jwt}/>
+          <NavBar name={this.state.currentUser} logout={this.logout} loggedIn={this.state.loggedIn}/>
           <Route exact path="/currentCar/" render={() => <CurrentCar updateCurrent={this.updateCurrent}></CurrentCar>} />
           <Route exact path="/" component={CarSlide} />
           

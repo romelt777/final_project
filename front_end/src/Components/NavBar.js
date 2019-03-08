@@ -5,7 +5,7 @@ import Bird from '../images/bird.png';
 export default class NavBar extends React.Component {
 
   render() {
-    if (this.props.name) {
+    if (!this.props.loggedIn) {
     return (
      <div className="container"> 
       <nav id="nav-bar">
@@ -33,7 +33,7 @@ export default class NavBar extends React.Component {
           <ul id="nav-content">
             <li id="nav-content-item"><a id="nav-link" href="#">Home</a></li>
             <li id="nav-content-item"><a id="nav-link" href="#">About</a></li>
-            <li id="nav-content-item"><a id="nav-link" href="#">Logout</a></li>
+            <li id="nav-content-item"><a id="nav-link" onClick={this.props.logout} href="#">Logout</a></li>
           </ul>
         </div>
       
