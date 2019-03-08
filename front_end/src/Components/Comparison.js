@@ -2,6 +2,8 @@ import React from 'react'
 import axios from 'axios'
 import Chart from './Chart'
 import PieChart from './PieChart'
+import {ButtonToolbar, ToggleButtonGroup, ToggleButton} from 'react-bootstrap'
+
 
 
 export default class Comparison extends React.Component {
@@ -24,7 +26,7 @@ export default class Comparison extends React.Component {
         Array.prototype.push.apply(carsNeed, res.data.data2)
         this.setState({comparisonId: carsNeed})
         console.log(this.state)
-        // this.forceUpdate()
+        this.forceUpdate()
         // this.setState({ key: Math.random() });
       });
   }
@@ -61,9 +63,16 @@ export default class Comparison extends React.Component {
 
     return (
       <div>
-        <h2 key={this.state.key}>{this.props.match.params.id}</h2>
+        <h2 >{this.props.match.params.id}</h2>
         {carData}
-        <Chart  carName={carName} data={this.checkData(this.props.data.maintenances)}/>
+        <ButtonToolbar>
+          <ToggleButtonGroup type="radio" name="options" defaultValue={1}>
+            <ToggleButton value={1}>Radio 1 (pre-checked)</ToggleButton>
+            <ToggleButton value={2}>Radio 2</ToggleButton>
+            <ToggleButton value={3}>Radio 3</ToggleButton>
+          </ToggleButtonGroup>
+        </ButtonToolbar>
+        <Chart  key={this.state.key} carName={carName} data={this.checkData(this.props.data.maintenances)}/>
       </div>
     )
   }

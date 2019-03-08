@@ -57,7 +57,6 @@ export default class CurrentCar extends React.Component {
       .catch((err) => {
         console.log(err)
       })
-
   }
 
   render(){
@@ -70,7 +69,7 @@ export default class CurrentCar extends React.Component {
               <input type="checkbox" value={car.id} onChange={this.addNewCar}></input>
             </th>
             <th key={car.id}>
-              {car.year} {car.make} {car.model} {car.condition}
+              {car.year} {car.make} {car.model}
             </th>
           </tr>
         )
