@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route, Link} from "react-router-dom";
+import createHistory from 'history/createBrowserHistory'
 import axios from 'axios'
 import './App.css';
 
@@ -27,7 +28,8 @@ class AppRouter extends Component {
       newPictures: [],
       newFuels: [],
       newDepreciations: [],
-      maintenances: []
+      maintenances: [],
+      comparisonRedirect: false
     }
   }
 
@@ -140,12 +142,24 @@ class AppRouter extends Component {
       .then((res) => {
         console.log(res)
         // this.Comparisons(`http://localhost:3000/comparisons/${res.data.data.id}`)
+        const history = createHistory()
+        history.push(`/comparisons/${res.data.data.id}`)
+        this.setState({comparisonRedirect: true})
+        console.log(this.state.comparisonRedirect)
+        console.log(history)
       })
       .catch((err) => {
         console.log(err)
       })
 
   }
+
+  // unlisten = createHistory().listen((createHistory().location, action) => {
+  //   // location is an object like window.location
+  //   console.log(action, location.pathname, location.state)
+  // })
+
+
   render() {
     return (
       <Router>
