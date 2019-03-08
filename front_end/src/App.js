@@ -29,7 +29,8 @@ class AppRouter extends Component {
       newPictures: [],
       newFuels: [],
       newDepreciations: [],
-      currentUser: ''
+      currentUser: '',
+      jwt: ''
     }
   }
 
@@ -44,7 +45,9 @@ class AppRouter extends Component {
   }
 
   componentDidMount(){
-    axios.get(`http://localhost:3001/api/v1/cars/`)
+    axios.get(`http://localhost:3001/api/v1/cars/`, {
+      'headers': {'Authorization': `Bearer ${localStorage.getItem('jwt')}`}
+    })
       .then(res => {
         console.log(res)
         this.setState(
@@ -103,16 +106,22 @@ class AppRouter extends Component {
   }
 
 
+  logout = () => {
+      localStorage.clear(); 
+  }
+  
 
-
-
+//storage.removeItem('jwt')
 
   login = (account) => {
     axios.post(`http://localhost:3001/api/v1/login/`, account)
     .then((res) => {
-      this.setState(
-      {currentUser: res.data.data.first_name}
-      )
+     localStorage.setItem('jwt', res.data.jwt)
+     this.setState(
+       {currentUser: res.data.data.first_name,
+        jwt: res.data.jwt
+       }
+     )
     }
 
     ).catch((err) => {
@@ -138,10 +147,10 @@ class AppRouter extends Component {
     return (
       <Router>
         <div className="App">
-
+          <NavBar name={this.state.currentUser} jwt={this.state.jwt}/>
           <Route exact path="/currentCar/" render={() => <CurrentCar updateCurrent={this.updateCurrent}></CurrentCar>} />
           <Route exact path="/" component={CarSlide} />
-          <Route path="/" render={() => <NavBar name={this.state.currentUser}/>}/>
+          
           <Chart depi={this.state.newDepreciations}/>
           <PieChart />
           <Route path="/cars" component={this.Cars} />
