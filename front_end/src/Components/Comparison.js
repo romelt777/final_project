@@ -11,13 +11,11 @@ export default class Comparison extends React.Component {
     super()
     this.state = {
       comparisonId: [],
-      // key: 1,
-      toggle: "maintenances"
+      toggle: "maintenances",
     }
   }
 
   componentDidMount(){
-    //might have to do call in APP JS
     axios.get(`http://localhost:3001/api/v1/comparisons/${this.props.match.params.id}`)
       .then(res => {
         const carsNeed = this.state.comparisonId
@@ -26,6 +24,7 @@ export default class Comparison extends React.Component {
       });
   }
 
+  //sorts data from state which matches comparison cars.
   checkData = (data) => {
     let result = [];
     data.forEach((d) => {
@@ -35,19 +34,17 @@ export default class Comparison extends React.Component {
         }
       })
     })
+    console.log(result)
     return result;
   }
 
   toggle = (event) => {
-    console.log("im clicked")
-    console.log(event.target.value)
     if(event.target.value == 1){
       this.setState({toggle: "maintenances"})
     } else if(event.target.value == 2){
       this.setState({toggle: "newDepreciations"})
     }
   }
-
 
   render(){
 
@@ -81,7 +78,9 @@ export default class Comparison extends React.Component {
                   maintenances={this.checkData(this.props.data.maintenances)}
                   fuels={this.checkData(this.props.data.newFuels)}
                   depi={this.checkData(this.props.data.newDepreciations)}
+
         />
+
       </div>
     )
   }

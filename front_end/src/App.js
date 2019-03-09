@@ -48,43 +48,62 @@ class AppRouter extends Component {
       </div>
     )
   }
-  getAllInformation = () => {
+
+  getAllCars = () => {
     axios.get(`http://localhost:3001/api/v1/cars/`)
       .then(res => {
         const cars = this.state.cars
         Array.prototype.push.apply(cars, res.data.data)
         this.setState({cars})
       });
+  }
+
+  getAllPrices = () => {
     axios.get(`http://localhost:3001/api/v1/prices/`)
       .then(res => {
         const newPrices = this.state.newPrices
         Array.prototype.push.apply(newPrices, res.data.data)
         this.setState({newPrices})
       });
+  }
+
+  getAllWarranties = () => {
     axios.get(`http://localhost:3001/api/v1/warranties/`)
       .then(res => {
         const newWarranties = this.state.newWarranties
         Array.prototype.push.apply(newWarranties, res.data.data)
         this.setState({newWarranties})
       });
+  }
+
+  getAllPictures = () => {
     axios.get(`http://localhost:3001/api/v1/pictures/`)
       .then(res => {
         const newPictures = this.state.newPictures
         Array.prototype.push.apply(newPictures, res.data.data)
         this.setState({newPictures})
       });
+  }
+
+  getAllFuels = () => {
     axios.get(`http://localhost:3001/api/v1/fuels/`)
       .then(res => {
         const newFuels = this.state.newFuels
         Array.prototype.push.apply(newFuels, res.data.data)
         this.setState({newFuels})
       });
+  }
+
+  getAllDepreciations = () => {
     axios.get(`http://localhost:3001/api/v1/depreciations/`)
       .then(res => {
         const newDepreciations = this.state.newDepreciations
         Array.prototype.push.apply(newDepreciations, res.data.data)
         this.setState({newDepreciations})
       });
+  }
+
+  getAllMaintenances = () => {
     axios.get(`http://localhost:3001/api/v1/maintenances/`)
       .then(res => {
         const maintenances = this.state.maintenances
@@ -92,10 +111,26 @@ class AppRouter extends Component {
         this.setState({maintenances})
       });
   }
+
+
+  getAllInformation = () => {
+    axios.all([
+      this.getAllMaintenances(),
+      this.getAllDepreciations(),
+      this.getAllFuels(),
+      this.getAllPictures(),
+      this.getAllWarranties(),
+      this.getAllPrices(),
+      this.getAllCars()
+    ])
+    .then(axios.spread( (m,d,f,p,w,pr,c) => {
+    }))
+  }
+
   componentDidMount(){
     console.log("MOUNTING...")
     this.getAllInformation()
-    
+
     if(localStorage.getItem('jwt')) {
       this.setState(
         {loggedIn: true}
@@ -113,11 +148,11 @@ class AppRouter extends Component {
         console.log(err)
       })
   }
-  
+
   logout = () => {
-    localStorage.clear(); 
+    localStorage.clear();
   }
-  
+
   login = (account) => {
     axios.post(`http://localhost:3001/api/v1/login/`, account)
     .then((res) => {
@@ -167,7 +202,7 @@ class AppRouter extends Component {
     return (
       <Router history={this.history} >
         <div className="App">
-          <NavBar name={this.state.currentUser} logout={this.logout} loggedIn={this.state.loggedIn}/> 
+          <NavBar name={this.state.currentUser} logout={this.logout} loggedIn={this.state.loggedIn}/>
           <Route exact path="/currentCar/" render={() => <CurrentCar updateCurrent={this.updateCurrent} data={this.state} submitCars={this.submitCars}></CurrentCar>} />
           <Route exact path="/" component={CarSlide} />
           <Route path="/cars" component={this.Cars} />
