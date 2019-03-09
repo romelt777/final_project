@@ -12,30 +12,6 @@ import {Doughnut} from 'react-chartjs-2';
 
 export default class PieChart extends React.Component {
 
-  constructor(){
-    super()
-    // this.state = {
-    //   labels: [
-    //     'Depreciation',
-    //     'Maintenance',
-    //     'Fuel'
-    //   ],
-    //   datasets: [{
-    //     data: [50, 100, 50],
-    //     backgroundColor: [
-    //     '#FF6384',
-    //     '#36A2EB',
-    //     '#FFCE56'
-    //     ],
-    //     hoverBackgroundColor: [
-    //     '#FF6384',
-    //     '#36A2EB',
-    //     '#FFCE56'
-    //     ]
-    //   }]
-    // }
-  }
-
   data = () =>{
     if(this.props.depi.length > 0){
       const fuelCost = Math.round(this.props.fuels[0].auto_combined * 15000 * 1.61 * 1.13 / 100 * 100) / 100
@@ -66,27 +42,6 @@ export default class PieChart extends React.Component {
   render() {
 
     console.log(this.props)
-
-    // let depiData = [];
-    // if(this.props.depi.length > 0) {
-    //   depiData = this.props.depi.map((data) =>
-    //     [data.first, data.second, data.third, data.fourth, data.fifth]
-    //   );
-    // }
-
-    // let mainData = [];
-    // if(this.props.maintenances.length > 0) {
-    //   mainData = this.props.maintenances.map((data) =>
-    //     [data.first, data.second, data.third, data.fourth, data.fifth]
-    //   );
-    // }
-
-    // let fuelData = [];
-    // if(this.props.fuels.length > 0) {
-    //   fuelData = this.props.fuels.map((data) =>
-    //     [data.auto_combined, data.manual_combined]
-    //   );
-    // }
 
     return (
       <div style={{width: 768, height: 768}}>

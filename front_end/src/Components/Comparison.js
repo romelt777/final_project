@@ -11,7 +11,8 @@ export default class Comparison extends React.Component {
     super()
     this.state = {
       comparisonId: [],
-      toggle: "maintenances"
+      toggle: "maintenances",
+      togglePie: 0
     }
   }
 
@@ -39,14 +40,16 @@ export default class Comparison extends React.Component {
   }
 
   toggle = (event) => {
-    console.log("im clicked")
-    console.log(event.target.value)
     if(event.target.value == 1){
       this.setState({toggle: "maintenances"})
     } else if(event.target.value == 2){
       this.setState({toggle: "newDepreciations"})
     }
   }
+
+  togglePie = (event => {
+    console.log("im clicked")
+  })
 
 
   render(){
@@ -63,8 +66,8 @@ export default class Comparison extends React.Component {
     })
 
     const pieButtons = [];
-    carName.forEach((c) => {
-      pieButtons.push(<ToggleButton value={c.id} onChange={this.togglePie}>{c.model}</ToggleButton>)
+    carName.forEach((c, i) => {
+      pieButtons.push(<ToggleButton key={c.id} value={i} onChange={this.togglePie}>{c.model}</ToggleButton>)
     })
 
     return (
@@ -82,16 +85,17 @@ export default class Comparison extends React.Component {
           : null
         }
 
-        <PieChart carName={carName}
-                  maintenances={this.checkData(this.props.data.maintenances)}
-                  fuels={this.checkData(this.props.data.newFuels)}
-                  depi={this.checkData(this.props.data.newDepreciations)}
-        />
         <ButtonToolbar>
           <ToggleButtonGroup type="radio" name="options" defaultValue={1} >
             {pieButtons}
           </ToggleButtonGroup>
         </ButtonToolbar>
+
+        <PieChart carName={carName}
+                  maintenances={this.checkData(this.props.data.maintenances)}
+                  fuels={this.checkData(this.props.data.newFuels)}
+                  depi={this.checkData(this.props.data.newDepreciations)}
+        />
 
       </div>
     )
