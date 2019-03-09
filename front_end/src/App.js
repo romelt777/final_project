@@ -158,13 +158,12 @@ class AppRouter extends Component {
   render() {
     console.log(this.state.newFuels);
     return (
-      <Router history={this.history} >
+      <Router history={this.history}>
         <div className="App">
           <Route exact path="/currentCar/" render={() => <CurrentCar updateCurrent={this.updateCurrent} data={this.state} submitCars={this.submitCars}></CurrentCar>} />
           <Route exact path="/" component={CarSlide} />
           <Route path="/cars" component={this.Cars} />
           <Route path="/comparisons" component={this.Comparisons} />
-          <Body />
           <Route path="/login" render={() => <Login login={this.login}/>}/>
           <Route path="/register" render={() => <Register register={this.register}/>}/>
         </div>
