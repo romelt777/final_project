@@ -43,7 +43,7 @@ module Api
       private
 
       def comparison_params
-        params.permit(:make, :model, :year, :condition, newCars: [])
+        params.permit(:make, :model, :year, :currentUserId, :condition, newCars: [])
       end
 
       def create_comparison(data)
@@ -51,7 +51,7 @@ module Api
         puts data
         puts data[:make]
         comparison = Comparison.new({
-          user_id: "1",
+          user_id: data[:currentUserId],
         })
 
         data[:newCars].each do |car|

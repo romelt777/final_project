@@ -184,7 +184,7 @@ class AppRouter extends Component {
 
   submitCars = (currentCar) => {
     console.log("111", currentCar)
-    currentCar["currentUser"] = this.state.currentUser
+    currentCar["currentUserId"] = this.state.currentUser.id
     axios.post(`http://localhost:3001/api/v1/comparisons/`, currentCar)
       .then((res) => {
         this.resetState()
