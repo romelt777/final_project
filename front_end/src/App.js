@@ -209,7 +209,7 @@ class AppRouter extends Component {
     })
   }
   render() {
-    console.log(this.state.newFuels);
+    console.log(this.state.currentUser);
     return (
       <Router history={this.history} >
         <div className="App">
