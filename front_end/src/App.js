@@ -131,11 +131,7 @@ class AppRouter extends Component {
     console.log("MOUNTING...")
     this.getAllInformation()
 
-    if(localStorage.getItem('jwt')) {
-      this.setState(
-        {loggedIn: true}
-      )
-    }
+
   }
   //uses form to send users current car to database.
   updateCurrent = (currentCar) => {
@@ -156,20 +152,30 @@ class AppRouter extends Component {
   login = (account) => {
     axios.post(`http://localhost:3001/api/v1/login/`, account)
     .then((res) => {
-     localStorage.setItem('jwt', res.data.jwt)
-     this.setState(
-       {currentUser: res.data.data.first_name,
+      localStorage.setItem('jwt', res.data.jwt)
+      this.setState(
+        {currentUser: res.data.data.first_name,
         jwt: res.data.jwt
-       }
-     )
+        }
+      )
+      if(localStorage.getItem('jwt')) {
+        this.setState(
+          {loggedIn: true}
+        )
+      }
+      this.resetState()
+      this.getAllInformation()
+      this.history.push(`/`)
+      this.forceUpdate()
     }
     ).catch((err) => {
       console.log(err)
     });
   }
+
   register = (account) => {
     console.log(account)
-    axios.post(`http://localhost:3001//api/v1/register/`, account)
+    axios.post(`http://localhost:3001/api/v1/register/`, account)
     .then((res) => {
       console.log(res)
     }
@@ -177,25 +183,30 @@ class AppRouter extends Component {
       console.log(err)
     });
   }
+
   submitCars = (currentCar) => {
     console.log("111", currentCar)
     axios.post(`http://localhost:3001/api/v1/comparisons/`, currentCar)
       .then((res) => {
-        this.setState({
-          cars: [],
-          newPrices: [],
-          newWarranties: [],
-          newPictures: [],
-          newFuels: [],
-          newDepreciations: [],
-          maintenances: []
-        })
-        this.history.push(`/comparisons/${res.data.data.id}`)
+        this.resetState()
         this.getAllInformation()
+        this.history.push(`/comparisons/${res.data.data.id}`)
       })
       .catch((err) => {
         console.log(err)
       })
+  }
+
+  resetState = () => {
+    this.setState({
+      cars: [],
+      newPrices: [],
+      newWarranties: [],
+      newPictures: [],
+      newFuels: [],
+      newDepreciations: [],
+      maintenances: []
+    })
   }
   render() {
     console.log(this.state.newFuels);
