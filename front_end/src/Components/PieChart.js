@@ -14,7 +14,8 @@ export default class PieChart extends React.Component {
 
   data = () =>{
     if(this.props.depi.length > 0){
-      const fuelCost = Math.round(this.props.fuels[0].auto_combined * 15000 * 1.61 * 1.13 / 100 * 100) / 100
+      const which = this.props.which
+      const fuelCost = Math.round(this.props.fuels[which].auto_combined * 15000 * 1.61 * 1.13 / 100 * 100) / 100
       return (
           {
           labels: [
@@ -23,7 +24,7 @@ export default class PieChart extends React.Component {
             'Fuel'
           ],
           datasets: [{
-            data: [this.props.depi[0].total, this.props.maintenances[0].total, fuelCost],
+            data: [this.props.depi[which].total, this.props.maintenances[which].total, fuelCost],
             backgroundColor: [
             '#FF6384',
             '#36A2EB',

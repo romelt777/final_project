@@ -95,6 +95,7 @@ export default class Comparison extends React.Component {
                   maintenances={this.checkData(this.props.data.maintenances)}
                   fuels={this.checkData(this.props.data.newFuels)}
                   depi={this.checkData(this.props.data.newDepreciations)}
+                  which={this.state.togglePie}
         />
 
       </div>
