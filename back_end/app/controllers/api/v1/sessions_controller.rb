@@ -6,9 +6,9 @@ module Api
       if user && user.authenticate(params[:password])
         payload = { data: user.id}
         token = JWT.encode payload, nil, 'none'
-
+        puts user
         # cookies.signed[:jwt] = {
-        #   value:  token, 
+        #   value:  token,
         #   httponly: true,
         #   expires: 1.hour.from_now
       # }
@@ -23,12 +23,12 @@ module Api
       end
     end
 
-   
+
 
     def destroy
       session[:user_id] = nil
       render json: {
-        status: 'SUCCESS', 
+        status: 'SUCCESS',
       },status: 200
       end
     end

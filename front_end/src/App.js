@@ -152,7 +152,7 @@ class AppRouter extends Component {
     .then((res) => {
       localStorage.setItem('jwt', res.data.jwt)
       this.setState(
-        {currentUser: res.data.data.first_name,
+        {currentUser: res.data.data,
         jwt: res.data.jwt
         }
       )
@@ -184,6 +184,7 @@ class AppRouter extends Component {
 
   submitCars = (currentCar) => {
     console.log("111", currentCar)
+    currentCar["currentUser"] = this.state.currentUser
     axios.post(`http://localhost:3001/api/v1/comparisons/`, currentCar)
       .then((res) => {
         this.resetState()
@@ -216,7 +217,7 @@ class AppRouter extends Component {
     return (
       <Router history={this.history} >
         <div className="App">
-          <NavBar name={this.state.currentUser} logout={this.logout}/>
+          <NavBar user={this.state.currentUser} logout={this.logout}/>
           <Route exact path="/currentCar/" render={() => <CurrentCar updateCurrent={this.updateCurrent} data={this.state} submitCars={this.submitCars}></CurrentCar>} />
           <Route exact path="/" render={() => <CarSlide getStarted={this.getStarted}/>}/>
           <Route path="/cars" component={this.Cars} />
