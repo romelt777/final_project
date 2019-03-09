@@ -6,60 +6,69 @@ import Honda from '../images/honda.jpg';
 import Toyota from '../images/toyota.jpg';
 import '../image.css';
 
-export default function CarSLide(){
-  const fadeProperties = {
-      duration: 400000,
-      transitionDuration: 500,
-      infinite: true,
-      arrows: false,
-      autoplay: true
+export default class CarSlide extends React.Component{
+
+  redirect = (event) => {
+    console.log("imclciked")
+    this.props.getStarted()
   }
 
-  return (
-    <Fade {...fadeProperties}>
-      <div className="each-fade">
-        <div className="image-container">
-          <img className="image" src={Bmw} alt="Logo" />
-          <div className="centered">
-            <h1 className="big">Need professional advice?</h1>
-            <p className="para">Click on the button</p>
-            <button type="button" className="btn btn-transparent btn-lg text-uppercase">Get Started</button>
-          </div>
-        </div>
-      </div>
+  render() {
+    const fadeProperties = {
+        duration: 400000,
+        transitionDuration: 500,
+        infinite: true,
+        arrows: false,
+        autoplay: true
+    }
 
-      <div className="each-fade">
-        <div className="image-container">
-          <img className="image" src={Mazda} alt="Logo" />
-          <div className="centered">
-            <h1 className="big">Compare your current vehicle to your new!</h1>
-            <p className="para">Click on the button</p>
-            <button type="button" className="btn btn-transparent btn-lg text-uppercase">Get Started</button>
-          </div>
-        </div>
-      </div>
 
-      <div className="each-fade">
-        <div className="image-container">
-          <img className="image" src={Honda} alt="Logo" />
-          <div className="centered">
-            <h1 className="big">We provide professional information right to you!</h1>
-            <p className="para">Click on the button</p>
-            <button type="button" className="btn btn-transparent btn-lg text-uppercase">Get Started</button>
+    return (
+      <Fade {...fadeProperties}>
+        <div className="each-fade">
+          <div className="image-container">
+            <img className="image" src={Bmw} alt="Logo" />
+            <div className="centered">
+              <h1 className="big">Need professional advice?</h1>
+              <p className="para">Click on the button</p>
+              <button type="button" onClick={this.redirect} className="btn btn-transparent btn-lg text-uppercase">Get Started</button>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div className="each-fade">
-        <div className="image-container">
-          <img className="image" src={Toyota} alt="Logo" />
-          <div className="centered">
-            <h1 className="big">Need professional advice?</h1>
-            <p className="para">Click on the button</p>
-            <button type="button" className="btn btn-transparent btn-lg text-uppercase">Get Started</button>
+        <div className="each-fade">
+          <div className="image-container">
+            <img className="image" src={Mazda} alt="Logo" />
+            <div className="centered">
+              <h1 className="big">Compare your current vehicle to your new!</h1>
+              <p className="para">Click on the button</p>
+              <button type="button" className="btn btn-transparent btn-lg text-uppercase">Get Started</button>
+            </div>
           </div>
         </div>
-      </div>
-    </Fade>
-  )
+
+        <div className="each-fade">
+          <div className="image-container">
+            <img className="image" src={Honda} alt="Logo" />
+            <div className="centered">
+              <h1 className="big">We provide professional information right to you!</h1>
+              <p className="para">Click on the button</p>
+              <button type="button"  className="btn btn-transparent btn-lg text-uppercase">Get Started</button>
+            </div>
+          </div>
+        </div>
+
+        <div className="each-fade">
+          <div className="image-container">
+            <img className="image" src={Toyota} alt="Logo" />
+            <div className="centered">
+              <h1 className="big">Need professional advice?</h1>
+              <p className="para">Click on the button</p>
+              <button type="button" className="btn btn-transparent btn-lg text-uppercase">Get Started</button>
+            </div>
+          </div>
+        </div>
+      </Fade>
+    )
+  }
 }

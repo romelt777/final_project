@@ -27,7 +27,6 @@ class AppRouter extends Component {
       maintenances: [],
       currentUser: '',
       jwt: '',
-      loggedIn: false
     }
     this.history = createHistory()
   }
@@ -130,9 +129,8 @@ class AppRouter extends Component {
   componentDidMount(){
     console.log("MOUNTING...")
     this.getAllInformation()
-
-
   }
+
   //uses form to send users current car to database.
   updateCurrent = (currentCar) => {
     console.log(currentCar)
@@ -208,14 +206,19 @@ class AppRouter extends Component {
       maintenances: []
     })
   }
+
+  getStarted = () => {
+    this.history.push(`/currentCar`)
+  }
+
   render() {
     console.log(this.state.currentUser);
     return (
       <Router history={this.history} >
         <div className="App">
-          <NavBar name={this.state.currentUser} logout={this.logout} loggedIn={this.state.loggedIn}/>
+          <NavBar name={this.state.currentUser} logout={this.logout}/>
           <Route exact path="/currentCar/" render={() => <CurrentCar updateCurrent={this.updateCurrent} data={this.state} submitCars={this.submitCars}></CurrentCar>} />
-          <Route exact path="/" component={CarSlide} />
+          <Route exact path="/" render={() => <CarSlide getStarted={this.getStarted}/>}/>
           <Route path="/cars" component={this.Cars} />
           <Route path="/comparisons" component={this.Comparisons} />
           <Body />
