@@ -1382,7 +1382,7 @@ Depreciation.create!({
 car24 = Car.find_or_create_by!({
   year: "2018",
   make: "Lexus",
-  model: "IS",
+  model: "IS 300",
   condition: 'new'
 })
 
@@ -1442,7 +1442,7 @@ Depreciation.create!({
 car25 = Car.find_or_create_by!({
   year: "2018",
   make: "Lexus",
-  model: "NX",
+  model: "NX 300",
   condition: 'new'
 })
 
@@ -1497,4 +1497,904 @@ Depreciation.create!({
   fifth: 3422.55,
   total: 27701.05,
   car_id: 25
+})
+
+car26 = Car.find_or_create_by!({
+  year: "2018",
+  make: "Lexus",
+  model: "ES 350",
+  condition: 'new'
+})
+
+Price.create!({
+  vehicle_price: 43950.00,
+  freight_delivery: 2075.00,
+  total_price: 46025.00,
+  car_id: 26
+})
+
+Picture.create!({
+  url: "https://picolio.auto123.com/18photo/lexus/2018-lexus-es-350.png",
+  car_id: 26
+})
+
+Warranty.create!({
+  bumper: "80000/km, 48/Months", 
+  powertrain: "110000/km, 72/Months", 
+  roadside: "80000/km, 48/Months",
+  rust: "Unlimited/km, 72/Months", 
+  car_id: 26
+})
+
+# city*0.45 + hwy*0.55
+Fuel.create!({
+  auto_city: 11.4,
+  auto_highway: 7.7,
+  auto_combined: 10.5,
+  manual_city: 10.9, #null 
+  manual_highway: 8.3, #null
+  manual_combined: 9.5, #null
+  car_id: 26
+})
+
+# 1CAD = 0.752USD
+Maintenance.create!({
+  first: 339.44,
+  second: 1277.25,
+  third: 744.62,
+  fourth: 1832.69,
+  fifth: 3850.54,
+  total: 8044.53,
+  car_id: 26
+})
+
+# 1CAD = 0.752USD
+Depreciation.create!({
+  first: 8287.37,
+  second: 5126.44,
+  third: 4185.95,
+  fourth: 4693.09,
+  fifth: 4101.42,
+  total: 26394.28,
+  car_id: 26
+})
+
+car27 = Car.find_or_create_by!({
+  year: "2018",
+  make: "Lexus",
+  model: "RX 350",
+  condition: 'new'
+})
+
+Price.create!({
+  vehicle_price: 56500.00,
+  freight_delivery: 2045.00,
+  total_price: 58545.00,
+  car_id: 27
+})
+
+Picture.create!({
+  url: "https://picolio.auto123.com/18photo/lexus/2018-lexus-rx-350.png",
+  car_id: 27
+})
+
+Warranty.create!({
+  bumper: "80000/km, 48/Months", 
+  powertrain: "110000/km, 72/Months", 
+  roadside: "Unlimited/km, 48/Months",
+  rust: "Unlimited/km, 72/Months", 
+  car_id: 27
+})
+
+# city*0.45 + hwy*0.55
+Fuel.create!({
+  auto_city: 12.2,
+  auto_highway: 9.0,
+  auto_combined: 10.44,
+  manual_city: 10.9, #null 
+  manual_highway: 8.3, #null
+  manual_combined: 9.5, #null
+  car_id: 27
+})
+
+# 1CAD = 0.752USD
+Maintenance.create!({
+  first: 367.61,
+  second: 1304.08,
+  third: 810.36,
+  fourth: 3116.65,
+  fifth: 4015.56,
+  total: 9614.26,
+  car_id: 27
+})
+
+# 1CAD = 0.752USD
+Depreciation.create!({
+  first: 6787.41,
+  second: 6879.98,
+  third: 5618.83,
+  fourth: 6300.39,
+  fifth: 5503.45,
+  total: 31090.06,
+  car_id: 27
+})
+
+car28 = Car.find_or_create_by!({
+  year: "2018",
+  make: "Lexus",
+  model: "RX 350",
+  condition: 'new'
+})
+
+Price.create!({
+  vehicle_price: 56500.00,
+  freight_delivery: 2045.00,
+  total_price: 58545.00,
+  car_id: 28
+})
+
+Picture.create!({
+  url: "https://picolio.auto123.com/18photo/lexus/2018-lexus-rx-350.png",
+  car_id: 28
+})
+
+Warranty.create!({
+  bumper: "80000/km, 48/Months", 
+  powertrain: "110000/km, 72/Months", 
+  roadside: "Unlimited/km, 48/Months",
+  rust: "Unlimited/km, 72/Months", 
+  car_id: 28
+})
+
+# city*0.45 + hwy*0.55
+Fuel.create!({
+  auto_city: 12.2,
+  auto_highway: 9.0,
+  auto_combined: 10.44,
+  manual_city: 10.9, #null 
+  manual_highway: 8.3, #null
+  manual_combined: 9.5, #null
+  car_id: 28
+})
+
+# 1CAD = 0.752USD
+Maintenance.create!({
+  first: 367.61,
+  second: 1304.08,
+  third: 810.36,
+  fourth: 3116.65,
+  fifth: 4015.56,
+  total: 9614.26,
+  car_id: 28
+})
+
+# 1CAD = 0.752USD
+Depreciation.create!({
+  first: 6787.41,
+  second: 6879.98,
+  third: 5618.83,
+  fourth: 6300.39,
+  fifth: 5503.45,
+  total: 31090.06,
+  car_id: 28
+})
+
+car29 = Car.find_or_create_by!({
+  year: "2018",
+  make: "Kia",
+  model: "Optima",
+  condition: 'new'
+})
+
+Price.create!({
+  vehicle_price: 23995.00,
+  freight_delivery: 1560.00,
+  total_price: 25555.00,
+  car_id: 29
+})
+
+Picture.create!({
+  url: "https://picolio.auto123.com/18photo/kia/2018-kia-optima-lx-at.png",
+  car_id: 29
+})
+
+Warranty.create!({
+  bumper: "100000/km, 60/Months", 
+  powertrain: "100000/km, 60/Months", 
+  roadside: "100000/km, 60/Months",
+  rust: "Unlimited/km, 60/Months", 
+  car_id: 29
+})
+
+# city*0.45 + hwy*0.55
+Fuel.create!({
+  auto_city: 9.6,
+  auto_highway: 6.8,
+  auto_combined: 8.0,
+  manual_city: 10.9, #null 
+  manual_highway: 8.3, #null
+  manual_combined: 9.5, #null
+  car_id: 29
+})
+
+# 1CAD = 0.752USD
+Maintenance.create!({
+  first: 507.14,
+  second: 906.96,
+  third: 637.28,
+  fourth: 1520.09,
+  fifth: 2037.97,
+  total: 5609.44,
+  car_id: 29
+})
+
+# 1CAD = 0.752USD
+Depreciation.create!({
+  first: 10038.23,
+  second: 1931.98,
+  third: 1828.67,
+  fourth: 2142.62,
+  fifth: 2029.92,
+  total: 17971.40,
+  car_id: 29
+})
+
+car30 = Car.find_or_create_by!({
+  year: "2018",
+  make: "Kia",
+  model: "Forte",
+  condition: 'new'
+})
+
+Price.create!({
+  vehicle_price: 15495.00,
+  freight_delivery: 1560.00,
+  total_price: 17055.00,
+  car_id: 30
+})
+
+Picture.create!({
+  url: "https://picolio.auto123.com/18photo/kia/2018-kia-forte-lx_1.png",
+  car_id: 30
+})
+
+Warranty.create!({
+  bumper: "100000/km, 60/Months", 
+  powertrain: "100000/km, 60/Months", 
+  roadside: "100000/km, 60/Months",
+  rust: "Unlimited/km, 60/Months", 
+  car_id: 30
+})
+
+# city*0.45 + hwy*0.55
+Fuel.create!({
+  auto_city: 7.9,
+  auto_highway: 6.3,
+  auto_combined: 7.0,
+  manual_city: 9.4, 
+  manual_highway: 6.8, 
+  manual_combined: 8.0, 
+  car_id: 30
+})
+
+# 1CAD = 0.752USD
+Maintenance.create!({
+  first: 482.99,
+  second: 834.51,
+  third: 610.45,
+  fourth: 1318.84,
+  fifth: 1995.03,
+  total: 5241.83,
+  car_id: 30
+})
+
+# 1CAD = 0.752USD
+Depreciation.create!({
+  first: 6564.69,
+  second: 1783.05,
+  third: 1686.45,
+  fourth: 1978.93,
+  fifth: 1872.94,
+  total: 13886.08,
+  car_id: 30
+})
+
+car31 = Car.find_or_create_by!({
+  year: "2018",
+  make: "Kia",
+  model: "Sorento",
+  condition: 'new'
+})
+
+Price.create!({
+  vehicle_price: 27995.00,
+  freight_delivery: 1785.00,
+  total_price: 29780.00,
+  car_id: 31
+})
+
+Picture.create!({
+  url: "https://picolio.auto123.com/18photo/kia/2018-kia-sorento-lx.png",
+  car_id: 31
+})
+
+Warranty.create!({
+  bumper: "100000/km, 60/Months", 
+  powertrain: "100000/km, 60/Months", 
+  roadside: "100000/km, 60/Months",
+  rust: "Unlimited/km, 60/Months", 
+  car_id: 31
+})
+
+# city*0.45 + hwy*0.55
+Fuel.create!({
+  auto_city: 11.2,
+  auto_highway: 6.3,
+  auto_combined: 8.5,
+  manual_city: 9.4, #null
+  manual_highway: 6.8, #null
+  manual_combined: 8.0, #null
+  car_id: 31
+})
+
+# 1CAD = 0.752USD
+Maintenance.create!({
+  first: 548.73,
+  second: 869.39,
+  third: 705.71,
+  fourth: 1428.86,
+  fifth: 2908.70,
+  total: 6461.39,
+  car_id: 31
+})
+
+# 1CAD = 0.752USD
+Depreciation.create!({
+  first: 8151.87,
+  second: 2086.27,
+  third: 1973.57,
+  fourth: 2314.35,
+  fifth: 2193.60,
+  total: 16719.64,
+  car_id: 31
+})
+
+car32 = Car.find_or_create_by!({
+  year: "2018",
+  make: "Kia",
+  model: "Soul",
+  condition: 'new'
+})
+
+Price.create!({
+  vehicle_price: 20095.00,
+  freight_delivery: 1785.00,
+  total_price: 21880.00,
+  car_id: 32
+})
+
+Picture.create!({
+  url: "https://picolio.auto123.com/19photo/kia/2019-kia-soul-lx.png",
+  car_id: 32
+})
+
+Warranty.create!({
+  bumper: "100000/km, 60/Months", 
+  powertrain: "100000/km, 60/Months", 
+  roadside: "100000/km, 60/Months",
+  rust: "Unlimited/km, 60/Months", 
+  car_id: 32
+})
+
+# city*0.45 + hwy*0.55
+Fuel.create!({
+  auto_city: 9.4,
+  auto_highway: 7.8,
+  auto_combined: 8.5,
+  manual_city: 9.4, #null
+  manual_highway: 6.8, #null
+  manual_combined: 8.0, #null
+  car_id: 32
+})
+
+# 1CAD = 0.752USD
+Maintenance.create!({
+  first: 754.01,
+  second: 1049.17,
+  third: 937.81,
+  fourth: 1548.26,
+  fifth: 2326.42,
+  total: 6615.68,
+  car_id: 32
+})
+
+# 1CAD = 0.752USD
+Depreciation.create!({
+  first: 6360.76,
+  second: 1211.51,
+  third: 1145.77,
+  fourth: 1344.33,
+  fifth: 1274.57,
+  total: 11336.94,
+  car_id: 32
+})
+
+car33 = Car.find_or_create_by!({
+  year: "2018",
+  make: "Kia",
+  model: "Soul",
+  condition: 'new'
+})
+
+Price.create!({
+  vehicle_price: 20095.00,
+  freight_delivery: 1785.00,
+  total_price: 21880.00,
+  car_id: 33
+})
+
+Picture.create!({
+  url: "https://picolio.auto123.com/19photo/kia/2019-kia-soul-lx.png",
+  car_id: 33
+})
+
+Warranty.create!({
+  bumper: "100000/km, 60/Months", 
+  powertrain: "100000/km, 60/Months", 
+  roadside: "100000/km, 60/Months",
+  rust: "Unlimited/km, 60/Months", 
+  car_id: 33
+})
+
+# city*0.45 + hwy*0.55
+Fuel.create!({
+  auto_city: 9.4,
+  auto_highway: 7.8,
+  auto_combined: 8.5,
+  manual_city: 9.4, #null
+  manual_highway: 6.8, #null
+  manual_combined: 8.0, #null
+  car_id: 33
+})
+
+# 1CAD = 0.752USD
+Maintenance.create!({
+  first: 754.01,
+  second: 1049.17,
+  third: 937.81,
+  fourth: 1548.26,
+  fifth: 2326.42,
+  total: 6615.68,
+  car_id: 33
+})
+
+# 1CAD = 0.752USD
+Depreciation.create!({
+  first: 6360.76,
+  second: 1211.51,
+  third: 1145.77,
+  fourth: 1344.33,
+  fifth: 1274.57,
+  total: 11336.94,
+  car_id: 33
+})
+
+car34 = Car.find_or_create_by!({
+  year: "2018",
+  make: "Hyundai",
+  model: "Elantra",
+  condition: 'new'
+})
+
+Price.create!({
+  vehicle_price: 15999.00,
+  freight_delivery: 1705.00,
+  total_price: 17704.00,
+  car_id: 34
+})
+
+Picture.create!({
+  url: "https://picolio.auto123.com/18photo/hyundai/2018-hyundai-elantra-l_1.png",
+  car_id: 34
+})
+
+Warranty.create!({
+  bumper: "100000/km, 60/Months", 
+  powertrain: "100000/km, 60/Months", 
+  roadside: "Unlimited/km, 36/Months",
+  rust: "Unlimited/km, 60/Months", 
+  car_id: 34
+})
+
+# city*0.45 + hwy*0.55
+Fuel.create!({
+  auto_city: 9.4, #null
+  auto_highway: 7.8, #null
+  auto_combined: 8.5, #null
+  manual_city: 9.8, 
+  manual_highway: 7.0, 
+  manual_combined: 8.3, 
+  car_id: 34
+})
+
+# 1CAD = 0.752USD
+Maintenance.create!({
+  first: 406.52,
+  second: 666.80,
+  third: 520.56,
+  fourth: 1065.27,
+  fifth: 1931.98,
+  total: 4591.13,
+  car_id: 34
+})
+
+# 1CAD = 0.752USD
+Depreciation.create!({
+  first: 3485.61,
+  second: 1597.91,
+  third: 1512.04,
+  fourth: 1773.66,
+  fifth: 1679.75,
+  total: 10048.96,
+  car_id: 34
+})
+
+car35 = Car.find_or_create_by!({
+  year: "2018",
+  make: "Hyundai",
+  model: "Sonata",
+  condition: 'new'
+})
+
+Price.create!({
+  vehicle_price: 24799.00,
+  freight_delivery: 1805.00,
+  total_price: 26604.00,
+  car_id: 35
+})
+
+Picture.create!({
+  url: "https://picolio.auto123.com/18photo/hyundai/2018-hyundai-sonata-gl_1.png",
+  car_id: 35
+})
+
+Warranty.create!({
+  bumper: "100000/km, 60/Months", 
+  powertrain: "100000/km, 60/Months", 
+  roadside: "Unlimited/km, 60/Months",
+  rust: "Unlimited/km, 60/Months", 
+  car_id: 35
+})
+
+# city*0.45 + hwy*0.55
+Fuel.create!({
+  auto_city: 9.8,
+  auto_highway: 6.9,
+  auto_combined: 8.2,
+  manual_city: 9.4, #null
+  manual_highway: 6.8, #null
+  manual_combined: 8.0, #null
+  car_id: 35
+})
+
+# 1CAD = 0.752USD
+Maintenance.create!({
+  first: 450.79,
+  second: 736.57,
+  third: 580.93,
+  fourth: 1330.92,
+  fifth: 2579.99,
+  total: 5679.20,
+  car_id: 35
+})
+
+# 1CAD = 0.752USD
+Depreciation.create!({
+  first: 3947.13,
+  second: 2229.82,
+  third: 2109.07,
+  fourth: 2474.00,
+  fifth: 2343.86,
+  total: 13103.90,
+  car_id: 35
+})
+
+car36 = Car.find_or_create_by!({
+  year: "2018",
+  make: "Honda",
+  model: "Civic",
+  condition: 'new'
+})
+
+Price.create!({
+  vehicle_price: 20090.00,
+  freight_delivery: 1655.00,
+  total_price: 21745.00,
+  car_id: 36
+})
+
+Picture.create!({
+  url: "https://picolio.auto123.com/18photo/honda/2018-honda-civic-lx_1.png",
+  car_id: 36
+})
+
+Warranty.create!({
+  bumper: "60000/km, 36/Months", 
+  powertrain: "100000/km, 60/Months", 
+  roadside: "Unlimited/km, 36/Months",
+  rust: "Unlimited/km, 60/Months", 
+  car_id: 36
+})
+
+# city*0.45 + hwy*0.55
+Fuel.create!({
+  auto_city: 9.8, #null
+  auto_highway: 6.9, #null
+  auto_combined: 8.2, #null
+  manual_city: 8.5, 
+  manual_highway: 6.1, 
+  manual_combined: 7.2, 
+  car_id: 36
+})
+
+# 1CAD = 0.752USD
+Maintenance.create!({
+  first: 217.35,
+  second: 892.20,
+  third: 637.28,
+  fourth: 1541.56,
+  fifth: 1726.70,
+  total: 5015.09,
+  car_id: 36
+})
+
+# 1CAD = 0.752USD
+Depreciation.create!({
+  first: 3439.99,
+  second: 2110.42,
+  third: 1995.03,
+  fourth: 2341.18,
+  fifth: 2975.44,
+  total: 12104.37,
+  car_id: 36
+})
+
+car37 = Car.find_or_create_by!({
+  year: "2018",
+  make: "Honda",
+  model: "Accord",
+  condition: 'new'
+})
+
+Price.create!({
+  vehicle_price: 26590.00,
+  freight_delivery: 1695.00,
+  total_price: 28285.00,
+  car_id: 37
+})
+
+Picture.create!({
+  url: "https://picolio.auto123.com/18photo/honda/2018-honda-accord-lx_1.png",
+  car_id: 37
+})
+
+Warranty.create!({
+  bumper: "60000/km, 36/Months", 
+  powertrain: "100000/km, 60/Months", 
+  roadside: "Unlimited/km, 36/Months",
+  rust: "Unlimited/km, 60/Months", 
+  car_id: 37
+})
+
+# city*0.45 + hwy*0.55
+Fuel.create!({
+  auto_city: 7.9, 
+  auto_highway: 6.3,
+  auto_combined: 7.0, 
+  manual_city: 8.9, 
+  manual_highway: 6.7, 
+  manual_combined: 7.7, 
+  car_id: 37
+})
+
+# 1CAD = 0.752USD
+Maintenance.create!({
+  first: 221.37,
+  second: 849.26,
+  third: 630.58,
+  fourth: 1478.50,
+  fifth: 2063.46,
+  total: 5243.17,
+  car_id: 37
+})
+
+# 1CAD = 0.752USD
+Depreciation.create!({
+  first: 6921.57,
+  second: 2169.45,
+  third: 2052.72,
+  fourth: 2406.92,
+  fifth: 2282.15,
+  total: 15832.81,
+  car_id: 37
+})
+
+car38 = Car.find_or_create_by!({
+  year: "2018",
+  make: "Ford",
+  model: "Fusion",
+  condition: 'new'
+})
+
+Price.create!({
+  vehicle_price: 23988.00,
+  freight_delivery: 1750.00,
+  total_price: 25738.00,
+  car_id: 38
+})
+
+Picture.create!({
+  url: "https://picolio.auto123.com/18photo/ford/2018-ford-fusion-s.png",
+  car_id: 38
+})
+
+Warranty.create!({
+  bumper: "60000/km, 36/Months", 
+  powertrain: "100000/km, 60/Months", 
+  roadside: "100000/km, 60/Months",
+  rust: "Unlimited/km, 60/Months", 
+  car_id: 38
+})
+
+# city*0.45 + hwy*0.55
+Fuel.create!({
+  auto_city: 11.3,
+  auto_highway: 7.4,
+  auto_combined: 9.2,
+  manual_city: 9.4, #null
+  manual_highway: 6.8, #null
+  manual_combined: 8.0, #null
+  car_id: 38
+})
+
+# 1CAD = 0.752USD
+Maintenance.create!({
+  first: 368.95,
+  second: 1023.68,
+  third: 603.74,
+  fourth: 2445.83,
+  fifth: 1993.69,
+  total: 6435.90,
+  car_id: 38
+})
+
+# 1CAD = 0.752USD
+Depreciation.create!({
+  first: 12564.55,
+  second: 1627.42,
+  third: 1538.87,
+  fourth: 1807.20,
+  fifth: 1710.60,
+  total: 19248.65,
+  car_id: 38
+})
+
+car39 = Car.find_or_create_by!({
+  year: "2018",
+  make: "Ford",
+  model: "Fiesta",
+  condition: 'new'
+})
+
+Price.create!({
+  vehicle_price: 16580.00,
+  freight_delivery: 1750.00,
+  total_price: 18330.00,
+  car_id: 39
+})
+
+Picture.create!({
+  url: "https://picolio.auto123.com/18photo/ford/2018-ford-fiesta-s.png",
+  car_id: 39
+})
+
+Warranty.create!({
+  bumper: "50000/km, 36/Months", 
+  powertrain: "50000/km, 60/Months", 
+  roadside: "50000/km, 60/Months",
+  rust: "Unlimited/km, 60/Months", 
+  car_id: 39
+})
+
+# city*0.45 + hwy*0.55
+Fuel.create!({
+  auto_city: 8.6,
+  auto_highway: 6.4,
+  auto_combined: 7.4,
+  manual_city: 8.6, 
+  manual_highway: 6.7, 
+  manual_combined: 7.5, 
+  car_id: 39
+})
+
+# 1CAD = 0.752USD
+Maintenance.create!({
+  first: 500.44,
+  second: 1230.29,
+  third: 715.10,
+  fourth: 1667.67,
+  fifth: 1811.23,
+  total: 5924.73,
+  car_id: 39
+})
+
+# 1CAD = 0.752USD
+Depreciation.create!({
+  first: 6015.96,
+  second: 1177.97,
+  third: 1113.57,
+  fourth: 1306.77,
+  fifth: 1238.34,
+  total: 10852.61,
+  car_id: 39
+})
+
+car40 = Car.find_or_create_by!({
+  year: "2018",
+  make: "Dodge",
+  model: "Grand Caravan",
+  condition: 'new'
+})
+
+Price.create!({
+  vehicle_price: 30945.00,
+  freight_delivery: 1895.00,
+  total_price: 32840.00,
+  car_id: 40
+})
+
+Picture.create!({
+  url: "https://picolio.auto123.com/18photo/dodge/2018-dodge-grand-caravan-canada-value-package.png",
+  car_id: 40
+})
+
+Warranty.create!({
+  bumper: "60000/km, 36/Months", 
+  powertrain: "100000/km, 60/Months", 
+  roadside: "100000/km, 60/Months",
+  rust: "160000/km, 60/Months", 
+  car_id: 40
+})
+
+# city*0.45 + hwy*0.55
+Fuel.create!({
+  auto_city: 13.7,
+  auto_highway: 9.4,
+  auto_combined: 11.3,
+  manual_city: 8.6, #null
+  manual_highway: 6.7, #null
+  manual_combined: 7.5, #null
+  car_id: 40
+})
+
+# 1CAD = 0.752USD
+Maintenance.create!({
+  first: 265.65,
+  second: 1000.87,
+  third: 482.99,
+  fourth: 1510.70,
+  fifth: 1568.39,
+  total: 4828.60,
+  car_id: 40
+})
+
+# 1CAD = 0.752USD
+Depreciation.create!({
+  first: 9217.14,
+  second: 1969.54,
+  third: 1864.89,
+  fourth: 2186.89,
+  fifth: 2072.85,
+  total: 17311.31,
+  car_id: 40
 })
