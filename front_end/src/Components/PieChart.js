@@ -1,5 +1,6 @@
 import React from 'react';
 import {Doughnut} from 'react-chartjs-2';
+import {ButtonToolbar, ToggleButtonGroup, ToggleButton} from 'react-bootstrap'
 
 // Cost composition = Depreciation + Taxes & Fees + Financing + Fuel + (Insurance) + Maintenance + (Repairs)
 // ****************************************************************
@@ -12,9 +13,19 @@ import {Doughnut} from 'react-chartjs-2';
 
 export default class PieChart extends React.Component {
 
+  constructor(){
+    super()
+    this.state = {
+      togglePie: 0
+    }
+  }
+
   data = () =>{
+    console.log(this.props)
     if(this.props.depi.length > 0){
-      const which = this.props.which
+      const which = this.state.togglePie
+      console.log(which)
+      console.log(this.props.fuels[which].auto_combined)
       const fuelCost = Math.round(this.props.fuels[which].auto_combined * 15000 * 1.61 * 1.13 / 100 * 100) / 100
       return (
           {
@@ -40,14 +51,30 @@ export default class PieChart extends React.Component {
       )
     }
   }
+
+
+  togglePie = (event) => {
+    this.setState({togglePie: event.target.value - 1})
+  }
+
   render() {
 
-    console.log(this.props)
+    const pieButtons = [];
+    this.props.carName.forEach((c, i) => {
+      pieButtons.push(<ToggleButton key={c.id} value={i + 1} onChange={this.togglePie}>{c.model}</ToggleButton>)
+    })
 
     return (
-      <div style={{width: 768, height: 768}}>
-        <h2>Cost Composition</h2>
-        <Doughnut data={this.data()} />
+      <div>
+        <ButtonToolbar>
+          <ToggleButtonGroup type="radio" name="options" defaultValue={1} >
+            {pieButtons}
+          </ToggleButtonGroup>
+        </ButtonToolbar>
+        <div style={{width: 768, height: 768}}>
+          <h2>Cost Composition</h2>
+          <Doughnut data={this.data()} />
+        </div>
       </div>
     );
   }

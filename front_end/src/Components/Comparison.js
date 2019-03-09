@@ -12,7 +12,6 @@ export default class Comparison extends React.Component {
     this.state = {
       comparisonId: [],
       toggle: "maintenances",
-      togglePie: 0
     }
   }
 
@@ -47,11 +46,6 @@ export default class Comparison extends React.Component {
     }
   }
 
-  togglePie = (event => {
-    this.setState({togglePie: event.target.value})
-  })
-
-
   render(){
 
     let carData = []
@@ -63,11 +57,6 @@ export default class Comparison extends React.Component {
           carName.push(car)
         }
       })
-    })
-
-    const pieButtons = [];
-    carName.forEach((c, i) => {
-      pieButtons.push(<ToggleButton key={c.id} value={i} onChange={this.togglePie}>{c.model}</ToggleButton>)
     })
 
     return (
@@ -85,17 +74,11 @@ export default class Comparison extends React.Component {
           : null
         }
 
-        <ButtonToolbar>
-          <ToggleButtonGroup type="radio" name="options" defaultValue={1} >
-            {pieButtons}
-          </ToggleButtonGroup>
-        </ButtonToolbar>
-
         <PieChart carName={carName}
                   maintenances={this.checkData(this.props.data.maintenances)}
                   fuels={this.checkData(this.props.data.newFuels)}
                   depi={this.checkData(this.props.data.newDepreciations)}
-                  which={this.state.togglePie}
+
         />
 
       </div>
