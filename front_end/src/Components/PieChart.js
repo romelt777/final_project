@@ -48,7 +48,7 @@ export default class PieChart extends React.Component {
             'Fuel'
           ],
           datasets: [{
-            data: [this.props.depi[0].total, this.props.maintenances[0].total, 50],
+            data: [this.props.depi[0].total, this.props.maintenances[0].total, (this.props.fuels[0].auto_combined * 15000 * 1.61 * 1.13 / 100)],
             backgroundColor: [
             '#FF6384',
             '#36A2EB',
