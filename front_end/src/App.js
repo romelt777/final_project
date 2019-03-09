@@ -176,6 +176,21 @@ class AppRouter extends Component {
     axios.post(`http://localhost:3001/api/v1/register/`, account)
     .then((res) => {
       console.log(res)
+      localStorage.setItem('jwt', res.data.jwt)
+      this.setState(
+        {currentUser: res.data.data,
+        jwt: res.data.jwt
+        }
+      )
+      if(localStorage.getItem('jwt')) {
+        this.setState(
+          {loggedIn: true}
+        )
+      }
+      this.resetState()
+      this.getAllInformation()
+      this.history.push(`/`)
+      this.forceUpdate()
     }
     ).catch((err) => {
       console.log(err)
