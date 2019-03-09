@@ -3,7 +3,7 @@ import { Fade } from 'react-slideshow-image';
 import Bmw from '../images/bmw.jpg';
 import Mazda from '../images/mazda.jpg';
 import Honda from '../images/honda.jpg';
-import Toyota from '../images/Toyota.jpg';
+import Toyota from '../images/toyota.jpg';
 import '../image.css';
 
 export default function CarSLide(){
@@ -29,13 +29,13 @@ export default function CarSLide(){
       </div>
 
       <div className="each-fade">
-        <div className="image-container">        
-          <img className="image" src={Mazda} alt="Logo" />  
+        <div className="image-container">
+          <img className="image" src={Mazda} alt="Logo" />
           <div className="centered">
           <h1 className="big">Compare your current vehicle to your new!</h1>
           <p className="para">Click on the button</p>
         <button type="button" className="btn btn-transparent btn-lg text-uppercase">Get Started</button>
-          </div>                  
+          </div>
         </div>
       </div>
 
