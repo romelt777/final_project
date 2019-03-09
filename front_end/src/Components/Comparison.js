@@ -48,7 +48,7 @@ export default class Comparison extends React.Component {
   }
 
   togglePie = (event => {
-    console.log("im clicked")
+    this.setState({togglePie: event.target.value})
   })
 
 
