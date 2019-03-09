@@ -14,59 +14,85 @@ export default class PieChart extends React.Component {
 
   constructor(){
     super()
-    this.state = {
-      labels: [
-        'Depreciation',
-        'Maintenance',
-        'Fuel'
-      ],
-      datasets: [{
-        data: [50, 100, 50],
-        backgroundColor: [
-        '#FF6384',
-        '#36A2EB',
-        '#FFCE56'
-        ],
-        hoverBackgroundColor: [
-        '#FF6384',
-        '#36A2EB',
-        '#FFCE56'
-        ]
-      }]
-    }
+    // this.state = {
+    //   labels: [
+    //     'Depreciation',
+    //     'Maintenance',
+    //     'Fuel'
+    //   ],
+    //   datasets: [{
+    //     data: [50, 100, 50],
+    //     backgroundColor: [
+    //     '#FF6384',
+    //     '#36A2EB',
+    //     '#FFCE56'
+    //     ],
+    //     hoverBackgroundColor: [
+    //     '#FF6384',
+    //     '#36A2EB',
+    //     '#FFCE56'
+    //     ]
+    //   }]
+    // }
   }
 
-
+  data = () =>{
+    const d = this.props;
+    console.log("909",d)
+    if(this.props.depi.length > 0){
+      return (
+          {
+          labels: [
+            'Depreciation',
+            'Maintenance',
+            'Fuel'
+          ],
+          datasets: [{
+            data: [this.props.depi[0].total, this.props.maintenances[0].total, 50],
+            backgroundColor: [
+            '#FF6384',
+            '#36A2EB',
+            '#FFCE56'
+            ],
+            hoverBackgroundColor: [
+            '#FF6384',
+            '#36A2EB',
+            '#FFCE56'
+            ]
+          }]
+        }
+      )
+    }
+  }
   render() {
 
+    console.log(this.props)
 
+    // let depiData = [];
+    // if(this.props.depi.length > 0) {
+    //   depiData = this.props.depi.map((data) =>
+    //     [data.first, data.second, data.third, data.fourth, data.fifth]
+    //   );
+    // }
 
-    let depiData = [];
-    if(this.props.depi.length > 0) {
-      depiData = this.props.depi.map((data) =>
-        [data.first, data.second, data.third, data.fourth, data.fifth]
-      );
-    }
+    // let mainData = [];
+    // if(this.props.maintenances.length > 0) {
+    //   mainData = this.props.maintenances.map((data) =>
+    //     [data.first, data.second, data.third, data.fourth, data.fifth]
+    //   );
+    // }
 
-    let mainData = [];
-    if(this.props.maintenances.length > 0) {
-      mainData = this.props.maintenances.map((data) =>
-        [data.first, data.second, data.third, data.fourth, data.fifth]
-      );
-    }
-
-    let fuelData = [];
-    if(this.props.fuels.length > 0) {
-      fuelData = this.props.fuels.map((data) =>
-        [data.auto_combined, data.manual_combined]
-      );
-    }
-
+    // let fuelData = [];
+    // if(this.props.fuels.length > 0) {
+    //   fuelData = this.props.fuels.map((data) =>
+    //     [data.auto_combined, data.manual_combined]
+    //   );
+    // }
 
     return (
       <div style={{width: 768, height: 768}}>
         <h2>Cost Composition</h2>
-        <Doughnut data={this.state} redraw/>
+        <Doughnut data={this.data()} />
       </div>
     );
   }

@@ -24,6 +24,7 @@ export default class Comparison extends React.Component {
       });
   }
 
+  //sorts data from state which matches comparison cars.
   checkData = (data) => {
     let result = [];
     data.forEach((d) => {
@@ -33,6 +34,7 @@ export default class Comparison extends React.Component {
         }
       })
     })
+    console.log(result)
     return result;
   }
 
@@ -60,6 +62,8 @@ export default class Comparison extends React.Component {
       })
     })
 
+
+
     return (
       <div >
         <h2 >{this.props.match.params.id}</h2>
@@ -80,6 +84,8 @@ export default class Comparison extends React.Component {
                   fuels={this.checkData(this.props.data.newFuels)}
                   depi={this.checkData(this.props.data.newDepreciations)}
         />
+
+
       </div>
     )
   }
