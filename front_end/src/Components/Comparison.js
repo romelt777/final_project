@@ -62,7 +62,10 @@ export default class Comparison extends React.Component {
       })
     })
 
-
+    const pieButtons = [];
+    carName.forEach((c) => {
+      pieButtons.push(<ToggleButton value={c.id} onChange={this.togglePie}>{c.model}</ToggleButton>)
+    })
 
     return (
       <div >
@@ -84,7 +87,11 @@ export default class Comparison extends React.Component {
                   fuels={this.checkData(this.props.data.newFuels)}
                   depi={this.checkData(this.props.data.newDepreciations)}
         />
-
+        <ButtonToolbar>
+          <ToggleButtonGroup type="radio" name="options" defaultValue={1} >
+            {pieButtons}
+          </ToggleButtonGroup>
+        </ButtonToolbar>
 
       </div>
     )
