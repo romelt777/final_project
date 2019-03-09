@@ -4,7 +4,6 @@ import createHistory from 'history/createBrowserHistory'
 import axios from 'axios'
 import './App.css';
 //components
-import Body from './Components/Body'
 import CurrentCar from './Components/CurrentCar';
 import CarSlide from './Components/CarSlide';
 import CarList from './Components/CarList'
@@ -172,7 +171,6 @@ class AppRouter extends Component {
           <Route exact path="/" component={CarSlide} />
           <Route path="/cars" component={this.Cars} />
           <Route path="/comparisons" component={this.Comparisons} />
-          <Body />
           <Route path="/login" render={() => <Login login={this.login}/>}/>
           <Route path="/register" render={() => <Register register={this.register}/>}/>
         </div>

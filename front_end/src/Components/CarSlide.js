@@ -8,7 +8,7 @@ import '../image.css';
 
 export default function CarSLide(){
   const fadeProperties = {
-      duration: 400000,
+      duration: 4000,
       transitionDuration: 500,
       infinite: true,
       arrows: false,
