@@ -47,8 +47,20 @@ export default class Calculator extends Component {
     this.setState({resValue: resValue})
   }
 
-  tipChanger = (v) => {
+  tipChangerInterest = (v) => {
     return `${v} %`
+  }
+
+  tipChangerMonth = (v) => {
+    return `${v}`
+  }
+
+  tipChangerDown = (v) => {
+    return `$${v}`
+  }
+
+  tipChanger = (v) => {
+    return `$${v} %`
   }
 
   changeInterest = (v) => {
@@ -109,19 +121,19 @@ export default class Calculator extends Component {
               <div ClassName='leaseCalculator'>
                 <div style={wrapperStyle}>
                   <span>Interest Rate (%): {this.state.interestChanged}</span>
-                  <SliderWithTooltip min={0} max={20} defaultValue={this.state.interestChanged} tipFormatter={this.tipChanger}  onChange={this.changeInterest}/>
+                  <SliderWithTooltip min={0} max={20} defaultValue={this.state.interestChanged} tipFormatter={this.tipChangerInterest}  onChange={this.changeInterest}/>
                 </div>
                 <div style={wrapperStyle}>
                   <span>Term (Months): </span>
-                  <SliderWithTooltip min={0} max={96} defaultValue={0} handle={this.handleChange} tipFormatter={this.tipChanger} onChange={this.changeTerm} />
+                  <SliderWithTooltip min={0} max={96} defaultValue={0} handle={this.handleChange} tipFormatter={this.tipChangerTerm} onChange={this.changeTerm} />
                 </div>
                 <div style={wrapperStyle}>
                   <span>Down Payment ($): </span>
-                  <SliderWithTooltip min={0} max={vehiclePrice} defaultValue={0} handle={this.handleChange} tipFormatter={this.tipChanger}  onChange={this.changeDown}/>
+                  <SliderWithTooltip min={0} max={vehiclePrice} defaultValue={0} handle={this.handleChange} tipFormatter={this.tipChangerDown}  onChange={this.changeDown}/>
                 </div>
                 <div style={wrapperStyle}>
                   <span>Monthly Payment: </span>
-                  <SliderWithTooltip min={0} max={vehiclePrice / 2} defaultValue={0} handle={this.handleChange} tipFormatter={this.tipChanger}  onChange={this.changeMonthPay} />
+                  <SliderWithTooltip min={0} max={vehiclePrice / 2} defaultValue={0} handle={this.handleChange} tipFormatter={this.tipChangerMonth}  onChange={this.changeMonthPay} />
                 </div>
               </div>
             </li>
