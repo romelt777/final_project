@@ -119,8 +119,8 @@ export default class Calculator extends Component {
             <li ClassName='leaseItem'>
               <div ClassName='leaseCalculator'>
                 <div style={wrapperStyle}>
-                  <span>Interest Rate (%): </span>
-                  <SliderWithTooltip min={0} max={20} defaultValue={0} tipFormatter={this.tipChanger} tipProps={{ overlayClassName: 'foo' }} onChange={this.log}/>
+                  <span>Interest Rate (%): {this.state.interestChanged}</span>
+                  <SliderWithTooltip min={0} max={20} defaultValue={this.state.interestChanged} tipFormatter={this.tipChanger} tipProps={{ overlayClassName: 'foo' }} onChange={this.log}/>
                 </div>
                 <div style={wrapperStyle}>
                   <span>Term (Months): </span>
