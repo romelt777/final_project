@@ -14,7 +14,10 @@ export default class Calculator extends Component {
       finFee: 0,
       downPayment: 20000,
       resValue: 0,
-      interestChanged: 5
+      interestChanged: 5,
+      termChanged: 0,
+      downPayChanged: 0,
+      monthlyPayChanged: 0
     };
     // methods for leasing calculator, reflecting the following respectively:
     // depreciationFee = (price - resdiual value - down payment) / months;
@@ -44,38 +47,24 @@ export default class Calculator extends Component {
     this.setState({resValue: resValue})
   }
 
-  // changeValue = (v) => {
-  //   this.setState({interestChanged: v})
-
-  // }
-
-  // handleChange = (props) => {
-  //     const { value, dragging, index, ...restProps } = props;
-
-  //     if(props.max === 20 && props.dragging === true) {
-  //       // this.setState({interestChanged: props.value})
-  //       this.changeValue(props.value)
-  //     }
-
-  //     return (
-  //       <Tooltip
-  //         prefixCls="rc-slider-tooltip"
-  //         overlay={value}
-  //         visible={dragging}
-  //         placement="top"
-  //         key={index}
-  //       >
-  //         <Handle value={value} {...restProps} />
-  //       </Tooltip>
-  //     );
-  // };
   tipChanger = (v) => {
     return `${v} %`
   }
 
-  log = (v) => {
+  changeInterest = (v) => {
     this.setState({interestChanged: v})
-    console.log(this.state)
+  }
+
+  changeTerm = (v) => {
+    this.setState({termChanged: v})
+  }
+
+  changeDown = (v) => {
+    this.setState({downPayChanged: v})
+  }
+
+  changeMonthPay = (v) => {
+    this.setState({monthlyPayChanged: v})
   }
 
 
@@ -120,19 +109,19 @@ export default class Calculator extends Component {
               <div ClassName='leaseCalculator'>
                 <div style={wrapperStyle}>
                   <span>Interest Rate (%): {this.state.interestChanged}</span>
-                  <SliderWithTooltip min={0} max={20} defaultValue={this.state.interestChanged} tipFormatter={this.tipChanger} tipProps={{ overlayClassName: 'foo' }} onChange={this.log}/>
+                  <SliderWithTooltip min={0} max={20} defaultValue={this.state.interestChanged} tipFormatter={this.tipChanger}  onChange={this.changeInterest}/>
                 </div>
                 <div style={wrapperStyle}>
                   <span>Term (Months): </span>
-                  <SliderWithTooltip min={0} max={96} defaultValue={0} handle={this.handleChange} />
+                  <SliderWithTooltip min={0} max={96} defaultValue={0} handle={this.handleChange} tipFormatter={this.tipChanger} onChange={this.changeTerm} />
                 </div>
                 <div style={wrapperStyle}>
                   <span>Down Payment ($): </span>
-                  <SliderWithTooltip min={0} max={vehiclePrice} defaultValue={0} handle={this.handleChange} />
+                  <SliderWithTooltip min={0} max={vehiclePrice} defaultValue={0} handle={this.handleChange} tipFormatter={this.tipChanger}  onChange={this.changeDown}/>
                 </div>
                 <div style={wrapperStyle}>
                   <span>Monthly Payment: </span>
-                  <SliderWithTooltip min={0} max={vehiclePrice / 2} defaultValue={0} handle={this.handleChange} />
+                  <SliderWithTooltip min={0} max={vehiclePrice / 2} defaultValue={0} handle={this.handleChange} tipFormatter={this.tipChanger}  onChange={this.changeMonthPay} />
                 </div>
               </div>
             </li>
@@ -140,9 +129,9 @@ export default class Calculator extends Component {
               <table ClassName='finCalculator'>
                 <tbody>
                   <tr>Interest Rate (%): {this.state.interestChanged}</tr>
-                  <tr>Term (Months):</tr>
-                  <tr>Down Payment ($):</tr>
-                  <tr>Monthly Payment:</tr>
+                  <tr>Term (Months): {this.state.termChanged}</tr>
+                  <tr>Down Payment ($): {this.state.downPayChanged}</tr>
+                  <tr>Monthly Payment: {this.state.monthlyPayChanged}</tr>
                 </tbody>
               </table>
             </li>
