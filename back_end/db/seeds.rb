@@ -36,6 +36,16 @@ Fuel.create!({
   car_id: 1
 })
 
+FuelPrice.create({
+  first: 2311.66,
+  second: 2381.43,
+  third: 2452.54,
+  fourth: 2526.33,
+  fifth: 2601.46,
+  total: 12273.41,
+  car_id: 1
+})
+
 # 1CAD = 0.752USD
 Maintenance.create!({
   first: 164.69,
@@ -94,6 +104,16 @@ Fuel.create!({
   manual_city: 8.6,
   manual_highway: 6.4,
   manual_combined: 7.39,
+  car_id: 2
+})
+
+FuelPrice.create({
+  first: 2311.66,
+  second: 2381.43,
+  third: 2452.54,
+  fourth: 2526.33,
+  fifth: 2601.46,
+  total: 12273.41,
   car_id: 2
 })
 
@@ -157,6 +177,16 @@ Fuel.create!({
   car_id: 3
 })
 
+FuelPrice.create({
+  first: 2655.13,
+  second: 2735.62,
+  third: 2817.47,
+  fourth: 2901.99,
+  fifth: 2989.20,
+  total: 14099.40,
+  car_id: 3
+})
+
 # 1CAD = 0.752USD
 Maintenance.create!({
   first: 387.92,
@@ -214,6 +244,16 @@ Fuel.create!({
   manual_city: 8.6, #Null Values
   manual_highway: 6.4, #Null Values
   manual_combined: 7.39, #Null Values
+  car_id: 4
+})
+
+FuelPrice.create({
+  first: 2643.05,
+  second: 2722.21,
+  third: 2804.05,
+  fourth: 2887.23,
+  fifth: 2974.44,
+  total: 14030.98,
   car_id: 4
 })
 
@@ -277,6 +317,16 @@ Fuel.create!({
   car_id: 5
 })
 
+FuelPrice.create({
+  first: 2559.87,
+  second: 2636.34,
+  third: 2715.50,
+  fourth: 2797.34,
+  fifth: 2881.86,
+  total: 13590.91,
+  car_id: 5
+})
+
 # 1CAD = 0.752USD
 Maintenance.create!({
   first: 383.92,
@@ -334,6 +384,16 @@ Fuel.create!({
   manual_city: 8.6, #Null Values
   manual_highway: 6.4, #Null Values
   manual_combined: 7.39, #Null Values
+  car_id: 6
+})
+
+FuelPrice.create({
+  first: 2311.66,
+  second: 2381.43,
+  third: 2452.54,
+  fourth: 2526.33,
+  fifth: 2601.46,
+  total: 12273.41,
   car_id: 6
 })
 
@@ -397,6 +457,16 @@ Fuel.create!({
   car_id: 7
 })
 
+FuelPrice.create({
+  first: 2985.17,
+  second: 3075.06,
+  third: 3167.64,
+  fourth: 3261.55,
+  fifth: 3359.49,
+  total: 15848.91,
+  car_id: 7
+})
+
 # 1CAD = 0.752USD
 Maintenance.create!({
   first: 557.21,
@@ -454,6 +524,16 @@ Fuel.create!({
   manual_city: 8.6, #Null Values
   manual_highway: 6.4, #Null Values
   manual_combined: 7.39, #Null Values
+  car_id: 8
+})
+
+FuelPrice.create({
+  first: 2841.61,
+  second: 2927.48,
+  third: 3014.69,
+  fourth: 3105.92,
+  fifth: 3198.49,
+  total: 15088.20,
   car_id: 8
 })
 
@@ -517,6 +597,16 @@ Fuel.create!({
   car_id: 9
 })
 
+FuelPrice.create({
+  first: 3332.66,
+  second: 3433.28,
+  third: 3535.25,
+  fourth: 3641.24,
+  fifth: 3751.25,
+  total: 17693.68,
+  car_id: 9
+})
+
 # 1CAD = 0.752USD
 Maintenance.create!({
   first: 253.28,
@@ -574,6 +664,16 @@ Fuel.create!({
   manual_city: 8.6, #Null Values
   manual_highway: 6.4, #Null Values
   manual_combined: 7.39, #Null Values
+  car_id: 10
+})
+
+FuelPrice.create({
+  first: 2643.05,
+  second: 2722.21,
+  third: 2804.05,
+  fourth: 2887.23,
+  fifth: 2974.44,
+  total: 14030.98,
   car_id: 10
 })
 
@@ -637,6 +737,16 @@ Fuel.create!({
   car_id: 11
 })
 
+FuelPrice.create({
+  first: 2643.05,
+  second: 2722.21,
+  third: 2804.05,
+  fourth: 2887.23,
+  fifth: 2974.44,
+  total: 14030.98,
+  car_id: 11
+})
+
 # 1CAD = 0.752USD
 Maintenance.create!({
   first: 191.86,
@@ -694,6 +804,16 @@ Fuel.create!({
   manual_city: 8.6, #Null Values
   manual_highway: 6.4, #Null Values
   manual_combined: 7.39, #Null Values
+  car_id: 12
+})
+
+FuelPrice.create({
+  first: 2985.17,
+  second: 3075.06,
+  third: 3167.64,
+  fourth: 2887.23,
+  fifth: 3359.49,
+  total: 15848.91,
   car_id: 12
 })
 
@@ -757,6 +877,16 @@ Fuel.create!({
   car_id: 13
 })
 
+FuelPrice.create({
+  first: 2985.17,
+  second: 3075.06,
+  third: 3167.64,
+  fourth: 2887.23,
+  fifth: 3359.49,
+  total: 15848.91,
+  car_id: 13
+})
+
 # 1CAD = 0.752USD
 Maintenance.create!({
   first: 399.81,
@@ -814,6 +944,16 @@ Fuel.create!({
   manual_city: 8.6, #Null Values
   manual_highway: 6.4, #Null Values
   manual_combined: 7.39, #Null Values
+  car_id: 14
+})
+
+FuelPrice.create({
+  first: 2240.56,
+  second: 2307.64,
+  third: 2376.06,
+  fourth: 2447.17,
+  fifth: 2520.96,
+  total: 11892.39,
   car_id: 14
 })
 
@@ -877,6 +1017,16 @@ Fuel.create!({
   car_id: 15
 })
 
+FuelPrice.create({
+  first: 2755.75,
+  second: 2838.93,
+  third: 2923.46,
+  fourth: 3012.00,
+  fifth: 3101.89,
+  total: 14632.03,
+  car_id: 15
+})
+
 # 1CAD = 0.752USD
 Maintenance.create!({
   first: 91.23,
@@ -934,6 +1084,16 @@ Fuel.create!({
   manual_city: 9.5, 
   manual_highway: 7.0, 
   manual_combined: 8.1, 
+  car_id: 16
+})
+
+FuelPrice.create({
+  first: 2655.13,
+  second: 2735.62,
+  third: 2817.47,
+  fourth: 2901.99,
+  fifth: 2989.20,
+  total: 14099.40,
   car_id: 16
 })
 
@@ -997,6 +1157,16 @@ Fuel.create!({
   car_id: 17
 })
 
+FuelPrice.create({
+  first: 2985.17,
+  second: 3075.06,
+  third: 3167.64,
+  fourth: 3261.55,
+  fifth: 3359.49,
+  total: 15848.91,
+  car_id: 17
+})
+
 # 1CAD = 0.752USD
 Maintenance.create!({
   first: 634.60,
@@ -1054,6 +1224,16 @@ Fuel.create!({
   manual_city: 10.9, #null 
   manual_highway: 8.3, #null
   manual_combined: 9.5, #null
+  car_id: 18
+})
+
+FuelPrice.create({
+  first: 3113.97,
+  second: 3207.89,
+  third: 3303.14,
+  fourth: 3402.42,
+  fifth: 3504.39,
+  total: 16531.81,
   car_id: 18
 })
 
@@ -1117,6 +1297,16 @@ Fuel.create!({
   car_id: 19
 })
 
+FuelPrice.create({
+  first: 2311.66,
+  second: 2381.43,
+  third: 2452.54,
+  fourth: 2526.33,
+  fifth: 2601.46,
+  total: 12273.41,
+  car_id: 19
+})
+
 # 1CAD = 0.752USD
 Maintenance.create!({
   first: 623.87,
@@ -1141,61 +1331,71 @@ Depreciation.create!({
 
 car20 = Car.find_or_create_by!({
   year: "2018",
-  make: "Mitsubishi",
-  model: "Outlander",
-  condition: 'new'
+  make: "Chrysler",
+  model: "300",
+  condition: 'new' 
 })
 
 Price.create!({
-  vehicle_price: 28998.00,
-  freight_delivery: 1700.00,
-  total_price: 30698.00,
+  vehicle_price: 41245.00,
+  freight_delivery: 1895.00,
+  total_price: 43140.00,
   car_id: 20
 })
 
 Picture.create!({
-  url: "https://picolio.auto123.com/18photo/mitsubishi/2018-mitsubishi-outlander-es-awc_1.png",
+  url: "https://picolio.auto123.com/18photo/chrysler/2018-chrysler-300-touring.png",
   car_id: 20
 })
 
 Warranty.create!({
-  bumper: "100000/km, 60/Months",
-  powertrain: "160000/km, 120/Months",
-  roadside: "Unlimited/km, 60/Months",
-  rust: "Unlimited/km, 60/Months",
+  bumper: "60000/km, 36/Months",
+  powertrain: "100000/km, 60/Months",
+  roadside: "100000/km, 60/Months",
+  rust: "160000/km, 60/Months",
   car_id: 20
 })
 
 # city*0.45 + hwy*0.55
 Fuel.create!({
-  auto_city: 9.9,
-  auto_highway: 8.1,
-  auto_combined: 8.9,
+  auto_city: 12.4,
+  auto_highway: 7.8,
+  auto_combined: 9.9,
   manual_city: 10.9, #null 
   manual_highway: 8.3, #null
   manual_combined: 9.5, #null
   car_id: 20
 })
 
+FuelPrice.create({
+  first: 3113.97,
+  second: 3207.89,
+  third: 3303.14,
+  fourth: 3402.42,
+  fifth: 3504.39,
+  total: 16531.81,
+  car_id: 20
+})
+
 # 1CAD = 0.752USD
 Maintenance.create!({
-  first: 452.14,
-  second: 1262.49,
-  third: 751.32,
-  fourth: 3146.17,
-  fifth: 4126.92,
-  total: 9739.04,
+  first: 216.01,
+  second: 951.23,
+  third: 570.20,
+  fourth: 2461.93,
+  fifth: 1791.10,
+  total: 5990.47,
   car_id: 20
 })
 
 # 1CAD = 0.752USD
 Depreciation.create!({
-  first: 6468.09,
-  second: 1835.38,
-  third: 1734.75,
-  fourth: 2036.62,
-  fifth: 1927.95,
-  total: 14002.80,
+  first: 9277.51,
+  second: 1809.89,
+  third: 1713.29,
+  fourth: 2009.79,
+  fifth: 1903.80,
+  total: 16714.28,
   car_id: 20
 })
 
@@ -1234,6 +1434,16 @@ Fuel.create!({
   manual_city: 10.9, #null 
   manual_highway: 8.3, #null
   manual_combined: 9.5, #null
+  car_id: 21
+})
+
+FuelPrice.create({
+  first: 2655.13,
+  second: 2735.62,
+  third: 2817.47,
+  fourth: 2901.99,
+  fifth: 2989.20,
+  total: 14099.40,
   car_id: 21
 })
 
@@ -1297,6 +1507,16 @@ Fuel.create!({
   car_id: 22
 })
 
+FuelPrice.create({
+  first: 1791.10,
+  second: 1844.77,
+  third: 1899.78,
+  fourth: 1957.47,
+  fifth: 2016.50,
+  total: 9509.62,
+  car_id: 22
+})
+
 # 1CAD = 0.752USD
 Maintenance.create!({
   first: 452.14,
@@ -1354,6 +1574,16 @@ Fuel.create!({
   manual_city: 10.9, #null 
   manual_highway: 8.3, #null
   manual_combined: 9.5, #null
+  car_id: 23
+})
+
+FuelPrice.create({
+  first: 1791.10,
+  second: 1844.77,
+  third: 1899.78,
+  fourth: 1957.47,
+  fifth: 2016.50,
+  total: 9509.62,
   car_id: 23
 })
 
@@ -1417,6 +1647,16 @@ Fuel.create!({
   car_id: 24
 })
 
+FuelPrice.create({
+  first: 2948.95,
+  second: 3037.50,
+  third: 3128.73,
+  fourth: 3222.64,
+  fifth: 3319.24,
+  total: 15657.06,
+  car_id: 24
+})
+
 # 1CAD = 0.752USD
 Maintenance.create!({
   first: 386.40,
@@ -1474,6 +1714,16 @@ Fuel.create!({
   manual_city: 10.9, #null 
   manual_highway: 8.3, #null
   manual_combined: 9.5, #null
+  car_id: 25
+})
+
+FuelPrice.create({
+  first: 3067.01,
+  second: 3159.59,
+  third: 3253.50,
+  fourth: 3351.44,
+  fifth: 3452.07,
+  total: 16283.61,
   car_id: 25
 })
 
@@ -1537,6 +1787,16 @@ Fuel.create!({
   car_id: 26
 })
 
+FuelPrice.create({
+  first: 2985.17,
+  second: 3075.06,
+  third: 3167.64,
+  fourth: 3261.55,
+  fifth: 3359.49,
+  total: 15848.91,
+  car_id: 26
+})
+
 # 1CAD = 0.752USD
 Maintenance.create!({
   first: 339.44,
@@ -1597,6 +1857,16 @@ Fuel.create!({
   car_id: 27
 })
 
+FuelPrice.create({
+  first: 3113.97,
+  second: 3207.89,
+  third: 3303.14,
+  fourth: 3402.42,
+  fifth: 3504.39,
+  total: 16531.81,
+  car_id: 27
+})
+
 # 1CAD = 0.752USD
 Maintenance.create!({
   first: 367.61,
@@ -1621,28 +1891,28 @@ Depreciation.create!({
 
 car28 = Car.find_or_create_by!({
   year: "2018",
-  make: "Lexus",
-  model: "RX 350",
+  make: "Chevrolet",
+  model: "Equinox",
   condition: 'new'
 })
 
 Price.create!({
-  vehicle_price: 56500.00,
-  freight_delivery: 2045.00,
-  total_price: 58545.00,
+  vehicle_price: 25195.00,
+  freight_delivery: 1795.00,
+  total_price: 26990.00,
   car_id: 28
 })
 
 Picture.create!({
-  url: "https://picolio.auto123.com/18photo/lexus/2018-lexus-rx-350.png",
+  url: "https://picolio.auto123.com/18photo/chevrolet/2018-chevrolet-equinox-ls-fwd_2.png",
   car_id: 28
 })
 
 Warranty.create!({
-  bumper: "80000/km, 48/Months", 
-  powertrain: "110000/km, 72/Months", 
-  roadside: "Unlimited/km, 48/Months",
-  rust: "Unlimited/km, 72/Months", 
+  bumper: "60000/km, 36/Months", 
+  powertrain: "160000/km, 60/Months", 
+  roadside: "160000/km, 60/Months",
+  rust: "160000/km, 72/Months", 
   car_id: 28
 })
 
@@ -1657,25 +1927,35 @@ Fuel.create!({
   car_id: 28
 })
 
+FuelPrice.create({
+  first: 2559.87,
+  second: 2636.34,
+  third: 2715.50,
+  fourth: 2797.34,
+  fifth: 2881.86,
+  total: 13590.91,
+  car_id: 28 
+})
+
 # 1CAD = 0.752USD
 Maintenance.create!({
-  first: 367.61,
-  second: 1304.08,
-  third: 810.36,
-  fourth: 3116.65,
-  fifth: 4015.56,
-  total: 9614.26,
+  first: 116.72,
+  second: 705.71,
+  third: 999.53,
+  fourth: 2639.03,
+  fifth: 2685.98,
+  total: 7146.97,
   car_id: 28
 })
 
 # 1CAD = 0.752USD
 Depreciation.create!({
-  first: 6787.41,
-  second: 6879.98,
-  third: 5618.83,
-  fourth: 6300.39,
-  fifth: 5503.45,
-  total: 31090.06,
+  first: 7914.39,
+  second: 2267.39,
+  third: 2146.64,
+  fourth: 2516.94,
+  fifth: 2382.77,
+  total: 17228.13,
   car_id: 28
 })
 
@@ -1715,6 +1995,16 @@ Fuel.create!({
   manual_highway: 8.3, #null
   manual_combined: 9.5, #null
   car_id: 29
+})
+
+FuelPrice.create({
+  first: 2469.98,
+  second: 2543.77,
+  third: 2620.24,
+  fourth: 2698.06,
+  fifth: 2779.90,
+  total: 13111.95,
+  car_id: 29 
 })
 
 # 1CAD = 0.752USD
@@ -1774,6 +2064,16 @@ Fuel.create!({
   manual_city: 9.4, 
   manual_highway: 6.8, 
   manual_combined: 8.0, 
+  car_id: 30
+})
+
+FuelPrice.create({
+  first: 2559.87,
+  second: 2636.34,
+  third: 2715.50,
+  fourth: 2797.34,
+  fifth: 2881.86,
+  total: 13590.91,
   car_id: 30
 })
 
@@ -1837,6 +2137,16 @@ Fuel.create!({
   car_id: 31
 })
 
+FuelPrice.create({
+  first: 2985.17,
+  second: 3075.06,
+  third: 3167.64,
+  fourth: 3261.55,
+  fifth: 3359.49,
+  total: 15848.91,
+  car_id: 31
+})
+
 # 1CAD = 0.752USD
 Maintenance.create!({
   first: 548.73,
@@ -1861,61 +2171,71 @@ Depreciation.create!({
 
 car32 = Car.find_or_create_by!({
   year: "2018",
-  make: "Kia",
-  model: "Soul",
+  make: "Chevrolet",
+  model: "Impala",
   condition: 'new'
 })
 
 Price.create!({
-  vehicle_price: 20095.00,
-  freight_delivery: 1785.00,
-  total_price: 21880.00,
+  vehicle_price: 31045.00,
+  freight_delivery: 1750.00,
+  total_price: 32795.00,
   car_id: 32
 })
 
 Picture.create!({
-  url: "https://picolio.auto123.com/19photo/kia/2019-kia-soul-lx.png",
+  url: "https://picolio.auto123.com/18photo/chevrolet/2018-chevrolet-impala-ls-1ls.png",
   car_id: 32
 })
 
 Warranty.create!({
-  bumper: "100000/km, 60/Months", 
-  powertrain: "100000/km, 60/Months", 
-  roadside: "100000/km, 60/Months",
-  rust: "Unlimited/km, 60/Months", 
+  bumper: "60000/km, 36/Months", 
+  powertrain: "160000/km, 60/Months", 
+  roadside: "160000/km, 60/Months",
+  rust: "160000/km, 72/Months", 
   car_id: 32
 })
 
 # city*0.45 + hwy*0.55
 Fuel.create!({
-  auto_city: 9.4,
-  auto_highway: 7.8,
-  auto_combined: 8.5,
-  manual_city: 9.4, #null
-  manual_highway: 6.8, #null
-  manual_combined: 8.0, #null
+  auto_city: 10.9, 
+  auto_highway: 7.9, 
+  auto_combined: 9.3, 
+  manual_city: 8.6, #null
+  manual_highway: 5.8, #null
+  manual_combined: 8.3, #null
   car_id: 32
 })
 
+FuelPrice.create({
+  first: 2865.76,
+  second: 2951.63,
+  third: 3040.18,
+  fourth: 3131.41,
+  fifth: 3225.33,
+  total: 15214.31,
+  car_id: 32
+}) 
+
 # 1CAD = 0.752USD
 Maintenance.create!({
-  first: 754.01,
-  second: 1049.17,
-  third: 937.81,
-  fourth: 1548.26,
-  fifth: 2326.42,
-  total: 6615.68,
+  first: 57.69,
+  second: 707.05,
+  third: 940.50,
+  fourth: 1583.15,
+  fifth: 2856.37,
+  total: 6144.76,
   car_id: 32
 })
 
 # 1CAD = 0.752USD
 Depreciation.create!({
-  first: 6360.76,
-  second: 1211.51,
-  third: 1145.77,
-  fourth: 1344.33,
-  fifth: 1274.57,
-  total: 11336.94,
+  first: 14829.26,
+  second: 1513.38,
+  third: 1431.54,
+  fourth: 1679.75,
+  fifth: 1591.20,
+  total: 21045.12,
   car_id: 32
 })
 
@@ -1954,6 +2274,16 @@ Fuel.create!({
   manual_city: 9.4, #null
   manual_highway: 6.8, #null
   manual_combined: 8.0, #null
+  car_id: 33
+})
+
+FuelPrice.create({
+  first: 2655.13,
+  second: 2735.62,
+  third: 2817.47,
+  fourth: 2901.99,
+  fifth: 2989.20,
+  total: 14099.40,
   car_id: 33
 })
 
@@ -2017,6 +2347,16 @@ Fuel.create!({
   car_id: 34
 })
 
+FuelPrice.create({
+  first: 2469.98,
+  second: 2543.77,
+  third: 2620.24,
+  fourth: 2698.06,
+  fifth: 2779.90,
+  total: 13111.95,
+  car_id: 34
+})
+
 # 1CAD = 0.752USD
 Maintenance.create!({
   first: 406.52,
@@ -2074,6 +2414,16 @@ Fuel.create!({
   manual_city: 9.4, #null
   manual_highway: 6.8, #null
   manual_combined: 8.0, #null
+  car_id: 35
+})
+
+FuelPrice.create({
+  first: 2469.98,
+  second: 2543.77,
+  third: 2620.24,
+  fourth: 2698.06,
+  fifth: 2779.90,
+  total: 13111.95,
   car_id: 35
 })
 
@@ -2137,6 +2487,16 @@ Fuel.create!({
   car_id: 36
 })
 
+FuelPrice.create({
+  first: 2240.56,
+  second: 2307.64,
+  third: 2376.06,
+  fourth: 2447.17,
+  fifth: 2520.96,
+  total: 11892.39,
+  car_id: 36
+})
+
 # 1CAD = 0.752USD
 Maintenance.create!({
   first: 217.35,
@@ -2194,6 +2554,16 @@ Fuel.create!({
   manual_city: 8.9, 
   manual_highway: 6.7, 
   manual_combined: 7.7, 
+  car_id: 37
+})
+
+FuelPrice.create({
+  first: 2173.47,
+  second: 2237.87,
+  third: 2304.95,
+  fourth: 2374.72,
+  fifth: 2445.83,
+  total: 11536.85,
   car_id: 37
 })
 
@@ -2257,6 +2627,16 @@ Fuel.create!({
   car_id: 38
 })
 
+FuelPrice.create({
+  first: 2865.76,
+  second: 2951.63,
+  third: 3040.18,
+  fourth: 3131.41,
+  fifth: 3225.33,
+  total: 15214.31,
+  car_id: 38
+})
+
 # 1CAD = 0.752USD
 Maintenance.create!({
   first: 368.95,
@@ -2317,6 +2697,16 @@ Fuel.create!({
   car_id: 39
 })
 
+FuelPrice.create({
+  first: 2388.14,
+  second: 2459.24,
+  third: 2533.04,
+  fourth: 2609.51,
+  fifth: 2687.32,
+  total: 12677.25,
+  car_id: 39
+})
+
 # 1CAD = 0.752USD
 Maintenance.create!({
   first: 500.44,
@@ -2374,6 +2764,16 @@ Fuel.create!({
   manual_city: 8.6, #null
   manual_highway: 6.7, #null
   manual_combined: 7.5, #null
+  car_id: 40
+})
+
+FuelPrice.create({
+  first: 3582.21,
+  second: 3689.54,
+  third: 3800.89,
+  fourth: 3914.93,
+  fifth: 4031.66,
+  total: 19019.23,
   car_id: 40
 })
 
