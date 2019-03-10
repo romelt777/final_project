@@ -1,27 +1,10 @@
 import React, { Component } from 'react';
 import Tooltip from 'rc-tooltip';
-import Slider from 'rc-slider';
+import Slider, {createSliderWithTooltip} from 'rc-slider';
 import 'rc-slider/assets/index.css';
 import 'rc-tooltip/assets/bootstrap.css';
 
-const Handle = Slider.Handle;
-
-const handle = (props) => {
-  const { value, dragging, index, ...restProps } = props;
-  return (
-    <Tooltip
-      prefixCls="rc-slider-tooltip"
-      overlay={value}
-      visible={dragging}
-      placement="top"
-      key={index}
-    >
-      <Handle value={value} {...restProps} />
-    </Tooltip>
-  );
-};
-
-const wrapperStyle = { width: 300, margin: 50 };
+const SliderWithTooltip = createSliderWithTooltip(Slider);
 
 export default class Calculator extends Component {
   constructor(props) {
@@ -30,7 +13,8 @@ export default class Calculator extends Component {
       depiFee: 0,
       finFee: 0,
       downPayment: 20000,
-      resValue: 0
+      resValue: 0,
+      interestChanged: 5
     };
     // methods for leasing calculator, reflecting the following respectively:
     // depreciationFee = (price - resdiual value - down payment) / months;
@@ -60,6 +44,41 @@ export default class Calculator extends Component {
     this.setState({resValue: resValue})
   }
 
+  // changeValue = (v) => {
+  //   this.setState({interestChanged: v})
+
+  // }
+
+  // handleChange = (props) => {
+  //     const { value, dragging, index, ...restProps } = props;
+
+  //     if(props.max === 20 && props.dragging === true) {
+  //       // this.setState({interestChanged: props.value})
+  //       this.changeValue(props.value)
+  //     }
+
+  //     return (
+  //       <Tooltip
+  //         prefixCls="rc-slider-tooltip"
+  //         overlay={value}
+  //         visible={dragging}
+  //         placement="top"
+  //         key={index}
+  //       >
+  //         <Handle value={value} {...restProps} />
+  //       </Tooltip>
+  //     );
+  // };
+  tipChanger = (v) => {
+    return `${v} %`
+  }
+
+  log = (v) => {
+    this.setState({interestChanged: v})
+    console.log(this.state)
+  }
+
+
   render() {
 
     let vehiclePrice = 0;
@@ -76,6 +95,10 @@ export default class Calculator extends Component {
       priceTotal = hst + subtotal;
 
     }
+
+
+
+    const wrapperStyle = { width: 300, margin: 50 };
 
     return (
       <div ClassName='calculatorContainer'>
@@ -97,26 +120,26 @@ export default class Calculator extends Component {
               <div ClassName='leaseCalculator'>
                 <div style={wrapperStyle}>
                   <span>Interest Rate (%): </span>
-                  <Slider min={0} max={20} defaultValue={0} handle={handle} />
+                  <SliderWithTooltip min={0} max={20} defaultValue={0} tipFormatter={this.tipChanger} tipProps={{ overlayClassName: 'foo' }} onChange={this.log}/>
                 </div>
                 <div style={wrapperStyle}>
                   <span>Term (Months): </span>
-                  <Slider min={0} max={96} defaultValue={0} handle={handle} />
+                  <SliderWithTooltip min={0} max={96} defaultValue={0} handle={this.handleChange} />
                 </div>
                 <div style={wrapperStyle}>
                   <span>Down Payment ($): </span>
-                  <Slider min={0} max={vehiclePrice} defaultValue={0} handle={handle} />
+                  <SliderWithTooltip min={0} max={vehiclePrice} defaultValue={0} handle={this.handleChange} />
                 </div>
                 <div style={wrapperStyle}>
                   <span>Monthly Payment: </span>
-                  <Slider min={0} max={vehiclePrice / 2} defaultValue={0} handle={handle} />
+                  <SliderWithTooltip min={0} max={vehiclePrice / 2} defaultValue={0} handle={this.handleChange} />
                 </div>
               </div>
             </li>
             <li ClassName='finItem'>
               <table ClassName='finCalculator'>
                 <tbody>
-                  <tr>Interest Rate (%):</tr>
+                  <tr>Interest Rate (%): {this.state.interestChanged}</tr>
                   <tr>Term (Months):</tr>
                   <tr>Down Payment ($):</tr>
                   <tr>Monthly Payment:</tr>
