@@ -241,7 +241,8 @@ class AppRouter extends Component {
           <Route exact path="/" render={() => <CarSlide getStarted={this.getStarted}/>}/>
           <Route path="/cars" component={this.Cars} />
           <Route path="/comparisons" component={this.Comparisons} />
-          <Calculator price={this.state.newPrices}/>
+
+          <Calculator price={this.state.newPrices} />
 
           <Route path="/login" render={() => <Login login={this.login}/>}/>
           <Route path="/register" render={() => <Register register={this.register}/>}/>

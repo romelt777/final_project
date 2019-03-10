@@ -64,6 +64,7 @@ export default class CurrentCar extends React.Component {
     const containerStyle = {
       'padding-top': 20,
       'padding-bottom': 20,
+      'margin-top': 100,
       'height': '100%',
       'justify-content': 'center'
     }
@@ -97,14 +98,9 @@ export default class CurrentCar extends React.Component {
     const cars = this.props.data.cars.map(car => {
       if(car.condition === "new"){
         return (
-          <tr key={car.id}>
-            <th>
-              <input type="checkbox" value={car.id} onChange={this.addNewCar}></input>
-            </th>
-            <th key={car.id}>
-              {car.year} {car.make} {car.model}
-            </th>
-          </tr>
+          <option key={car.id} value={car.id}>
+            {car.year} {car.make} {car.model}
+          </option>
         )
       }
     })
@@ -115,10 +111,10 @@ export default class CurrentCar extends React.Component {
           <div classNmae="left-bar" style={barStyle}></div>
             <form onSubmit={this.submitCurrent}
                   style={{
-                         'padding': 40,
-                         'border-top': '1px solid #eee',
-                         'border-radius': 10,
-                         'height': '90%'}}>
+                   'padding': 40,
+                   'border-top': '1px solid #eee',
+                   'border-radius': 10,
+                   'height': '90%'}}>
               <h3>Enter your current car info</h3>
               <label> Make: <input type="text" name="make" ref="make"/> </label> <br></br>
               <label> Model: <input type="text" name="model" ref="model" /> </label> <br></br>
@@ -136,14 +132,18 @@ export default class CurrentCar extends React.Component {
         </div>
         <div className="new-car-container" style={{...style, ...shadow}}>
           <div classNmae="right-bar" style={{...barStyle, 'background-color': '#008080'}}></div>
-          <table style={{
+          <form style={{
                      'padding': 40,
                      'border-top': '1px solid #eee',
                      'border-radius': 10,
                      'height': '90%'}}>
-              {cars}
+              <h3>Choose a car you want to compare with</h3>
+              <select onChange={this.addNewCar}>
+                <option value="select">Select</option>
+                {cars}
+              </select>
               <input type="submit" value="Submit" onClick={this.submitComparison}/>
-          </table>
+          </form>
         </div>
       </div>
     )
