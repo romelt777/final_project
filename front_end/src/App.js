@@ -234,7 +234,7 @@ class AppRouter extends Component {
   render() {
     console.log(this.state.currentUser);
     return (
-      <Router history={this.history} >
+      <Router history={this.history}>
         <div className="App">
           <NavBar user={this.state.currentUser} logout={this.logout}/>
           <Route exact path="/currentCar/" render={() => <CurrentCar updateCurrent={this.updateCurrent} data={this.state} submitCars={this.submitCars}></CurrentCar>} />
@@ -242,6 +242,7 @@ class AppRouter extends Component {
           <Route path="/cars" component={this.Cars} />
           <Route path="/comparisons" component={this.Comparisons} />
           <Calculator price={this.state.newPrices}/>
+
           <Route path="/login" render={() => <Login login={this.login}/>}/>
           <Route path="/register" render={() => <Register register={this.register}/>}/>
         </div>

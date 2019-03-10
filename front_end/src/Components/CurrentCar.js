@@ -61,6 +61,39 @@ export default class CurrentCar extends React.Component {
 
   render(){
 
+    const containerStyle = {
+      'padding-top': 20,
+      'padding-bottom': 20,
+      'height': '100%',
+      'justify-content': 'center'
+    }
+
+    const style = {
+      display: 'inline-block',
+      'background-color': '#ffffff',
+      position: 'relative',
+      float: 'left',
+      width: '30%',
+      padding: 0,
+      height: 450,
+      'justify-content': 'center'
+    }
+
+    const shadow = {
+      overflow: 'hidden',
+      'border-radius': 20,
+      'z-index': 2
+    }
+
+    const barStyle = {
+      'position': 'relative',
+      'padding' :0,
+      'width': '100%',
+      'height': '5%',
+      'border-radius': -10,
+      'background-color': 'orange'
+    }
+
     const cars = this.props.data.cars.map(car => {
       if(car.condition === "new"){
         return (
@@ -77,23 +110,41 @@ export default class CurrentCar extends React.Component {
     })
 
     return (
-      <div>
-        <form onSubmit={this.submitCurrent}>
-          <label>Make: <input type="text" name="make" ref="make"/> </label> <br></br>
-          <label> Model: <input type="text" name="model" ref="model" /> </label> <br></br>
-          <label> Year: <input type="text" name="year" ref="year" /> </label> <br></br>
-          <input type="submit" value="Submit"/>
-        </form>
-        <table>
-          <tbody>
-            {cars}
-            <tr>
-              <th>
-                <input type="submit" value="Submit" onClick={this.submitComparison}/>
-              </th>
-            </tr>
-          </tbody>
-        </table>
+      <div className="forms-container" style={containerStyle}>
+        <div className="current-car-container" style={{...style, ...shadow, 'margin-left': 50}}>
+          <div classNmae="left-bar" style={barStyle}></div>
+            <form onSubmit={this.submitCurrent}
+                  style={{
+                         'padding': 40,
+                         'border-top': '1px solid #eee',
+                         'border-radius': 10,
+                         'height': '90%'}}>
+              <h3>Enter your current car info</h3>
+              <label> Make: <input type="text" name="make" ref="make"/> </label> <br></br>
+              <label> Model: <input type="text" name="model" ref="model" /> </label> <br></br>
+              <label> Year: <input type="text" name="year" ref="year" /> </label> <br></br>
+              <input type="submit" value="Submit"/>
+            </form>
+        </div>
+        <div className="middle-container" style={{...style, margin: 0}}>
+            <div style={{width: '100%', height: '25%', 'background-color': '#E9EDF6'}}>
+              <span style={{'font-size': 30, 'text-alignment': 'center'}}>VS.</span>
+            </div>
+            <div style={{width: '100%', height: '25%', 'background-color': '#E2E5EC'}}></div>
+            <div style={{width: '100%', height: '25%', 'background-color': '#E9EDF6'}}></div>
+            <div style={{width: '100%', height: '25%', 'background-color': '#E2E5EC'}}></div>
+        </div>
+        <div className="new-car-container" style={{...style, ...shadow}}>
+          <div classNmae="right-bar" style={{...barStyle, 'background-color': '#008080'}}></div>
+          <table style={{
+                     'padding': 40,
+                     'border-top': '1px solid #eee',
+                     'border-radius': 10,
+                     'height': '90%'}}>
+              {cars}
+              <input type="submit" value="Submit" onClick={this.submitComparison}/>
+          </table>
+        </div>
       </div>
     )
   }
