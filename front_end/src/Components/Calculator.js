@@ -55,12 +55,8 @@ export default class Calculator extends Component {
     return `${v}`
   }
 
-  tipChangerDown = (v) => {
-    return `$${v}`
-  }
-
   tipChanger = (v) => {
-    return `$${v} %`
+    return `$${v}`
   }
 
   changeInterest = (v) => {
@@ -129,11 +125,11 @@ export default class Calculator extends Component {
                 </div>
                 <div style={wrapperStyle}>
                   <span>Down Payment ($): </span>
-                  <SliderWithTooltip min={0} max={vehiclePrice} defaultValue={0} handle={this.handleChange} tipFormatter={this.tipChangerDown}  onChange={this.changeDown}/>
+                  <SliderWithTooltip min={0} max={vehiclePrice} defaultValue={0} handle={this.handleChange} tipFormatter={this.tipChanger}  onChange={this.changeDown}/>
                 </div>
                 <div style={wrapperStyle}>
                   <span>Monthly Payment: </span>
-                  <SliderWithTooltip min={0} max={vehiclePrice / 2} defaultValue={0} handle={this.handleChange} tipFormatter={this.tipChangerMonth}  onChange={this.changeMonthPay} />
+                  <SliderWithTooltip min={0} max={vehiclePrice / 2} defaultValue={0} handle={this.handleChange} tipFormatter={this.tipChanger}  onChange={this.changeMonthPay} />
                 </div>
               </div>
             </li>
@@ -143,7 +139,7 @@ export default class Calculator extends Component {
                   <tr>Interest Rate (%): {this.state.interestChanged}</tr>
                   <tr>Term (Months): {this.state.termChanged}</tr>
                   <tr>Down Payment ($): {this.state.downPayChanged}</tr>
-                  <tr>Monthly Payment: {this.state.monthlyPayChanged}</tr>
+                  <tr>Monthly Payment: {(priceTotal - this.state.downPayChanged) * (this.state.interestChanged / 1200)/(1 - Math.pow((1 + (this.state.interestChanged / 1200)),(this.state.termChanged * -1)) )}</tr>
                 </tbody>
               </table>
             </li>
