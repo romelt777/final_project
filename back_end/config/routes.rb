@@ -11,6 +11,7 @@ Rails.application.routes.draw do
       post '/register' => 'users#create'
       resources :comparisons
       resources :maintenances
+      resources :users, except: [:create]
 
     end
   end

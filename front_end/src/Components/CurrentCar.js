@@ -6,7 +6,8 @@ export default class CurrentCar extends React.Component {
   constructor(props){
     super(props)
     this.state = {
-      comparisonCars: {}
+      comparisonCars: {},
+      compare: false
     }
   }
 
@@ -18,6 +19,7 @@ export default class CurrentCar extends React.Component {
       [event.target.value]: event.target.checked
     };
     this.setState({ comparisonCars: newComparisonCars })
+    this.setState({compare: false })
   }
 
   submitCurrent = event => {

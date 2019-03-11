@@ -2,6 +2,7 @@ import React from 'react'
 import axios from 'axios'
 import Chart from './Chart'
 import PieChart from './PieChart'
+import Calculator from './Calculator'
 import {ButtonToolbar, ToggleButtonGroup, ToggleButton} from 'react-bootstrap'
 
 
@@ -80,6 +81,8 @@ export default class Comparison extends React.Component {
                   depi={this.checkData(this.props.data.newDepreciations)}
 
         />
+
+        <Calculator carName={carName} price={this.checkData(this.props.data.newPrices)}/>
 
       </div>
     )
