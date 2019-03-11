@@ -82,7 +82,7 @@ export default class Comparison extends React.Component {
 
         />
 
-        <Calculator price={this.props.data.newPrices}/>
+        <Calculator carName={carName} price={this.checkData(this.props.data.newPrices)}/>
 
       </div>
     )
