@@ -152,7 +152,7 @@ export default class Calculator extends Component {
                     <tr>Interest Rate (%): {this.state.interestChanged}</tr>
                     <tr>Term (Months): {this.state.termChanged}</tr>
                     <tr>Down Payment ($): {this.state.downPayChanged}</tr>
-                    <tr>Monthly Payment: {(priceTotal - this.state.downPayChanged) * (this.state.interestChanged / 1200)/(1 - Math.pow((1 + (this.state.interestChanged / 1200)),(this.state.termChanged * -1)) )}</tr>
+                    <tr>Monthly Payment: {((priceTotal - this.state.downPayChanged) * (this.state.interestChanged / 1200)/(1 - Math.pow((1 + (this.state.interestChanged / 1200)),(this.state.termChanged * -1)) )).toFixed(2)}</tr>
                   </tbody>
                 </table>
               </li>
