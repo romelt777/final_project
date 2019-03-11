@@ -26,8 +26,16 @@ module Api
         puts params
         @user = User.find(params[:id])
         @comparison = Comparison.where(user_id: params[:id])
-        puts @user.inspect
-        puts @comparison.inspect
+        # @comparison_cars = @comparison.comparison_cars
+        @comparison_cars = []
+        @comparison.each{|c| @comparison_cars.push(c.comparison_cars)}
+        render json: {
+          status: 'SUCCESS',
+          message: 'Loaded Comparison',
+          data1: @comparison,
+          data2: @comparison_cars,
+          data3: @user
+        },status: :ok
       end
 
       private
