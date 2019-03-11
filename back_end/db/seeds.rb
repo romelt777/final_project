@@ -368,6 +368,16 @@ FuelPrice.create({
   car_id: 5
 })
 
+Repairs.create({
+  first: 0.00,
+  second: 0.00,
+  third: 93.32,
+  fourth: 222.48,
+  fifth: 324.76,
+  total: 640.56,
+  car_id: 5
+})
+
 # 1CAD = 0.752USD
 Maintenance.create!({
   first: 383.92,
@@ -435,6 +445,16 @@ FuelPrice.create({
   fourth: 2526.33,
   fifth: 2601.46,
   total: 12273.41,
+  car_id: 6
+})
+
+Repairs.create({
+  first: 0.00,
+  second: 0.00,
+  third: 148.66,
+  fourth: 360.27,
+  fifth: 526.34,
+  total: 1035.28,
   car_id: 6
 })
 
@@ -508,6 +528,17 @@ FuelPrice.create({
   car_id: 7
 })
 
+Repairs.create({
+  first: 0.00,
+  second: 0.00,
+  third: 178.13,
+  fourth: 200.83,
+  fifth: 425.90,
+  total: 624.11,
+  car_id: 7
+})
+
+
 # 1CAD = 0.752USD
 Maintenance.create!({
   first: 557.21,
@@ -575,6 +606,16 @@ FuelPrice.create({
   fourth: 3105.92,
   fifth: 3198.49,
   total: 15088.20,
+  car_id: 8
+})
+
+Repairs.create({
+  first: 0.00,
+  second: 0.00,
+  third: 0.00,
+  fourth: 554.47,
+  fifth: 849.11,
+  total: 1403.58,
   car_id: 8
 })
 
@@ -648,6 +689,16 @@ FuelPrice.create({
   car_id: 9
 })
 
+Repairs.create({
+  first: 0.00,
+  second: 0.00,
+  third: 0.00,
+  fourth: 554.47,
+  fifth: 849.11,
+  total: 1403.58,
+  car_id: 9
+})
+
 # 1CAD = 0.752USD
 Maintenance.create!({
   first: 253.28,
@@ -715,6 +766,16 @@ FuelPrice.create({
   fourth: 2887.23,
   fifth: 2974.44,
   total: 14030.98,
+  car_id: 10
+})
+
+Repairs.create({
+  first: 0.00,
+  second: 0.00,
+  third: 0.00,
+  fourth: 554.47,
+  fifth: 849.11,
+  total: 1403.58,
   car_id: 10
 })
 
@@ -788,6 +849,16 @@ FuelPrice.create({
   car_id: 11
 })
 
+Repairs.create({
+  first: 0.00,
+  second: 0.00,
+  third: 0.00,
+  fourth: 1058.04,
+  fifth: 1624.56,
+  total: 2682.61,
+  car_id: 11
+})
+
 # 1CAD = 0.752USD
 Maintenance.create!({
   first: 191.86,
@@ -855,6 +926,16 @@ FuelPrice.create({
   fourth: 2887.23,
   fifth: 3359.49,
   total: 15848.91,
+  car_id: 12
+})
+
+Repairs.create({
+  first: 0.00,
+  second: 0.00,
+  third: 0.00,
+  fourth: 0.00,
+  fifth: 1584.39,
+  total: 1584.39,
   car_id: 12
 })
 
@@ -928,6 +1009,16 @@ FuelPrice.create({
   car_id: 13
 })
 
+Repairs.create({
+  first: 0.00,
+  second: 0.00,
+  third: 0.00,
+  fourth: 0.00,
+  fifth: 1584.39,
+  total: 1584.39,
+  car_id: 13
+})
+
 # 1CAD = 0.752USD
 Maintenance.create!({
   first: 399.81,
@@ -995,6 +1086,16 @@ FuelPrice.create({
   fourth: 2447.17,
   fifth: 2520.96,
   total: 11892.39,
+  car_id: 14
+})
+
+Repairs.create({
+  first: 0.00,
+  second: 0.00,
+  third: 148.66,
+  fourth: 360.27,
+  fifth: 526.34,
+  total: 1035.28,
   car_id: 14
 })
 
@@ -1068,6 +1169,16 @@ FuelPrice.create({
   car_id: 15
 })
 
+Repairs.create({
+  first: 0.00,
+  second: 0.00,
+  third: 148.66,
+  fourth: 360.27,
+  fifth: 526.34,
+  total: 1035.28,
+  car_id: 15
+})
+
 # 1CAD = 0.752USD
 Maintenance.create!({
   first: 91.23,
@@ -1135,6 +1246,16 @@ FuelPrice.create({
   fourth: 2901.99,
   fifth: 2989.20,
   total: 14099.40,
+  car_id: 16
+})
+
+Repairs.create({
+  first: 0.00,
+  second: 0.00,
+  third: 183.48,
+  fourth: 437.95,
+  fifth: 644.20,
+  total: 1265.63,
   car_id: 16
 })
 
@@ -1208,6 +1329,16 @@ FuelPrice.create({
   car_id: 17
 })
 
+Repairs.create({
+  first: 0.00,
+  second: 0.00,
+  third: 183.48,
+  fourth: 437.95,
+  fifth: 644.20,
+  total: 1265.63,
+  car_id: 16
+})
+
 # 1CAD = 0.752USD
 Maintenance.create!({
   first: 634.60,
@@ -1227,7 +1358,7 @@ Depreciation.create!({
   fourth: 2659.15,
   fifth: 2516.94,
   total: 15458.49,
-  car_id: 17
+  car_id: 18
 })
 
 car18 = Car.find_or_create_by!({
@@ -1275,6 +1406,16 @@ FuelPrice.create({
   fourth: 3402.42,
   fifth: 3504.39,
   total: 16531.81,
+  car_id: 18
+})
+
+Repairs.create({
+  first: 0.00,
+  second: 0.00,
+  third: 148.66,
+  fourth: 360.27,
+  fifth: 526.34,
+  total: 1035.28,
   car_id: 18
 })
 
@@ -1348,6 +1489,16 @@ FuelPrice.create({
   car_id: 19
 })
 
+Repairs.create({
+  first: 0.00,
+  second: 0.00,
+  third: 148.66,
+  fourth: 360.27,
+  fifth: 526.34,
+  total: 1035.28,
+  car_id: 19
+})
+
 # 1CAD = 0.752USD
 Maintenance.create!({
   first: 623.87,
@@ -1415,6 +1566,16 @@ FuelPrice.create({
   fourth: 3402.42,
   fifth: 3504.39,
   total: 16531.81,
+  car_id: 20
+})
+
+Repairs.create({
+  first: 0.00,
+  second: 0.00,
+  third: 188.84,
+  fourth: 448.66,
+  fifth: 656.25,
+  total: 1293.76,
   car_id: 20
 })
 
@@ -1488,6 +1649,16 @@ FuelPrice.create({
   car_id: 21
 })
 
+Repairs.create({
+  first: 0.00,
+  second: 0.00,
+  third: 0.00,
+  fourth: 0.00,
+  fifth: 977.69,
+  total: 977.69,
+  car_id: 21
+})
+
 # 1CAD = 0.752USD
 Maintenance.create!({
   first: 452.14,
@@ -1555,6 +1726,16 @@ FuelPrice.create({
   fourth: 1957.47,
   fifth: 2016.50,
   total: 9509.62,
+  car_id: 22
+})
+
+Repairs.create({
+  first: 0.00,
+  second: 0.00,
+  third: 0.00,
+  fourth: 554.47,
+  fifth: 849.11,
+  total: 1403.58,
   car_id: 22
 })
 
@@ -1628,6 +1809,16 @@ FuelPrice.create({
   car_id: 23
 })
 
+Repairs.create({
+  first: 0.00,
+  second: 0.00,
+  third: 0.00,
+  fourth: 554.47,
+  fifth: 849.11,
+  total: 1403.58,
+  car_id: 23
+})
+
 # 1CAD = 0.752USD
 Maintenance.create!({
   first: 105.99,
@@ -1695,6 +1886,16 @@ FuelPrice.create({
   fourth: 3222.64,
   fifth: 3319.24,
   total: 15657.06,
+  car_id: 24
+})
+
+Repairs.create({
+  first: 0.00,
+  second: 0.00,
+  third: 0.00,
+  fourth: 692.42,
+  fifth: 1062.06,
+  total: 1754.48,
   car_id: 24
 })
 
@@ -1768,6 +1969,16 @@ FuelPrice.create({
   car_id: 25
 })
 
+Repairs.create({
+  first: 0.00,
+  second: 0.00,
+  third: 0.00,
+  fourth: 692.42,
+  fifth: 1062.06,
+  total: 1754.48,
+  car_id: 25
+})
+
 # 1CAD = 0.752USD
 Maintenance.create!({
   first: 407.86,
@@ -1835,6 +2046,16 @@ FuelPrice.create({
   fourth: 3261.55,
   fifth: 3359.49,
   total: 15848.91,
+  car_id: 26
+})
+
+Repairs.create({
+  first: 0.00,
+  second: 0.00,
+  third: 0.00,
+  fourth: 574.56,
+  fifth: 881.26,
+  total: 1455.81,
   car_id: 26
 })
 
@@ -1908,6 +2129,16 @@ FuelPrice.create({
   car_id: 27
 })
 
+Repairs.create({
+  first: 0.00,
+  second: 0.00,
+  third: 0.00,
+  fourth: 574.56,
+  fifth: 881.26,
+  total: 1455.81,
+  car_id: 27
+})
+
 # 1CAD = 0.752USD
 Maintenance.create!({
   first: 367.61,
@@ -1976,6 +2207,16 @@ FuelPrice.create({
   fifth: 2881.86,
   total: 13590.91,
   car_id: 28 
+})
+
+Repairs.create({
+  first: 116.52,
+  second: 704.47,
+  third: 997.77,
+  fourth: 2634.39,
+  fifth: 2681.27,
+  total: 7134.42,
+  car_id: 28
 })
 
 # 1CAD = 0.752USD
@@ -2048,6 +2289,16 @@ FuelPrice.create({
   car_id: 29 
 })
 
+Repairs.create({
+  first: 0.00,
+  second: 0.00,
+  third: 0.00,
+  fourth: 0.00,
+  fifth: 897.33,
+  total: 897.33,
+  car_id: 29
+})
+
 # 1CAD = 0.752USD
 Maintenance.create!({
   first: 507.14,
@@ -2115,6 +2366,16 @@ FuelPrice.create({
   fourth: 2797.34,
   fifth: 2881.86,
   total: 13590.91,
+  car_id: 30
+})
+
+Repairs.create({
+  first: 0.00,
+  second: 0.00,
+  third: 0.00,
+  fourth: 0.00,
+  fifth: 897.33,
+  total: 897.33,
   car_id: 30
 })
 
@@ -2188,6 +2449,16 @@ FuelPrice.create({
   car_id: 31
 })
 
+Repairs.create({
+  first: 0.00,
+  second: 0.00,
+  third: 0.00,
+  fourth: 0.00,
+  fifth: 897.33,
+  total: 897.33,
+  car_id: 31
+})
+
 # 1CAD = 0.752USD
 Maintenance.create!({
   first: 548.73,
@@ -2258,6 +2529,16 @@ FuelPrice.create({
   car_id: 32
 }) 
 
+Repairs.create({
+  first: 57.59,
+  second: 705.81,
+  third: 938.95,
+  fourth: 1580.55,
+  fifth: 2851.68,
+  total: 6134.66,
+  car_id: 32
+})
+
 # 1CAD = 0.752USD
 Maintenance.create!({
   first: 57.69,
@@ -2325,6 +2606,16 @@ FuelPrice.create({
   fourth: 2901.99,
   fifth: 2989.20,
   total: 14099.40,
+  car_id: 33
+})
+
+Repairs.create({
+  first: 0.00,
+  second: 0.00,
+  third: 0.00,
+  fourth: 0.00,
+  fifth: 897.33,
+  total: 897.33,
   car_id: 33
 })
 
@@ -2398,6 +2689,16 @@ FuelPrice.create({
   car_id: 34
 })
 
+Repairs.create({
+  first: 0.00,
+  second: 0.00,
+  third: 0.00,
+  fourth: 0.00,
+  fifth: 897.33,
+  total: 897.33,
+  car_id: 34
+})
+
 # 1CAD = 0.752USD
 Maintenance.create!({
   first: 406.52,
@@ -2465,6 +2766,16 @@ FuelPrice.create({
   fourth: 2698.06,
   fifth: 2779.90,
   total: 13111.95,
+  car_id: 35
+})
+
+Repairs.create({
+  first: 0.00,
+  second: 0.00,
+  third: 0.00,
+  fourth: 0.00,
+  fifth: 897.33,
+  total: 897.33,
   car_id: 35
 })
 
@@ -2538,6 +2849,16 @@ FuelPrice.create({
   car_id: 36
 })
 
+Repairs.create({
+  first: 0.00,
+  second: 0.00,
+  third: 148.68,
+  fourth: 360.31,
+  fifth: 526.40,
+  total: 1035.39,
+  car_id: 36
+})
+
 # 1CAD = 0.752USD
 Maintenance.create!({
   first: 217.35,
@@ -2605,6 +2926,16 @@ FuelPrice.create({
   fourth: 2374.72,
   fifth: 2445.83,
   total: 11536.85,
+  car_id: 37
+})
+
+Repairs.create({
+  first: 0.00,
+  second: 0.00,
+  third: 178.15,
+  fourth: 425.94,
+  fifth: 624.18,
+  total: 1228.27,
   car_id: 37
 })
 
@@ -2678,6 +3009,16 @@ FuelPrice.create({
   car_id: 38
 })
 
+Repairs.create({
+  first: 0.00,
+  second: 0.00,
+  third: 171.45,
+  fourth: 411.21,
+  fifth: 601.41,
+  total: 1184.07,
+  car_id: 38
+})
+
 # 1CAD = 0.752USD
 Maintenance.create!({
   first: 368.95,
@@ -2748,6 +3089,16 @@ FuelPrice.create({
   car_id: 39
 })
 
+Repairs.create({
+  first: 0.00,
+  second: 0.00,
+  third: 137.96,
+  fourth: 330.84,
+  fifth: 483.54,
+  total: 952.35,
+  car_id: 39
+})
+
 # 1CAD = 0.752USD
 Maintenance.create!({
   first: 500.44,
@@ -2815,6 +3166,16 @@ FuelPrice.create({
   fourth: 3914.93,
   fifth: 4031.66,
   total: 19019.23,
+  car_id: 40
+})
+
+Repairs.create({
+  first: 0.00,
+  second: 0.00,
+  third: 188.86,
+  fourth: 448.71,
+  fifth: 656.33,
+  total: 1293.90,
   car_id: 40
 })
 
