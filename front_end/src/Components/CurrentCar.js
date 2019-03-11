@@ -62,6 +62,17 @@ export default class CurrentCar extends React.Component {
       })
   }
 
+  renderCar = () => {
+    let result = {
+      params: {
+        id: 1
+      }
+    }
+    return result
+  }
+
+
+
   render(){
 
     const containerStyle = {
@@ -108,6 +119,13 @@ export default class CurrentCar extends React.Component {
       }
     })
 
+    // let compareKeys = null;
+    // if (this.state.compare){
+    //   compareKeys = Object.keys(this.state.compareCars)
+    // }
+    // console.log(compareKeys)
+
+
     return (
       <div className="forms-container" style={containerStyle}>
         <div className="current-car-container" style={{...style, ...shadow, 'margin-left': 50}}>
@@ -148,7 +166,7 @@ export default class CurrentCar extends React.Component {
               <input type="submit" value="Submit" onClick={this.submitComparison}/>
           </form>
         </div>
-          { this.state.compare ? <Car data={this.props.data}/>
+          { this.state.compare ? <Car data={this.props.data} match={this.renderCar()}/>
             : null
           }
       </div>

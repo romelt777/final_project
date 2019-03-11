@@ -3,6 +3,8 @@ import React from 'react'
 export default class Car extends React.Component {
 
   render(){
+    console.log(this.props)
+
     let newCar;
     this.props.data.cars.forEach((car) => {
       if(car.id == this.props.match.params.id) {
