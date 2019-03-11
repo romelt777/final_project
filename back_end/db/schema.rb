@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_05_215443) do
+ActiveRecord::Schema.define(version: 2019_03_11_193345) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -55,6 +55,19 @@ ActiveRecord::Schema.define(version: 2019_03_05_215443) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["car_id"], name: "index_depreciations_on_car_id"
+  end
+
+  create_table "fuel_prices", force: :cascade do |t|
+    t.integer "first"
+    t.integer "second"
+    t.integer "third"
+    t.integer "fourth"
+    t.integer "fifth"
+    t.integer "total"
+    t.bigint "car_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["car_id"], name: "index_fuel_prices_on_car_id"
   end
 
   create_table "fuels", force: :cascade do |t|
@@ -136,6 +149,7 @@ ActiveRecord::Schema.define(version: 2019_03_05_215443) do
   add_foreign_key "comparisons", "comparison_cars"
   add_foreign_key "comparisons", "users"
   add_foreign_key "depreciations", "cars"
+  add_foreign_key "fuel_prices", "cars"
   add_foreign_key "fuels", "cars"
   add_foreign_key "maintenances", "cars"
   add_foreign_key "pictures", "cars"
