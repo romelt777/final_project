@@ -133,11 +133,11 @@ export default class Calculator extends Component {
                     <SliderWithTooltip min={0} max={20} defaultValue={this.state.interestChanged} tipFormatter={this.tipChangerInterest}  onChange={this.changeInterest}/>
                   </div>
                   <div style={wrapperStyle}>
-                    <span>Term (Months): </span>
+                    <span>Term (Months): {this.state.termChanged} </span>
                     <SliderWithTooltip min={24} max={96} defaultValue={60} handle={this.handleChange} tipFormatter={this.tipChangerTerm} onChange={this.changeTerm} />
                   </div>
                   <div style={wrapperStyle}>
-                    <span>Down Payment ($): </span>
+                    <span>Down Payment ($): {this.state.downPayChanged} </span>
                     <SliderWithTooltip min={0} max={vehiclePrice} defaultValue={0} handle={this.handleChange} tipFormatter={this.tipChanger}  onChange={this.changeDown}/>
                   </div>
                 </div>
@@ -145,9 +145,6 @@ export default class Calculator extends Component {
               <li ClassName='finItem'>
                 <table ClassName='finCalculator'>
                   <tbody>
-                    <tr>Interest Rate (%): {this.state.interestChanged}</tr>
-                    <tr>Term (Months): {this.state.termChanged}</tr>
-                    <tr>Down Payment ($): {this.state.downPayChanged}</tr>
                     <tr>Monthly Payment: {((priceTotal - this.state.downPayChanged) * (this.state.interestChanged / 1200)/(1 - Math.pow((1 + (this.state.interestChanged / 1200)),(this.state.termChanged * -1)) )).toFixed(2)}</tr>
                   </tbody>
                 </table>
