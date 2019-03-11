@@ -76,7 +76,7 @@ export default class CurrentCar extends React.Component {
       float: 'left',
       width: '30%',
       padding: 0,
-      height: 450,
+      height: 700,
       'justify-content': 'center'
     }
 
@@ -123,12 +123,12 @@ export default class CurrentCar extends React.Component {
             </form>
         </div>
         <div className="middle-container" style={{...style, margin: 0}}>
-            <div style={{width: '100%', height: '25%', 'background-color': '#E9EDF6'}}>
-              <span style={{'font-size': 30, 'text-alignment': 'center'}}>VS.</span>
+            <div style={{width: '100%', height: '40%', 'background-color': '#E9EDF6'}}>
+              <span style={{'font-size': 30, 'text-alignment': 'center', 'margin': 40}}>VS.</span>
             </div>
-            <div style={{width: '100%', height: '25%', 'background-color': '#E2E5EC'}}></div>
-            <div style={{width: '100%', height: '25%', 'background-color': '#E9EDF6'}}></div>
-            <div style={{width: '100%', height: '25%', 'background-color': '#E2E5EC'}}></div>
+            <div style={{width: '100%', height: '20%', 'background-color': '#E2E5EC'}}></div>
+            <div style={{width: '100%', height: '20%', 'background-color': '#E9EDF6'}}></div>
+            <div style={{width: '100%', height: '20%', 'background-color': '#E2E5EC'}}></div>
         </div>
         <div className="new-car-container" style={{...style, ...shadow}}>
           <div classNmae="right-bar" style={{...barStyle, 'background-color': '#008080'}}></div>
