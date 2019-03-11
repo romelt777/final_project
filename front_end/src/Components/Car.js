@@ -82,4 +82,3 @@ export default class Car extends React.Component {
 }
 
 
-// <Car match={params:t}/>

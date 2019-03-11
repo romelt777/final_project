@@ -19,7 +19,7 @@ export default class CurrentCar extends React.Component {
       [event.target.value]: event.target.checked
     };
     this.setState({ comparisonCars: newComparisonCars })
-    this.setState({compare: false })
+    this.setState({compare: true })
   }
 
   submitCurrent = event => {
@@ -148,6 +148,9 @@ export default class CurrentCar extends React.Component {
               <input type="submit" value="Submit" onClick={this.submitComparison}/>
           </form>
         </div>
+          { this.state.compare ? <Car data={this.props.data}/>
+            : null
+          }
       </div>
     )
   }
