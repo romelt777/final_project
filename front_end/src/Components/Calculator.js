@@ -140,10 +140,6 @@ export default class Calculator extends Component {
                     <span>Down Payment ($): </span>
                     <SliderWithTooltip min={0} max={vehiclePrice} defaultValue={0} handle={this.handleChange} tipFormatter={this.tipChanger}  onChange={this.changeDown}/>
                   </div>
-                  <div style={wrapperStyle}>
-                    <span>Monthly Payment: </span>
-                    <SliderWithTooltip min={0} max={vehiclePrice / 2} defaultValue={0} handle={this.handleChange} tipFormatter={this.tipChanger}  onChange={this.changeMonthPay} />
-                  </div>
                 </div>
               </li>
               <li ClassName='finItem'>
