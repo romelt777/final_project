@@ -63,11 +63,17 @@ export default class CurrentCar extends React.Component {
   }
 
   renderCar = () => {
+    let compareKeys = []
+    if (this.state.compare){
+      compareKeys = Object.keys(this.state.comparisonCars)
+    }
+    console.log(compareKeys)
     let result = {
       params: {
-        id: 1
+        id: compareKeys[0]
       }
     }
+    // this.setState({compare: true })
     return result
   }
 
