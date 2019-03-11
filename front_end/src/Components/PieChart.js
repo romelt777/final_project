@@ -66,8 +66,9 @@ export default class PieChart extends React.Component {
 
     return (
       <div>
-        <ButtonToolbar>
-          <ToggleButtonGroup type="radio" name="options" defaultValue={1} >
+        <ButtonToolbar style={{float: "right"}}>
+          <ToggleButtonGroup 
+     name="options" defaultValue={1} >
             {pieButtons}
           </ToggleButtonGroup>
         </ButtonToolbar>

@@ -54,8 +54,8 @@ export default class Chart extends React.Component {
     }
 
     return (
-      <div style={{width: 768, height: 768}}>
-        <h2>5 years cost to own</h2>
+      <div style={{width: 768, height: 450}}>
+        <h2>5 Years True Cost to Own</h2>
         <Line data={chartData(depiData)} redraw/>
       </div>
     );
