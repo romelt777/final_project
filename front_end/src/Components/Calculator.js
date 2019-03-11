@@ -103,7 +103,32 @@ export default class Calculator extends Component {
       pieButtons.push(<ToggleButton key={c.id} value={i + 1} onChange={this.togglePie}>{c.model}</ToggleButton>)
     })
 
-    const wrapperStyle = { width: 300, margin: 50 };
+    const calculator = {
+      position: 'relative',
+      'border-radius': 20,
+      'background-color': 'white',
+      'width': 400,
+      'height': 350
+    }
+
+    const wrapperStyle = {
+      width: 300, margin: 20
+    }
+
+    const calWrap = {
+      'justify-content': 'center'
+    }
+    const calHead = {
+      'font-style': 'italic',
+      'font-weight': 'bold',
+      'margin-top': 30
+    }
+
+    const disclaimer = {
+      position: 'relative',
+      float: 'left'
+    }
+
     return (
       <div>
         <ButtonToolbar>
@@ -111,45 +136,53 @@ export default class Calculator extends Component {
             {pieButtons}
           </ToggleButtonGroup>
         </ButtonToolbar>
-        <div ClassName='calculatorContainer'>
-          <h3>Payment Calculator</h3>
-          <table ClassName='priceCalculator'>
-            <tbody>
-              <tr ClassName='price'>Vehicle Price: ${vehiclePrice.toFixed(2)}</tr>
-              <tr ClassName='priceTax'>Freight & Delivery: ${priceFAD.toFixed(2)}</tr>
-              <tr ClassName='priceTax'>Subtotal: ${subtotal.toFixed(2)}</tr>
-              <tr ClassName='priceTax'>HST (13%): ${hst.toFixed(2)}</tr>
-              <tr ClassName='priceTotal'>Total Price:* ${priceTotal.toFixed(2)}</tr>
-              <tr ClassName='calDisclaimer'>* This price excludes promotions and may vary depending on taxes and applicable fees.</tr>
-            </tbody>
-          </table>
-
-          <div ClassName='optTabs'>
-            <ul ClassName='contentItems'>
-              <li ClassName='leaseItem'>
-                <div ClassName='leaseCalculator'>
-                  <div style={wrapperStyle}>
-                    <span>Interest Rate (%): {this.state.interestChanged}</span>
-                    <SliderWithTooltip min={0} max={20} defaultValue={this.state.interestChanged} tipFormatter={this.tipChangerInterest}  onChange={this.changeInterest}/>
-                  </div>
-                  <div style={wrapperStyle}>
-                    <span>Term (Months): {this.state.termChanged} </span>
-                    <SliderWithTooltip min={24} max={96} defaultValue={60} handle={this.handleChange} tipFormatter={this.tipChangerTerm} onChange={this.changeTerm} />
-                  </div>
-                  <div style={wrapperStyle}>
-                    <span>Down Payment ($): {this.state.downPayChanged} </span>
-                    <SliderWithTooltip min={0} max={vehiclePrice} defaultValue={0} handle={this.handleChange} tipFormatter={this.tipChanger}  onChange={this.changeDown}/>
-                  </div>
+        <div ClassName='calculatorContainer' style={calculator}>
+          <p style={calHead}>Payment Calculator</p>
+          <div ClassName='calWrapper' style={calWrap}>
+            <table ClassName='priceCalculator'>
+              <tbody>
+                <div style={wrapperStyle}>
+                  <tr ClassName='price'>Vehicle Price: ${vehiclePrice.toFixed(2)}</tr>
                 </div>
-              </li>
-              <li ClassName='finItem'>
-                <table ClassName='finCalculator'>
-                  <tbody>
-                    <tr>Monthly Payment: {((priceTotal - this.state.downPayChanged) * (this.state.interestChanged / 1200)/(1 - Math.pow((1 + (this.state.interestChanged / 1200)),(this.state.termChanged * -1)) )).toFixed(2)}</tr>
-                  </tbody>
-                </table>
-              </li>
-            </ul>
+                <div style={wrapperStyle}>
+                  <tr ClassName='priceTax'>Freight & Delivery: ${priceFAD.toFixed(2)}</tr>
+                </div>
+                <div style={wrapperStyle}>
+                  <tr ClassName='priceTax'>Subtotal: ${subtotal.toFixed(2)}</tr>
+                </div>
+                <div style={wrapperStyle}>
+                  <tr ClassName='priceTax'>HST (13%): ${hst.toFixed(2)}</tr>
+                </div>
+                <div style={wrapperStyle}>
+                  <tr ClassName='priceTotal'>Total Price:* ${priceTotal.toFixed(2)}</tr>
+                </div>
+              </tbody>
+            </table>
+          </div>
+            <small ClassName='calDisclaimer' style={disclaimer}>
+              * This price excludes promotions and may vary depending on taxes and applicable fees.
+            </small>
+        </div>
+
+        <div ClassName='leaseCalculator' style={calculator}>
+          <p style={calHead}>Loan Payment Calculator</p>
+          <div ClassName='calWrapper' style={calWrap}>
+            <div style={wrapperStyle}>
+              <span>Interest Rate (%): {this.state.interestChanged}</span>
+              <SliderWithTooltip min={0} max={20} defaultValue={this.state.interestChanged} tipFormatter={this.tipChangerInterest}  onChange={this.changeInterest}/>
+            </div>
+            <div style={wrapperStyle}>
+              <span>Term (Months): {this.state.termChanged} </span>
+              <SliderWithTooltip min={24} max={96} defaultValue={60} handle={this.handleChange} tipFormatter={this.tipChangerTerm} onChange={this.changeTerm} />
+            </div>
+            <div style={wrapperStyle}>
+              <span>Down Payment ($): {this.state.downPayChanged} </span>
+              <SliderWithTooltip min={0} max={vehiclePrice/2} defaultValue={0} handle={this.handleChange} tipFormatter={this.tipChanger}  onChange={this.changeDown}/>
+            </div>
+            <div style={wrapperStyle}>
+              <p>Monthly Payment: {((priceTotal - this.state.downPayChanged) * (this.state.interestChanged / 1200)/(1 - Math.pow((1 + (this.state.interestChanged / 1200)),(this.state.termChanged * -1)) )).toFixed(2)}</p>
+              <p></p>
+            </div>
           </div>
         </div>
       </div>
