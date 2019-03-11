@@ -230,7 +230,8 @@ class AppRouter extends Component {
   }
 
   getProfile = () => {
-    axios.get(`http://localhost:3001/api/v1/users/${this.state.currentUser.id}`)
+    console.log("111", this.state.currentUser)
+    axios.get(`http://localhost:3001/api/v1/users/${this.state.currentUser.id}`, this.state.currentUser)
       .then(res => {
         console.log(res)
       });

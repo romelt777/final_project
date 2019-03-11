@@ -21,13 +21,19 @@ module Api
       end
 
       def show
+        params.permit(:id)
         puts "showtime "
+        puts params
+        @user = User.find(params[:id])
+        @comparison = Comparison.where(user_id: params[:id])
+        puts @user.inspect
+        puts @comparison.inspect
       end
 
       private
 
       def user_params
-        params.require(:user).permit(:first_name, :last_name, :email, :password)
+        params.require(:user).permit(:first_name, :last_name, :email, :password, :id)
         # {user: {first_name: "asdf", last_name: "asdf", email: "asdf", password: "asdf"}}
       end
     end
