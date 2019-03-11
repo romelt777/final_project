@@ -71,7 +71,7 @@ export default class PieChart extends React.Component {
             {pieButtons}
           </ToggleButtonGroup>
         </ButtonToolbar>
-        <div style={{width: 768, height: 768}}>
+        <div style={{width: 575, height: 600, float: "right"}}>
           <h2>Cost Composition</h2>
           <Doughnut data={this.data()} />
         </div>
