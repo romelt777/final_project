@@ -79,8 +79,6 @@ export default class CurrentCar extends React.Component {
     this.forceUpdate()
   }
 
-
-
   render(){
 
     const containerStyle = {
@@ -126,13 +124,6 @@ export default class CurrentCar extends React.Component {
         )
       }
     })
-
-    // let compareKeys = null;
-    // if (this.state.compare){
-    //   compareKeys = Object.keys(this.state.compareCars)
-    // }
-    // console.log(compareKeys)
-
 
     return (
       <div className="forms-container" style={containerStyle}>

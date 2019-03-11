@@ -13,6 +13,8 @@ import Login from './Components/Login'
 import Register from './Components/Register'
 import Comparison from './Components/Comparison';
 import NavBar from './Components/NavBar'
+import Profile from './Components/Profile'
+
 
 
 
@@ -29,6 +31,7 @@ class AppRouter extends Component {
       maintenances: [],
       currentUser: '',
       jwt: '',
+      profile: {}
     }
     this.history = createHistory()
   }
@@ -41,6 +44,19 @@ class AppRouter extends Component {
       </div>
     )
   }
+
+
+  Users = ({match}) => {
+    console.log(match)
+    return (
+      <div>
+        <h2>Profile</h2>
+        <Route exact path = {`${match.path}/:id`} render={(props) => <Profile data={this.state.profile} {...props}/> }></Route>
+      </div>
+    )
+  }
+
+
   Comparisons = ({match}) => {
     return (
       <div>
@@ -233,7 +249,9 @@ class AppRouter extends Component {
     console.log("111", this.state.currentUser)
     axios.get(`http://localhost:3001/api/v1/users/${this.state.currentUser.id}`, this.state.currentUser)
       .then(res => {
-        console.log(res)
+        debugger
+        this.setState({profile: res.data.data})
+        console.log(this.state.profile)
       });
     // this.history.push(`/users/${this.currentUser.id}`)
   }
@@ -247,6 +265,7 @@ class AppRouter extends Component {
           <Route exact path="/" render={() => <CarSlide getStarted={this.getStarted}/>}/>
           <Route path="/comparisons" component={this.Comparisons} />
           <Route path="/cars" component={this.Cars} />
+          <Route path="/users" component={this.Users} />
           <Route path="/login" render={() => <Login login={this.login}/>}/>
           <Route path="/register" render={() => <Register register={this.register}/>}/>
         </div>
