@@ -39,9 +39,9 @@ export default class Comparison extends React.Component {
   }
 
   toggle = (event) => {
-    if(event.target.value == 1){
+    if(event.target.value === 1){
       this.setState({toggle: "maintenances"})
-    } else if(event.target.value == 2){
+    } else if(event.target.value === 2){
       this.setState({toggle: "newDepreciations"})
     }
   }

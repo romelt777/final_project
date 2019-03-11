@@ -15,7 +15,7 @@ export default class CarSlide extends React.Component{
 
   render() {
     const fadeProperties = {
-        duration: 400000,
+        duration: 5000,
         transitionDuration: 500,
         infinite: true,
         arrows: false,
