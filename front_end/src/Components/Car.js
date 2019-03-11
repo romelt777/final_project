@@ -43,6 +43,13 @@ export default class Car extends React.Component {
       }
     })
 
+    let newPrice;
+    this.props.data.newPrices.forEach((price) => {
+      if(price.id == this.props.match.params.id) {
+        newPrice = <p>Price: {price.vehicle_price}</p>
+      }
+    })
+
     const containerStyle = {
       position: 'relative',
       'margin-top': '50%',
@@ -62,6 +69,7 @@ export default class Car extends React.Component {
       <div style={containerStyle}>
         <form>
         <div>{newCar}</div>
+        <div>{newPrice}</div>
         <div style={display}>{newFuel}</div>
         <div style={display}>{newWarranty}</div>
         <div className='imgContainer' style={imgSize}>

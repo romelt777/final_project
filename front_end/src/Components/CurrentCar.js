@@ -1,5 +1,6 @@
 import React from 'react'
 import axios from 'axios'
+import Car from './Car'
 
 export default class CurrentCar extends React.Component {
   constructor(props){
