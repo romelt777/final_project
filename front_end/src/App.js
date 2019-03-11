@@ -51,7 +51,7 @@ class AppRouter extends Component {
     return (
       <div>
         <h2>Profile</h2>
-        <Route exact path = {`${match.path}/:id`} render={(props) => <Profile data={this.state.profile} {...props}/> }></Route>
+        <Route exact path = {`${match.path}/:id`} render={(props) => <Profile data={this.state.profile} {...props} currentUser={this.state.currentUser}/> }></Route>
       </div>
     )
   }
@@ -255,6 +255,19 @@ class AppRouter extends Component {
       });
     // this.history.push(`/users/${this.currentUser.id}`)
   }
+
+  // getProfile = () => {
+  //   console.log("111", this.state.currentUser)
+  //   axios.get(`http://localhost:3001/api/v1/users/1`, {'id':1})
+  //     .then(res => {
+  //       console.log(res.data)
+  //       this.setState({profile: res.data})
+  //       console.log(this.state.profile)
+  //     });
+  //   // this.history.push(`/users/${this.currentUser.id}`)
+  // }
+
+
 
   render() {
     return (
