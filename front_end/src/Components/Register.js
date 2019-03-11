@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React  from 'react';
 
 
 export default  class Register extends React.Component {
@@ -16,7 +16,7 @@ export default  class Register extends React.Component {
     console.log(account)
     this.props.register(account)
   }
-      
+
   render(){
     return (
       <div>

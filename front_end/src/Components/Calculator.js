@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Tooltip from 'rc-tooltip';
 import Slider, {createSliderWithTooltip} from 'rc-slider';
 import 'rc-slider/assets/index.css';
 import 'rc-tooltip/assets/bootstrap.css';
@@ -16,7 +15,7 @@ export default class Calculator extends Component {
       downPayment: 20000,
       resValue: 0,
       interestChanged: 5,
-      termChanged: 0,
+      termChanged: 60,
       downPayChanged: 0,
       monthlyPayChanged: 0,
       togglePie: 0

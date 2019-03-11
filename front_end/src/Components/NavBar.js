@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React  from 'react';
 import '../NavBar.scss';
 import Bird from '../images/bird.png';
 
@@ -9,7 +9,7 @@ export default class NavBar extends React.Component {
     return (
      <div className="container">
       <nav id="nav-bar">
-        <img id="logo" src={Bird}></img>
+        <img id="logo" src={Bird} alt=""></img>
         <div id="content">
           <ul id="nav-content">
             <li id="nav-content-item"><a id="nav-link" href="/">Home</a></li>
@@ -26,7 +26,7 @@ export default class NavBar extends React.Component {
       return (
         <div className="container">
           <nav id="nav-bar">
-            <img id="logo" src={Bird}></img>
+            <img id="logo" src={Bird} alt=""></img>
             <div id="content">
               <ul id="nav-content">
                 <li id="nav-content-item"><a id="nav-link" href="/">Home</a></li>

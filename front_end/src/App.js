@@ -11,11 +11,9 @@ import CarList from './Components/CarList'
 import Car from './Components/Car';
 import Login from './Components/Login'
 import Register from './Components/Register'
-
 import Comparison from './Components/Comparison';
 import NavBar from './Components/NavBar'
 
-import Calculator from './Components/Calculator'
 
 
 class AppRouter extends Component {
