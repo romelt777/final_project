@@ -31,7 +31,7 @@ class AppRouter extends Component {
       maintenances: [],
       currentUser: '',
       jwt: '',
-      profile: {}
+      profile: ''
     }
     this.history = createHistory()
   }
@@ -249,8 +249,8 @@ class AppRouter extends Component {
     console.log("111", this.state.currentUser)
     axios.get(`http://localhost:3001/api/v1/users/${this.state.currentUser.id}`, this.state.currentUser)
       .then(res => {
-        debugger
-        this.setState({profile: res.data.data})
+        console.log(res.data)
+        this.setState({profile: res.data})
         console.log(this.state.profile)
       });
     // this.history.push(`/users/${this.currentUser.id}`)
