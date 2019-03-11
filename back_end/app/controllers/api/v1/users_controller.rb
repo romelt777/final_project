@@ -20,6 +20,10 @@ module Api
         end
       end
 
+      def show
+        puts "showtime "
+      end
+
       private
 
       def user_params

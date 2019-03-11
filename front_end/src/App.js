@@ -230,7 +230,11 @@ class AppRouter extends Component {
   }
 
   getProfile = () => {
-    this.history.push(`/users/${this.currentUser.id}`)
+    axios.get(`http://localhost:3001/api/v1/users/${this.state.currentUser.id}`)
+      .then(res => {
+        console.log(res)
+      });
+    // this.history.push(`/users/${this.currentUser.id}`)
   }
 
   render() {
@@ -238,7 +242,7 @@ class AppRouter extends Component {
     return (
       <Router history={this.history} >
         <div className="App">
-          <NavBar user={this.state.currentUser} logout={this.logout}/>
+          <NavBar user={this.state.currentUser} logout={this.logout} getProfile={this.getProfile}/>
           <Route exact path="/currentCar/" render={() => <CurrentCar updateCurrent={this.updateCurrent} data={this.state} submitCars={this.submitCars}></CurrentCar>} />
           <Route exact path="/" render={() => <CarSlide getStarted={this.getStarted}/>}/>
           <Route path="/cars" component={this.Cars} />
