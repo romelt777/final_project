@@ -7,7 +7,8 @@ export default class CurrentCar extends React.Component {
     super(props)
     this.state = {
       comparisonCars: {},
-      compare: false
+      compare: false,
+      rerender: 1
     }
   }
 
@@ -75,6 +76,7 @@ export default class CurrentCar extends React.Component {
     }
     // this.setState({compare: true })
     return result
+    this.forceUpdate()
   }
 
 
@@ -171,7 +173,7 @@ export default class CurrentCar extends React.Component {
               </select>
               <input type="submit" value="Submit" onClick={this.submitComparison}/>
           </form>
-        </div>
+        </div >
           { this.state.compare ? <Car data={this.props.data} match={this.renderCar()}/>
             : null
           }
