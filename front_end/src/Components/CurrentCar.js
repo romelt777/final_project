@@ -86,12 +86,12 @@ export default class CurrentCar extends React.Component {
     console.log(compareKeys)
     let result = {
       params: {
-        id: compareKeys[0]
+        id: compareKeys
       }
     }
     // this.setState({compare: true })
     return result
-    this.forceUpdate()
+    // this.forceUpdate()
   }
 
 
