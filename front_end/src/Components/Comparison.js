@@ -35,7 +35,6 @@ export default class Comparison extends React.Component {
         }
       })
     })
-    console.log(result)
     return result;
   }
 
@@ -62,6 +61,8 @@ export default class Comparison extends React.Component {
       })
     })
 
+    console.log("hello")
+    console.log(this.props.data.repairs)
     return (
       <div >
         <h2 >{this.props.match.params.id}</h2>
