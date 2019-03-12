@@ -67,17 +67,28 @@ export default class Car extends React.Component {
       'line-height': 0.5
     }
 
+
+    let displayCars = [];
+    if(this.props.moreCars > 0){
+      for(let i = 0; i < this.props.moreCars; i++)
+        displayCars.push(
+          <div style={containerStyle}>
+            <form>
+              <div>{newCar}</div>
+              <div>{newPrice}</div>
+              <div style={display}>{newFuel}</div>
+              <div style={display}>{newWarranty}</div>
+              <div className='imgContainer' style={imgSize}>
+              <div style={display}>{newPic}</div>
+              </div>
+            </form>
+          </div>
+        )
+      }
+
     return (
-      <div style={containerStyle}>
-        <form>
-        <div>{newCar}</div>
-        <div>{newPrice}</div>
-        <div style={display}>{newFuel}</div>
-        <div style={display}>{newWarranty}</div>
-        <div className='imgContainer' style={imgSize}>
-          <div style={display}>{newPic}</div>
-        </div>
-        </form>
+      <div>
+        {displayCars}
       </div>
     )
   }
