@@ -112,7 +112,7 @@ export default class CurrentCar extends React.Component {
       float: 'left',
       width: '30%',
       padding: 0,
-      height: 700,
+      height: 400,
       'justify-content': 'center'
     }
 
