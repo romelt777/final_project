@@ -1,6 +1,7 @@
 import React from 'react'
 import axios from 'axios'
 import Car from './Car'
+import CarSelector from './CarSelector'
 
 export default class CurrentCar extends React.Component {
   constructor(props){
@@ -8,7 +9,9 @@ export default class CurrentCar extends React.Component {
     this.state = {
       comparisonCars: {},
       compare: false,
-      rerender: 1
+      rerender: 1,
+      more: 0,
+      moreCars: 0
     }
   }
 
@@ -20,7 +23,19 @@ export default class CurrentCar extends React.Component {
       [event.target.value]: event.target.checked
     };
     this.setState({ comparisonCars: newComparisonCars })
+    // this.setState({})
+    console.log(this.state)
+
+    let prev = this.state.more
+    prev += 1;
+    this.setState({more: prev})
+
+    let prevCars = this.state.moreCars
+    prevCars += 1;
+    this.setState({moreCars: prevCars})
+
     this.setState({compare: true })
+    console.log(this.state.more)
   }
 
   submitCurrent = event => {
@@ -71,13 +86,14 @@ export default class CurrentCar extends React.Component {
     console.log(compareKeys)
     let result = {
       params: {
-        id: compareKeys[0]
+        id: compareKeys
       }
     }
     // this.setState({compare: true })
     return result
-    this.forceUpdate()
+    // this.forceUpdate()
   }
+
 
   render(){
 
@@ -125,6 +141,23 @@ export default class CurrentCar extends React.Component {
       }
     })
 
+    let compareKeys = []
+    const moreSelects = []
+
+    // if (this.state.compare){
+    //   compareKeys = Object.keys(this.state.comparisonCars)
+    //   moreSelects = this.state.compareKeys.map((k) => {
+    //     return (
+    //       <select onChange={this.addNewCar}>
+    //         <option value="select">Select</option>
+    //         {cars}
+    //       </select>
+    //     )
+    //   })
+    // }
+
+    const romel =  <Car data={this.props.data} match={this.renderCar()} />
+
     return (
       <div className="forms-container" style={containerStyle}>
         <div className="current-car-container" style={{...style, ...shadow, 'margin-left': 50}}>
@@ -161,13 +194,19 @@ export default class CurrentCar extends React.Component {
               <select onChange={this.addNewCar}>
                 <option value="select">Select</option>
                 {cars}
-              </select>
+              </select> <br></br>
+              { this.state.more > 0 ?
+                <CarSelector cars={cars} more={this.state.more} addNewCar={this.addNewCar}/>
+                : null
+              }
+              <br></br>
               <input type="submit" value="Submit" onClick={this.submitComparison}/>
           </form>
         </div >
-          { this.state.compare ? <Car data={this.props.data} match={this.renderCar()}/>
+          { this.state.moreCars > 0 ? <Car data={this.props.data}  moreCars={this.state.moreCars} match={this.renderCar()}/>
             : null
           }
+
       </div>
     )
   }
