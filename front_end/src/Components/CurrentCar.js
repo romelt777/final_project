@@ -1,6 +1,7 @@
 import React from 'react'
 import axios from 'axios'
 import Car from './Car'
+import CarSelector from './CarSelector'
 
 export default class CurrentCar extends React.Component {
   constructor(props){
@@ -8,7 +9,8 @@ export default class CurrentCar extends React.Component {
     this.state = {
       comparisonCars: {},
       compare: false,
-      rerender: 1
+      rerender: 1,
+      more: 0
     }
   }
 
@@ -20,7 +22,13 @@ export default class CurrentCar extends React.Component {
       [event.target.value]: event.target.checked
     };
     this.setState({ comparisonCars: newComparisonCars })
+    // this.setState({})
+    console.log(this.state)
+    let prev = this.state.more
+    prev += 1;
+    this.setState({more: prev})
     this.setState({compare: true })
+    console.log(this.state.more)
   }
 
   submitCurrent = event => {
@@ -79,6 +87,7 @@ export default class CurrentCar extends React.Component {
     this.forceUpdate()
   }
 
+
   render(){
 
     const containerStyle = {
@@ -125,6 +134,21 @@ export default class CurrentCar extends React.Component {
       }
     })
 
+    let compareKeys = []
+    const moreSelects = []
+
+    // if (this.state.compare){
+    //   compareKeys = Object.keys(this.state.comparisonCars)
+    //   moreSelects = this.state.compareKeys.map((k) => {
+    //     return (
+    //       <select onChange={this.addNewCar}>
+    //         <option value="select">Select</option>
+    //         {cars}
+    //       </select>
+    //     )
+    //   })
+    // }
+
     return (
       <div className="forms-container" style={containerStyle}>
         <div className="current-car-container" style={{...style, ...shadow, 'margin-left': 50}}>
@@ -161,7 +185,12 @@ export default class CurrentCar extends React.Component {
               <select onChange={this.addNewCar}>
                 <option value="select">Select</option>
                 {cars}
-              </select>
+              </select> <br></br>
+              { this.state.more > 0 ?
+                <CarSelector cars={cars} more={this.state.more}/>
+                : null
+              }
+              <br></br>
               <input type="submit" value="Submit" onClick={this.submitComparison}/>
           </form>
         </div >
