@@ -1,5 +1,6 @@
 import React from 'react';
 import {Line} from 'react-chartjs-2';
+import '../image.css';
 
 export default class Chart extends React.Component {
 
@@ -54,8 +55,8 @@ export default class Chart extends React.Component {
     }
 
     return (
-      <div style={{width: 768, height: 450}}>
-        <h2>5 Years True Cost to Own</h2>
+      <div style={{width: 672, height: 365}}>
+        <h2 className="line-chart-h2">5 Years True Cost to Own</h2>
         <Line data={chartData(depiData)} redraw/>
       </div>
     );

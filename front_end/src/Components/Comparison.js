@@ -3,6 +3,7 @@ import axios from 'axios'
 import Chart from './Chart'
 import PieChart from './PieChart'
 import {ButtonToolbar, ToggleButtonGroup, ToggleButton} from 'react-bootstrap'
+import '../image.css';
 
 
 
@@ -63,14 +64,12 @@ export default class Comparison extends React.Component {
     })
 
     return (
-      <div >
+      <body className="body"><div >
         <h2 >{this.props.match.params.id}</h2>
         {carData}
-        <div class="chart-container" style={{
-          height: 550,
-          width: 675,
-          float: "left"
-          }}>
+        <div class="chart-container" style={{}}>
+          <div class="inside-chart-container">
+          
           <ButtonToolbar>
             <ToggleButtonGroup type="radio" name="options" defaultValue={1} >
               <ToggleButton value={1} onChange={this.toggle}>Depreciation </ToggleButton>
@@ -82,6 +81,7 @@ export default class Comparison extends React.Component {
             : null
           }
         </div>
+        </div>
 
         <PieChart carName={carName}
                   maintenances={this.checkData(this.props.data.maintenances)}
@@ -89,6 +89,7 @@ export default class Comparison extends React.Component {
                   depi={this.checkData(this.props.data.newDepreciations)}
         />
       </div>
+      </body>
     )
   }
 }
