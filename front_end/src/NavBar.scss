@@ -18,7 +18,8 @@
 }
 
 #logo {
-  width: 82px;
+  margin-top: 0.938em;
+  width: 12.500em
 }
 
 #content {
@@ -49,4 +50,9 @@
   color: #ffaa3b;
   border-top: 4px solid #ffaa3b;
   font-weight: 700;
+}
+
+#nav-content {
+  margin-bottom: 0em;
+  margin-top: 0em;
 }

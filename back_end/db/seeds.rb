@@ -46,7 +46,11 @@ FuelPrice.create({
   car_id: 1
 })
 
+<<<<<<< HEAD
 Repair.create({
+=======
+Repairs.create({
+>>>>>>> feature/styling-comparison
   first: 0.00,
   second: 0.00,
   third: 167.71,
@@ -127,7 +131,11 @@ FuelPrice.create({
   car_id: 2
 })
 
+<<<<<<< HEAD
 Repair.create({
+=======
+Repairs.create({
+>>>>>>> feature/styling-comparison
   first: 0.00,
   second: 0.00,
   third: 167.71,
@@ -208,7 +216,11 @@ FuelPrice.create({
   car_id: 3
 })
 
+<<<<<<< HEAD
 Repair.create({
+=======
+Repairs.create({
+>>>>>>> feature/styling-comparison
   first: 0.00,
   second: 0.00,
   third: 167.71,
@@ -288,7 +300,11 @@ FuelPrice.create({
   car_id: 4
 })
 
+<<<<<<< HEAD
 Repair.create({
+=======
+Repairs.create({
+>>>>>>> feature/styling-comparison
   first: 0.00,
   second: 0.00,
   third: 148.92,
@@ -368,7 +384,11 @@ FuelPrice.create({
   car_id: 5
 })
 
+<<<<<<< HEAD
 Repair.create({
+=======
+Repairs.create({
+>>>>>>> feature/styling-comparison
   first: 0.00,
   second: 0.00,
   third: 93.32,
@@ -448,7 +468,11 @@ FuelPrice.create({
   car_id: 6
 })
 
+<<<<<<< HEAD
 Repair.create({
+=======
+Repairs.create({
+>>>>>>> feature/styling-comparison
   first: 0.00,
   second: 0.00,
   third: 148.66,
@@ -528,7 +552,11 @@ FuelPrice.create({
   car_id: 7
 })
 
+<<<<<<< HEAD
 Repair.create({
+=======
+Repairs.create({
+>>>>>>> feature/styling-comparison
   first: 0.00,
   second: 0.00,
   third: 178.13,
@@ -609,7 +637,11 @@ FuelPrice.create({
   car_id: 8
 })
 
+<<<<<<< HEAD
 Repair.create({
+=======
+Repairs.create({
+>>>>>>> feature/styling-comparison
   first: 0.00,
   second: 0.00,
   third: 0.00,
@@ -689,7 +721,11 @@ FuelPrice.create({
   car_id: 9
 })
 
+<<<<<<< HEAD
 Repair.create({
+=======
+Repairs.create({
+>>>>>>> feature/styling-comparison
   first: 0.00,
   second: 0.00,
   third: 0.00,
@@ -769,7 +805,11 @@ FuelPrice.create({
   car_id: 10
 })
 
+<<<<<<< HEAD
 Repair.create({
+=======
+Repairs.create({
+>>>>>>> feature/styling-comparison
   first: 0.00,
   second: 0.00,
   third: 0.00,
@@ -849,7 +889,11 @@ FuelPrice.create({
   car_id: 11
 })
 
+<<<<<<< HEAD
 Repair.create({
+=======
+Repairs.create({
+>>>>>>> feature/styling-comparison
   first: 0.00,
   second: 0.00,
   third: 0.00,
@@ -929,7 +973,11 @@ FuelPrice.create({
   car_id: 12
 })
 
+<<<<<<< HEAD
 Repair.create({
+=======
+Repairs.create({
+>>>>>>> feature/styling-comparison
   first: 0.00,
   second: 0.00,
   third: 0.00,
@@ -1009,7 +1057,11 @@ FuelPrice.create({
   car_id: 13
 })
 
+<<<<<<< HEAD
 Repair.create({
+=======
+Repairs.create({
+>>>>>>> feature/styling-comparison
   first: 0.00,
   second: 0.00,
   third: 0.00,
@@ -1089,7 +1141,11 @@ FuelPrice.create({
   car_id: 14
 })
 
+<<<<<<< HEAD
 Repair.create({
+=======
+Repairs.create({
+>>>>>>> feature/styling-comparison
   first: 0.00,
   second: 0.00,
   third: 148.66,
@@ -1169,7 +1225,11 @@ FuelPrice.create({
   car_id: 15
 })
 
+<<<<<<< HEAD
 Repair.create({
+=======
+Repairs.create({
+>>>>>>> feature/styling-comparison
   first: 0.00,
   second: 0.00,
   third: 148.66,
@@ -1249,7 +1309,11 @@ FuelPrice.create({
   car_id: 16
 })
 
+<<<<<<< HEAD
 Repair.create({
+=======
+Repairs.create({
+>>>>>>> feature/styling-comparison
   first: 0.00,
   second: 0.00,
   third: 183.48,
@@ -1329,14 +1393,22 @@ FuelPrice.create({
   car_id: 17
 })
 
+<<<<<<< HEAD
 Repair.create({
+=======
+Repairs.create({
+>>>>>>> feature/styling-comparison
   first: 0.00,
   second: 0.00,
   third: 183.48,
   fourth: 437.95,
   fifth: 644.20,
   total: 1265.63,
+<<<<<<< HEAD
   car_id: 17
+=======
+  car_id: 16
+>>>>>>> feature/styling-comparison
 })
 
 # 1CAD = 0.752USD
@@ -1358,7 +1430,7 @@ Depreciation.create!({
   fourth: 2659.15,
   fifth: 2516.94,
   total: 15458.49,
-  car_id: 17
+  car_id: 18
 })
 
 car18 = Car.find_or_create_by!({
@@ -1409,7 +1481,11 @@ FuelPrice.create({
   car_id: 18
 })
 
+<<<<<<< HEAD
 Repair.create({
+=======
+Repairs.create({
+>>>>>>> feature/styling-comparison
   first: 0.00,
   second: 0.00,
   third: 148.66,
@@ -1489,7 +1565,11 @@ FuelPrice.create({
   car_id: 19
 })
 
+<<<<<<< HEAD
 Repair.create({
+=======
+Repairs.create({
+>>>>>>> feature/styling-comparison
   first: 0.00,
   second: 0.00,
   third: 148.66,
@@ -1569,7 +1649,11 @@ FuelPrice.create({
   car_id: 20
 })
 
+<<<<<<< HEAD
 Repair.create({
+=======
+Repairs.create({
+>>>>>>> feature/styling-comparison
   first: 0.00,
   second: 0.00,
   third: 188.84,
@@ -1649,7 +1733,11 @@ FuelPrice.create({
   car_id: 21
 })
 
+<<<<<<< HEAD
 Repair.create({
+=======
+Repairs.create({
+>>>>>>> feature/styling-comparison
   first: 0.00,
   second: 0.00,
   third: 0.00,
@@ -1729,7 +1817,11 @@ FuelPrice.create({
   car_id: 22
 })
 
+<<<<<<< HEAD
 Repair.create({
+=======
+Repairs.create({
+>>>>>>> feature/styling-comparison
   first: 0.00,
   second: 0.00,
   third: 0.00,
@@ -1809,7 +1901,11 @@ FuelPrice.create({
   car_id: 23
 })
 
+<<<<<<< HEAD
 Repair.create({
+=======
+Repairs.create({
+>>>>>>> feature/styling-comparison
   first: 0.00,
   second: 0.00,
   third: 0.00,
@@ -1889,7 +1985,11 @@ FuelPrice.create({
   car_id: 24
 })
 
+<<<<<<< HEAD
 Repair.create({
+=======
+Repairs.create({
+>>>>>>> feature/styling-comparison
   first: 0.00,
   second: 0.00,
   third: 0.00,
@@ -1969,7 +2069,11 @@ FuelPrice.create({
   car_id: 25
 })
 
+<<<<<<< HEAD
 Repair.create({
+=======
+Repairs.create({
+>>>>>>> feature/styling-comparison
   first: 0.00,
   second: 0.00,
   third: 0.00,
@@ -2049,7 +2153,11 @@ FuelPrice.create({
   car_id: 26
 })
 
+<<<<<<< HEAD
 Repair.create({
+=======
+Repairs.create({
+>>>>>>> feature/styling-comparison
   first: 0.00,
   second: 0.00,
   third: 0.00,
@@ -2129,7 +2237,11 @@ FuelPrice.create({
   car_id: 27
 })
 
+<<<<<<< HEAD
 Repair.create({
+=======
+Repairs.create({
+>>>>>>> feature/styling-comparison
   first: 0.00,
   second: 0.00,
   third: 0.00,
@@ -2219,6 +2331,16 @@ Repair.create({
   car_id: 28
 })
 
+Repairs.create({
+  first: 116.52,
+  second: 704.47,
+  third: 997.77,
+  fourth: 2634.39,
+  fifth: 2681.27,
+  total: 7134.42,
+  car_id: 28
+})
+
 # 1CAD = 0.752USD
 Maintenance.create!({
   first: 116.72,
@@ -2299,6 +2421,16 @@ Repair.create({
   car_id: 29
 })
 
+Repairs.create({
+  first: 0.00,
+  second: 0.00,
+  third: 0.00,
+  fourth: 0.00,
+  fifth: 897.33,
+  total: 897.33,
+  car_id: 29
+})
+
 # 1CAD = 0.752USD
 Maintenance.create!({
   first: 507.14,
@@ -2369,7 +2501,11 @@ FuelPrice.create({
   car_id: 30
 })
 
+<<<<<<< HEAD
 Repair.create({
+=======
+Repairs.create({
+>>>>>>> feature/styling-comparison
   first: 0.00,
   second: 0.00,
   third: 0.00,
@@ -2449,7 +2585,11 @@ FuelPrice.create({
   car_id: 31
 })
 
+<<<<<<< HEAD
 Repair.create({
+=======
+Repairs.create({
+>>>>>>> feature/styling-comparison
   first: 0.00,
   second: 0.00,
   third: 0.00,
@@ -2539,6 +2679,16 @@ Repair.create({
   car_id: 32
 })
 
+Repairs.create({
+  first: 57.59,
+  second: 705.81,
+  third: 938.95,
+  fourth: 1580.55,
+  fifth: 2851.68,
+  total: 6134.66,
+  car_id: 32
+})
+
 # 1CAD = 0.752USD
 Maintenance.create!({
   first: 57.69,
@@ -2609,7 +2759,11 @@ FuelPrice.create({
   car_id: 33
 })
 
+<<<<<<< HEAD
 Repair.create({
+=======
+Repairs.create({
+>>>>>>> feature/styling-comparison
   first: 0.00,
   second: 0.00,
   third: 0.00,
@@ -2689,7 +2843,11 @@ FuelPrice.create({
   car_id: 34
 })
 
+<<<<<<< HEAD
 Repair.create({
+=======
+Repairs.create({
+>>>>>>> feature/styling-comparison
   first: 0.00,
   second: 0.00,
   third: 0.00,
@@ -2769,7 +2927,11 @@ FuelPrice.create({
   car_id: 35
 })
 
+<<<<<<< HEAD
 Repair.create({
+=======
+Repairs.create({
+>>>>>>> feature/styling-comparison
   first: 0.00,
   second: 0.00,
   third: 0.00,
@@ -2849,7 +3011,11 @@ FuelPrice.create({
   car_id: 36
 })
 
+<<<<<<< HEAD
 Repair.create({
+=======
+Repairs.create({
+>>>>>>> feature/styling-comparison
   first: 0.00,
   second: 0.00,
   third: 148.68,
@@ -2929,7 +3095,11 @@ FuelPrice.create({
   car_id: 37
 })
 
+<<<<<<< HEAD
 Repair.create({
+=======
+Repairs.create({
+>>>>>>> feature/styling-comparison
   first: 0.00,
   second: 0.00,
   third: 178.15,
@@ -3009,7 +3179,11 @@ FuelPrice.create({
   car_id: 38
 })
 
+<<<<<<< HEAD
 Repair.create({
+=======
+Repairs.create({
+>>>>>>> feature/styling-comparison
   first: 0.00,
   second: 0.00,
   third: 171.45,
@@ -3089,7 +3263,11 @@ FuelPrice.create({
   car_id: 39
 })
 
+<<<<<<< HEAD
 Repair.create({
+=======
+Repairs.create({
+>>>>>>> feature/styling-comparison
   first: 0.00,
   second: 0.00,
   third: 137.96,
@@ -3169,7 +3347,11 @@ FuelPrice.create!({
   car_id: 40
 })
 
+<<<<<<< HEAD
 Repair.create!({
+=======
+Repairs.create({
+>>>>>>> feature/styling-comparison
   first: 0.00,
   second: 0.00,
   third: 188.86,

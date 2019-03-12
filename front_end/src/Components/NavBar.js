@@ -1,8 +1,7 @@
 import React  from 'react';
 import '../NavBar.scss';
-import Bird from '../images/bird.png';
 import { Link } from 'react-router-dom'
-
+import Logo from '../images/logo.png';
 
 export default class NavBar extends React.Component {
 
@@ -11,7 +10,7 @@ export default class NavBar extends React.Component {
     return (
      <div className="container">
       <nav id="nav-bar">
-        <img id="logo" src={Bird} alt=""></img>
+        <img id="logo" src={Logo}></img>
         <div id="content">
           <ul id="nav-content">
             <Link id="nav-content-item" to="/">Home </Link>
@@ -28,7 +27,7 @@ export default class NavBar extends React.Component {
       return (
         <div className="container">
           <nav id="nav-bar">
-            <img id="logo" src={Bird} alt=""></img>
+            <img id="logo" src={Logo}></img>
             <div id="content">
               <ul id="nav-content">
                 <Link id="nav-content-item" to="/">Home </Link>
