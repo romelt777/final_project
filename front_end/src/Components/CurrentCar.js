@@ -53,9 +53,9 @@ export default class CurrentCar extends React.Component {
   submitComparison = event => {
     event.preventDefault();
     let car = {
-      "make": this.refs.make.value,
-      "model": this.refs.model.value,
-      "year": this.refs.year.value,
+      "make": "",
+      "model": "",
+      "year": "",
       "condition": "current"
     }
     console.log(car)
