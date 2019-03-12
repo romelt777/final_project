@@ -50,8 +50,7 @@ class AppRouter extends Component {
     console.log(match)
     return (
       <div>
-        <h2>Profile</h2>
-        <Route exact path = {`${match.path}/:id`} render={(props) => <Profile data={this.state.profile} {...props} currentUser={this.state.currentUser}/> }></Route>
+        <Route exact path = {`${match.path}/:id`} render={(props) => <Profile cars={this.state.cars} data={this.state.profile} {...props} currentUser={this.state.currentUser}/> }></Route>
       </div>
     )
   }
