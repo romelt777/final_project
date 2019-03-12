@@ -39,7 +39,6 @@ class AppRouter extends Component {
   Cars = ({match}) => {
     return (
       <div>
-        <h2>Cars</h2>
         <Route exact path = {`${match.path}/:id`} render={(props) => <Car data={this.state} {...props}/> }></Route>
         <Route exact path = {`${match.path}`} render={() => <CarList data={this.state}/> }></Route>
       </div>
@@ -60,7 +59,6 @@ class AppRouter extends Component {
   Comparisons = ({match}) => {
     return (
       <div>
-        <h2>Comparisons</h2>
         <Route exact path = {`${match.path}/:id`} render={(props) => <Comparison data={this.state} {...props}/> }></Route>
       </div>
     )

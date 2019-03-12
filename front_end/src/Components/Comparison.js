@@ -64,13 +64,11 @@ export default class Comparison extends React.Component {
       })
     })
 
-    console.log("hello")
     console.log(this.props.data.repairs)
     return (
        <div>
 
           <div class="inside-chart-container">
-          <h2 >{this.props.match.params.id}</h2>
           {carData}
           <ButtonToolbar>
             <ToggleButtonGroup type="radio" name="options" defaultValue={1} >
