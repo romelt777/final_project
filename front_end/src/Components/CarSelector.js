@@ -13,7 +13,7 @@ export default class CarSelector extends Component {
   if(this.props.more > 0){
     for(let i = 0; i < this.props.more; i++)
       selectors.push(
-        <select onChange={this.addNewCar}>
+        <select onChange={this.props.addNewCar}>
           <option value="select">Select</option>
           {this.props.cars}
         </select>

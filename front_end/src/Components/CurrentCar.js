@@ -187,7 +187,7 @@ export default class CurrentCar extends React.Component {
                 {cars}
               </select> <br></br>
               { this.state.more > 0 ?
-                <CarSelector cars={cars} more={this.state.more}/>
+                <CarSelector cars={cars} more={this.state.more} addNewCar={this.addNewCar}/>
                 : null
               }
               <br></br>
