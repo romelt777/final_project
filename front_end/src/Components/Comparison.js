@@ -4,8 +4,6 @@ import Chart from './Chart'
 import PieChart from './PieChart'
 import Calculator from './Calculator'
 import {ButtonToolbar, ToggleButtonGroup, ToggleButton} from 'react-bootstrap'
-import '../image.css';
-
 
 
 export default class Comparison extends React.Component {
@@ -60,7 +58,7 @@ export default class Comparison extends React.Component {
     this.props.data.cars.forEach((car) => {
       this.state.comparisonId.forEach((c) => {
         if(c.car_id === car.id){
-          
+
           carName.push(car)
         }
       })
@@ -69,8 +67,8 @@ export default class Comparison extends React.Component {
     console.log("hello")
     console.log(this.props.data.repairs)
     return (
-       <div> 
-        <div class="chart-container" style={{}}>
+       <div>
+
           <div class="inside-chart-container">
           <h2 >{this.props.match.params.id}</h2>
           {carData}
@@ -87,14 +85,16 @@ export default class Comparison extends React.Component {
             : null
           }
         </div>
-        </div>
 
-       
-
+        <PieChart carName={carName}
+                  maintenances={this.checkData(this.props.data.maintenances)}
+                  fuels={this.checkData(this.props.data.newFuels)}
+                  depi={this.checkData(this.props.data.newDepreciations)}
+        />
         <Calculator carName={carName} price={this.checkData(this.props.data.newPrices)}/>
 
       </div>
-     
+
     )
   }
 }

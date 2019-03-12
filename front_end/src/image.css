@@ -13,28 +13,6 @@
   text-align: left;
 }
 
-.big {
-  font-size: 6.7rem;
-  line-height: 1;
-  color: #fff;
-  font-family: 'Open Sans Condensed', sans-serif;
-  font-weight: 700;
-  padding-top: 50px;
-}
-
-
-.btn {
-	  text-transform: uppercase;
-    font-weight: bold;
-    padding: 15px 26px;
-    padding: 1.5rem 2.6rem;
-    color: #fff;
-    border-radius: 0;
-    border: none;
-    font-size: 22px;
-    font-size: 2.2rem;
-}
-
 .btn-transparent {
 	background-color: transparent;
 	border: 3px solid #fff;

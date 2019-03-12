@@ -1,7 +1,6 @@
 import React from 'react';
 import {Doughnut} from 'react-chartjs-2';
 import {ButtonToolbar, ToggleButtonGroup, ToggleButton} from 'react-bootstrap'
-import '../image.css';
 
 // Cost composition = Depreciation + Taxes & Fees + Financing + Fuel + (Insurance) + Maintenance + (Repairs)
 // ****************************************************************
@@ -68,15 +67,14 @@ export default class PieChart extends React.Component {
     return (
       <div className="pie-container">
        <div className="inside-pie-container">
-      <ButtonToolbar style={{float: "right"}}>
-        <ToggleButtonGroup 
-    name="options" defaultValue={1} >
-          {pieButtons}
-        </ToggleButtonGroup>
-      </ButtonToolbar>
-      
-        <h2 className="pie-chart-h2">Cost Composition</h2>
-        <Doughnut data={this.data()} />
+          <ButtonToolbar>
+            <ToggleButtonGroup name="options" defaultValue={1} >
+              {pieButtons}
+            </ToggleButtonGroup>
+          </ButtonToolbar>
+
+          <h2 className="pie-chart-h2">Cost Composition</h2>
+          <Doughnut data={this.data()} />
         </div>
       </div>
     );
