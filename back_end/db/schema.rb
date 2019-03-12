@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_11_193345) do
+ActiveRecord::Schema.define(version: 2019_03_12_043725) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -114,6 +114,19 @@ ActiveRecord::Schema.define(version: 2019_03_11_193345) do
     t.index ["car_id"], name: "index_prices_on_car_id"
   end
 
+  create_table "repairs", force: :cascade do |t|
+    t.float "first"
+    t.float "second"
+    t.float "third"
+    t.float "fourth"
+    t.float "fifth"
+    t.float "total"
+    t.bigint "car_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["car_id"], name: "index_repairs_on_car_id"
+  end
+
   create_table "saved_cars", force: :cascade do |t|
     t.bigint "user_id"
     t.bigint "car_id"
@@ -154,6 +167,7 @@ ActiveRecord::Schema.define(version: 2019_03_11_193345) do
   add_foreign_key "maintenances", "cars"
   add_foreign_key "pictures", "cars"
   add_foreign_key "prices", "cars"
+  add_foreign_key "repairs", "cars"
   add_foreign_key "saved_cars", "cars"
   add_foreign_key "saved_cars", "users"
   add_foreign_key "warranties", "cars"
