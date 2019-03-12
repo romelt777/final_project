@@ -278,6 +278,7 @@ class AppRouter extends Component {
   //   // this.history.push(`/users/${this.currentUser.id}`)
   // }
 
+  // getCompareCars
 
 
   render() {

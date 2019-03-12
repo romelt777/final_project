@@ -48,6 +48,25 @@ export default class Comparison extends React.Component {
     }
   }
 
+  // giveInfo = () => {
+  //   let carName = []
+  //   this.props.data.cars.forEach((car) => {
+  //     this.state.comparisonId.forEach((c) => {
+  //       if(c.car_id === car.id){
+  //         carData.push(<h3 key={car.id}> {car.year} {car.make} {car.model} </h3>)
+  //         carName.push(car)
+  //       }
+  //     })
+  //   })
+
+  //   return carName
+  // }
+
+  // giveAppInfo = (d) => {
+  //   c
+
+  // }
+
   render(){
 
     let carData = []

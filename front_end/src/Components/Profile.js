@@ -11,28 +11,39 @@ export default class Profile extends React.Component {
     }
   }
 
-  // componentDidMount(){
-  //   axios.get(`http://localhost:3001/api/v1/users/${this.props.currentUser.id}`, this.props.currentUser)
-  //     .then(res => {
-  //       this.setState({profile: res.data})
-  //     });
-  // }
-
   componentDidMount(){
-    axios.get(`http://localhost:3001/api/v1/users/1`)
+    axios.get(`http://localhost:3001/api/v1/users/${this.props.currentUser.id}`, this.props.currentUser)
       .then(res => {
         this.setState({profile: res.data})
       });
   }
+
+  // componentDidMount(){
+  //   axios.get(`http://localhost:3001/api/v1/users/1`)
+  //     .then(res => {
+  //       this.setState({profile: res.data})
+  //     });
+  // }
 
   render(){
     console.log("profilepage")
     let carId = 0;
     const comparisons = [];
 
+    // let newCompare = [];
+    // if(this.state.profile && this.props.cars){
+    //   this.state.profile.data2.forEach((car) => {
+    //     car.forEach((c) => {
+    //       newCompare.push(`${c.id}`)
+    //     })
+    //   })
+    // }
+    // console.log(newCompare)
+
     if(this.state.profile && this.props.cars){
       this.state.profile.data1.forEach((c, index) => {
         carId = this.props.cars.length - 1 - this.state.profile.data2[index][0].car_id
+
         comparisons.push(
         <div
           style={{
@@ -45,8 +56,7 @@ export default class Profile extends React.Component {
           key={c.id}
         >
             <Link to={`/comparisons/${c.id}`}>
-              {this.props.cars[carId].year} {this.props.cars[carId].make} {this.props.cars[carId].model}
-               <span> VS </span>
+               <span> Comparison </span>
 
             </Link>
         </div>)
@@ -57,7 +67,14 @@ export default class Profile extends React.Component {
     if(this.state.profile && this.props.cars){
       name = `${this.state.profile.data3.first_name} ${this.state.profile.data3.last_name}`
     }
-    console.log(this.state.profile.data2);
+    console.log(this.state.profile);
+
+    let compareNew = [];
+    if(this.state.profile && this.props.cars){
+      this.state.profile.data1.forEach((c, index) => {
+        compareNew.push(`${this.state.profile.data3.first_name} ${this.state.profile.data3.last_name}`)
+      })
+    }
 
     const compareDiv = {
       width: '75%',
