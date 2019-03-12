@@ -12,6 +12,7 @@ Rails.application.routes.draw do
       resources :comparisons
       resources :maintenances
       resources :users, except: [:create]
+      resources :repairs
 
     end
   end
