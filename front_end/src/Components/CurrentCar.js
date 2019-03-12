@@ -102,7 +102,6 @@ export default class CurrentCar extends React.Component {
       'padding-bottom': 20,
       'margin-top': 100,
       'height': '50%',
-      'justify-content': 'center'
     }
 
     const style = {
@@ -110,10 +109,9 @@ export default class CurrentCar extends React.Component {
       'background-color': '#ffffff',
       position: 'relative',
       float: 'left',
-      width: '30%',
+      width: '20%',
       padding: 0,
-      height: 450,
-      'justify-content': 'center'
+      height: 550,
     }
 
     const shadow = {
@@ -128,11 +126,14 @@ export default class CurrentCar extends React.Component {
       'width': '100%',
       'height': '5%',
       'border-radius': -10,
-      'background-color': 'orange'
+      'background-color': '#008080'
     }
 
     const formStyle = {
-
+      'padding': 40,
+      'border-top': '1px solid #eee',
+      'border-radius': 10,
+      'height': '90%'
     }
 
     const cars = this.props.data.cars.map(car => {
@@ -145,8 +146,8 @@ export default class CurrentCar extends React.Component {
       }
     })
 
-    let compareKeys = []
-    const moreSelects = []
+    // let compareKeys = []
+    // const moreSelects = []
 
     // if (this.state.compare){
     //   compareKeys = Object.keys(this.state.comparisonCars)
@@ -160,34 +161,16 @@ export default class CurrentCar extends React.Component {
     //   })
     // }
 
-    const romel =  <Car data={this.props.data} match={this.renderCar()} />
+    // const romel =  <Car data={this.props.data} match={this.renderCar()} />
 
     return (
       <div className="forms-container" style={containerStyle}>
         <div className="current-car-container" style={{...style, ...shadow, 'margin-left': 50}}>
           <div className="left-bar" style={barStyle}></div>
-            <form onSubmit={this.submitCurrent}
-                  style={{
-                   'padding': 40,
-                   'border-top': '1px solid #eee',
-                   'border-radius': 10,
-                   'height': '90%'}}>
-              <h3>Enter your current car info</h3>
-              <label> Make: <input type="text" name="make" ref="make"/> </label> <br></br>
-              <label> Model: <input type="text" name="model" ref="model" /> </label> <br></br>
-              <label> Year: <input type="text" name="year" ref="year" /> </label> <br></br>
-              <input type="submit" value="Submit"/>
-            </form>
-        </div>
-
-        <div className="new-car-container" style={{...style, ...shadow}}>
-          <div className="right-bar" style={{...barStyle, 'background-color': '#008080'}}></div>
-          <form style={{
-                     'padding': 40,
-                     'border-top': '1px solid #eee',
-                     'border-radius': 10,
-                     'height': '90%'}}>
-              <h3>Choose a car you want to compare with</h3>
+            <form style={formStyle}>
+              <h5>Instruction: </h5>
+              <p>1. Choose only one car if you want to know more info of that car</p>
+              <p>2. Choose more than one car if you want to compare them</p>
               <select onChange={this.addNewCar}>
                 <option value="select">Select</option>
                 {cars}
@@ -198,13 +181,18 @@ export default class CurrentCar extends React.Component {
               }
               <br></br>
               <input type="submit" value="Submit" onClick={this.submitComparison}/>
+            </form>
+        </div>
+
+        <div className="new-car-container" style={{...style, ...shadow, 'width': '70%'}}>
+          <div className="right-bar" style={{...barStyle, 'background-color': 'orange'}}></div>
+          <form style={formStyle}>
+            { this.state.moreCars > 0 ? <Car data={this.props.data}  moreCars={this.state.moreCars} match={this.renderCar()}/>
+              : null
+            }
           </form>
         </div>
-        <div>
-          { this.state.moreCars > 0 ? <Car data={this.props.data}  moreCars={this.state.moreCars} match={this.renderCar()}/>
-            : null
-          }
-        </div>
+
       </div>
     )
   }

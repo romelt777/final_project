@@ -67,11 +67,9 @@ export default class Car extends React.Component {
     const containerStyle = {
       'padding-top': 20,
       'padding-bottom': 20,
-      'margin-top': 100,
-      'height': '50%',
+      width: 320,
       'justify-content': 'center',
-      overflow: 'hidden',
-      'border-radius': 20
+      display: 'inline-block'
     }
 
     const imgSize = {
@@ -91,12 +89,10 @@ export default class Car extends React.Component {
         displayCars.push(
           <div style={containerStyle}>
             <form>
-              <div>{newCar[i]}</div>
-              <div>{newPrice[i]}</div>
-              <div style={display}>{newFuel[i]}</div>
-              <div style={display}>{newWarranty[i]}</div>
+              <h4>{newCar[i]}</h4>
+              <h5>{newPrice[i]}</h5>
               <div className='imgContainer' style={imgSize}>
-              <div style={display}>{newPic[i]}</div>
+                <div style={display}>{newPic[i]}</div>
               </div>
             </form>
           </div>
@@ -105,7 +101,7 @@ export default class Car extends React.Component {
 
     return (
       <div>
-        {displayCars}
+      {displayCars}
       </div>
     )
   }
