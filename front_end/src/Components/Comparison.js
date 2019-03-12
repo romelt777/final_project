@@ -40,9 +40,9 @@ export default class Comparison extends React.Component {
   }
 
   toggle = (event) => {
-    if(event.target.value === 1){
+    if(event.target.value == 1){
       this.setState({toggle: "maintenances"})
-    } else if(event.target.value === 2){
+    } else if(event.target.value == 2){
       this.setState({toggle: "newDepreciations"})
     }
   }
@@ -70,8 +70,8 @@ export default class Comparison extends React.Component {
             <ToggleButton value={2} onChange={this.toggle}>Maintenance</ToggleButton>
           </ToggleButtonGroup>
         </ButtonToolbar>
-        { this.state.toggle === "maintenances" ? <Chart carName={carName} data={this.checkData(this.props.data.maintenances)}/>
-          : this.state.toggle === "newDepreciations" ? <Chart carName={carName} data={this.checkData(this.props.data.newDepreciations)}/>
+        { this.state.toggle == "maintenances" ? <Chart carName={carName} data={this.checkData(this.props.data.maintenances)}/>
+          : this.state.toggle == "newDepreciations" ? <Chart carName={carName} data={this.checkData(this.props.data.newDepreciations)}/>
           : null
         }
 

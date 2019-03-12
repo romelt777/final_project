@@ -6,6 +6,11 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  padding:0;
+  border:0;     /* This removes the border around the viewport in old versions of IE */
+  width:100%;
+  background:#fff;
+  min-width:600px;
 }
 
 code {
