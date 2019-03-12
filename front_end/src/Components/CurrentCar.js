@@ -101,7 +101,7 @@ export default class CurrentCar extends React.Component {
       'padding-top': 20,
       'padding-bottom': 20,
       'margin-top': 100,
-      'height': '100%',
+      'height': '50%',
       'justify-content': 'center'
     }
 
@@ -112,7 +112,7 @@ export default class CurrentCar extends React.Component {
       float: 'left',
       width: '30%',
       padding: 0,
-      height: 400,
+      height: 450,
       'justify-content': 'center'
     }
 
@@ -129,6 +129,10 @@ export default class CurrentCar extends React.Component {
       'height': '5%',
       'border-radius': -10,
       'background-color': 'orange'
+    }
+
+    const formStyle = {
+
     }
 
     const cars = this.props.data.cars.map(car => {
@@ -161,7 +165,7 @@ export default class CurrentCar extends React.Component {
     return (
       <div className="forms-container" style={containerStyle}>
         <div className="current-car-container" style={{...style, ...shadow, 'margin-left': 50}}>
-          <div classNmae="left-bar" style={barStyle}></div>
+          <div className="left-bar" style={barStyle}></div>
             <form onSubmit={this.submitCurrent}
                   style={{
                    'padding': 40,
@@ -175,16 +179,9 @@ export default class CurrentCar extends React.Component {
               <input type="submit" value="Submit"/>
             </form>
         </div>
-        <div className="middle-container" style={{...style, margin: 0}}>
-            <div style={{width: '100%', height: '40%', 'background-color': '#E9EDF6'}}>
-              <span style={{'font-size': 30, 'text-alignment': 'center', 'margin': 40}}>VS.</span>
-            </div>
-            <div style={{width: '100%', height: '20%', 'background-color': '#E2E5EC'}}></div>
-            <div style={{width: '100%', height: '20%', 'background-color': '#E9EDF6'}}></div>
-            <div style={{width: '100%', height: '20%', 'background-color': '#E2E5EC'}}></div>
-        </div>
+
         <div className="new-car-container" style={{...style, ...shadow}}>
-          <div classNmae="right-bar" style={{...barStyle, 'background-color': '#008080'}}></div>
+          <div className="right-bar" style={{...barStyle, 'background-color': '#008080'}}></div>
           <form style={{
                      'padding': 40,
                      'border-top': '1px solid #eee',
@@ -202,11 +199,12 @@ export default class CurrentCar extends React.Component {
               <br></br>
               <input type="submit" value="Submit" onClick={this.submitComparison}/>
           </form>
-        </div >
+        </div>
+        <div>
           { this.state.moreCars > 0 ? <Car data={this.props.data}  moreCars={this.state.moreCars} match={this.renderCar()}/>
             : null
           }
-
+        </div>
       </div>
     )
   }
