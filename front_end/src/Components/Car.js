@@ -65,8 +65,13 @@ export default class Car extends React.Component {
     })
 
     const containerStyle = {
-      position: 'relative',
-      'margin-top': '50%',
+      'padding-top': 20,
+      'padding-bottom': 20,
+      'margin-top': 100,
+      'height': '50%',
+      'justify-content': 'center',
+      overflow: 'hidden',
+      'border-radius': 20
     }
 
     const imgSize = {
