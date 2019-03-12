@@ -35,7 +35,6 @@ export default class Comparison extends React.Component {
         }
       })
     })
-    console.log(result)
     return result;
   }
 
@@ -44,6 +43,8 @@ export default class Comparison extends React.Component {
       this.setState({toggle: "maintenances"})
     } else if(event.target.value == 2){
       this.setState({toggle: "newDepreciations"})
+    } else if(event.target.value == 3){
+      this.setState({toggle: "repairs"})
     }
   }
 
@@ -60,6 +61,8 @@ export default class Comparison extends React.Component {
       })
     })
 
+    console.log("hello")
+    console.log(this.props.data.repairs)
     return (
       <div >
         <h2 >{this.props.match.params.id}</h2>
@@ -68,10 +71,12 @@ export default class Comparison extends React.Component {
           <ToggleButtonGroup type="radio" name="options" defaultValue={1} >
             <ToggleButton value={1} onChange={this.toggle}>Depreciation </ToggleButton>
             <ToggleButton value={2} onChange={this.toggle}>Maintenance</ToggleButton>
+            <ToggleButton value={3} onChange={this.toggle}>Repairs</ToggleButton>
           </ToggleButtonGroup>
         </ButtonToolbar>
-        { this.state.toggle == "maintenances" ? <Chart carName={carName} data={this.checkData(this.props.data.maintenances)}/>
-          : this.state.toggle == "newDepreciations" ? <Chart carName={carName} data={this.checkData(this.props.data.newDepreciations)}/>
+        { this.state.toggle === "maintenances" ? <Chart carName={carName} data={this.checkData(this.props.data.maintenances)}/>
+          : this.state.toggle === "newDepreciations" ? <Chart carName={carName} data={this.checkData(this.props.data.newDepreciations)}/>
+          : this.state.toggle === "repairs" ? <Chart carName={carName} data={this.checkData(this.props.data.repairs)}/>
           : null
         }
 

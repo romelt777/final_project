@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  first: 1.5
+  second: 1.5
+  third: 1.5
+  fourth: 1.5
+  fifth: 1.5
+  total: 1.5
+  car: one
+
+two:
+  first: 1.5
+  second: 1.5
+  third: 1.5
+  fourth: 1.5
+  fifth: 1.5
+  total: 1.5
+  car: two

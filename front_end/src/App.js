@@ -31,7 +31,8 @@ class AppRouter extends Component {
       maintenances: [],
       currentUser: '',
       jwt: '',
-      profile: ''
+      profile: '',
+      repairs: []
     }
     this.history = createHistory()
   }
@@ -128,6 +129,16 @@ class AppRouter extends Component {
       });
   }
 
+  getAllRepairs = () => {
+    axios.get(`http://localhost:3001/api/v1/repairs/`)
+      .then(res => {
+        const repairs = this.state.repairs
+        Array.prototype.push.apply(repairs, res.data.data)
+        this.setState({repairs})
+        console.log(this.state.repairs)
+      });
+  }
+
 
   getAllInformation = () => {
     axios.all([
@@ -137,7 +148,8 @@ class AppRouter extends Component {
       this.getAllPictures(),
       this.getAllWarranties(),
       this.getAllPrices(),
-      this.getAllCars()
+      this.getAllCars(),
+      this.getAllRepairs()
     ])
     .then(axios.spread( (m,d,f,p,w,pr,c) => {
     }))

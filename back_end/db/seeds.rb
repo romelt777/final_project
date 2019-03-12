@@ -46,6 +46,16 @@ FuelPrice.create({
   car_id: 1
 })
 
+Repair.create({
+  first: 0.00,
+  second: 0.00,
+  third: 167.71,
+  fourth: 399.81,
+  fifth: 583.62,
+  total: 1151.14,
+  car_id: 1
+})
+
 # 1CAD = 0.752USD
 Maintenance.create!({
   first: 164.69,
@@ -117,6 +127,17 @@ FuelPrice.create({
   car_id: 2
 })
 
+Repair.create({
+  first: 0.00,
+  second: 0.00,
+  third: 167.71,
+  fourth: 399.81,
+  fifth: 583.62,
+  total: 1151.14,
+  car_id: 2
+})
+
+
 # 1CAD = 0.752USD
 Maintenance.create!({
   first: 353.26,
@@ -184,6 +205,16 @@ FuelPrice.create({
   fourth: 2901.99,
   fifth: 2989.20,
   total: 14099.40,
+  car_id: 3
+})
+
+Repair.create({
+  first: 0.00,
+  second: 0.00,
+  third: 167.71,
+  fourth: 399.81,
+  fifth: 583.62,
+  total: 1151.14,
   car_id: 3
 })
 
@@ -257,6 +288,16 @@ FuelPrice.create({
   car_id: 4
 })
 
+Repair.create({
+  first: 0.00,
+  second: 0.00,
+  third: 148.92,
+  fourth: 360.90,
+  fifth: 527.27,
+  total: 1037.10,
+  car_id: 4
+})
+
 # 1CAD = 0.752USD
 Maintenance.create!({
   first: 393.25,
@@ -324,6 +365,16 @@ FuelPrice.create({
   fourth: 2797.34,
   fifth: 2881.86,
   total: 13590.91,
+  car_id: 5
+})
+
+Repair.create({
+  first: 0.00,
+  second: 0.00,
+  third: 93.32,
+  fourth: 222.48,
+  fifth: 324.76,
+  total: 640.56,
   car_id: 5
 })
 
@@ -397,6 +448,16 @@ FuelPrice.create({
   car_id: 6
 })
 
+Repair.create({
+  first: 0.00,
+  second: 0.00,
+  third: 148.66,
+  fourth: 360.27,
+  fifth: 526.34,
+  total: 1035.28,
+  car_id: 6
+})
+
 # 1CAD = 0.752USD
 Maintenance.create!({
   first: 330.60,
@@ -467,6 +528,17 @@ FuelPrice.create({
   car_id: 7
 })
 
+Repair.create({
+  first: 0.00,
+  second: 0.00,
+  third: 178.13,
+  fourth: 200.83,
+  fifth: 425.90,
+  total: 624.11,
+  car_id: 7
+})
+
+
 # 1CAD = 0.752USD
 Maintenance.create!({
   first: 557.21,
@@ -534,6 +606,16 @@ FuelPrice.create({
   fourth: 3105.92,
   fifth: 3198.49,
   total: 15088.20,
+  car_id: 8
+})
+
+Repair.create({
+  first: 0.00,
+  second: 0.00,
+  third: 0.00,
+  fourth: 554.47,
+  fifth: 849.11,
+  total: 1403.58,
   car_id: 8
 })
 
@@ -607,6 +689,16 @@ FuelPrice.create({
   car_id: 9
 })
 
+Repair.create({
+  first: 0.00,
+  second: 0.00,
+  third: 0.00,
+  fourth: 554.47,
+  fifth: 849.11,
+  total: 1403.58,
+  car_id: 9
+})
+
 # 1CAD = 0.752USD
 Maintenance.create!({
   first: 253.28,
@@ -674,6 +766,16 @@ FuelPrice.create({
   fourth: 2887.23,
   fifth: 2974.44,
   total: 14030.98,
+  car_id: 10
+})
+
+Repair.create({
+  first: 0.00,
+  second: 0.00,
+  third: 0.00,
+  fourth: 554.47,
+  fifth: 849.11,
+  total: 1403.58,
   car_id: 10
 })
 
@@ -747,6 +849,16 @@ FuelPrice.create({
   car_id: 11
 })
 
+Repair.create({
+  first: 0.00,
+  second: 0.00,
+  third: 0.00,
+  fourth: 1058.04,
+  fifth: 1624.56,
+  total: 2682.61,
+  car_id: 11
+})
+
 # 1CAD = 0.752USD
 Maintenance.create!({
   first: 191.86,
@@ -814,6 +926,16 @@ FuelPrice.create({
   fourth: 2887.23,
   fifth: 3359.49,
   total: 15848.91,
+  car_id: 12
+})
+
+Repair.create({
+  first: 0.00,
+  second: 0.00,
+  third: 0.00,
+  fourth: 0.00,
+  fifth: 1584.39,
+  total: 1584.39,
   car_id: 12
 })
 
@@ -887,6 +1009,16 @@ FuelPrice.create({
   car_id: 13
 })
 
+Repair.create({
+  first: 0.00,
+  second: 0.00,
+  third: 0.00,
+  fourth: 0.00,
+  fifth: 1584.39,
+  total: 1584.39,
+  car_id: 13
+})
+
 # 1CAD = 0.752USD
 Maintenance.create!({
   first: 399.81,
@@ -954,6 +1086,16 @@ FuelPrice.create({
   fourth: 2447.17,
   fifth: 2520.96,
   total: 11892.39,
+  car_id: 14
+})
+
+Repair.create({
+  first: 0.00,
+  second: 0.00,
+  third: 148.66,
+  fourth: 360.27,
+  fifth: 526.34,
+  total: 1035.28,
   car_id: 14
 })
 
@@ -1027,6 +1169,16 @@ FuelPrice.create({
   car_id: 15
 })
 
+Repair.create({
+  first: 0.00,
+  second: 0.00,
+  third: 148.66,
+  fourth: 360.27,
+  fifth: 526.34,
+  total: 1035.28,
+  car_id: 15
+})
+
 # 1CAD = 0.752USD
 Maintenance.create!({
   first: 91.23,
@@ -1081,9 +1233,9 @@ Fuel.create!({
   auto_city: 8.5,
   auto_highway: 6.4,
   auto_combined: 7.3,
-  manual_city: 9.5, 
-  manual_highway: 7.0, 
-  manual_combined: 8.1, 
+  manual_city: 9.5,
+  manual_highway: 7.0,
+  manual_combined: 8.1,
   car_id: 16
 })
 
@@ -1094,6 +1246,16 @@ FuelPrice.create({
   fourth: 2901.99,
   fifth: 2989.20,
   total: 14099.40,
+  car_id: 16
+})
+
+Repair.create({
+  first: 0.00,
+  second: 0.00,
+  third: 183.48,
+  fourth: 437.95,
+  fifth: 644.20,
+  total: 1265.63,
   car_id: 16
 })
 
@@ -1151,9 +1313,9 @@ Fuel.create!({
   auto_city: 9.2,
   auto_highway: 7.4,
   auto_combined: 8.2,
-  manual_city: 10.9, 
-  manual_highway: 8.3, 
-  manual_combined: 9.5, 
+  manual_city: 10.9,
+  manual_highway: 8.3,
+  manual_combined: 9.5,
   car_id: 17
 })
 
@@ -1164,6 +1326,16 @@ FuelPrice.create({
   fourth: 3261.55,
   fifth: 3359.49,
   total: 15848.91,
+  car_id: 17
+})
+
+Repair.create({
+  first: 0.00,
+  second: 0.00,
+  third: 183.48,
+  fourth: 437.95,
+  fifth: 644.20,
+  total: 1265.63,
   car_id: 17
 })
 
@@ -1221,7 +1393,7 @@ Fuel.create!({
   auto_city: 11.6,
   auto_highway: 8.5,
   auto_combined: 9.9,
-  manual_city: 10.9, #null 
+  manual_city: 10.9, #null
   manual_highway: 8.3, #null
   manual_combined: 9.5, #null
   car_id: 18
@@ -1234,6 +1406,16 @@ FuelPrice.create({
   fourth: 3402.42,
   fifth: 3504.39,
   total: 16531.81,
+  car_id: 18
+})
+
+Repair.create({
+  first: 0.00,
+  second: 0.00,
+  third: 148.66,
+  fourth: 360.27,
+  fifth: 526.34,
+  total: 1035.28,
   car_id: 18
 })
 
@@ -1291,7 +1473,7 @@ Fuel.create!({
   auto_city: 8.8,
   auto_highway: 6.0,
   auto_combined: 7.3,
-  manual_city: 10.9, #null 
+  manual_city: 10.9, #null
   manual_highway: 8.3, #null
   manual_combined: 9.5, #null
   car_id: 19
@@ -1304,6 +1486,16 @@ FuelPrice.create({
   fourth: 2526.33,
   fifth: 2601.46,
   total: 12273.41,
+  car_id: 19
+})
+
+Repair.create({
+  first: 0.00,
+  second: 0.00,
+  third: 148.66,
+  fourth: 360.27,
+  fifth: 526.34,
+  total: 1035.28,
   car_id: 19
 })
 
@@ -1333,7 +1525,7 @@ car20 = Car.find_or_create_by!({
   year: "2018",
   make: "Chrysler",
   model: "300",
-  condition: 'new' 
+  condition: 'new'
 })
 
 Price.create!({
@@ -1361,7 +1553,7 @@ Fuel.create!({
   auto_city: 12.4,
   auto_highway: 7.8,
   auto_combined: 9.9,
-  manual_city: 10.9, #null 
+  manual_city: 10.9, #null
   manual_highway: 8.3, #null
   manual_combined: 9.5, #null
   car_id: 20
@@ -1374,6 +1566,16 @@ FuelPrice.create({
   fourth: 3402.42,
   fifth: 3504.39,
   total: 16531.81,
+  car_id: 20
+})
+
+Repair.create({
+  first: 0.00,
+  second: 0.00,
+  third: 188.84,
+  fourth: 448.66,
+  fifth: 656.25,
+  total: 1293.76,
   car_id: 20
 })
 
@@ -1431,7 +1633,7 @@ Fuel.create!({
   auto_city: 9.9,
   auto_highway: 8.1,
   auto_combined: 8.9,
-  manual_city: 10.9, #null 
+  manual_city: 10.9, #null
   manual_highway: 8.3, #null
   manual_combined: 9.5, #null
   car_id: 21
@@ -1444,6 +1646,16 @@ FuelPrice.create({
   fourth: 2901.99,
   fifth: 2989.20,
   total: 14099.40,
+  car_id: 21
+})
+
+Repair.create({
+  first: 0.00,
+  second: 0.00,
+  third: 0.00,
+  fourth: 0.00,
+  fifth: 977.69,
+  total: 977.69,
   car_id: 21
 })
 
@@ -1489,10 +1701,10 @@ Picture.create!({
 })
 
 Warranty.create!({
-  bumper: "80000/km, 48/Months", 
-  powertrain: "110000/km, 72/Months", 
+  bumper: "80000/km, 48/Months",
+  powertrain: "110000/km, 72/Months",
   roadside: "110000/km, 72/Months",
-  rust: "Unlimited/km, 60/Months", 
+  rust: "Unlimited/km, 60/Months",
   car_id: 22
 })
 
@@ -1501,7 +1713,7 @@ Fuel.create!({
   auto_city: 14.0,
   auto_highway: 9.4,
   auto_combined: 11.5,
-  manual_city: 10.9, #null 
+  manual_city: 10.9, #null
   manual_highway: 8.3, #null
   manual_combined: 9.5, #null
   car_id: 22
@@ -1514,6 +1726,16 @@ FuelPrice.create({
   fourth: 1957.47,
   fifth: 2016.50,
   total: 9509.62,
+  car_id: 22
+})
+
+Repair.create({
+  first: 0.00,
+  second: 0.00,
+  third: 0.00,
+  fourth: 554.47,
+  fifth: 849.11,
+  total: 1403.58,
   car_id: 22
 })
 
@@ -1559,10 +1781,10 @@ Picture.create!({
 })
 
 Warranty.create!({
-  bumper: "80000/km, 48/Months", 
-  powertrain: "110000/km, 72/Months", 
+  bumper: "80000/km, 48/Months",
+  powertrain: "110000/km, 72/Months",
   roadside: "110000/km, 72/Months",
-  rust: "Unlimited/km, 60/Months", 
+  rust: "Unlimited/km, 60/Months",
   car_id: 23
 })
 
@@ -1571,7 +1793,7 @@ Fuel.create!({
   auto_city: 11.8,
   auto_highway: 8.4,
   auto_combined: 11.1,
-  manual_city: 10.9, #null 
+  manual_city: 10.9, #null
   manual_highway: 8.3, #null
   manual_combined: 9.5, #null
   car_id: 23
@@ -1584,6 +1806,16 @@ FuelPrice.create({
   fourth: 1957.47,
   fifth: 2016.50,
   total: 9509.62,
+  car_id: 23
+})
+
+Repair.create({
+  first: 0.00,
+  second: 0.00,
+  third: 0.00,
+  fourth: 554.47,
+  fifth: 849.11,
+  total: 1403.58,
   car_id: 23
 })
 
@@ -1629,10 +1861,10 @@ Picture.create!({
 })
 
 Warranty.create!({
-  bumper: "80000/km, 48/Months", 
-  powertrain: "110000/km, 72/Months", 
+  bumper: "80000/km, 48/Months",
+  powertrain: "110000/km, 72/Months",
   roadside: "Unlimited/km, 48/Months",
-  rust: "Unlimited/km, 72/Months", 
+  rust: "Unlimited/km, 72/Months",
   car_id: 24
 })
 
@@ -1641,7 +1873,7 @@ Fuel.create!({
   auto_city: 10.6,
   auto_highway: 7.3,
   auto_combined: 8.8,
-  manual_city: 10.9, #null 
+  manual_city: 10.9, #null
   manual_highway: 8.3, #null
   manual_combined: 9.5, #null
   car_id: 24
@@ -1654,6 +1886,16 @@ FuelPrice.create({
   fourth: 3222.64,
   fifth: 3319.24,
   total: 15657.06,
+  car_id: 24
+})
+
+Repair.create({
+  first: 0.00,
+  second: 0.00,
+  third: 0.00,
+  fourth: 692.42,
+  fifth: 1062.06,
+  total: 1754.48,
   car_id: 24
 })
 
@@ -1699,10 +1941,10 @@ Picture.create!({
 })
 
 Warranty.create!({
-  bumper: "80000/km, 48/Months", 
-  powertrain: "110000/km, 72/Months", 
+  bumper: "80000/km, 48/Months",
+  powertrain: "110000/km, 72/Months",
   roadside: "Unlimited/km, 48/Months",
-  rust: "Unlimited/km, 72/Months", 
+  rust: "Unlimited/km, 72/Months",
   car_id: 25
 })
 
@@ -1711,7 +1953,7 @@ Fuel.create!({
   auto_city: 10.6,
   auto_highway: 8.5,
   auto_combined: 9.4,
-  manual_city: 10.9, #null 
+  manual_city: 10.9, #null
   manual_highway: 8.3, #null
   manual_combined: 9.5, #null
   car_id: 25
@@ -1724,6 +1966,16 @@ FuelPrice.create({
   fourth: 3351.44,
   fifth: 3452.07,
   total: 16283.61,
+  car_id: 25
+})
+
+Repair.create({
+  first: 0.00,
+  second: 0.00,
+  third: 0.00,
+  fourth: 692.42,
+  fifth: 1062.06,
+  total: 1754.48,
   car_id: 25
 })
 
@@ -1769,10 +2021,10 @@ Picture.create!({
 })
 
 Warranty.create!({
-  bumper: "80000/km, 48/Months", 
-  powertrain: "110000/km, 72/Months", 
+  bumper: "80000/km, 48/Months",
+  powertrain: "110000/km, 72/Months",
   roadside: "80000/km, 48/Months",
-  rust: "Unlimited/km, 72/Months", 
+  rust: "Unlimited/km, 72/Months",
   car_id: 26
 })
 
@@ -1781,7 +2033,7 @@ Fuel.create!({
   auto_city: 11.4,
   auto_highway: 7.7,
   auto_combined: 10.5,
-  manual_city: 10.9, #null 
+  manual_city: 10.9, #null
   manual_highway: 8.3, #null
   manual_combined: 9.5, #null
   car_id: 26
@@ -1794,6 +2046,16 @@ FuelPrice.create({
   fourth: 3261.55,
   fifth: 3359.49,
   total: 15848.91,
+  car_id: 26
+})
+
+Repair.create({
+  first: 0.00,
+  second: 0.00,
+  third: 0.00,
+  fourth: 574.56,
+  fifth: 881.26,
+  total: 1455.81,
   car_id: 26
 })
 
@@ -1839,10 +2101,10 @@ Picture.create!({
 })
 
 Warranty.create!({
-  bumper: "80000/km, 48/Months", 
-  powertrain: "110000/km, 72/Months", 
+  bumper: "80000/km, 48/Months",
+  powertrain: "110000/km, 72/Months",
   roadside: "Unlimited/km, 48/Months",
-  rust: "Unlimited/km, 72/Months", 
+  rust: "Unlimited/km, 72/Months",
   car_id: 27
 })
 
@@ -1851,7 +2113,7 @@ Fuel.create!({
   auto_city: 12.2,
   auto_highway: 9.0,
   auto_combined: 10.44,
-  manual_city: 10.9, #null 
+  manual_city: 10.9, #null
   manual_highway: 8.3, #null
   manual_combined: 9.5, #null
   car_id: 27
@@ -1864,6 +2126,16 @@ FuelPrice.create({
   fourth: 3402.42,
   fifth: 3504.39,
   total: 16531.81,
+  car_id: 27
+})
+
+Repair.create({
+  first: 0.00,
+  second: 0.00,
+  third: 0.00,
+  fourth: 574.56,
+  fifth: 881.26,
+  total: 1455.81,
   car_id: 27
 })
 
@@ -1909,10 +2181,10 @@ Picture.create!({
 })
 
 Warranty.create!({
-  bumper: "60000/km, 36/Months", 
-  powertrain: "160000/km, 60/Months", 
+  bumper: "60000/km, 36/Months",
+  powertrain: "160000/km, 60/Months",
   roadside: "160000/km, 60/Months",
-  rust: "160000/km, 72/Months", 
+  rust: "160000/km, 72/Months",
   car_id: 28
 })
 
@@ -1921,7 +2193,7 @@ Fuel.create!({
   auto_city: 12.2,
   auto_highway: 9.0,
   auto_combined: 10.44,
-  manual_city: 10.9, #null 
+  manual_city: 10.9, #null
   manual_highway: 8.3, #null
   manual_combined: 9.5, #null
   car_id: 28
@@ -1934,7 +2206,17 @@ FuelPrice.create({
   fourth: 2797.34,
   fifth: 2881.86,
   total: 13590.91,
-  car_id: 28 
+  car_id: 28
+})
+
+Repair.create({
+  first: 116.52,
+  second: 704.47,
+  third: 997.77,
+  fourth: 2634.39,
+  fifth: 2681.27,
+  total: 7134.42,
+  car_id: 28
 })
 
 # 1CAD = 0.752USD
@@ -1979,10 +2261,10 @@ Picture.create!({
 })
 
 Warranty.create!({
-  bumper: "100000/km, 60/Months", 
-  powertrain: "100000/km, 60/Months", 
+  bumper: "100000/km, 60/Months",
+  powertrain: "100000/km, 60/Months",
   roadside: "100000/km, 60/Months",
-  rust: "Unlimited/km, 60/Months", 
+  rust: "Unlimited/km, 60/Months",
   car_id: 29
 })
 
@@ -1991,7 +2273,7 @@ Fuel.create!({
   auto_city: 9.6,
   auto_highway: 6.8,
   auto_combined: 8.0,
-  manual_city: 10.9, #null 
+  manual_city: 10.9, #null
   manual_highway: 8.3, #null
   manual_combined: 9.5, #null
   car_id: 29
@@ -2004,7 +2286,17 @@ FuelPrice.create({
   fourth: 2698.06,
   fifth: 2779.90,
   total: 13111.95,
-  car_id: 29 
+  car_id: 29
+})
+
+Repair.create({
+  first: 0.00,
+  second: 0.00,
+  third: 0.00,
+  fourth: 0.00,
+  fifth: 897.33,
+  total: 897.33,
+  car_id: 29
 })
 
 # 1CAD = 0.752USD
@@ -2049,10 +2341,10 @@ Picture.create!({
 })
 
 Warranty.create!({
-  bumper: "100000/km, 60/Months", 
-  powertrain: "100000/km, 60/Months", 
+  bumper: "100000/km, 60/Months",
+  powertrain: "100000/km, 60/Months",
   roadside: "100000/km, 60/Months",
-  rust: "Unlimited/km, 60/Months", 
+  rust: "Unlimited/km, 60/Months",
   car_id: 30
 })
 
@@ -2061,9 +2353,9 @@ Fuel.create!({
   auto_city: 7.9,
   auto_highway: 6.3,
   auto_combined: 7.0,
-  manual_city: 9.4, 
-  manual_highway: 6.8, 
-  manual_combined: 8.0, 
+  manual_city: 9.4,
+  manual_highway: 6.8,
+  manual_combined: 8.0,
   car_id: 30
 })
 
@@ -2074,6 +2366,16 @@ FuelPrice.create({
   fourth: 2797.34,
   fifth: 2881.86,
   total: 13590.91,
+  car_id: 30
+})
+
+Repair.create({
+  first: 0.00,
+  second: 0.00,
+  third: 0.00,
+  fourth: 0.00,
+  fifth: 897.33,
+  total: 897.33,
   car_id: 30
 })
 
@@ -2119,10 +2421,10 @@ Picture.create!({
 })
 
 Warranty.create!({
-  bumper: "100000/km, 60/Months", 
-  powertrain: "100000/km, 60/Months", 
+  bumper: "100000/km, 60/Months",
+  powertrain: "100000/km, 60/Months",
   roadside: "100000/km, 60/Months",
-  rust: "Unlimited/km, 60/Months", 
+  rust: "Unlimited/km, 60/Months",
   car_id: 31
 })
 
@@ -2144,6 +2446,16 @@ FuelPrice.create({
   fourth: 3261.55,
   fifth: 3359.49,
   total: 15848.91,
+  car_id: 31
+})
+
+Repair.create({
+  first: 0.00,
+  second: 0.00,
+  third: 0.00,
+  fourth: 0.00,
+  fifth: 897.33,
+  total: 897.33,
   car_id: 31
 })
 
@@ -2189,18 +2501,18 @@ Picture.create!({
 })
 
 Warranty.create!({
-  bumper: "60000/km, 36/Months", 
-  powertrain: "160000/km, 60/Months", 
+  bumper: "60000/km, 36/Months",
+  powertrain: "160000/km, 60/Months",
   roadside: "160000/km, 60/Months",
-  rust: "160000/km, 72/Months", 
+  rust: "160000/km, 72/Months",
   car_id: 32
 })
 
 # city*0.45 + hwy*0.55
 Fuel.create!({
-  auto_city: 10.9, 
-  auto_highway: 7.9, 
-  auto_combined: 9.3, 
+  auto_city: 10.9,
+  auto_highway: 7.9,
+  auto_combined: 9.3,
   manual_city: 8.6, #null
   manual_highway: 5.8, #null
   manual_combined: 8.3, #null
@@ -2215,7 +2527,17 @@ FuelPrice.create({
   fifth: 3225.33,
   total: 15214.31,
   car_id: 32
-}) 
+})
+
+Repair.create({
+  first: 57.59,
+  second: 705.81,
+  third: 938.95,
+  fourth: 1580.55,
+  fifth: 2851.68,
+  total: 6134.66,
+  car_id: 32
+})
 
 # 1CAD = 0.752USD
 Maintenance.create!({
@@ -2259,10 +2581,10 @@ Picture.create!({
 })
 
 Warranty.create!({
-  bumper: "100000/km, 60/Months", 
-  powertrain: "100000/km, 60/Months", 
+  bumper: "100000/km, 60/Months",
+  powertrain: "100000/km, 60/Months",
   roadside: "100000/km, 60/Months",
-  rust: "Unlimited/km, 60/Months", 
+  rust: "Unlimited/km, 60/Months",
   car_id: 33
 })
 
@@ -2284,6 +2606,16 @@ FuelPrice.create({
   fourth: 2901.99,
   fifth: 2989.20,
   total: 14099.40,
+  car_id: 33
+})
+
+Repair.create({
+  first: 0.00,
+  second: 0.00,
+  third: 0.00,
+  fourth: 0.00,
+  fifth: 897.33,
+  total: 897.33,
   car_id: 33
 })
 
@@ -2329,10 +2661,10 @@ Picture.create!({
 })
 
 Warranty.create!({
-  bumper: "100000/km, 60/Months", 
-  powertrain: "100000/km, 60/Months", 
+  bumper: "100000/km, 60/Months",
+  powertrain: "100000/km, 60/Months",
   roadside: "Unlimited/km, 36/Months",
-  rust: "Unlimited/km, 60/Months", 
+  rust: "Unlimited/km, 60/Months",
   car_id: 34
 })
 
@@ -2341,9 +2673,9 @@ Fuel.create!({
   auto_city: 9.4, #null
   auto_highway: 7.8, #null
   auto_combined: 8.5, #null
-  manual_city: 9.8, 
-  manual_highway: 7.0, 
-  manual_combined: 8.3, 
+  manual_city: 9.8,
+  manual_highway: 7.0,
+  manual_combined: 8.3,
   car_id: 34
 })
 
@@ -2354,6 +2686,16 @@ FuelPrice.create({
   fourth: 2698.06,
   fifth: 2779.90,
   total: 13111.95,
+  car_id: 34
+})
+
+Repair.create({
+  first: 0.00,
+  second: 0.00,
+  third: 0.00,
+  fourth: 0.00,
+  fifth: 897.33,
+  total: 897.33,
   car_id: 34
 })
 
@@ -2399,10 +2741,10 @@ Picture.create!({
 })
 
 Warranty.create!({
-  bumper: "100000/km, 60/Months", 
-  powertrain: "100000/km, 60/Months", 
+  bumper: "100000/km, 60/Months",
+  powertrain: "100000/km, 60/Months",
   roadside: "Unlimited/km, 60/Months",
-  rust: "Unlimited/km, 60/Months", 
+  rust: "Unlimited/km, 60/Months",
   car_id: 35
 })
 
@@ -2424,6 +2766,16 @@ FuelPrice.create({
   fourth: 2698.06,
   fifth: 2779.90,
   total: 13111.95,
+  car_id: 35
+})
+
+Repair.create({
+  first: 0.00,
+  second: 0.00,
+  third: 0.00,
+  fourth: 0.00,
+  fifth: 897.33,
+  total: 897.33,
   car_id: 35
 })
 
@@ -2469,10 +2821,10 @@ Picture.create!({
 })
 
 Warranty.create!({
-  bumper: "60000/km, 36/Months", 
-  powertrain: "100000/km, 60/Months", 
+  bumper: "60000/km, 36/Months",
+  powertrain: "100000/km, 60/Months",
   roadside: "Unlimited/km, 36/Months",
-  rust: "Unlimited/km, 60/Months", 
+  rust: "Unlimited/km, 60/Months",
   car_id: 36
 })
 
@@ -2481,9 +2833,9 @@ Fuel.create!({
   auto_city: 9.8, #null
   auto_highway: 6.9, #null
   auto_combined: 8.2, #null
-  manual_city: 8.5, 
-  manual_highway: 6.1, 
-  manual_combined: 7.2, 
+  manual_city: 8.5,
+  manual_highway: 6.1,
+  manual_combined: 7.2,
   car_id: 36
 })
 
@@ -2494,6 +2846,16 @@ FuelPrice.create({
   fourth: 2447.17,
   fifth: 2520.96,
   total: 11892.39,
+  car_id: 36
+})
+
+Repair.create({
+  first: 0.00,
+  second: 0.00,
+  third: 148.68,
+  fourth: 360.31,
+  fifth: 526.40,
+  total: 1035.39,
   car_id: 36
 })
 
@@ -2539,21 +2901,21 @@ Picture.create!({
 })
 
 Warranty.create!({
-  bumper: "60000/km, 36/Months", 
-  powertrain: "100000/km, 60/Months", 
+  bumper: "60000/km, 36/Months",
+  powertrain: "100000/km, 60/Months",
   roadside: "Unlimited/km, 36/Months",
-  rust: "Unlimited/km, 60/Months", 
+  rust: "Unlimited/km, 60/Months",
   car_id: 37
 })
 
 # city*0.45 + hwy*0.55
 Fuel.create!({
-  auto_city: 7.9, 
+  auto_city: 7.9,
   auto_highway: 6.3,
-  auto_combined: 7.0, 
-  manual_city: 8.9, 
-  manual_highway: 6.7, 
-  manual_combined: 7.7, 
+  auto_combined: 7.0,
+  manual_city: 8.9,
+  manual_highway: 6.7,
+  manual_combined: 7.7,
   car_id: 37
 })
 
@@ -2564,6 +2926,16 @@ FuelPrice.create({
   fourth: 2374.72,
   fifth: 2445.83,
   total: 11536.85,
+  car_id: 37
+})
+
+Repair.create({
+  first: 0.00,
+  second: 0.00,
+  third: 178.15,
+  fourth: 425.94,
+  fifth: 624.18,
+  total: 1228.27,
   car_id: 37
 })
 
@@ -2609,10 +2981,10 @@ Picture.create!({
 })
 
 Warranty.create!({
-  bumper: "60000/km, 36/Months", 
-  powertrain: "100000/km, 60/Months", 
+  bumper: "60000/km, 36/Months",
+  powertrain: "100000/km, 60/Months",
   roadside: "100000/km, 60/Months",
-  rust: "Unlimited/km, 60/Months", 
+  rust: "Unlimited/km, 60/Months",
   car_id: 38
 })
 
@@ -2634,6 +3006,16 @@ FuelPrice.create({
   fourth: 3131.41,
   fifth: 3225.33,
   total: 15214.31,
+  car_id: 38
+})
+
+Repair.create({
+  first: 0.00,
+  second: 0.00,
+  third: 171.45,
+  fourth: 411.21,
+  fifth: 601.41,
+  total: 1184.07,
   car_id: 38
 })
 
@@ -2679,10 +3061,10 @@ Picture.create!({
 })
 
 Warranty.create!({
-  bumper: "50000/km, 36/Months", 
-  powertrain: "50000/km, 60/Months", 
+  bumper: "50000/km, 36/Months",
+  powertrain: "50000/km, 60/Months",
   roadside: "50000/km, 60/Months",
-  rust: "Unlimited/km, 60/Months", 
+  rust: "Unlimited/km, 60/Months",
   car_id: 39
 })
 
@@ -2691,9 +3073,9 @@ Fuel.create!({
   auto_city: 8.6,
   auto_highway: 6.4,
   auto_combined: 7.4,
-  manual_city: 8.6, 
-  manual_highway: 6.7, 
-  manual_combined: 7.5, 
+  manual_city: 8.6,
+  manual_highway: 6.7,
+  manual_combined: 7.5,
   car_id: 39
 })
 
@@ -2704,6 +3086,16 @@ FuelPrice.create({
   fourth: 2609.51,
   fifth: 2687.32,
   total: 12677.25,
+  car_id: 39
+})
+
+Repair.create({
+  first: 0.00,
+  second: 0.00,
+  third: 137.96,
+  fourth: 330.84,
+  fifth: 483.54,
+  total: 952.35,
   car_id: 39
 })
 
@@ -2749,10 +3141,10 @@ Picture.create!({
 })
 
 Warranty.create!({
-  bumper: "60000/km, 36/Months", 
-  powertrain: "100000/km, 60/Months", 
+  bumper: "60000/km, 36/Months",
+  powertrain: "100000/km, 60/Months",
   roadside: "100000/km, 60/Months",
-  rust: "160000/km, 60/Months", 
+  rust: "160000/km, 60/Months",
   car_id: 40
 })
 
@@ -2767,13 +3159,23 @@ Fuel.create!({
   car_id: 40
 })
 
-FuelPrice.create({
+FuelPrice.create!({
   first: 3582.21,
   second: 3689.54,
   third: 3800.89,
   fourth: 3914.93,
   fifth: 4031.66,
   total: 19019.23,
+  car_id: 40
+})
+
+Repair.create!({
+  first: 0.00,
+  second: 0.00,
+  third: 188.86,
+  fourth: 448.71,
+  fifth: 656.33,
+  total: 1293.90,
   car_id: 40
 })
 
