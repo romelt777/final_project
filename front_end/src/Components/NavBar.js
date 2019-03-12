@@ -16,8 +16,8 @@ export default class NavBar extends React.Component {
           <ul id="nav-content">
             <Link id="nav-content-item" to="/">Home </Link>
             <Link id="nav-content-item" to="/about">About </Link>
-            <li id="nav-content-item"><a id="nav-link" href="/login">Login</a></li>
-            <li id="nav-content-item"><a id="nav-link" href="/register">Register</a></li>
+            <Link id="nav-content-item" to="/login">Login </Link>
+            <Link id="nav-content-item" to="/register">Register </Link>
           </ul>
         </div>
       </nav>
