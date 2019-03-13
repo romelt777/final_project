@@ -3,9 +3,8 @@ import axios from 'axios'
 import Chart from './Chart'
 import PieChart from './PieChart'
 import Calculator from './Calculator'
-import {ButtonToolbar, ToggleButtonGroup, ToggleButton} from 'react-bootstrap'
-import '../image.css';
-
+import Datatable from './Datatable'
+import {Container, Row, Col, ButtonToolbar, ToggleButtonGroup, ToggleButton} from 'react-bootstrap'
 
 
 export default class Comparison extends React.Component {
@@ -41,8 +40,6 @@ export default class Comparison extends React.Component {
   }
 
   toggle = (event) => {
-    console.log("im clicked")
-    console.log(event.target.value)
     if(event.target.value == 1){
       this.setState({toggle: "maintenances"})
     } else if(event.target.value == 2){
@@ -60,41 +57,41 @@ export default class Comparison extends React.Component {
     this.props.data.cars.forEach((car) => {
       this.state.comparisonId.forEach((c) => {
         if(c.car_id === car.id){
-          
+
           carName.push(car)
         }
       })
     })
 
-    console.log("hello")
-    console.log(this.props.data.repairs)
+
     return (
-       <div> 
-        <div class="chart-container" style={{}}>
-          <div class="inside-chart-container">
-          <h2 >{this.props.match.params.id}</h2>
-          {carData}
-          <ButtonToolbar>
-            <ToggleButtonGroup type="radio" name="options" defaultValue={1} >
-              <ToggleButton value={1} onChange={this.toggle}>Depreciation </ToggleButton>
-              <ToggleButton value={2} onChange={this.toggle}>Maintenance</ToggleButton>
-              <ToggleButton value={3} onChange={this.toggle}>Repairs</ToggleButton>
-            </ToggleButtonGroup>
-          </ButtonToolbar>
-          { this.state.toggle === "maintenances" ? <Chart carName={carName} data={this.checkData(this.props.data.maintenances)}/>
-            : this.state.toggle === "newDepreciations" ? <Chart carName={carName} data={this.checkData(this.props.data.newDepreciations)}/>
-            : this.state.toggle === "repairs" ? <Chart carName={carName} data={this.checkData(this.props.data.repairs)}/>
-            : null
-          }
-        </div>
-        </div>
-
-       
-
-        <Calculator carName={carName} price={this.checkData(this.props.data.newPrices)}/>
-
-      </div>
-     
+      <Container>
+        <Row className="analytics-container">
+          <Col sm={8} className="chart-container">
+            {carData}
+            <ButtonToolbar>
+              <ToggleButtonGroup type="radio" name="options" defaultValue={1} >
+                <ToggleButton value={1} onChange={this.toggle}>Depreciation </ToggleButton>
+                <ToggleButton value={2} onChange={this.toggle}>Maintenance</ToggleButton>
+                <ToggleButton value={3} onChange={this.toggle}>Repairs</ToggleButton>
+              </ToggleButtonGroup>
+            </ButtonToolbar>
+            { this.state.toggle === "maintenances" ? <Chart carName={carName} data={this.checkData(this.props.data.maintenances)}/>
+              : this.state.toggle === "newDepreciations" ? <Chart carName={carName} data={this.checkData(this.props.data.newDepreciations)}/>
+              : this.state.toggle === "repairs" ? <Chart carName={carName} data={this.checkData(this.props.data.repairs)}/>
+              : null
+            }
+            <PieChart carName={carName}
+                  maintenances={this.checkData(this.props.data.maintenances)}
+                  fuels={this.checkData(this.props.data.newFuels)}
+                  depi={this.checkData(this.props.data.newDepreciations)}
+            />
+          </Col>
+          <Col sm={4} className="cal-container">
+             <Calculator carName={carName} price={this.checkData(this.props.data.newPrices)}/>
+          </Col>
+        </Row>
+      </Container>
     )
   }
 }

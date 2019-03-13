@@ -107,8 +107,9 @@ export default class Calculator extends Component {
       position: 'relative',
       'border-radius': 20,
       'background-color': 'white',
-      'width': 400,
-      'height': 350
+      'padding': 20,
+      'margin-bottom': 20,
+      'width': 400
     }
 
     const wrapperStyle = {
@@ -136,14 +137,14 @@ export default class Calculator extends Component {
             {pieButtons}
           </ToggleButtonGroup>
         </ButtonToolbar>
-        <div ClassName='calculatorContainer' style={calculator}>
-          <p style={calHead}>Payment Calculator</p>
+        <div ClassName='calculatorContainer' style={{...calculator, 'height': 400}}>
+          <h4 style={calHead}>Payment Calculator</h4>
           <div ClassName='calWrapper' style={calWrap}>
             <table ClassName='priceCalculator'>
               <tbody>
-                <div style={wrapperStyle}>
+
                   <tr ClassName='price'>Vehicle Price: ${vehiclePrice.toFixed(2)}</tr>
-                </div>
+
                 <div style={wrapperStyle}>
                   <tr ClassName='priceTax'>Freight & Delivery: ${priceFAD.toFixed(2)}</tr>
                 </div>
@@ -164,24 +165,23 @@ export default class Calculator extends Component {
             </small>
         </div>
 
-        <div ClassName='leaseCalculator' style={calculator}>
-          <p style={calHead}>Loan Payment Calculator</p>
+        <div ClassName='leaseCalculator' style={{...calculator, 'height': 400}}>
+          <h4 style={calHead}>Loan Payment Calculator</h4>
           <div ClassName='calWrapper' style={calWrap}>
             <div style={wrapperStyle}>
-              <span>Interest Rate (%): {this.state.interestChanged}</span>
+              <h4>Interest Rate (%): {this.state.interestChanged}</h4>
               <SliderWithTooltip min={0} max={20} defaultValue={this.state.interestChanged} tipFormatter={this.tipChangerInterest}  onChange={this.changeInterest}/>
             </div>
             <div style={wrapperStyle}>
-              <span>Term (Months): {this.state.termChanged} </span>
+              <h4>Term (Months): {this.state.termChanged} </h4>
               <SliderWithTooltip min={24} max={96} defaultValue={60} handle={this.handleChange} tipFormatter={this.tipChangerTerm} onChange={this.changeTerm} />
             </div>
             <div style={wrapperStyle}>
-              <span>Down Payment ($): {this.state.downPayChanged} </span>
+              <h4>Down Payment ($): {this.state.downPayChanged} </h4>
               <SliderWithTooltip min={0} max={vehiclePrice/2} defaultValue={0} handle={this.handleChange} tipFormatter={this.tipChanger}  onChange={this.changeDown}/>
             </div>
             <div style={wrapperStyle}>
-              <p>Monthly Payment: {((priceTotal - this.state.downPayChanged) * (this.state.interestChanged / 1200)/(1 - Math.pow((1 + (this.state.interestChanged / 1200)),(this.state.termChanged * -1)) )).toFixed(2)}</p>
-              <p></p>
+              <h4>Monthly Payment: {((priceTotal - this.state.downPayChanged) * (this.state.interestChanged / 1200)/(1 - Math.pow((1 + (this.state.interestChanged / 1200)),(this.state.termChanged * -1)) )).toFixed(2)}</h4>
             </div>
           </div>
         </div>

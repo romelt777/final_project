@@ -1,14 +1,13 @@
 import React from 'react';
 import {Line} from 'react-chartjs-2';
-import '../image.css';
 
 export default class Chart extends React.Component {
 
   render() {
     // set plot color
     const colorScheme = [
-      'rgba(75,192,192,1)', 'rgba(100,10,0,1)', 'rgba(255,0,0,1)', 'rgba(0,255,0,1)', 'rgba(0,0,255,1)',
-      'rgba(255,255,0,1)', 'rgba(255,0,255,1)', 'rgba(0,255,255,1)', 'rgba(128,128,0,1)', 'rgba(0,128,0,1)',
+      'rgba(255,0,0,1)', 'rgba(0,255,0,1)', 'rgba(0,0,255,1)', 'rgba(255,255,0,1)', 'rgba(255,0,255,1)',
+      'rgba(0,255,255,1)', 'rgba(128,128,0,1)', 'rgba(0,128,0,1)', 'rgba(75,192,192,1)', 'rgba(100,10,0,1)'
     ];
 
     // set plot label name
@@ -55,7 +54,7 @@ export default class Chart extends React.Component {
     }
 
     return (
-      <div style={{width: 672, height: 365}}>
+      <div style={{width: 650, height: 450}}>
         <h2 className="line-chart-h2">5 Years True Cost to Own</h2>
         <Line data={chartData(depiData)} redraw/>
       </div>
