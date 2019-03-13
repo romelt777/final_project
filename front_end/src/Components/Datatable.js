@@ -56,6 +56,19 @@ export default class Datatable extends React.Component {
       })
     }
 
+    let getFuel = (Arr) => {
+      if(Arr.length > 0) {
+        return (
+          <div>
+            <p>auto(city): {Arr[0].auto_city}</p>
+            <p>auto(highway): {Arr[0].auto_highway}</p>
+            <p>manual(city): {Arr[0].manual_city}</p>
+            <p>manual(highway): {Arr[0].manual_highway}</p>
+          </div>
+        )
+      }
+    }
+
     // store car warranty
     let warranties = []
     if(this.props.data.newWarranties.length > 0) {
@@ -67,30 +80,20 @@ export default class Datatable extends React.Component {
     }
 
     return (
-      <Col sm={12}>
-        <Table striped bordered hover>
-           <thead>
-            <tr>
-              <th>1</th>
-              <th>2</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Price</td>
-              <td>Otto</td>
-            </tr>
-            <tr>
-              <td>Fuel Economy</td>
-              <td>Thornton</td>
-            </tr>
-            <tr>
-              <td>Warranty</td>
-              <td>@twitter</td>
-            </tr>
-          </tbody>
-        </Table>
-      </Col>
+      <Container>
+        <Col sm={6}>
+          <h3>{cars[0]}</h3>
+          <h3>{prices[0]}</h3>
+          <img className='image' style={{width:'50%', height: '50%'}} src={imgs[0]} alt={comparison[0]}/>
+          <form>
+            <h3>Fuel Economy</h3>
+            {getFuel(fuels)}
+          </form>
+
+        </Col>
+        <Col sm={6}>
+        </Col>
+      </Container>
     )
   }
 }

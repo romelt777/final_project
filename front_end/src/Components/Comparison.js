@@ -66,9 +66,6 @@ export default class Comparison extends React.Component {
 
     return (
       <Container>
-        <Row className="table-container">
-          <Datatable data={this.props.data} comparison={this.state.comparisonId}/>
-        </Row>
         <Row className="analytics-container">
           <Col sm={8} className="chart-container">
             {carData}
