@@ -2809,9 +2809,9 @@ car36 = Car.find_or_create_by!({
 })
 
 Price.create!({
-  vehicle_price: 20090.00,
+  vehicle_price: 16790.00
   freight_delivery: 1655.00,
-  total_price: 21745.00,
+  total_price: 18445.00,
   car_id: 36
 })
 
@@ -3199,4 +3199,84 @@ Depreciation.create!({
   fifth: 2072.85,
   total: 17311.31,
   car_id: 40
+})
+
+car41 = Car.find_or_create_by!({
+  year: "2014",
+  make: "Honda",
+  model: "Civic",
+  condition: 'new'
+})
+
+Price.create!({
+  vehicle_price: 15791.84,
+  freight_delivery: 0.00,
+  total_price: 15791.84,
+  car_id: 41
+})
+
+Picture.create!({
+  url: "https://picolio.auto123.com/14photo/honda/2014-honda-civic-dx_2.png",
+  car_id: 41
+})
+
+Warranty.create!({
+  bumper: "",
+  powertrain: "",
+  roadside: "",
+  rust: "",
+  car_id: 41
+})
+
+# city*0.45 + hwy*0.55
+Fuel.create!({
+  auto_city: 0.00,
+  auto_highway: 0.00,
+  auto_combined: 0.00,
+  manual_city: 7.3, 
+  manual_highway: 5.5, 
+  manual_combined: 6.3, 
+  car_id: 41
+})
+
+FuelPrice.create!({
+  first: 2147.33,
+  second: 2212.48,
+  third: 2278.96,
+  fourth: 2346.77,
+  fifth: 2417.24,
+  total: 11402.78,
+  car_id: 41
+})
+
+Repair.create!({
+  first: 541.15,
+  second: 634.23,
+  third: 740.60,
+  fourth: 866.91,
+  fifth: 1011.84,
+  total: 3794.72,
+  car_id: 41
+})
+
+# 1CAD = 0.752USD
+Maintenance.create!({
+  first: 1023.80,
+  second: 1342.91,
+  third: 204.76,
+  fourth: 2386.66,
+  fifth: 1925.28,
+  total: 6883.42,
+  car_id: 41
+})
+
+# 1CAD = 0.752USD
+Depreciation.create!({
+  first: 3325.37,
+  second: 1410.72,
+  third: 1241.86,
+  fourth: 1100.92,
+  fifth: 987.90,
+  total: 8066.77,
+  car_id: 41
 })
