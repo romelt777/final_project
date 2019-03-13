@@ -76,8 +76,8 @@ export default class Comparison extends React.Component {
                 <ToggleButton value={3} onChange={this.toggle}>Repairs</ToggleButton>
               </ToggleButtonGroup>
             </ButtonToolbar>
-            { this.state.toggle === "maintenances" ? <Chart carName={carName} data={this.checkData(this.props.data.maintenances)}/>
-              : this.state.toggle === "newDepreciations" ? <Chart carName={carName} data={this.checkData(this.props.data.newDepreciations)}/>
+            { this.state.toggle === "maintenances" ? <Chart carName={carName} data={this.checkData(this.props.data.newDepreciations)}/>
+              : this.state.toggle === "newDepreciations" ? <Chart carName={carName} data={this.checkData(this.props.data.maintenances)}/>
               : this.state.toggle === "repairs" ? <Chart carName={carName} data={this.checkData(this.props.data.repairs)}/>
               : null
             }
