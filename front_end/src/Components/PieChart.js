@@ -21,11 +21,8 @@ export default class PieChart extends React.Component {
   }
 
   data = () =>{
-    console.log(this.props)
     if(this.props.depi.length > 0){
       const which = this.state.togglePie
-      console.log(which)
-      console.log(this.props.fuels[which].auto_combined)
       const fuelCost = Math.round(this.props.fuels[which].auto_combined * 15000 * 1.61 * 1.13 / 100 * 100) / 100
       return (
           {
@@ -65,7 +62,7 @@ export default class PieChart extends React.Component {
     })
 
     return (
-      <div className="pie-container">
+      <div className="pie-container" style={{width: 650, height: 450}}>
         <ButtonToolbar>
           <ToggleButtonGroup name="options" defaultValue={1} >
             {pieButtons}

@@ -3,7 +3,8 @@ import axios from 'axios'
 import Chart from './Chart'
 import PieChart from './PieChart'
 import Calculator from './Calculator'
-import {ButtonToolbar, ToggleButtonGroup, ToggleButton} from 'react-bootstrap'
+import Datatable from './Datatable'
+import {Container, Row, Col, ButtonToolbar, ToggleButtonGroup, ToggleButton} from 'react-bootstrap'
 
 
 export default class Comparison extends React.Component {
@@ -39,8 +40,6 @@ export default class Comparison extends React.Component {
   }
 
   toggle = (event) => {
-    console.log("im clicked")
-    console.log(event.target.value)
     if(event.target.value == 1){
       this.setState({toggle: "maintenances"})
     } else if(event.target.value == 2){
@@ -64,11 +63,14 @@ export default class Comparison extends React.Component {
       })
     })
 
-    console.log(this.props.data.repairs)
-    return (
-       <div>
 
-          <div class="inside-chart-container">
+    return (
+      <Container>
+        <Row className="table-container">
+          <Datatable data={this.props.data} comparison={this.state.comparisonId}/>
+        </Row>
+        <Row className="analytics-container">
+          <Col sm={8} className="chart-container">
             {carData}
             <ButtonToolbar>
               <ToggleButtonGroup type="radio" name="options" defaultValue={1} >
@@ -82,17 +84,17 @@ export default class Comparison extends React.Component {
               : this.state.toggle === "repairs" ? <Chart carName={carName} data={this.checkData(this.props.data.repairs)}/>
               : null
             }
-          </div>
-
-        <PieChart carName={carName}
+            <PieChart carName={carName}
                   maintenances={this.checkData(this.props.data.maintenances)}
                   fuels={this.checkData(this.props.data.newFuels)}
                   depi={this.checkData(this.props.data.newDepreciations)}
-        />
-        <Calculator carName={carName} price={this.checkData(this.props.data.newPrices)}/>
-
-      </div>
-
+            />
+          </Col>
+          <Col sm={4} className="cal-container">
+             <Calculator carName={carName} price={this.checkData(this.props.data.newPrices)}/>
+          </Col>
+        </Row>
+      </Container>
     )
   }
 }
