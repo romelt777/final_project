@@ -1,8 +1,6 @@
 import React from 'react'
 import {Container, Row, Col, Table} from 'react-bootstrap'
 
-
-
 export default class Datatable extends React.Component {
 
 
@@ -80,17 +78,14 @@ export default class Datatable extends React.Component {
           <tbody>
             <tr>
               <td>Price</td>
-              <td>Mark</td>
               <td>Otto</td>
             </tr>
             <tr>
               <td>Fuel Economy</td>
-              <td>Jacob</td>
               <td>Thornton</td>
             </tr>
             <tr>
               <td>Warranty</td>
-              <td>3</td>
               <td>@twitter</td>
             </tr>
           </tbody>

@@ -137,7 +137,7 @@ export default class Calculator extends Component {
           </ToggleButtonGroup>
         </ButtonToolbar>
         <div ClassName='calculatorContainer' style={calculator}>
-          <p style={calHead}>Payment Calculator</p>
+          <h4 style={calHead}>Payment Calculator</h4>
           <div ClassName='calWrapper' style={calWrap}>
             <table ClassName='priceCalculator'>
               <tbody>
@@ -165,7 +165,7 @@ export default class Calculator extends Component {
         </div>
 
         <div ClassName='leaseCalculator' style={calculator}>
-          <p style={calHead}>Loan Payment Calculator</p>
+          <h4 style={calHead}>Loan Payment Calculator</h4>
           <div ClassName='calWrapper' style={calWrap}>
             <div style={wrapperStyle}>
               <span>Interest Rate (%): {this.state.interestChanged}</span>
@@ -181,7 +181,6 @@ export default class Calculator extends Component {
             </div>
             <div style={wrapperStyle}>
               <p>Monthly Payment: {((priceTotal - this.state.downPayChanged) * (this.state.interestChanged / 1200)/(1 - Math.pow((1 + (this.state.interestChanged / 1200)),(this.state.termChanged * -1)) )).toFixed(2)}</p>
-              <p></p>
             </div>
           </div>
         </div>
