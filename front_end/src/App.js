@@ -47,7 +47,6 @@ class AppRouter extends Component {
 
 
   Users = ({match}) => {
-    console.log(match)
     return (
       <div>
         <Route exact path = {`${match.path}/:id`} render={(props) => <Profile cars={this.state.cars} data={this.state.profile} {...props} currentUser={this.state.currentUser}/> }></Route>
@@ -133,7 +132,6 @@ class AppRouter extends Component {
         const repairs = this.state.repairs
         Array.prototype.push.apply(repairs, res.data.data)
         this.setState({repairs})
-        console.log(this.state.repairs)
       });
   }
 
@@ -154,7 +152,6 @@ class AppRouter extends Component {
   }
 
   componentDidMount(){
-    console.log("MOUNTING...")
     this.getAllInformation()
   }
 
