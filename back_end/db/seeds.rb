@@ -3310,7 +3310,7 @@ Warranty.create!({
 
 # city*0.45 + hwy*0.55
 Fuel.create!({
-  auto_city: 7,4,
+  auto_city: 7.4,
   auto_highway: 5.4,
   auto_combined: 6.3,
   manual_city: 7.1, 
