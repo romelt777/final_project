@@ -3280,3 +3280,83 @@ Depreciation.create!({
   total: 8066.77,
   car_id: 41
 })
+
+car42 = Car.find_or_create_by!({
+  year: "2014",
+  make: "Toyota",
+  model: "Corolla",
+  condition: 'new'
+})
+
+Price.create!({
+  vehicle_price: 14561.94,
+  freight_delivery: 0.00,
+  total_price: 14561.94,
+  car_id: 42
+})
+
+Picture.create!({
+  url: "https://picolio.auto123.com/14photo/toyota/2014-toyota-corolla-ce_1.png",
+  car_id: 42
+})
+
+Warranty.create!({
+  bumper: "",
+  powertrain: "",
+  roadside: "",
+  rust: "",
+  car_id: 42
+})
+
+# city*0.45 + hwy*0.55
+Fuel.create!({
+  auto_city: 7.4,
+  auto_highway: 5.4,
+  auto_combined: 6.3,
+  manual_city: 7.1, 
+  manual_highway: 5.2, 
+  manual_combined: 6.0, 
+  car_id: 42
+})
+
+FuelPrice.create!({
+  first: 0.00,
+  second: 0.00,
+  third: 0.00,
+  fourth: 0.00,
+  fifth: 0.00,
+  total: 0.00,
+  car_id: 42
+})
+
+Repair.create!({
+  first: 541.15,
+  second: 634.23,
+  third: 740.60,
+  fourth: 866.91,
+  fifth: 1011.84,
+  total: 3794.72,
+  car_id: 42
+})
+
+# 1CAD = 0.752USD
+Maintenance.create!({
+  first: 1474.54,
+  second: 977.27,
+  third: 394.90,
+  fourth: 2027.66,
+  fifth: 2478.40,
+  total: 7352.77,
+  car_id: 42
+})
+
+# 1CAD = 0.752USD
+Depreciation.create!({
+  first: 3320.05,
+  second: 1192.66,
+  third: 1050.40,
+  fourth: 930.73,
+  fifth: 835.00,
+  total: 7328.84,
+  car_id: 42
+})
