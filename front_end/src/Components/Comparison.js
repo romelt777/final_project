@@ -63,35 +63,37 @@ export default class Comparison extends React.Component {
       })
     })
 
-    const button = {
+    const container = {
       'border-radius': 20,
     }
 
     return (
       <Container>
         <Row className="analytics-container">
-          <Col sm={6} className="chart-container">
+          <Col sm={6} className="chart-container" style={container}>
             {carData}
-            <ButtonToolbar>
+            <ButtonToolbar style={{'justify-content': 'center'}}>
               <ToggleButtonGroup type="radio" name="options" defaultValue={1} >
-                <ToggleButton value={1} onChange={this.toggle} style={button}>Depreciation</ToggleButton>
-                <ToggleButton value={2} onChange={this.toggle} style={button}>Maintenance</ToggleButton>
-                <ToggleButton value={3} onChange={this.toggle} style={button}>Repairs</ToggleButton>
+                <ToggleButton value={1} onChange={this.toggle} >Depreciation</ToggleButton>
+                <ToggleButton value={2} onChange={this.toggle} >Maintenance</ToggleButton>
+                <ToggleButton value={3} onChange={this.toggle} >Repairs</ToggleButton>
               </ToggleButtonGroup>
             </ButtonToolbar>
-            { this.state.toggle === "maintenances" ? <Chart carName={carName} data={this.checkData(this.props.data.maintenances)}/>
-              : this.state.toggle === "newDepreciations" ? <Chart carName={carName} data={this.checkData(this.props.data.newDepreciations)}/>
+            { this.state.toggle === "maintenances" ? <Chart carName={carName} data={this.checkData(this.props.data.newDepreciations)}/>
+              : this.state.toggle === "newDepreciations" ? <Chart carName={carName} data={this.checkData(this.props.data.maintenances)}/>
               : this.state.toggle === "repairs" ? <Chart carName={carName} data={this.checkData(this.props.data.repairs)}/>
               : null
             }
           </Col>
-          <Col sm={6} className="cal-container">
+          <Col sm={6} className="cal-container" style={container}>
               <PieChart carName={carName}
                     maintenances={this.checkData(this.props.data.maintenances)}
                     fuels={this.checkData(this.props.data.newFuels)}
                     depi={this.checkData(this.props.data.newDepreciations)}
               />
           </Col>
+        </Row>
+        <Row>
           <Calculator carName={carName} price={this.checkData(this.props.data.newPrices)}/>
         </Row>
       </Container>

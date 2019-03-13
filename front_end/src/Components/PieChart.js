@@ -63,7 +63,7 @@ export default class PieChart extends React.Component {
 
     return (
       <div className="pie-container" style={{width: 650, height: 450}}>
-        <ButtonToolbar>
+        <ButtonToolbar style={{'justify-content': 'center'}}>
           <ToggleButtonGroup name="options" defaultValue={1} >
             {pieButtons}
           </ToggleButtonGroup>

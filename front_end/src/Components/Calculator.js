@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Slider, {createSliderWithTooltip} from 'rc-slider';
 import 'rc-slider/assets/index.css';
 import 'rc-tooltip/assets/bootstrap.css';
-import {Row, Col, ButtonToolbar, ToggleButtonGroup, ToggleButton} from 'react-bootstrap'
+import {Row, Col, ButtonToolbar, ToggleButtonGroup, ToggleButton, DropdownButton, Dropdown} from 'react-bootstrap'
 
 const SliderWithTooltip = createSliderWithTooltip(Slider);
 
@@ -107,7 +107,7 @@ export default class Calculator extends Component {
       position: 'relative',
       'border-radius': 20,
       'background-color': 'white',
-      'margin-left': 20,
+      'margin-left': 10,
       'margin-bottom': 20,
       'width': 400,
       'height': 350
@@ -133,18 +133,19 @@ export default class Calculator extends Component {
 
     return (
       <Row>
-        <Col sm={2}>
-          <ButtonToolbar>
+        <Col sm={7}>
+          <ButtonToolbar style={{
+            'justify-content': 'center',
+            'margin-right': 70
+          }}>
             <ToggleButtonGroup type="radio" name="options" defaultValue={1} >
               {pieButtons}
             </ToggleButtonGroup>
           </ButtonToolbar>
-        </Col>
-        <Col sm={5}>
           <div ClassName='calculatorContainer' style={calculator}>
             <h4 style={calHead}>Payment Calculator</h4>
             <div ClassName='calWrapper' style={calWrap}>
-              <table ClassName='priceCalculator'>
+              <table ClassName='priceCalculator' style={{fontSize: 18, fontWeight: 'bold'}}>
                 <tbody>
                   <div style={wrapperStyle}>
                     <tr ClassName='price'>Vehicle Price: ${vehiclePrice.toFixed(2)}</tr>
@@ -164,12 +165,13 @@ export default class Calculator extends Component {
                 </tbody>
               </table>
             </div>
-              <small ClassName='calDisclaimer' style={disclaimer}>
+              <h6 ClassName='calDisclaimer' style={disclaimer}>
                 * This price excludes promotions and may vary depending on taxes and applicable fees.
-              </small>
+              </h6>
           </div>
         </Col>
         <Col sm={5}>
+           <div style={{height: 38}}></div>
           <div ClassName='leaseCalculator' style={calculator}>
             <h4 style={calHead}>Loan Payment Calculator</h4>
             <div ClassName='calWrapper' style={calWrap}>

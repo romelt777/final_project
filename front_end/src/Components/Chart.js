@@ -29,7 +29,7 @@ export default class Chart extends React.Component {
           label: label[i],
           data: data[i],
           backgroundColor: colorScheme[i],
-          borderColor: colorScheme[i]
+          borderColor: colorScheme[i],
         });
       }
       return dataSet;
@@ -44,6 +44,41 @@ export default class Chart extends React.Component {
       );
     }
 
+    const options = {
+    // maintainAspectRatio: false,
+    scales: {
+      yAxes: [{
+        ticks: {
+          fontSize: 15,
+          fontColor: 'black',
+          fontStyle: 'bold',
+          padding: 20
+        },
+        beginAtZero: true,
+        gridLines: {
+          drawTicks: false,
+        },
+      }],
+
+      xAxes: [{
+        ticks: {
+          fontSize: 16,
+          fontColor: 'black',
+          fontStyle: 'bold',
+          padding: 20
+        },
+        beginAtZero: true,
+        gridLines: {
+          tickMarkLength: 40,
+          offsetGridLines: true,
+          display: true,
+          drawTicks: false,
+          drawOnChartArea: false,
+        },
+      }]
+    },
+  };
+
     // fetch prop depi passed down from App.js
     // outputting arrays of data array
     let depiData = [];
@@ -56,7 +91,7 @@ export default class Chart extends React.Component {
     return (
       <div style={{width: 650, height: 450}}>
         <h2 className="line-chart-h2">5 Years True Cost to Own</h2>
-        <Line data={chartData(depiData)} redraw/>
+        <Line options={options} data={chartData(depiData)} redraw/>
       </div>
     );
   }
