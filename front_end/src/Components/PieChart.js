@@ -66,16 +66,14 @@ export default class PieChart extends React.Component {
 
     return (
       <div className="pie-container">
-       <div className="inside-pie-container">
-          <ButtonToolbar>
-            <ToggleButtonGroup name="options" defaultValue={1} >
-              {pieButtons}
-            </ToggleButtonGroup>
-          </ButtonToolbar>
+        <ButtonToolbar>
+          <ToggleButtonGroup name="options" defaultValue={1} >
+            {pieButtons}
+          </ToggleButtonGroup>
+        </ButtonToolbar>
 
-          <h2 className="pie-chart-h2">Cost Composition</h2>
-          <Doughnut data={this.data()} />
-        </div>
+        <h2 className="pie-chart-h2">Cost Composition</h2>
+        <Doughnut data={this.data()} />
       </div>
     );
   }

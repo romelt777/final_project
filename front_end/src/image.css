@@ -13,51 +13,37 @@
   text-align: left;
 }
 
-.chart-container {
-  height: 36em;
-  width: 42em;
-  float: left;
-  overflow: auto;
-  margin-left: 1.25em;
-  background-color: white;
-  border-top: 1.25em solid black;
-  border-bottom: 1.25em solid black;
-  border-radius: .625em;
+.big {
+  font-size: 6.7rem;
+  line-height: 1;
+  color: #fff;
+  font-family: 'Open Sans Condensed', sans-serif;
+  font-weight: 700;
+  padding-top: 50px;
 }
 
-.inside-chart-container {
-  margin-top: 3.125em;
+
+.button {
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 15px 26px;
+    padding: 1.5rem 2.6rem;
+    color: #fff;
+    border-radius: 0;
+    border: none;
+    font-size: 22px;
+    font-size: 2.2rem;
 }
 
-.line-chart-h2 {
-  text-align: center;
-  font-weight: 900;
-  margin-right: 2.969em;
-  margin-left: 2.969em;
-  color: black;
+.btn-transparent {
+  background-color: transparent;
+  border: 3px solid #fff;
 }
 
-.pie-chart-h2 {
-  height: 1.18em;
-  width: 16.97em;
-  float: right;
-  text-align: center;
-  font-weight: 900;
-  color: black;
-}
-
-.pie-container {
-  width: 33.9em;
-  background-color: white;
-  border-top: 1.25em solid black;
-  border-bottom: 1.25em solid black;
-  border-radius: .625em;
-  height: 36em;
-  float: right;
-  margin-right: 1.25em;
-}
-
-.inside-pie-container {
-  margin-top: 3.125em;
-  height: 36em;
+.para {
+  font-size: 2.3rem;
+  line-height: 1.1;
+  margin: 30px 0 40px;
+  color: #fff;
+  font-weight: 500;
 }

@@ -31,7 +31,7 @@ export default class CarSlide extends React.Component{
             <div className="centered">
               <h1 className="big">Need professional advice?</h1>
               <p className="para">Click on the button</p>
-              <button type="button" onClick={this.redirect} className="btn btn-transparent btn-lg text-uppercase">Get Started</button>
+              <button type="button" onClick={this.redirect} className="button btn-transparent btn-lg text-uppercase">Get Started</button>
             </div>
           </div>
         </div>
@@ -42,7 +42,7 @@ export default class CarSlide extends React.Component{
             <div className="centered">
               <h1 className="big">Compare your current vehicle to your new!</h1>
               <p className="para">Click on the button</p>
-              <button type="button" onClick={this.redirect} className="btn btn-transparent btn-lg text-uppercase">Get Started</button>
+              <button type="button" onClick={this.redirect} className="button btn-transparent btn-lg text-uppercase">Get Started</button>
             </div>
           </div>
         </div>
@@ -53,7 +53,7 @@ export default class CarSlide extends React.Component{
             <div className="centered">
               <h1 className="big">We provide professional information right to you!</h1>
               <p className="para">Click on the button</p>
-              <button type="button" onClick={this.redirect} className="btn btn-transparent btn-lg text-uppercase">Get Started</button>
+              <button type="button" onClick={this.redirect} className="button btn-transparent btn-lg text-uppercase">Get Started</button>
             </div>
           </div>
         </div>
@@ -64,7 +64,7 @@ export default class CarSlide extends React.Component{
             <div className="centered">
               <h1 className="big">Need professional advice?</h1>
               <p className="para">Click on the button</p>
-              <button type="button" onClick={this.redirect} className="btn btn-transparent btn-lg text-uppercase">Get Started</button>
+              <button type="button" onClick={this.redirect} className="button btn-transparent btn-lg text-uppercase">Get Started</button>
             </div>
           </div>
         </div>

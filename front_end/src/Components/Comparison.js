@@ -69,20 +69,20 @@ export default class Comparison extends React.Component {
        <div>
 
           <div class="inside-chart-container">
-          {carData}
-          <ButtonToolbar>
-            <ToggleButtonGroup type="radio" name="options" defaultValue={1} >
-              <ToggleButton value={1} onChange={this.toggle}>Depreciation </ToggleButton>
-              <ToggleButton value={2} onChange={this.toggle}>Maintenance</ToggleButton>
-              <ToggleButton value={3} onChange={this.toggle}>Repairs</ToggleButton>
-            </ToggleButtonGroup>
-          </ButtonToolbar>
-          { this.state.toggle === "maintenances" ? <Chart carName={carName} data={this.checkData(this.props.data.maintenances)}/>
-            : this.state.toggle === "newDepreciations" ? <Chart carName={carName} data={this.checkData(this.props.data.newDepreciations)}/>
-            : this.state.toggle === "repairs" ? <Chart carName={carName} data={this.checkData(this.props.data.repairs)}/>
-            : null
-          }
-        </div>
+            {carData}
+            <ButtonToolbar>
+              <ToggleButtonGroup type="radio" name="options" defaultValue={1} >
+                <ToggleButton value={1} onChange={this.toggle}>Depreciation </ToggleButton>
+                <ToggleButton value={2} onChange={this.toggle}>Maintenance</ToggleButton>
+                <ToggleButton value={3} onChange={this.toggle}>Repairs</ToggleButton>
+              </ToggleButtonGroup>
+            </ButtonToolbar>
+            { this.state.toggle === "maintenances" ? <Chart carName={carName} data={this.checkData(this.props.data.maintenances)}/>
+              : this.state.toggle === "newDepreciations" ? <Chart carName={carName} data={this.checkData(this.props.data.newDepreciations)}/>
+              : this.state.toggle === "repairs" ? <Chart carName={carName} data={this.checkData(this.props.data.repairs)}/>
+              : null
+            }
+          </div>
 
         <PieChart carName={carName}
                   maintenances={this.checkData(this.props.data.maintenances)}
