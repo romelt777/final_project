@@ -63,17 +63,20 @@ export default class Comparison extends React.Component {
       })
     })
 
+    const button = {
+      'border-radius': 20,
+    }
 
     return (
       <Container>
         <Row className="analytics-container">
-          <Col sm={8} className="chart-container">
+          <Col sm={6} className="chart-container">
             {carData}
             <ButtonToolbar>
               <ToggleButtonGroup type="radio" name="options" defaultValue={1} >
-                <ToggleButton value={1} onChange={this.toggle}>Depreciation </ToggleButton>
-                <ToggleButton value={2} onChange={this.toggle}>Maintenance</ToggleButton>
-                <ToggleButton value={3} onChange={this.toggle}>Repairs</ToggleButton>
+                <ToggleButton value={1} onChange={this.toggle} style={button}>Depreciation</ToggleButton>
+                <ToggleButton value={2} onChange={this.toggle} style={button}>Maintenance</ToggleButton>
+                <ToggleButton value={3} onChange={this.toggle} style={button}>Repairs</ToggleButton>
               </ToggleButtonGroup>
             </ButtonToolbar>
             { this.state.toggle === "maintenances" ? <Chart carName={carName} data={this.checkData(this.props.data.maintenances)}/>
@@ -81,15 +84,15 @@ export default class Comparison extends React.Component {
               : this.state.toggle === "repairs" ? <Chart carName={carName} data={this.checkData(this.props.data.repairs)}/>
               : null
             }
-            <PieChart carName={carName}
-                  maintenances={this.checkData(this.props.data.maintenances)}
-                  fuels={this.checkData(this.props.data.newFuels)}
-                  depi={this.checkData(this.props.data.newDepreciations)}
-            />
           </Col>
-          <Col sm={4} className="cal-container">
-             <Calculator carName={carName} price={this.checkData(this.props.data.newPrices)}/>
+          <Col sm={6} className="cal-container">
+              <PieChart carName={carName}
+                    maintenances={this.checkData(this.props.data.maintenances)}
+                    fuels={this.checkData(this.props.data.newFuels)}
+                    depi={this.checkData(this.props.data.newDepreciations)}
+              />
           </Col>
+          <Calculator carName={carName} price={this.checkData(this.props.data.newPrices)}/>
         </Row>
       </Container>
     )
