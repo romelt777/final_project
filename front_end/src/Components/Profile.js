@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
 import axios from 'axios'
+import '../Profile.scss'
 
 export default class Profile extends React.Component {
 
