@@ -2809,7 +2809,7 @@ car36 = Car.find_or_create_by!({
 })
 
 Price.create!({
-  vehicle_price: 16790.00
+  vehicle_price: 16790.00,
   freight_delivery: 1655.00,
   total_price: 18445.00,
   car_id: 36
@@ -3233,9 +3233,9 @@ Fuel.create!({
   auto_city: 0.00,
   auto_highway: 0.00,
   auto_combined: 0.00,
-  manual_city: 7.3, 
-  manual_highway: 5.5, 
-  manual_combined: 6.3, 
+  manual_city: 7.3,
+  manual_highway: 5.5,
+  manual_combined: 6.3,
   car_id: 41
 })
 
@@ -3313,9 +3313,9 @@ Fuel.create!({
   auto_city: 7.4,
   auto_highway: 5.4,
   auto_combined: 6.3,
-  manual_city: 7.1, 
-  manual_highway: 5.2, 
-  manual_combined: 6.0, 
+  manual_city: 7.1,
+  manual_highway: 5.2,
+  manual_combined: 6.0,
   car_id: 42
 })
 

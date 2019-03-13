@@ -27,6 +27,7 @@ export default class Chart extends React.Component {
         dataSet.push({
           ...plotSettings,
           label: label[i],
+          labelColor: 'rgba(255,5,5)',
           data: data[i],
           backgroundColor: colorScheme[i],
           borderColor: colorScheme[i]
@@ -35,11 +36,40 @@ export default class Chart extends React.Component {
       return dataSet;
     }
 
+    const options = {
+        legend: {
+            labels: {
+                fontColor: "white",
+                fontSize: 18
+            }
+        },
+        scales: {
+            yAxes: [{
+                ticks: {
+                    fontColor: "white",
+                    fontSize: 18,
+                    stepSize: 1,
+                    beginAtZero: true
+                }
+            }],
+            xAxes: [{
+                ticks: {
+                    fontColor: "white",
+                    fontSize: 14,
+                    stepSize: 1,
+                    beginAtZero: true
+                }
+            }]
+        }
+    }
+
+
+
     const chartData = (dataset) => {
       return (
         {
           labels: ['1st year', '2nd year', '3rd year', '4th year', '5th year'],
-          datasets: getConfig(dataset)
+          datasets: getConfig(dataset,options)
         }
       );
     }
@@ -55,7 +85,7 @@ export default class Chart extends React.Component {
 
     return (
       <div style={{width: 650, height: 450}}>
-        <h2 className="line-chart-h2">5 Years True Cost to Own</h2>
+        <h2 className="line-chart-h2" style={{ color: 'white' }}>5 Years True Cost to Own</h2>
         <Line data={chartData(depiData)} redraw/>
       </div>
     );

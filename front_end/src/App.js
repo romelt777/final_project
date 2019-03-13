@@ -58,7 +58,7 @@ class AppRouter extends Component {
   Comparisons = ({match}) => {
     return (
       <div style={{
-          'background-image': 'linear-gradient(to bottom, rgba(0,128,128,0.2), rgba(0,128,128,1))',
+          'background-image': 'linear-gradient(to bottom, rgba(0,99,99,1), rgba(0,99,99,0.5))',
           'padding-top': 100
       }}>
         <Route exact path = {`${match.path}/:id`} render={(props) => <Comparison data={this.state} {...props}/> }></Route>
