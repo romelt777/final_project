@@ -70,6 +70,7 @@ export default class Profile extends React.Component {
       <div className="row">
         <div className="column left">
           <section className="container">
+            <h1>{name}</h1>
           </section>
         </div>
         <div className="column right"  style={compareDiv}>
