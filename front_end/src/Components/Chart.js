@@ -27,6 +27,7 @@ export default class Chart extends React.Component {
         dataSet.push({
           ...plotSettings,
           label: label[i],
+          labelColor: 'rgba(255,5,5)',
           data: data[i],
           backgroundColor: colorScheme[i],
           borderColor: colorScheme[i],
@@ -39,7 +40,7 @@ export default class Chart extends React.Component {
       return (
         {
           labels: ['1st year', '2nd year', '3rd year', '4th year', '5th year'],
-          datasets: getConfig(dataset)
+          datasets: getConfig(dataset,options)
         }
       );
     }

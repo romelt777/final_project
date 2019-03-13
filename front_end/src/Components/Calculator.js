@@ -100,13 +100,15 @@ export default class Calculator extends Component {
 
     const pieButtons = [];
     this.props.carName.forEach((c, i) => {
-      pieButtons.push(<ToggleButton key={c.id} value={i + 1} onChange={this.togglePie}>{c.model}</ToggleButton>)
+      pieButtons.push(<ToggleButton variant="outline-light" key={c.id} value={i + 1} onChange={this.togglePie}>{c.model}</ToggleButton>)
     })
 
     const calculator = {
       position: 'relative',
       'border-radius': 20,
-      'background-color': 'white',
+      'background-color': 'transparent',
+      '-webkit-box-shadow': '0 10px 30px 0px rgba(0, 0, 0, 0.1)',
+      color: 'white',
       'margin-left': 10,
       'margin-bottom': 20,
       'width': 400,

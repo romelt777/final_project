@@ -58,7 +58,7 @@ export default class PieChart extends React.Component {
 
     const pieButtons = [];
     this.props.carName.forEach((c, i) => {
-      pieButtons.push(<ToggleButton key={c.id} value={i + 1} onChange={this.togglePie}>{c.model}</ToggleButton>)
+      pieButtons.push(<ToggleButton variant="outline-light" key={c.id} value={i + 1} onChange={this.togglePie}>{c.model}</ToggleButton>)
     })
 
     return (
