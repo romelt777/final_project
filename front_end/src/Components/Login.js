@@ -1,4 +1,5 @@
 import React from 'react';
+import {Button} from 'react-bootstrap'
 
 
 export default class Login extends React.Component {
@@ -13,12 +14,27 @@ export default class Login extends React.Component {
   }
 
   render(){
+
+    const container = {
+      'justify-content': 'center',
+      margin: 'auto'
+    }
+
+    const loginForm = {
+      'margin-top': 100,
+      'background-color': 'white',
+      padding: 50,
+      width: 350,
+      height: 300,
+      'border-radius': 20
+    }
+
     return (
-      <div>
-        <form onSubmit={this.submitCurrent}>
+      <div style={container}>
+        <form style={loginForm} onSubmit={this.submitCurrent}>
           <label>Email: <input type="email" name="email" ref="email" /> </label> <br></br>
           <label>Password: <input type="password" name="password" ref="password" /> </label> <br></br>
-          <input type="submit" value="Submit"/>
+          <Button variant="success" type="submit">Login</Button>
         </form>
       </div>
     )
