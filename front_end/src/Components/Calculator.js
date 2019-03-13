@@ -108,7 +108,8 @@ export default class Calculator extends Component {
       'border-radius': 20,
       'background-color': 'white',
       'width': 400,
-      'height': 350
+      'height': 350,
+      'clear': 'both'
     }
 
     const wrapperStyle = {
@@ -130,7 +131,7 @@ export default class Calculator extends Component {
     }
 
     return (
-      <div>
+      <div style={{clear:"both"}}>
         <ButtonToolbar>
           <ToggleButtonGroup type="radio" name="options" defaultValue={1} >
             {pieButtons}

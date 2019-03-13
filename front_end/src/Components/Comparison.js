@@ -72,7 +72,6 @@ export default class Comparison extends React.Component {
        <div> 
         <div class="chart-container" style={{}}>
           <div class="inside-chart-container">
-          <h2 >{this.props.match.params.id}</h2>
           {carData}
           <ButtonToolbar>
             <ToggleButtonGroup type="radio" name="options" defaultValue={1} >
@@ -89,10 +88,15 @@ export default class Comparison extends React.Component {
         </div>
         </div>
 
-       
+        <PieChart carName={carName}
+                 maintenances={this.checkData(this.props.data.maintenances)}
+                 fuels={this.checkData(this.props.data.newFuels)}
+                 depi={this.checkData(this.props.data.newDepreciations)}
 
+       />
+        <div>
         <Calculator carName={carName} price={this.checkData(this.props.data.newPrices)}/>
-
+        </div>
       </div>
      
     )

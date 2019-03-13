@@ -60,7 +60,7 @@ class AppRouter extends Component {
   Comparisons = ({match}) => {
     return (
       <div>
-        <h2>Comparisons</h2>
+        
         <Route exact path = {`${match.path}/:id`} render={(props) => <Comparison data={this.state} {...props}/> }></Route>
       </div>
     )

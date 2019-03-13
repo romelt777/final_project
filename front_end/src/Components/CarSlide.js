@@ -1,8 +1,8 @@
 import React from 'react'
 import { Fade } from 'react-slideshow-image';
-import Bmw from '../images/bmw.jpg';
+import Lincoln from '../images/lincoln.jpg';
 import Mazda from '../images/mazda.jpg';
-import Honda from '../images/honda.jpg';
+import Lexus from '../images/lexus.jpg';
 import Toyota from '../images/toyota.jpg';
 import '../image.css';
 
@@ -27,7 +27,7 @@ export default class CarSlide extends React.Component{
       <Fade {...fadeProperties}>
         <div className="each-fade">
           <div className="image-container">
-            <img className="image" src={Bmw} alt="Logo" />
+            <img className="image" src={Lincoln} alt="Logo" />
             <div className="centered">
               <h1 className="big">Need professional advice?</h1>
               <p className="para">Click on the button</p>
@@ -49,7 +49,7 @@ export default class CarSlide extends React.Component{
 
         <div className="each-fade">
           <div className="image-container">
-            <img className="image" src={Honda} alt="Logo" />
+            <img className="image" src={Lexus} alt="Logo" />
             <div className="centered">
               <h1 className="big">We provide professional information right to you!</h1>
               <p className="para">Click on the button</p>

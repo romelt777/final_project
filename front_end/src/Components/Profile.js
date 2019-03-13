@@ -11,19 +11,19 @@ export default class Profile extends React.Component {
     }
   }
 
-  // componentDidMount(){
-  //   axios.get(`http://localhost:3001/api/v1/users/${this.props.currentUser.id}`, this.props.currentUser)
-  //     .then(res => {
-  //       this.setState({profile: res.data})
-  //     });
-  // }
-
   componentDidMount(){
-    axios.get(`http://localhost:3001/api/v1/users/1`)
+    axios.get(`http://localhost:3001/api/v1/users/${this.props.currentUser.id}`, this.props.currentUser)
       .then(res => {
         this.setState({profile: res.data})
       });
   }
+
+  // componentDidMount(){
+  //   axios.get(`http://localhost:3001/api/v1/users/1`)
+  //     .then(res => {
+  //       this.setState({profile: res.data})
+  //     });
+  // }
 
   render(){
     console.log("profilepage")
@@ -45,8 +45,8 @@ export default class Profile extends React.Component {
           key={c.id}
         >
             <Link to={`/comparisons/${c.id}`}>
-              {this.props.cars[carId].year} {this.props.cars[carId].make} {this.props.cars[carId].model}
-               <span> VS </span>
+              
+               <span> Comparison </span>
 
             </Link>
         </div>)
