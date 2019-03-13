@@ -5,8 +5,8 @@
   margin-left: 0px;
   color: #ffffff;
   background-color: white;
-  
-  
+
+
   display: flex;
   justify-content: space-between;
   padding: 0 40px;
@@ -15,6 +15,8 @@
   left: 0;
   right: 0;
   z-index: 1000;
+
+  margin-bottom: 0!important;
 }
 
 #logo {
@@ -28,15 +30,15 @@
 }
 
 #nav-link {
-  color: #3a3e47; 
-  display: inline-block; 
-  height: 100%; 
-  font-size: 16px; 
-  text-decoration: none; 
-  text-transform: uppercase; 
-  display: flex; 
-  align-items: center; 
-  padding: 0 3px; 
+  color: #3a3e47;
+  display: inline-block;
+  height: 100%;
+  font-size: 16px;
+  text-decoration: none;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  padding: 0 3px;
 }
 
 #nav-content-item {

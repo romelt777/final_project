@@ -156,7 +156,7 @@ export default class CurrentCar extends React.Component {
     //   })
     // }
 
-    const romel =  <Car data={this.props.data} match={this.renderCar()} />
+    // const romel =  <Car data={this.props.data} match={this.renderCar()} />
 
     return (
       <div className="forms-container" style={containerStyle}>

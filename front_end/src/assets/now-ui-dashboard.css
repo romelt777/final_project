@@ -1521,7 +1521,7 @@ a[data-toggle="collapse"][aria-expanded="true"] .caret,
 .form-check-radio input[type="radio"]:disabled + .form-check-sign::before,
 .form-check-radio input[type="radio"]:disabled + .form-check-sign::after {
   color: #9A9A9A; }
-
+/*
 .navbar {
   padding-top: 0.625rem;
   padding-bottom: 0.625rem;
@@ -1695,7 +1695,7 @@ a[data-toggle="collapse"][aria-expanded="true"] .caret,
     background-color: rgba(222, 222, 222, 0.8);
     color: #888; }
   .navbar.bg-white:not(.navbar-transparent) .logo-container {
-    border: 1px solid #888; }
+    border: 1px solid #888; }*/
 
 .bg-default {
   background-color: #888 !important; }
