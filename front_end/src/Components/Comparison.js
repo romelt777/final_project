@@ -63,7 +63,6 @@ export default class Comparison extends React.Component {
       })
     })
 
-<<<<<<< HEAD
 
     return (
       <Container>
@@ -93,41 +92,6 @@ export default class Comparison extends React.Component {
           </Col>
         </Row>
       </Container>
-=======
-    console.log("hello")
-    console.log(this.props.data.repairs)
-    return (
-       <div> 
-        <div class="chart-container" style={{}}>
-          <div class="inside-chart-container">
-          {carData}
-          <ButtonToolbar>
-            <ToggleButtonGroup type="radio" name="options" defaultValue={1} >
-              <ToggleButton value={1} onChange={this.toggle}>Depreciation </ToggleButton>
-              <ToggleButton value={2} onChange={this.toggle}>Maintenance</ToggleButton>
-              <ToggleButton value={3} onChange={this.toggle}>Repairs</ToggleButton>
-            </ToggleButtonGroup>
-          </ButtonToolbar>
-          { this.state.toggle === "maintenances" ? <Chart carName={carName} data={this.checkData(this.props.data.newDepreciations)}/>
-            : this.state.toggle === "newDepreciations" ? <Chart carName={carName} data={this.checkData(this.props.data.maintenances)}/>
-            : this.state.toggle === "repairs" ? <Chart carName={carName} data={this.checkData(this.props.data.repairs)}/>
-            : null
-          }
-        </div>
-        </div>
-
-        <PieChart carName={carName}
-                 maintenances={this.checkData(this.props.data.maintenances)}
-                 fuels={this.checkData(this.props.data.newFuels)}
-                 depi={this.checkData(this.props.data.newDepreciations)}
-
-       />
-        <div>
-        <Calculator carName={carName} price={this.checkData(this.props.data.newPrices)}/>
-        </div>
-      </div>
-     
->>>>>>> feature/carslidepics
     )
   }
 }

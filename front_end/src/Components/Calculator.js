@@ -107,15 +107,9 @@ export default class Calculator extends Component {
       position: 'relative',
       'border-radius': 20,
       'background-color': 'white',
-<<<<<<< HEAD
       'padding': 20,
       'margin-bottom': 20,
       'width': 400
-=======
-      'width': 400,
-      'height': 350,
-      'clear': 'both'
->>>>>>> feature/carslidepics
     }
 
     const wrapperStyle = {
