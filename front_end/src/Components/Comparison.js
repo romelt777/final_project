@@ -91,6 +91,7 @@ export default class Comparison extends React.Component {
                     maintenances={this.checkData(this.props.data.maintenances)}
                     fuels={this.checkData(this.props.data.newFuels)}
                     depi={this.checkData(this.props.data.newDepreciations)}
+                    repairs={this.checkData(this.props.data.repairs)}
               />
           </Col>
         </Row>

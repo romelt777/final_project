@@ -23,25 +23,29 @@ export default class PieChart extends React.Component {
   data = () =>{
     if(this.props.depi.length > 0){
       const which = this.state.togglePie
+      console.log(this.props.repairs[which])
       const fuelCost = Math.round(this.props.fuels[which].auto_combined * 15000 * 1.61 * 1.13 / 100 * 100) / 100
       return (
           {
           labels: [
             'Depreciation',
             'Maintenance',
-            'Fuel'
+            'Fuel',
+            'Repairs'
           ],
           datasets: [{
-            data: [this.props.depi[which].total, this.props.maintenances[which].total, fuelCost],
+            data: [this.props.depi[which].total, this.props.maintenances[which].total, fuelCost, this.props.repairs[which].total],
             backgroundColor: [
             '#FF6384',
             '#36A2EB',
-            '#FFCE56'
+            '#FFCE56',
+            '#D2691E'
             ],
             hoverBackgroundColor: [
             '#FF6384',
             '#36A2EB',
-            '#FFCE56'
+            '#FFCE56',
+            '#D2691E'
             ]
           }]
         }
