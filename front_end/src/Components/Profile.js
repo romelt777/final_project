@@ -45,8 +45,8 @@ export default class Profile extends React.Component {
           key={c.id}
         >
             <Link to={`/comparisons/${c.id}`}>
-              
-               <span> Comparison </span>
+
+               <span> Comparison {c.id}</span>
 
             </Link>
         </div>)

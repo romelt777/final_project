@@ -112,7 +112,7 @@ export default class Calculator extends Component {
       'margin-left': 10,
       'margin-bottom': 20,
       'width': 400,
-      'height': 350
+      'height': 400
     }
 
     const wrapperStyle = {
@@ -175,7 +175,7 @@ export default class Calculator extends Component {
         <Col sm={5}>
            <div style={{height: 38}}></div>
           <div ClassName='leaseCalculator' style={calculator}>
-            <h4 style={calHead}>Loan Payment Calculator</h4>
+            <h4 style={calHead}>Financing Calculator</h4>
             <div ClassName='calWrapper' style={calWrap}>
               <div style={wrapperStyle}>
                 <h4>Interest Rate (%): {this.state.interestChanged}</h4>

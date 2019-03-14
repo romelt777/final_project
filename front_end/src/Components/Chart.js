@@ -51,7 +51,7 @@ export default class Chart extends React.Component {
       yAxes: [{
         ticks: {
           fontSize: 15,
-          fontColor: 'black',
+          fontColor: 'white',
           fontStyle: 'bold',
           padding: 20
         },
@@ -64,7 +64,7 @@ export default class Chart extends React.Component {
       xAxes: [{
         ticks: {
           fontSize: 16,
-          fontColor: 'black',
+          fontColor: 'white',
           fontStyle: 'bold',
           padding: 20
         },
@@ -91,7 +91,6 @@ export default class Chart extends React.Component {
 
     return (
       <div style={{width: 650, height: 450}}>
-        <h2 className="line-chart-h2">5 Years True Cost to Own</h2>
         <Line options={options} data={chartData(depiData)} redraw/>
       </div>
     );

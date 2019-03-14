@@ -72,6 +72,7 @@ export default class Comparison extends React.Component {
         <Row className="analytics-container">
           <Col sm={6} className="chart-container" style={container}>
             {carData}
+            <h2 className="line-chart-h2" >5 Years True Cost to Own</h2>
             <ButtonToolbar style={{'justify-content': 'center'}}>
               <ToggleButtonGroup type="radio" name="options" defaultValue={1} >
                 <ToggleButton variant="outline-light" value={1} onChange={this.toggle}>Depreciation </ToggleButton>

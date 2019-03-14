@@ -63,13 +63,13 @@ export default class PieChart extends React.Component {
 
     return (
       <div className="pie-container" style={{width: 650, height: 450}}>
+
+        <h2 className="pie-chart-h2">Cost Composition</h2>
         <ButtonToolbar style={{'justify-content': 'center'}}>
           <ToggleButtonGroup name="options" defaultValue={1} >
             {pieButtons}
           </ToggleButtonGroup>
         </ButtonToolbar>
-
-        <h2 className="pie-chart-h2">Cost Composition</h2>
         <Doughnut data={this.data()} />
       </div>
     );
