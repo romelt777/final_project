@@ -59,7 +59,7 @@ export default class Car extends React.Component {
     this.props.data.newPrices.forEach((price) => {
       this.props.match.params.id.forEach((i) => {
         if(price.id == i) {
-          newPrice.push(<p>Price: {price.vehicle_price}</p>)
+          newPrice.push(<p>Price: ${price.vehicle_price}</p>)
         }
       })
     })
