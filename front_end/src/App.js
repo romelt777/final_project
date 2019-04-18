@@ -260,25 +260,9 @@ class AppRouter extends Component {
     console.log("111", this.state.currentUser)
     axios.get(`http://localhost:3001/api/v1/users/${this.state.currentUser.id}`, this.state.currentUser)
       .then(res => {
-        console.log(res.data)
         this.setState({profile: res.data})
-        console.log(this.state.profile)
       });
-    // this.history.push(`/users/${this.currentUser.id}`)
   }
-
-  // getProfile = () => {
-  //   console.log("111", this.state.currentUser)
-  //   axios.get(`http://localhost:3001/api/v1/users/1`, {'id':1})
-  //     .then(res => {
-  //       console.log(res.data)
-  //       this.setState({profile: res.data})
-  //       console.log(this.state.profile)
-  //     });
-  //   // this.history.push(`/users/${this.currentUser.id}`)
-  // }
-
-
 
   render() {
     return (
